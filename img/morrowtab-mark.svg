@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">MorrowTab brand mark</title>
+  <desc id="desc">A warm rising sun behind three overlapping cards, without an app-icon background.</desc>
+  <g fill="none" stroke="#ffd166" stroke-width="52" stroke-linecap="round">
+    <path d="M512 142v78"/><path d="m350 220-55-55"/><path d="m674 220 55-55"/>
+  </g>
+  <circle cx="512" cy="425" r="157" fill="#ffd166"/>
+  <path d="M224 384 650 487c42 10 69 49 63 92l-27 179c-6 42-46 68-87 58l-397-96c-41-10-67-48-61-89l27-179c6-42 15-78 56-68Z" fill="#f8fbff" stroke="#182044" stroke-opacity="0.12" stroke-width="6"/>
+  <path d="M270 474 474 404c22-8 46-8 68-1l251 78c38 12 61 48 55 88l-27 125c-6 41-32 71-72 80l-421 94c-50 11-94-26-94-77V550c0-35 14-64 36-76Z" fill="#18c8be"/>
+  <path d="M401 487 817 371c43-12 85 20 85 64v252c0 41-27 75-67 86L420 889c-43 12-85-20-85-64V573c0-41 27-75 66-86Z" fill="#6574f7"/>
+</svg>

@@ -1,0 +1,43 @@
+# MorrowTab
+
+> MorrowTab is a Chrome and Edge extension that replaces the new-tab page with a board-based homepage: columns of organized links, a search box that uses your browser's own default provider or extra engines you add yourself, and a daily FixQuotes quote. Boards, columns, links, search engines and shared settings travel through the browser's own extension sync, so there is no MorrowTab account and no MorrowTab server holding a copy of anything.
+
+MorrowTab is published by FixQuotes. Version 1.0.0 is not yet listed on the Chrome Web Store or Microsoft Edge Add-ons; this site will link to both listings the day they go live, and installing will then be an ordinary one-click store install. Requirements are Chrome or Edge on Chromium 114 or newer.
+
+Use the user manual for detailed information about boards, columns and links, search engines and URL templates, the Quick Save toolbar popup, keyboard shortcuts, themes and backgrounds, the four daily-quote modes, backup and restore, the enforced storage limits, and the read-only recovery view.
+
+## Product
+
+- [MorrowTab homepage](https://calxibe.github.io/morrowtab/): Product overview, screenshots, feature summary, browser requirements, the install story, and frequently asked questions.
+
+## Documentation
+
+- [User manual](https://calxibe.github.io/morrowtab/manual.html): Complete reference — boards and board switching, columns and column colors, adding and editing links, additional search engines, Quick Save, keyboard shortcuts, appearance and background options, daily-quote modes, backup and restore, storage limits, and troubleshooting.
+- [Changelog](https://calxibe.github.io/morrowtab/changelog.html): Release history and changes by version.
+
+## Legal and support
+
+- [Privacy policy](https://calxibe.github.io/morrowtab/privacy.html): What is stored in browser sync, what stays only on one computer, every network request the extension can make, what an exported backup contains, and how the website itself behaves.
+- [Contact MorrowTab support](https://calxibe.github.io/morrowtab/contact.html): MorrowTab's handoff page for support, feedback and questions, all handled by FixQuotes.
+- [FixQuotes support form](https://fixquotes.com/docs/contact/?category=morrowtab): The only support channel for MorrowTab.
+- [About FixQuotes](https://fixquotes.com/docs/about/): Information about the publisher.
+
+## Optional
+
+- [XML sitemap](https://calxibe.github.io/morrowtab/sitemap.xml): Complete list of indexable MorrowTab pages.
+
+## Key facts
+
+- Version: MorrowTab 1.0.0, a Manifest V3 extension. No other version number is current.
+- Browsers: Chrome or Edge on Chromium 114 or newer. The floor exists because MorrowTab uses the Popover API, Web Locks, CSS `:has()` and CSS `color-mix()`. There is no Firefox, Safari or mobile version.
+- Availability: as of 31 August 2026 MorrowTab is not published on the Chrome Web Store or Microsoft Edge Add-ons, and this site offers no download, installer or side-load instructions. There is no public source repository.
+- Account: none. No sign-up, no login, no MorrowTab-operated backend for user content. Boards, columns, links, search engines and shared settings live in the browser's own extension sync (chrome.storage.sync), which is not end-to-end encrypted, so saved names, titles and addresses should be treated as non-confidential.
+- Network hosts: exactly three, and only for two features — `https://fixquotes.com` for the daily quote feed, `https://api.fixquotes.com` for the metadata of the opt-in daily nature background, and `https://images.pexels.com` for that photo's image bytes. The daily quote is ON by default (Text mode) and fetches once per local day; setting it to Off stops that request entirely. The nature background is opt-in and makes no request until it is switched on. One further request is possible only after two separate opt-ins: turning on "Fetch page titles when adding links" (off by default) and then granting Chrome's per-site permission prompt for the one address being added.
+- Permissions declared: storage, favicon, search and activeTab, the three fixed host permissions above, plus an optional `https://*/*` host permission that is never granted at install and is requested one origin at a time for the page-title fetch.
+- Storage limits (enforced before every write, nothing is unlimited): 30 boards; 120 columns total and 40 per board; 250 links total and 200 per column; 80 additional search engines total and 20 per board; and a sync budget of 500 records, 8,000 bytes per record and 100,000 bytes in total. Text caps: board name 80 characters, column title 100, link title 160, link description 200, search-engine name 80, and 2,048 characters for a URL or search template.
+- Stays on one computer and never syncs or appears in a backup: the selected board, the Quick Save destination, saved search suggestions and their on/off preference, an uploaded background image, the cached nature photo, the cached daily quote, and two local safety snapshots.
+- Backup: Settings exports the synced records to a plaintext JSON file on that computer. Importing a full backup replaces all synced data after confirmation; importing a single exported column adds it to the current board instead.
+- Search: "Browser default" hands the query to the provider the Chrome or Edge profile is already set to. MorrowTab never changes the browser's default engine and ships with no search provider preconfigured. Search suggestions come only from the user's own completed searches, stored on that computer.
+- No analytics, telemetry or tracking script exists in the extension, and this website has no analytics and no consent banner.
+- A fresh install shows a virtual "Popular websites" starter board — 50 links in five columns of ten (News, Streaming, Social media, Everyday tools, Shopping) — and writes nothing to sync until the first change.
+- "Boardmark" is not a product name. It survives only as an import alias for files exported before the rename.

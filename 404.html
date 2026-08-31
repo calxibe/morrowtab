@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+    ROOT-ABSOLUTE PATHS ARE DELIBERATE, AND ONLY ON THIS PAGE.
+
+    GitHub Pages serves this file for a missing path at ANY depth, without
+    redirecting. A request for /morrowtab/a/b/c renders this document while the
+    browser still believes it is sitting in /morrowtab/a/b/, so a document-relative
+    reference such as "style.css" or "img/icon48.png" would resolve to
+    /morrowtab/a/b/style.css and 404 in turn — an unstyled, iconless error page.
+
+    Every internal reference below therefore starts with the project base,
+    /morrowtab/. Every other page on this site uses relative links, as the house
+    rules require; this file is the single exception.
+
+    IF THE SITE EVER MOVES TO AN APEX DOMAIN (e.g. https://morrowtab.com/), the
+    /morrowtab prefix must be stripped from every href, src and srcset in this
+    file, leaving plain "/" roots. Nothing else on the site needs that change.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Page Not Found - MorrowTab</title>
+    <meta name="description"
+        content="That MorrowTab address does not lead anywhere. Head back to the home page, or open the user manual to find what you were looking for.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0b12">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MorrowTab">
+    <meta property="og:title" content="Page Not Found - MorrowTab">
+    <meta property="og:description"
+        content="That MorrowTab address does not lead anywhere. Head back to the home page, or open the user manual.">
+    <meta property="og:url" content="https://calxibe.github.io/morrowtab/404.html">
+    <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Page Not Found - MorrowTab">
+    <meta name="twitter:description"
+        content="That MorrowTab address does not lead anywhere. Head back to the home page, or open the user manual.">
+    <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/morrowtab/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/morrowtab/favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/morrowtab/img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/morrowtab/img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="/morrowtab/img/icon128.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/morrowtab/apple-touch-icon.png">
+    <link rel="manifest" href="/morrowtab/site.webmanifest">
+
+    <link rel="preload" href="/morrowtab/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/morrowtab/style.css?v=20260831-1">
+    <script src="/morrowtab/index.js" defer></script>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="/morrowtab/" class="logo">
+                <img src="/morrowtab/img/icon48.png" alt="" aria-hidden="true" class="logo-icon" width="48" height="48">
+                <span class="logo-text">Morrow<span>Tab</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav" aria-label="Main">
+                <a href="/morrowtab/#install">Availability</a>
+                <a href="/morrowtab/manual.html">Manual</a>
+                <a href="/morrowtab/changelog.html">Changelog</a>
+                <a href="/morrowtab/privacy.html">Privacy</a>
+                <a href="/morrowtab/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container not-found">
+            <span class="section-badge">404</span>
+            <h1>That page is not here</h1>
+            <p class="subtitle">
+                The address you followed does not match any page on this site. It may have been renamed since the link
+                was written, or the link may simply have a typo in it. The home page and the user manual between them
+                cover everything MorrowTab does.
+            </p>
+            <div class="cta-buttons">
+                <a href="/morrowtab/" class="btn btn-primary">Go to the home page</a>
+                <a href="/morrowtab/manual.html" class="btn btn-secondary">Open the user manual</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h2>MorrowTab</h2>
+                    <ul>
+                        <li><a href="/morrowtab/#install">Availability</a></li>
+                        <li><a href="/morrowtab/manual.html">User manual</a></li>
+                        <li><a href="/morrowtab/changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Support</h2>
+                    <ul>
+                        <li><a href="/morrowtab/manual.html#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="/morrowtab/manual.html#shortcuts">Keyboard shortcuts</a></li>
+                        <li><a href="/morrowtab/contact.html">Contact FixQuotes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Legal</h2>
+                    <ul>
+                        <li><a href="/morrowtab/privacy.html">Privacy policy</a></li>
+                        <li><a href="https://www.pexels.com/" target="_blank" rel="noopener">Photos by Pexels<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                        <li><a href="https://fixquotes.com/" target="_blank" rel="noopener">Quotes by FixQuotes<span class="visually-hidden"> (opens in a new tab)</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Requirements</h2>
+                    <ul>
+                        <li>Google Chrome 114+</li>
+                        <li>Microsoft Edge 114+</li>
+                        <li>Version 1.0.0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FixQuotes. MorrowTab is a browser extension by FixQuotes.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

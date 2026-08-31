@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>MorrowTab User Manual - Boards, Search, Sync and Settings</title>
+    <meta name="description"
+        content="The complete MorrowTab 1.0.0 user manual: boards and columns, search engines, Quick Save, backgrounds and themes, the daily quote, backup and import, sync limits, keyboard shortcuts and troubleshooting.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0b12">
+    <link rel="canonical" href="https://calxibe.github.io/morrowtab/manual.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MorrowTab">
+    <meta property="og:title" content="MorrowTab User Manual">
+    <meta property="og:description"
+        content="Every MorrowTab screen explained: boards, columns and links, search engines, Quick Save, appearance, the daily quote, backup, sync limits, keyboard shortcuts and troubleshooting.">
+    <meta property="og:url" content="https://calxibe.github.io/morrowtab/manual.html">
+    <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MorrowTab User Manual">
+    <meta name="twitter:description"
+        content="The complete guide to MorrowTab 1.0.0 — boards, search, Quick Save, appearance, backup, limits and shortcuts.">
+    <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css?v=20260831-1">
+    <script src="index.js" defer></script>
+    <script src="manual.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "MorrowTab User Manual",
+        "description": "The complete MorrowTab 1.0.0 user manual: boards and columns, search engines, saved search suggestions, Quick Save, rearranging, appearance, the daily quote, backgrounds, backup and import, storage limits, syncing, recovery, keyboard shortcuts, accessibility and troubleshooting.",
+        "inLanguage": "en",
+        "about": {
+            "@type": "SoftwareApplication",
+            "name": "MorrowTab",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Chrome, Microsoft Edge",
+            "softwareVersion": "1.0.0"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "FixQuotes",
+            "url": "https://fixquotes.com/docs/about/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="./" class="logo">
+                <img src="img/icon48.png" alt="" aria-hidden="true" class="logo-icon" width="48" height="48">
+                <span class="logo-text">Morrow<span>Tab</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav" aria-label="Main">
+                <a href="./#install">Availability</a>
+                <a href="manual.html" class="active" aria-current="page">Manual</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <span class="section-badge">User manual</span>
+                <h1>MorrowTab User Manual</h1>
+                <p class="subtitle">
+                    MorrowTab replaces the new tab in Chrome and Edge with a board of your own links, a search box that
+                    runs through your browser's own provider, and a daily quote from FixQuotes. This manual walks
+                    through every screen and every setting in the order you are likely to meet them — from the starter
+                    board a fresh install shows you, through boards, columns, links and search engines, to backups,
+                    storage limits, keyboard shortcuts and what to do when something looks wrong.
+                </p>
+                <p class="updated">Covers MorrowTab 1.0.0 · Chrome and Edge 114 or newer</p>
+            </div>
+        </section>
+
+        <div class="container manual-layout">
+            <aside aria-label="Contents">
+                <button class="manual-toc-toggle" type="button" aria-expanded="true" aria-controls="manual-contents">
+                    <span class="manual-toc-toggle-state">Hide sections</span>
+                </button>
+                <nav class="manual-toc" aria-label="Manual contents">
+                    <p>Contents</p>
+                    <ol id="manual-contents" data-manual-contents>
+                        <li><a href="#what-it-does">What MorrowTab does</a></li>
+                        <li><a href="#install">Installing MorrowTab</a></li>
+                        <li><a href="#first-board">Your first board</a></li>
+                        <li><a href="#boards">Managing boards</a></li>
+                        <li><a href="#columns">Columns</a></li>
+                        <li><a href="#links">Adding and editing links</a></li>
+                        <li><a href="#search">Searching from the new tab</a></li>
+                        <li><a href="#search-engines">Adding your own search engines</a></li>
+                        <li><a href="#suggestions">Saved search suggestions</a></li>
+                        <li><a href="#quick-save">Quick Save from the toolbar</a></li>
+                        <li><a href="#rearranging">Rearranging things</a></li>
+                        <li><a href="#usage-ordering">Ordering links by how often you use them</a></li>
+                        <li><a href="#appearance">Appearance and layout</a></li>
+                        <li><a href="#daily-quote">The daily quote</a></li>
+                        <li><a href="#backgrounds">Nature photos and your own image</a></li>
+                        <li><a href="#backup">Backup, export and import</a></li>
+                        <li><a href="#limits">How much MorrowTab can hold</a></li>
+                        <li><a href="#sync">How syncing works</a></li>
+                        <li><a href="#recovery">When sync goes wrong</a></li>
+                        <li><a href="#shortcuts">Keyboard shortcuts</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    </ol>
+                </nav>
+            </aside>
+
+            <article>
+                <section class="manual-topic" id="what-it-does">
+                    <h2>What MorrowTab does</h2>
+                    <p>
+                        MorrowTab is a browser extension that takes over the new tab page. Instead of a blank page or a
+                        grid of most-visited thumbnails, every new tab opens a <strong>board</strong>: a set of columns,
+                        each holding links you put there yourself, with a search box across the top and — unless you
+                        turn it off — a quote of the day at the bottom.
+                    </p>
+                    <p>
+                        You can keep as many boards as you need, up to thirty. Each board owns its own columns, links,
+                        extra search engines and their ordering, so a work board and a private board never share a
+                        screen. The browser tab title follows the board you are on, reading
+                        <em>Board name — MorrowTab</em>.
+                    </p>
+
+                    <h3>The three surfaces</h3>
+                    <ul>
+                        <li>
+                            <strong>The new tab page.</strong> Boards, columns, links, the search box, the layout lock
+                            and the Settings dialog all live here.
+                        </li>
+                        <li>
+                            <strong>The toolbar popup.</strong> Clicking the MorrowTab button on any website opens
+                            <em>Save to MorrowTab</em>, which files the page you are looking at into a board and column
+                            without leaving the tab. See <a href="#quick-save">Quick Save from the toolbar</a>.
+                        </li>
+                        <li>
+                            <strong>The welcome page.</strong> Shown once, on a genuine first install. It is an
+                            introduction, not a release-notes page, and it does not reappear after an update.
+                        </li>
+                    </ul>
+
+                    <h3>What it is not</h3>
+                    <p>
+                        MorrowTab has no account and no MorrowTab server holding your data. Your boards travel through
+                        the extension sync your browser already runs for the profile you are signed into. There is no
+                        bookmark import, no tags, no widgets, no to-do list and no AI features — a link carries
+                        a title, an address, an optional one-line description, an optional <em>Opens in</em> override, and
+                        a count of how often you have opened it.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">🌐</span>
+                        <div>
+                            <h3>MorrowTab is not an offline-only extension</h3>
+                            <p>
+                                The daily quote is set to <strong>Text</strong> out of the box, and in that mode
+                                MorrowTab asks <code>fixquotes.com</code> for the quote of the day once per local day.
+                                Setting the quote to <strong>Off</strong> stops that request entirely. The curated
+                                nature background is separate and is off until you switch it on. Those are the only
+                                features that reach the network on their own.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="manual-topic" id="install">
+                    <h2>Installing MorrowTab</h2>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">📦</span>
+                        <div>
+                            <h3>MorrowTab 1.0.0 is not published yet</h3>
+                            <p>
+                                MorrowTab is on its way to the <strong>Chrome Web Store</strong> and
+                                <strong>Microsoft Edge Add-ons</strong>. It is not listed on either store today, so
+                                there is nothing to install yet. This page will carry direct links to both listings the
+                                day they go live.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>What installing will involve</h3>
+                    <p>
+                        Once the listings are live, installing MorrowTab is an ordinary one-click store install — the
+                        same <em>Add to Chrome</em> or <em>Get</em> button as any other extension. Nothing needs to be
+                        downloaded by hand, unpacked, or configured first. After the install completes:
+                    </p>
+                    <ol>
+                        <li>
+                            <strong>The new tab is taken over.</strong> MorrowTab's manifest overrides the new tab
+                            page, so every new tab opens MorrowTab once the extension is enabled, subject to whatever
+                            confirmation your browser shows for an extension that changes that page.
+                        </li>
+                        <li>
+                            <strong>A welcome page opens once.</strong> It is a short introduction to Quick Save,
+                            boards and search, unlocking the layout, the quote modes, and the boundary between what
+                            syncs and what stays on that computer. It appears only on a true first install, never after
+                            an update or a browser restart, and it cannot be reopened from inside the extension.
+                        </li>
+                        <li>
+                            <strong>The starter board appears.</strong> Your first new tab shows a ready-made
+                            <em>Popular websites</em> board. It is rendered from a file inside the extension and
+                            <strong>nothing is written to sync until your first edit</strong> — see
+                            <a href="#first-board">Your first board</a>.
+                        </li>
+                    </ol>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/welcome.png"
+                            aria-label="Open full size: the MorrowTab welcome page">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/welcome-768.avif 768w, img/screenshots/welcome-1280.avif 1280w, img/screenshots/welcome-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/welcome-768.webp 768w, img/screenshots/welcome-1280.webp 1280w, img/screenshots/welcome-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/welcome.png" width="1920" height="2924"
+                                alt="The MorrowTab welcome page, headed Everything you reach for, thoughtfully arranged, with four cards covering Quick Save, boards and search, rearranging and quote modes, and a privacy panel beneath them"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            The one-time welcome page. It covers the essentials in about thirty seconds and then gets
+                            out of the way; the note under the buttons reads "Your starter board stays virtual until you
+                            make your first change."
+                        </figcaption>
+                    </figure>
+
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li><strong>Google Chrome or Microsoft Edge on Chromium 114 or newer.</strong> That floor is
+                            declared in the extension itself.</li>
+                        <li>
+                            Chromium 114 is the minimum because MorrowTab's menus, search autocomplete and toasts use
+                            the Popover API, and the rest of the app relies on Web Locks, CSS <code>:has()</code> and
+                            CSS <code>color-mix()</code>.
+                        </li>
+                        <li>
+                            There is no Firefox or Safari build, and no mobile version. Chrome and Edge on the desktop
+                            are the supported browsers.
+                        </li>
+                    </ul>
+                    <p>
+                        You do not need sync to use MorrowTab — it works on a single computer as it is. Sync is only
+                        what carries your boards to a second computer, and it is your browser's own, so there is no
+                        MorrowTab account to create for it. See <a href="#sync">How syncing works</a>.
+                    </p>
+                </section>
+                <section class="manual-topic" id="first-board">
+                    <h2>Your first board</h2>
+                    <p>
+                        A fresh install opens on a board called <strong>Popular websites</strong>. It holds exactly 50
+                        links in five columns of ten: <em>News</em>, <em>Streaming</em>, <em>Social media</em>,
+                        <em>Everyday tools</em> and <em>Shopping</em>. No search engines are configured on it —
+                        <em>Browser default</em> covers search without putting any provider into your synced data.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/newtab-light.png">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/newtab-light-768.avif 768w, img/screenshots/newtab-light-1280.avif 1280w, img/screenshots/newtab-light-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/newtab-light-768.webp 768w, img/screenshots/newtab-light-1280.webp 1280w, img/screenshots/newtab-light-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/newtab-light.png" width="1920" height="1200"
+                                alt="The MorrowTab new tab page showing the Popular websites board: a board picker at the top left, a centered search box set to Browser default, and five columns of links titled News, Streaming, Social media, Everyday tools and Shopping"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            The starter board on a fresh install. The board picker sits at the top left, the search form
+                            in the middle, and the layout lock and Settings buttons at the right.
+                        </figcaption>
+                    </figure>
+
+                    <h3>The starter board is virtual until you change something</h3>
+                    <p>
+                        While your synced storage is empty, that board is read from a file bundled inside the
+                        extension. Opening or reloading a new tab does not write it anywhere. The first time you
+                        actually change something — rename a column, delete a link, add a board — MorrowTab takes a
+                        lock, checks once more that nothing has arrived through sync in the meantime, and then writes
+                        the whole starter board <em>plus</em> your change in a single save. That is the same protected write
+                        every later change uses &mdash; see <a href="#sync">How syncing works</a>.
+                    </p>
+                    <p>
+                        One thing to expect from that first save: the starter board stops being a template and
+                        becomes ordinary data of yours, so its 5 columns and 50 links start counting towards your
+                        totals. Anything you do not want is yours to delete.
+                    </p>
+                    <p>
+                        Two consequences worth knowing. First, if data does arrive through sync while the starter is on
+                        screen, your pending change is stopped and the page refreshes to show the real data rather than
+                        overwriting it. Second, the starter is never merged into storage that already has content, so a
+                        future update to the bundled starter can never bring back a link or column you deleted.
+                    </p>
+
+                    <h3>Making it yours</h3>
+                    <ul>
+                        <li>Delete what you do not want. Deleting a link, column or board leaves a six-second
+                            <strong>Undo</strong> button in the toast.</li>
+                        <li>Rename a column in place from its <span aria-hidden="true">⋯</span> menu.</li>
+                        <li>Add links with the large <strong>+</strong> button at the foot of a column card.</li>
+                        <li>If you empty a board completely you get the prompt "Build this board your way" and a
+                            <strong>Create the first column</strong> button.</li>
+                    </ul>
+
+                    <h3>Which board opens</h3>
+                    <p>
+                        The board you last selected is remembered on that computer only, not through sync. A laptop and
+                        a desktop signed into the same profile share every board, but each can sit on a different one.
+                    </p>
+                </section>
+                <section class="manual-topic" id="boards">
+                    <h2>Managing boards</h2>
+                    <p>
+                        The picker at the top left switches boards. Its last entry, <strong>Manage boards…</strong>,
+                        opens the dialog where boards are created, renamed, reordered and deleted.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/boards-manager.png"
+                            aria-label="Open full size: the Manage boards dialog">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/boards-manager-768.avif 768w, img/screenshots/boards-manager-1280.avif 1280w, img/screenshots/boards-manager-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/boards-manager-768.webp 768w, img/screenshots/boards-manager-1280.webp 1280w, img/screenshots/boards-manager-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/boards-manager.png" width="1920" height="1200"
+                                alt="The Manage boards dialog listing each board with a Current badge on the active one, a summary of its columns, links and search options, and rename and delete buttons"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            Manage boards. The active board carries a "Current" badge, and each row summarizes its
+                            contents as "n columns · n links · n search options".
+                        </figcaption>
+                    </figure>
+
+                    <h3>Creating and renaming</h3>
+                    <p>
+                        <strong>Add board</strong> opens a dialog titled <em>New board</em> with one field,
+                        <strong>Board name</strong>, and the placeholder "For example, Cyber security". The button reads
+                        <strong>Create board</strong>. Renaming reuses the same dialog with the title
+                        <em>Rename board</em> and the button <strong>Save name</strong>.
+                    </p>
+                    <p>
+                        A new board starts empty. It reuses any search engines you marked as visible on all boards, but
+                        MorrowTab never invents a search provider for it.
+                    </p>
+
+                    <h3>Reordering</h3>
+                    <p>
+                        Drag a board's handle, or focus the handle and press <kbd>Alt</kbd> +
+                        <kbd>↑</kbd> / <kbd>Alt</kbd> + <kbd>↓</kbd>. The
+                        order matters beyond appearance: <kbd>Alt</kbd> + <kbd>1</kbd>–<kbd>9</kbd> jump to the first nine boards in exactly this order. Boards past the
+                        ninth have no shortcut.
+                    </p>
+
+                    <h3>Deleting</h3>
+                    <p>
+                        Deleting asks first, spelling out what goes with it: "This removes the board, its <em>n</em>
+                        columns, <em>n</em> links, and <em>n</em> board-only search engines. Search engines visible on
+                        all boards remain." The dialog closes itself so the six-second <strong>Undo</strong> in the
+                        toast is not stranded behind it.
+                    </p>
+                    <p>
+                        You can never end up with zero boards. On the last remaining board the delete button is
+                        disabled, with the tooltip "At least one board is required".
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/board-picker.png"
+                            aria-label="Open full size: the board picker">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/board-picker-768.avif 768w, img/screenshots/board-picker-1280.avif 1280w, img/screenshots/board-picker-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/board-picker-768.webp 768w, img/screenshots/board-picker-1280.webp 1280w, img/screenshots/board-picker-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/board-picker.png" width="1920" height="1200"
+                                alt="The MorrowTab board picker open in the top-left corner, listing the current board with a tick beside it, a separator, and a Manage boards option at the bottom"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            The board picker. The current board carries the tick; the last entry is always <strong>Manage boards&hellip;</strong>, which opens the dialog above. Arrow keys, Home, End and typing the first letters of a board name all work here.
+                        </figcaption>
+                    </figure>
+
+                    <h3>What is per board and what is shared</h3>
+                    <ul>
+                        <li><strong>Per board:</strong> columns, links, which extra engines appear, their order, and
+                            their order.</li>
+                        <li><strong>Shared across every board:</strong> the background color, spacing, board layout,
+                            the daily quote mode, the background mode, usage ordering, and both "open in a new tab"
+                            settings.</li>
+                        <li><strong>Per computer:</strong> which board is currently selected.</li>
+                    </ul>
+                </section>
+                <section class="manual-topic" id="columns">
+                    <h2>Columns</h2>
+                    <p>
+                        A column is a card with a heading and a list of links. Columns wrap onto new rows when another
+                        readable card no longer fits — MorrowTab never turns the board into a horizontal strip you have
+                        to scroll sideways.
+                    </p>
+
+                    <h3>Creating a column</h3>
+                    <p>
+                        On an empty board, use the <strong>Create the first column</strong> button. Otherwise use the
+                        <strong>+</strong> button in a column card's header. Either way you get a dialog titled
+                        <em>New column</em> with the field <strong>Column heading</strong>, the placeholder "For
+                        example, Current projects", and a <strong>Create column</strong> button.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/column-menu.png"
+                            aria-label="Open full size: a column options menu">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/column-menu-768.avif 768w, img/screenshots/column-menu-1280.avif 1280w, img/screenshots/column-menu-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/column-menu-768.webp 768w, img/screenshots/column-menu-1280.webp 1280w, img/screenshots/column-menu-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/column-menu.png" width="1920" height="1200"
+                                alt="A column card with its options menu open, listing Open all links, Rename column, Move to board, Export column, a grid of nine color swatches, and Delete column"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            Every column card carries a permanently visible options menu, labeled "Options for" the
+                            column's own title.
+                        </figcaption>
+                    </figure>
+
+                    <h3>The column menu</h3>
+                    <p>Its entries, in order:</p>
+                    <ul>
+                        <li>
+                            <strong>Open all links (<em>n</em>)</strong> — opens every link in the column as background
+                            tabs. Disabled when the column is empty. At eight links or more it asks first: "This opens
+                            every link in <em>column</em> in its own background tab." with an <strong>Open all</strong>
+                            button. Fewer than eight open straight away.
+                        </li>
+                        <li>
+                            <strong>Rename column</strong> — closes the menu and turns the heading into a focused input.
+                            <kbd>Enter</kbd> saves and returns focus to the options button;
+                            <kbd>Esc</kbd> cancels; clicking away also saves. An empty name is refused
+                            with "Column name cannot be empty."
+                        </li>
+                        <li>
+                            <strong>Move to board…</strong> — swaps the menu for a second page headed "Move <em>column</em>
+                            to" with a <strong>Back</strong> item and one entry per other board. It is disabled when
+                            only one board exists, and a destination already holding 40 columns is shown disabled. The
+                            move carries all the column's links in one save, with <strong>Undo</strong>.
+                        </li>
+                        <li>
+                            <strong>Export column</strong> — downloads that one column and its links as a JSON file
+                            named after the column. See <a href="#backup">Backup, export and import</a>.
+                        </li>
+                        <li>
+                            <strong>Color</strong> — a row of swatches: <em>No color</em> plus blue, purple, yellow,
+                            amber, green, teal, red and gray. Each swatch is announced by its own name &mdash; "blue accent", "teal accent", and so on &mdash; and <strong>No color</strong> is announced as "No color".
+                            Applying one confirms with "Column color saved"; <em>No color</em> gives "Column color
+                            cleared".
+                        </li>
+                        <li>
+                            <strong>Delete column…</strong> — confirms with "This removes the column and its <em>n</em>
+                            saved links from Sync." and leaves a six-second <strong>Undo</strong>.
+                        </li>
+                    </ul>
+                    <p>
+                        The menu is fully navigable with <kbd>↑</kbd> and <kbd>↓</kbd>,
+                        swatches included.
+                    </p>
+
+                    <h3>Empty columns and long columns</h3>
+                    <p>
+                        An empty column shows "No links yet" — or "Drop links here" while the layout is unlocked. Once
+                        a column holds six or more links it switches automatically to a denser row style with smaller
+                        icons, so a long list stays readable. A column holds up to 200 links, and you can have 40 columns on a
+                        board and 120 across all boards.
+                    </p>
+                </section>
+                <section class="manual-topic" id="links">
+                    <h2>Adding and editing links</h2>
+                    <p>
+                        The large <strong>+</strong> button at the foot of a column card adds a link there; its label
+                        and tooltip name the column. Hovering or focusing an existing link reveals a pencil button that
+                        opens the same dialog in edit mode.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/link-editor.png"
+                            aria-label="Open full size: the link editor dialog">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/link-editor-768.avif 768w, img/screenshots/link-editor-1280.avif 1280w, img/screenshots/link-editor-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/link-editor-768.webp 768w, img/screenshots/link-editor-1280.webp 1280w, img/screenshots/link-editor-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/link-editor.png" width="1920" height="1200"
+                                alt="The MorrowTab link editor dialog with fields for Web address, Name, Description, Column and Opens in, above a Delete link button and Cancel and Save link buttons"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            The link editor. The title and save button read "Add link" when creating and "Edit link" /
+                            "Save link" when changing an existing one.
+                        </figcaption>
+                    </figure>
+
+                    <h3>The fields</h3>
+                    <ul>
+                        <li>
+                            <strong>Web address</strong> — placeholder <code>https://example.com</code>. Only
+                            <code>http</code> and <code>https</code> addresses can be saved, up to 2,048 characters. If
+                            you leave the scheme out, MorrowTab prepends <code>https://</code> before validating.
+                        </li>
+                        <li>
+                            <strong>Name</strong> <em>(optional)</em> — placeholder "A friendly name". Left empty, the
+                            link falls back to the address's hostname.
+                        </li>
+                        <li>
+                            <strong>Description</strong> <em>(optional · 200 characters)</em> — placeholder "A short
+                            note shown beside the link name". It appears as a second line on the card.
+                        </li>
+                        <li>
+                            <strong>Column</strong> — with more than one board, this select groups every board's
+                            columns with the current board first, so a link can be moved to another board from the
+                            editor. Its click count and its <em>Opens in</em> choice travel with it.
+                        </li>
+                        <li>
+                            <strong>Opens in</strong> — <em>Follow the shared setting</em>, <em>New tab</em>, or
+                            <em>Current tab</em>. This is the per-link override of the Settings toggle
+                            <strong>Open saved links in a new tab</strong>.
+                        </li>
+                    </ul>
+                    <p>
+                        Deleting a link is only available inside the <em>Edit link</em> dialog. It confirms with "This
+                        link will be removed from the current board." and leaves a six-second <strong>Undo</strong>.
+                    </p>
+
+                    <h3>Duplicates are warned about, not blocked</h3>
+                    <p>
+                        Saving an address the destination board already holds shows an inline warning naming the column
+                        and title it is already in, and ending "Choose Add link again to keep both." Pressing the button
+                        a second time keeps both copies. The second press only counts after a short delay, so a
+                        double-click or a held <kbd>Enter</kbd> cannot skip past the warning.
+                    </p>
+
+                    <h3>Other inline messages</h3>
+                    <p>
+                        You may also see "Enter a valid http or https address.", "Choose a destination column. Create a
+                        column first if none exists.", a column-full message naming its 200-link ceiling, "No more than
+                        250 links can be synced.", or "This link changed on another synced device. Close the editor and
+                        try again."
+                    </p>
+
+                    <h3>Two faster ways in</h3>
+                    <ul>
+                        <li>
+                            <strong>Drag from outside.</strong> Drag a link from your bookmarks bar, another tab or the
+                            address bar onto a column card and it is added there, with an <strong>Undo</strong> in the
+                            toast. Dropped files are ignored, and anything that is not an http(s) address is refused
+                            with "Only http(s) addresses can be dropped here." The title comes from the dragged link's
+                            own text, or from the hostname with a leading <code>www.</code> removed.
+                        </li>
+                        <li>
+                            <strong>Paste.</strong> Paste an <code>http</code> or <code>https</code> address anywhere on
+                            the page — not into a field — and the <em>Add link</em> dialog opens with the address
+                            already filled in and the caret in <strong>Name</strong>.
+                        </li>
+                    </ul>
+
+                    <h3>Fetching page titles</h3>
+                    <p>
+                        Settings has a toggle <strong>Fetch page titles when adding links</strong>, described as "Off by
+                        default. When enabled, MorrowTab asks for access to each entered site and uses its page title
+                        only when Name is empty." Two separate opt-ins are needed: the setting itself, and Chrome's own
+                        permission prompt for that one site the first time you commit an address in the field. Decline
+                        and you simply see "Allow site access to fetch the page title." and type the name yourself.
+                        Title fetching never runs while you are editing an existing link, and never overwrites a name
+                        you typed.
+                    </p>
+
+                    <h3>Link icons</h3>
+                    <p>
+                        Each link shows a badge. MorrowTab tries a brand icon bundled inside the extension first, then
+                        the browser's own local favicon store, then a two-letter badge built from the title. It
+                        downloads no icons and calls no icon service. If the browser's favicon access is unavailable at
+                        startup you may see a warning suggesting a reload or reinstall from
+                        <code>chrome://extensions</code>; links keep working, with bundled icons and initials.
+                    </p>
+                </section>
+                <section class="manual-topic" id="search">
+                    <h2>Searching from the new tab</h2>
+                    <p>
+                        The search field takes focus the moment a new tab opens, so you can start typing straight away.
+                        Press <kbd>Enter</kbd> or the <strong>Search</strong> button to submit.
+                    </p>
+
+                    <h3>Browser default</h3>
+                    <p>
+                        The engine picker between the field and the button always lists <strong>Browser default</strong>
+                        first, and every fresh page starts on it. It hands your text to Chrome or Edge, which runs it
+                        through the provider that browser profile is already configured with. MorrowTab does not set,
+                        replace or hijack your default search engine, and it never sees your query on a server of its
+                        own. <em>Browser default</em> cannot be renamed, reordered or deleted, and it is not stored as a
+                        synced record.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/search-engine-picker.png"
+                            aria-label="Open full size: the search engine picker">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/search-engine-picker-768.avif 768w, img/screenshots/search-engine-picker-1280.avif 1280w, img/screenshots/search-engine-picker-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/search-engine-picker-768.webp 768w, img/screenshots/search-engine-picker-1280.webp 1280w, img/screenshots/search-engine-picker-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/search-engine-picker.png" width="1920" height="1200"
+                                alt="The MorrowTab search engine picker open, with Browser default listed first, the board's own engines below it, and Manage search engines as the final entry"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            The engine picker. Wikipedia and MDN were added for this picture &mdash; the starter board
+                            ships with none. Browser default is permanently first; the board's own engines follow, and
+                            the last entry is "Manage search engines…".
+                        </figcaption>
+                    </figure>
+
+                    <h3>Reading the placeholder</h3>
+                    <p>
+                        The placeholder tells you which engine is armed: "Search with browser default" for the built-in
+                        option, "Search with <em>name</em>" for one of your own, and "Chat with <em>name</em>" when the
+                        template points at <code>chatgpt.com</code> or one of its subdomains. If no engine can be
+                        resolved at all it reads "Search unavailable".
+                    </p>
+
+                    <h3>Where results open</h3>
+                    <p>
+                        Results replace the current tab by default. Turn on <strong>Open searches in a new tab</strong>
+                        in Settings and they open beside it instead — the board stays on screen and your query is
+                        re-selected in the field, so the next search types straight over it.
+                    </p>
+
+                    <h3>Keyboard</h3>
+                    <ul>
+                        <li><kbd>/</kbd> focuses the field and selects what is in it — but only when the
+                            caret is not already in a text field.</li>
+                        <li><kbd>Ctrl</kbd> + <kbd>K</kbd> (<kbd>Cmd</kbd> +
+                            <kbd>K</kbd> on a Mac keyboard) does the same and works even while you are
+                            typing somewhere else on the page.</li>
+                        <li>With focus in the field, <kbd>Alt</kbd> + <kbd>↑</kbd> and
+                            <kbd>Alt</kbd> + <kbd>↓</kbd> cycle through that board's
+                            engines, wrapping around.</li>
+                    </ul>
+                    <p>
+                        The field's own tooltip says the same thing: "Press / to focus search. Alt + up or down arrow
+                        switches the search engine."
+                    </p>
+                </section>
+                <section class="manual-topic" id="search-engines">
+                    <h2>Adding your own search engines</h2>
+                    <p>
+                        Beyond <em>Browser default</em>, each board can carry its own engines — a documentation site, an
+                        internal wiki, a package index, whatever that board is for. Open the engine picker and choose
+                        <strong>Manage search engines…</strong>, or reach the same dialog from the picker at any time.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/search-engines-manager.png"
+                            aria-label="Open full size: the Manage search engines dialog">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/search-engines-manager-768.avif 768w, img/screenshots/search-engines-manager-1280.avif 1280w, img/screenshots/search-engines-manager-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/search-engines-manager-768.webp 768w, img/screenshots/search-engines-manager-1280.webp 1280w, img/screenshots/search-engines-manager-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/search-engines-manager.png" width="1920" height="1200"
+                                alt="The Manage search engines dialog listing each engine with its URL template, an All boards checkbox, and edit and delete buttons, above a note explaining that Browser default follows the provider configured in Chrome or Edge"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            Manage search engines. Each row shows the name, the template, an "All boards" checkbox and
+                            edit and delete buttons. When one of your own engines is the one selected in the current
+                            tab, its row also carries a "This tab" badge. Wikipedia and MDN were added for this
+                            picture; the starter board ships with no engines of its own.
+                        </figcaption>
+                    </figure>
+
+                    <h3>Adding one</h3>
+                    <p>
+                        Press <strong>Add search engine</strong> and fill in two fields:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Name</strong> — what the picker shows, for example <em>VirusTotal</em>. The
+                            field accepts up to 60 characters; the stored limit is 80.
+                        </li>
+                        <li>
+                            <strong>Search URL template</strong> — the engine's own search address with
+                            <code>{query}</code> where your typed text should go, for example
+                            <code>https://example.com/search?q={query}</code>. The help text under the field reads "Use
+                            {query} or &lt;input&gt; where the typed search should go." The older
+                            <code>&lt;input&gt;</code> placeholder is accepted and quietly rewritten to
+                            <code>{query}</code> when the engine is saved.
+                        </li>
+                    </ul>
+                    <p>
+                        The template must be a valid <code>http</code> or <code>https</code> address of at most 2,048
+                        characters. Anything else is refused inline with "Use a valid http or https URL containing
+                        {query} or &lt;input&gt;." Your typed text is percent-encoded before it is inserted, and the
+                        search is an ordinary navigation to that address — it does not pass through anything of
+                        MorrowTab's.
+                    </p>
+
+                    <h3>One board or all of them</h3>
+                    <p>
+                        The <strong>Visible on all boards</strong> toggle decides scope. Its own help line puts it
+                        plainly: "Turn this off to keep the search engine only on the current board." An engine marked
+                        for all boards is one record referenced everywhere, but each board still keeps its own ordering,
+                        so the same engine can sit second on one board and fifth on another.
+                    </p>
+
+                    <h3>Reordering, editing and deleting</h3>
+                    <p>
+                        Drag an engine's handle to reorder it, or focus the handle and press <kbd>Alt</kbd> + <kbd>↑</kbd> / <kbd>Alt</kbd> + <kbd>↓</kbd>. Deleting asks first, and the wording depends on scope: "This search
+                        engine will disappear from every board." for a shared engine, or "…from the current board." for
+                        a board-only one. You can delete the last additional engine — <em>Browser default</em> is always
+                        there.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">🔢</span>
+                        <div>
+                            <h3>Twenty per board, eighty in total</h3>
+                            <p>
+                                When a board already holds twenty engines, <strong>Add search engine</strong> is
+                                disabled with the tooltip "A board can have up to 20 search engines". Marking an engine
+                                as visible on all boards is refused if that would overfill some other board, with a
+                                message naming it.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="manual-topic" id="suggestions">
+                    <h2>Saved search suggestions</h2>
+                    <p>
+                        Searches you have actually run come back as suggestions the next time you type. They are your
+                        own past queries and nothing else — MorrowTab does not fetch completions from Google, Bing or
+                        any other provider, and it never sends what you are typing anywhere to build the list.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/search-suggestions.png"
+                            aria-label="Open full size: the search box with saved suggestions">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/search-suggestions-768.avif 768w, img/screenshots/search-suggestions-1280.avif 1280w, img/screenshots/search-suggestions-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/search-suggestions-768.webp 768w, img/screenshots/search-suggestions-1280.webp 1280w, img/screenshots/search-suggestions-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/search-suggestions.png" width="1920" height="1200"
+                                alt="The MorrowTab search box with a word typed in and a suggestion panel below it listing earlier searches made on this computer"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            The suggestion panel opens under the field once you have typed at least five characters, and
+                            flips above it if there is not enough room below.
+                        </figcaption>
+                    </figure>
+
+                    <h3>How the list behaves</h3>
+                    <ul>
+                        <li>Nothing appears until you have typed <strong>five characters</strong>. Below that the
+                            screen-reader status says how many more are needed.</li>
+                        <li>It matches anywhere inside a saved query, not just at the start.</li>
+                        <li>At most <strong>eight</strong> suggestions are shown at a time.</li>
+                        <li>Each search engine keeps its own history of up to <strong>50</strong> queries, newest
+                            first, de-duplicated without regard to capitalization.</li>
+                        <li>Queries are stored up to 512 characters; whitespace is collapsed and control characters are
+                            stripped before saving.</li>
+                        <li>When you delete a search engine, its saved queries are dropped on the next load.</li>
+                    </ul>
+
+                    <h3>Keyboard</h3>
+                    <p>
+                        <kbd>↓</kbd> and <kbd>↑</kbd> move through the list and wrap
+                        around, opening it if it was closed. <kbd>Enter</kbd> accepts the highlighted
+                        suggestion into the field <em>without</em> submitting, so you can edit it first.
+                        <kbd>Esc</kbd> closes the list and leaves your typing alone, and
+                        <kbd>Tab</kbd> closes it as you move on.
+                    </p>
+
+                    <h3>Turning it off and clearing it</h3>
+                    <p>
+                        Settings has a toggle labeled <strong>Save search suggestions</strong>, described as "Queries
+                        you submit are stored only on this computer and never synced. Turning this off keeps existing
+                        suggestions but stops saving new ones." It is on unless you turn it off.
+                    </p>
+                    <p>
+                        The <strong>Clear saved suggestions</strong> button beneath it asks "Clear saved search
+                        suggestions?" and warns that this "permanently removes all saved search suggestions from this
+                        computer. It does not change whether future searches are saved." The button is disabled when
+                        there is nothing stored.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">💻</span>
+                        <div>
+                            <h3>Suggestions stay on one computer</h3>
+                            <p>
+                                Saved queries live in your browser's local extension storage. They are never synced to
+                                another computer and never included in an exported backup. What you search for still
+                                goes to the search engine you chose, exactly as if you had typed it in the address bar —
+                                only the suggestion list is local.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="manual-topic" id="quick-save">
+                    <h2>Quick Save from the toolbar</h2>
+                    <p>
+                        The MorrowTab toolbar button — tooltip <em>Save to MorrowTab</em> — files the page you are
+                        currently on into a board and column without leaving it. It works on any website, whether or not
+                        you use the new tab page.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/quick-save-popup.png"
+                            aria-label="Open full size: the Quick Save popup">
+                            <picture>
+                            <source type="image/avif" srcset="img/screenshots/quick-save-popup-640.avif 640w"
+                                sizes="(min-width: 720px) 320px, calc(100vw - 48px)">
+                            <source type="image/webp" srcset="img/screenshots/quick-save-popup-640.webp 640w"
+                                sizes="(min-width: 720px) 320px, calc(100vw - 48px)">
+                            <img src="img/screenshots/quick-save-popup.png" width="640" height="1120"
+                                alt="The MorrowTab toolbar popup titled Save to MorrowTab, previewing the current tab's title and address above Board, Column and Title fields, a Save current tab button and an Open MorrowTab button"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            The Quick Save popup. It previews the current tab, then asks only where to file it and what
+                            to call it.
+                        </figcaption>
+                    </figure>
+
+                    <h3>What the popup shows</h3>
+                    <ol>
+                        <li>The heading <strong>Save to MorrowTab</strong>.</li>
+                        <li>A <strong>Current tab</strong> preview: the page title on one line and the address beneath
+                            it.</li>
+                        <li>The hint "Choose a destination, then save."</li>
+                        <li><strong>Board</strong> and <strong>Column</strong> selects, a <strong>Title</strong> field
+                            prefilled from the page, a status line, and the <strong>Save current tab</strong> button.
+                        </li>
+                        <li>An <strong>Open MorrowTab</strong> button underneath, which opens the new tab page.</li>
+                    </ol>
+                    <p>
+                        Quick Save stores exactly four things: the board, the column, the title you leave in the field,
+                        and the page's address. There are no notes, tags, highlights or page captures.
+                    </p>
+
+                    <h3>Where it saves by default</h3>
+                    <p>
+                        The destination you used last is remembered <strong>on that computer</strong> and preselected
+                        next time, as long as that board still exists — otherwise the popup falls back to the board the
+                        new tab page is currently on. The remembered column is only reused when it is still part of the
+                        chosen board; otherwise the first column is selected. Because this preference is local, it does
+                        not follow you to another computer.
+                    </p>
+
+                    <h3>The New “Saved” column option</h3>
+                    <p>
+                        The <strong>Column</strong> list always ends with an entry that creates a new column called
+                        <em>Saved</em> on that board. Choosing it creates the column and saves the link in one write, so
+                        you can file something into a board that has nowhere obvious to put it.
+                    </p>
+
+                    <h3>Duplicates</h3>
+                    <p>
+                        Saving an address the destination board already holds shows "Already saved on this board in
+                        <em>column</em>. Save again to keep both." Pressing <strong>Save current tab</strong> a second
+                        time keeps both copies. As in the full editor, the second press is only accepted after a short
+                        delay, and the warning resets if you change the board.
+                    </p>
+
+                    <h3>What can and cannot be saved</h3>
+                    <p>
+                        Only <code>http</code> and <code>https</code> pages. On a <code>chrome://</code> page, a
+                        <code>file://</code> page or another extension's page the Save button stays disabled and the
+                        popup explains why: "Only http(s) pages can be saved." An address that is too long or otherwise
+                        invalid gives "This page's address is too long or invalid to save."
+                    </p>
+                    <p>
+                        On success the status line reads "Saved to MorrowTab ✓" and the popup closes itself a moment
+                        later. If your synced data changed while the popup was open, or a limit is in the way, you get
+                        plain-language messages instead — "Synced data changed — pick a destination and try again.",
+                        "Synced storage is full. Open MorrowTab to tidy up, then try again.", or "That board or column
+                        is full. Open MorrowTab to tidy up, then try again."
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">⌨️</span>
+                        <div>
+                            <h3>The shortcut opens the popup — it does not save on its own</h3>
+                            <p>
+                                <kbd>Alt</kbd> + <kbd>Shift</kbd> +
+                                <kbd>S</kbd> is MorrowTab's suggested shortcut for opening Quick Save. You
+                                still choose a destination and press Save. Chrome silently declines a suggested
+                                shortcut that collides with an existing one, so confirm or change it at
+                                <code>chrome://extensions/shortcuts</code>.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="manual-topic" id="rearranging">
+                    <h2>Rearranging things</h2>
+                    <p>
+                        Every new tab starts with the layout <strong>locked</strong>, so a stray drag can never
+                        rearrange a board you were only reading. The padlock button beside Settings unlocks it: its
+                        accessible name switches between "Enable drag and drop" and "Disable drag and drop", and its
+                        tooltip between "Unlock layout" and "Lock layout".
+                    </p>
+                    <p>
+                        Unlocking shows the toast "Drag and drop enabled — drag a handle or press Alt + arrow keys";
+                        locking again shows "Layout locked". The unlocked state belongs to that one page: it is never
+                        saved, never synced, does not affect another open tab, and is back to locked after a reload.
+                    </p>
+
+                    <h3>With the mouse, a finger or a pen</h3>
+                    <ul>
+                        <li>Drag a column card's handle sideways. It drops before or after the card you are over
+                            depending on which side of its midpoint you release.</li>
+                        <li>Drag a link's handle within its column or into another one. Dropping on empty space in a
+                            list appends to the end.</li>
+                        <li>Dragging near the top or bottom edge of the board area scrolls it automatically.</li>
+                        <li>Touch and pen dragging work through their own path, for columns, links, boards and search
+                            engines alike.</li>
+                    </ul>
+
+                    <h3>From the keyboard</h3>
+                    <p>
+                        Every drag handle is focusable and advertises its own shortcuts:
+                    </p>
+                    <ul>
+                        <li><strong>Column:</strong> <kbd>Alt</kbd> + <kbd>←</kbd> /
+                            <kbd>Alt</kbd> + <kbd>→</kbd> moves it one position. Focus stays
+                            on the handle.</li>
+                        <li><strong>Link:</strong> <kbd>Alt</kbd> + <kbd>↑</kbd> /
+                            <kbd>Alt</kbd> + <kbd>↓</kbd> moves it inside its column;
+                            <kbd>Alt</kbd> + <kbd>←</kbd> / <kbd>Alt</kbd> +
+                            <kbd>→</kbd> moves it to the previous or next column, appended at the end.
+                            Focus follows the link.</li>
+                        <li><strong>Boards and search engines</strong> in their managers:
+                            <kbd>Alt</kbd> + <kbd>↑</kbd> / <kbd>Alt</kbd> +
+                            <kbd>↓</kbd>.</li>
+                    </ul>
+                    <p>
+                        Each move is announced for screen readers in the form "Moved <em>name</em> to position 3 of 5",
+                        and confirmed with a toast such as "Columns reordered" or "Link moved".
+                    </p>
+
+                    <h3>Undo</h3>
+                    <p>
+                        Undo is a button inside a six-second toast, not a <kbd>Ctrl</kbd> +
+                        <kbd>Z</kbd> history. It is offered for exactly six operations: deleting a board,
+                        deleting a column, deleting a link, moving a column to another board, importing a column file,
+                        and adding a link by dragging it in from outside. Renames, edits, reorders, color changes,
+                        settings changes and full backup imports are not undone this way.
+                    </p>
+                    <p>
+                        Undo also refuses to fire if your synced data changed in the meantime, reporting "Could not
+                        restore — the surrounding data changed after deletion." That is deliberate: it can never
+                        overwrite newer work from another computer.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">🔒</span>
+                        <div>
+                            <h3>Usage ordering pauses manual link ordering</h3>
+                            <p>
+                                While <strong>Order links by most used</strong> is on, link drag handles are hidden and
+                                keyboard link moves are refused — the column is sorting itself. Columns can still be
+                                reordered. See <a href="#usage-ordering">Ordering links by how often you use them</a>.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="manual-topic" id="usage-ordering">
+                    <h2>Ordering links by how often you use them</h2>
+                    <p>
+                        MorrowTab keeps a plain counter on each link. Opening a link with a normal click or a
+                        middle-click adds one; clicking its edit button does not. The counter holds no dates, no times
+                        and no sequence — just a number.
+                    </p>
+
+                    <h3>The setting</h3>
+                    <p>
+                        <strong>Order links by most used</strong> in Settings is described as "Each column sorts by how
+                        often you open its links. Manual link reordering is paused while this is on." Turning it on
+                        sorts every column by those counts, using a stable sort so links with equal counts keep the
+                        order you gave them.
+                    </p>
+
+                    <h3>Resetting</h3>
+                    <p>
+                        <strong>Reset usage</strong> asks "Reset link usage?" and explains that "This clears the stored
+                        click counts for every link on every board." The action button reads <strong>Reset</strong> and
+                        success shows "Link usage reset". If there is nothing to clear you get "No link usage is stored
+                        yet."; if another computer already cleared it, "No link usage is stored anymore."
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">🔄</span>
+                        <div>
+                            <h3>Click counts are part of your synced data</h3>
+                            <p>
+                                The counter lives on the link's own synced record, so it travels with the link and is
+                                included in an exported backup. It is recorded whether or not usage ordering is turned
+                                on. Counting is also best-effort: when a link replaces the current tab, the write races
+                                the page leaving, so an occasional click may not be counted. Treat the numbers as a
+                                useful ordering signal, not as exact statistics.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="manual-topic" id="appearance">
+                    <h2>Appearance and layout</h2>
+                    <p>
+                        The gear button at the top right opens Settings. On a wide screen it puts <em>Background
+                        color</em> and <em>Backup</em> on one side and the taller <em>Layout and links</em> column
+                        opposite; in a short or narrow window the sections stack and only the area under the fixed
+                        header scrolls.
+                    </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/settings-light.png">
+                            <picture>
+                            <source type="image/avif"
+                                srcset="img/screenshots/settings-light-768.avif 768w, img/screenshots/settings-light-1280.avif 1280w, img/screenshots/settings-light-1920.avif 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <source type="image/webp"
+                                srcset="img/screenshots/settings-light-768.webp 768w, img/screenshots/settings-light-1280.webp 1280w, img/screenshots/settings-light-1920.webp 1920w"
+                                sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                            <img src="img/screenshots/settings-light.png" width="1920" height="1200"
+                                alt="The MorrowTab Settings dialog showing the Background color swatch grid, the Daily Pexels nature checkbox and upload buttons, a Backup section, and the Layout and links column with the daily quote select and toggles"
+                                loading="lazy" decoding="async">
+                        </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            Settings, with the nine background swatches at the top left and the "Layout and links"
+                            controls on the right.
+                        </figcaption>
+                    </figure>
+
+                    <h3>Background color</h3>
+                    <p>
+                        The help text reads "Choose the background used across every board. Auto follows the system
+                        appearance; the other choices use gradients." There are nine swatches, in this order:
+                        <strong>Auto</strong>, <strong>Purple</strong>, <strong>Blue</strong>, <strong>Green</strong>,
+                        <strong>Pink</strong>, <strong>Dark</strong>, <strong>Teal</strong>, <strong>Red</strong> and
+                        <strong>Violet</strong>.
+                    </p>
+                    <p>
+                        <strong>Auto</strong> is the default and the only flat one: a plain white page when your system
+                        is in light mode, and a dark gray surface when it is in dark mode, switching live as the system
+                        does. The other eight are gradients. There is no separate light/dark switch — <em>Dark</em> is
+                        simply one of the nine choices, and everything else follows the operating system.
+                    </p>
+                    <p>
+                        The swatches behave as a radio group: <kbd>←</kbd> <kbd>→</kbd>
+                        <kbd>↑</kbd> <kbd>↓</kbd> move between them, <kbd>Home</kbd> and <kbd>End</kbd> jump to the ends, and each keypress
+                        applies and saves that background immediately.
+                    </p>
+                    <p>
+                        The background is a single shared setting used on every board, not a per-board choice. Modal
+                        dialogs deliberately do not take the tint: they use one dedicated light or dark palette chosen
+                        by your system setting, so text in a form never has to fight a gradient.
+                    </p>
+
+                    <h3>Column spacing</h3>
+                    <p>
+                        Two options, <strong>Comfortable</strong> (the default) and <strong>Compact</strong>. Compact
+                        tightens the padding so more fits on screen.
+                    </p>
+
+                    <h3>Board layout</h3>
+                    <p>
+                        Also two options, worded in Settings as:
+                    </p>
+                    <ul>
+                        <li><strong>Capped cards — readable columns wrap into centered rows.</strong> The default. Cards
+                            share each row up to a readable maximum, and an incomplete final row is centered.</li>
+                        <li><strong>Fill each row — columns expand across the available width.</strong> The same
+                            wrapping behavior, but cards stretch to use the whole row.</li>
+                    </ul>
+                    <p>
+                        In both, cards size themselves to their contents, long titles are shortened with an ellipsis
+                        rather than wrapping, and columns wrap onto new rows instead of scrolling sideways.
+                    </p>
+
+                    <h3>Column accents</h3>
+                    <p>
+                        Color is set per column from its own menu rather than in Settings — eight accents plus
+                        <em>No color</em>. See <a href="#columns">Columns</a>.
+                    </p>
+
+                    <h3>Where links and searches open</h3>
+                    <ul>
+                        <li><strong>Open saved links in a new tab</strong> — "Individual links can override this in
+                            their editor." Off by default.</li>
+                        <li><strong>Open searches in a new tab</strong> — "The current tab keeps showing this board."
+                        </li>
+                    </ul>
+                    <figure class="manual-figure">
+                    <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/newtab-mobile.png"
+                    aria-label="Open full size: MorrowTab in a narrow window">
+                    <picture>
+                    <source type="image/avif"
+                    srcset="img/screenshots/newtab-mobile-768.avif 768w"
+                    sizes="(min-width: 1100px) 340px, calc(100vw - 48px)">
+                    <source type="image/webp"
+                    srcset="img/screenshots/newtab-mobile-768.webp 768w"
+                    sizes="(min-width: 1100px) 340px, calc(100vw - 48px)">
+                    <img src="img/screenshots/newtab-mobile.png" width="828" height="1792"
+                    alt="MorrowTab in a narrow window: the board picker and the lock and Settings buttons share the top row, the search box sits on its own row beneath them, and the columns are stacked one per row"
+                    loading="lazy" decoding="async">
+                    </picture>
+                    <span class="screenshot-hint">Open full size</span>
+                    </button>
+                    <figcaption>
+                    A narrow window. Below 1080&nbsp;px the search form drops onto its own row so the controls cannot collide, and narrower still the search field, engine picker and Search button each take a row. Columns wrap one per row rather than scrolling sideways.
+                    </figcaption>
+                    </figure>
+                </section>
+                <section class="manual-topic" id="daily-quote">
+                    <h2>The daily quote</h2>
+                    <p>
+                        MorrowTab shows a FixQuotes Quote of the Day. The Settings control is a select labeled
+                        <strong>Daily quote</strong>, described as "Show the FixQuotes quote as text at the bottom, or
+                        as a picture above or below your cards."
+                    </p>
+
+                    <h3>The four modes</h3>
+                    <ul>
+                        <li><strong>Text</strong> — the default. A compact strip fixed to the bottom of the page, with
+                            a fade so it never sits hard against your links, and a little extra scroll room so the last
+                            row can clear it.</li>
+                        <li><strong>Picture (bottom)</strong> — the same placement, with the quote's image.</li>
+                        <li><strong>Picture (top)</strong> — the quote moves into normal flow between the search
+                            toolbar and your cards. No fixed strip, no fade, no extra scroll room.</li>
+                        <li><strong>Off</strong> — the quote is hidden entirely, any bottom reserve and fade are
+                            removed, an in-flight load is aborted, and no request is made to FixQuotes.</li>
+                    </ul>
+                    <p>
+                        If a picture mode has no usable image, or the image fails to load, MorrowTab shows the text in
+                        that mode's chosen position instead — without changing your setting. The mode itself is a shared
+                        setting that syncs with the rest.
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">📡</span>
+                        <div>
+                            <h3>The quote is on unless you turn it off</h3>
+                            <p>
+                                In <strong>Text</strong> and both picture modes MorrowTab requests the quote of the day
+                                from <code>fixquotes.com</code> — a plain GET with no cookies, no referrer and no query
+                                parameters — at most once per local day. Choosing
+                                <strong>Off</strong> is the way to stop that request entirely.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>When the network is not there</h3>
+                    <p>
+                        A catalog of 150 quotes ships inside the extension, so a quote is shown immediately at
+                        startup and is still shown with no network at all — the day's entry is picked from your local
+                        date, so it is the same quote all day. If a request fails, MorrowTab keeps the last quote it had
+                        rather than blanking the strip. Cached quotes are re-checked against the same rules every time
+                        they are read, and anything that no longer validates is discarded.
+                    </p>
+                    <p>
+                        The quote itself renders as the text, an em dash, the author, and a <strong>FixQuotes</strong>
+                        source link; the picture modes swap in a linked image.
+                    </p>
+                </section>
+                <section class="manual-topic" id="backgrounds">
+                    <h2>Nature photos and your own image</h2>
+                    <p>
+                        Two optional background images sit below <em>Background color</em> in Settings. Their shared
+                        help line reads: "Daily nature downloads one curated, high-resolution Pexels photo through
+                        FixQuotes and caches it only on this computer. An uploaded image takes priority; the theme still
+                        colors buttons and accents."
+                    </p>
+
+                    <h3>Daily Pexels nature</h3>
+                    <p>
+                        The checkbox <strong>Daily Pexels nature</strong> is off until you tick it — this one really is
+                        opt-in, and a fresh install makes no request for it at all. When it is on, MorrowTab asks the
+                        FixQuotes public API once a day for one manually curated photograph, downloads it from Pexels'
+                        own image host, verifies it, and caches a compact copy on that computer. The status line then
+                        reads "Today's curated Pexels nature photo is cached on this computer."
+                    </p>
+                    <p>
+                        A credit chip reading <strong>Photo by <em>photographer</em> on Pexels</strong> is shown at the
+                        bottom left whenever the photo is displayed, with both names linked. It is required and it stays.
+                    </p>
+                    <p>
+                        You cannot search Pexels or choose the photo — the collection is curated on the FixQuotes side,
+                        and the extension holds no Pexels key. A verified cache prevents repeated downloads; once it is
+                        a day old it stays on screen while the next photo is fetched, and it is kept if the fetch fails.
+                        Turning the switch off stops work in progress and removes the photo and its credit.
+                    </p>
+
+                    <h3>Your own image</h3>
+                    <p>
+                        <strong>Upload background image…</strong> takes an image file from your computer. MorrowTab
+                        scales it to at most 2,560 pixels on its longest side, re-encodes it as WebP to fit local
+                        storage, and confirms with "Background image saved on this computer". A picture that is still
+                        too large after compression is refused with "That image is too large even after compression."
+                    </p>
+                    <p>
+                        <strong>Remove image</strong> appears once an image is set and takes you back to the plain
+                        background. An uploaded image always wins over the daily nature photo — while one is set, the
+                        nature background will not even fetch, and its status says "Your uploaded background is taking
+                        priority on this computer."
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">🖼️</span>
+                        <div>
+                            <h3>Background images never leave the computer they are set on</h3>
+                            <p>
+                                Both the uploaded image and the cached nature photo are stored in local extension
+                                storage. They are not synced to another computer, and image bytes are never part of an
+                                exported backup. Set the background again on your other machine if you want it there
+                                too.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="manual-topic" id="backup">
+                    <h2>Backup, export and import</h2>
+                    <p>
+                        The <strong>Backup</strong> section of Settings introduces itself as "Save synced MorrowTab data
+                        to a plaintext file on this computer, or restore a saved backup." It holds three buttons and one
+                        live readout.
+                    </p>
+
+                    <h3>Export backup</h3>
+                    <p>
+                        <strong>Export backup</strong> writes <code>morrowtab-backup-YYYY-MM-DD.json</code> to your
+                        downloads and confirms with "Backup exported". The file contains four fields — the application
+                        name, a schema version, the time it was exported, and your synced records: settings and board
+                        order, boards, columns, links (with their click counts) and search engines.
+                    </p>
+                    <p>
+                        It is a plain, readable JSON file. It is not encrypted and not password-protected, so store it
+                        the way you would store a document listing the sites you use.
+                    </p>
+
+                    <h3>What a backup does not contain</h3>
+                    <p>
+                        Everything device-local is excluded by design, and none of it is restored from a file:
+                    </p>
+                    <ul>
+                        <li>Saved search suggestions and the "Save search suggestions" preference</li>
+                        <li>An uploaded background image and the cached nature photo</li>
+                        <li>The cached daily quote</li>
+                        <li>Which board is currently selected</li>
+                        <li>The remembered Quick Save destination</li>
+                        <li>Both local safety copies described below</li>
+                    </ul>
+
+                    <h3>Import backup…</h3>
+                    <p>
+                        Importing a full backup <strong>replaces</strong> everything currently synced. It asks first,
+                        under the title "Replace synced data?", naming how many boards and links the file holds, and
+                        adding either that a copy of the current data stays on this computer, or that the action cannot
+                        be undone. The confirm button reads <strong>Replace</strong>; success shows "Backup imported".
+                    </p>
+                    <p>
+                        The file is validated first: it must carry the settings record, must not claim a newer schema
+                        than this version understands, and must not contain the old active-board field that 1.0.0 no
+                        longer accepts. The whole graph is sanitized and checked against every storage limit before
+                        anything is written, and a partly-failed write is rolled back.
+                    </p>
+
+                    <h3>Restore pre-import copy…</h3>
+                    <p>
+                        Before any full replacement, MorrowTab copies what you had onto that computer. The button
+                        <strong>Restore pre-import copy…</strong> then appears in Settings, with a tooltip showing when
+                        the copy was taken. Restoring is itself a full replace, so the copies rotate and the operation
+                        stays reversible. Success shows "Pre-import copy restored".
+                    </p>
+
+                    <h3>Single columns</h3>
+                    <p>
+                        A column's own menu has <strong>Export column</strong>, which writes just that column and its
+                        links. Feeding that file back through the same <strong>Import backup…</strong> picker is
+                        recognized automatically and behaves quite differently: it is <em>additive</em>. The column is
+                        appended to the board you are on with fresh identifiers, nothing is replaced, no confirmation is
+                        asked, and the toast offers <strong>Undo</strong>. The toast also reports anything skipped, for
+                        example "Imported “Research” (12 links, 3 skipped)". A file that is not readable gives "That
+                        file is not a readable MorrowTab column export."; one that would not fit gives "The imported
+                        column does not fit within the board or link limits."
+                    </p>
+
+                    <h3>The usage readout</h3>
+                    <p>
+                        Under the buttons sits a live line in the form <em>Synced data: 9 of 100 KB · 50 of 250
+                        links</em>, computed with exactly the same byte arithmetic a save uses, so it can never disagree
+                        with what MorrowTab will accept. It changes to a warning style once either figure passes 85%.
+                    </p>
+                </section>
+                <section class="manual-topic" id="limits">
+                    <h2>How much MorrowTab can hold</h2>
+                    <p>
+                        Browser extension sync is a small, shared budget rather than open storage, so MorrowTab enforces
+                        its own ceilings safely inside it. Every limit below is checked against the complete projected
+                        data <em>before</em> anything is written, and a save that would break one is refused with a
+                        message naming it — nothing is half-written.
+                    </p>
+
+                    <div class="table-wrap">
+                        <table>
+                            <caption>Every limit MorrowTab 1.0.0 enforces before it writes.</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Maximum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Boards</th>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Columns</th>
+                                    <td>120 in total, 40 per board</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Links</th>
+                                    <td>250 in total, 200 per column</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Search engines</th>
+                                    <td>80 in total, 20 per board</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Synced records</th>
+                                    <td>500</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bytes per synced record</th>
+                                    <td>8,000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bytes synced in total</th>
+                                    <td>100,000 (shown as 100 KB in Settings)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Board name</th>
+                                    <td>80 characters</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Column heading</th>
+                                    <td>100 characters</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Link name</th>
+                                    <td>160 characters</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Link description</th>
+                                    <td>200 characters</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Search engine name</th>
+                                    <td>80 characters</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Link address or search template</th>
+                                    <td>2,048 characters</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Saved search suggestions</th>
+                                    <td>50 per search engine, 512 characters each, stored on that computer only</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Some input fields stop you a little earlier than the stored limit — the board-name box and the
+                        search-engine name box accept 60 characters, the column heading 80 in the dialog (the full 100 when renaming in place), and
+                        the link name 100. Descriptions and addresses use the same number in both places.
+                    </p>
+                    <p>
+                        Every stored string is also cleaned before it is saved: control characters become spaces, runs
+                        of whitespace collapse to one, the value is trimmed, and anything left empty falls back to a
+                        sensible default such as "Untitled board" or the link's own hostname.
+                    </p>
+                </section>
+                <section class="manual-topic" id="sync">
+                    <h2>How syncing works</h2>
+                    <p>
+                        MorrowTab has no account, no login and no server of its own. Your boards are written to the
+                        extension sync storage that Chrome or Edge already runs for the profile you are signed into, and
+                        that is what carries them to another computer. MorrowTab never receives a copy.
+                    </p>
+
+                    <h3>What syncs</h3>
+                    <ul>
+                        <li>Board names and their order</li>
+                        <li>Column headings, their order, and any accent color</li>
+                        <li>Link titles, addresses, optional descriptions, per-link <em>Opens in</em> overrides, and
+                            click counts</li>
+                        <li>Search engine names, templates, scope and per-board ordering</li>
+                        <li>The shared settings: background, spacing, layout, quote mode, background mode, usage
+                            ordering and both "open in a new tab" toggles</li>
+                    </ul>
+
+                    <h3>What stays on one computer</h3>
+                    <p>
+                        Nine things are deliberately local and are never written to sync or included in a backup: the
+                        selected board, the remembered Quick Save destination, saved search suggestions and their
+                        on/off preference, an uploaded background image, the cached nature photo, the cached daily
+                        quote, and the two safety copies (a rolling last-good copy and a pre-replacement copy).
+                    </p>
+
+                    <h3>How a save is made</h3>
+                    <p>
+                        Every write takes an exclusive lock across all MorrowTab pages in that browser profile and then
+                        compares a fingerprint of the exact data it was based on. If anything changed in the meantime
+                        the save is refused rather than applied blindly, and you are told to review the refreshed board.
+                        If a write succeeds but a related cleanup fails, the change is rolled back — and the rollback
+                        will never overwrite a value that changed remotely while it ran.
+                    </p>
+                    <p>
+                        If the browser cannot provide that locking, MorrowTab refuses to write at all rather than risk
+                        corrupting your boards across tabs. And when sync itself is full or rate-limited, the save
+                        simply fails with "Browser Sync is full or temporarily rate-limited. No local fallback was
+                        used." — MorrowTab does not quietly divert your data into local storage.
+                    </p>
+
+                    <h3>Two computers at once</h3>
+                    <p>
+                        The lock covers the pages on one browser profile, not two separate computers. Simultaneous
+                        edits on two machines still resolve as last-write-wins once sync catches up, and in rare cases a
+                        merge can leave the record set inconsistent — which is what <a href="#recovery">the recovery
+                        view</a> exists for. If an editor is open on something another device just changed, the editor
+                        closes itself with "An item being edited changed on another synced device. The editor was
+                        closed."
+                    </p>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">🔓</span>
+                        <div>
+                            <h3>Extension sync is not end-to-end encrypted</h3>
+                            <p>
+                                Board names, column headings, link titles, saved addresses and search templates travel
+                                through your browser's sync service. Treat them as non-confidential: they are not the
+                                place for anything secret. Exported backups are plaintext for the same reason. Whether
+                                and how sync data is encrypted at rest is a matter for your browser's own sync
+                                settings, not something MorrowTab adds.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="manual-topic" id="recovery">
+                    <h2>When sync goes wrong</h2>
+                    <p>
+                        If changes from several computers merge into a set of records that no longer hangs together —
+                        a column pointing at a board that is gone, say — MorrowTab does not guess and does not silently
+                        rewrite. It opens a <strong>read-only recovery view</strong> instead of a broken page.
+                    </p>
+
+                    <h3>What you see</h3>
+                    <p>
+                        A banner headed "Synced data needs repair." with a summary in this shape: "Changes from your
+                        computers merged inconsistently. Showing a read-only view — <em>n</em> boards and <em>n</em>
+                        links are safe; <em>n</em> records would change… This can also resolve by itself while your
+                        computers finish syncing."
+                    </p>
+                    <p>
+                        That last sentence is worth taking seriously. If the other computer is still sending its
+                        changes, the state often settles on its own. Waiting is a legitimate first move.
+                    </p>
+                    <p>
+                        While recovery is active your boards render read-only. The board picker, search and the three
+                        recovery buttons keep working; editing and <em>Manage boards…</em> do not.
+                    </p>
+
+                    <h3>The three buttons</h3>
+                    <ul>
+                        <li>
+                            <strong>Download snapshot</strong> — writes <code>morrowtab-snapshot-YYYY-MM-DD.json</code>
+                            containing the raw, unrepaired records. Do this first if you want a copy of the current
+                            state before anything changes.
+                        </li>
+                        <li>
+                            <strong>Restore local copy…</strong> — shown only when this computer holds a usable last-good
+                            copy. It asks "Restore this computer's copy?" and states plainly that it "replaces the
+                            inconsistent synced data on every computer with the complete copy saved on this computer"
+                            and that "Changes made on other computers after that moment are discarded." This is a
+                            replacement, not a merge. If sync healed itself while the dialog was open you are told
+                            instead that "The synced data already recovered on its own — nothing was replaced."
+                        </li>
+                        <li>
+                            <strong>Repair…</strong> — asks "Repair synced data?" and explains that it keeps everything
+                            shown on the boards, lists what would be dropped or corrected, and notes that "The repaired
+                            data will be written to Sync for every computer." Success shows "Synced data repaired".
+                        </li>
+                    </ul>
+                    <p>
+                        Nothing is written until you confirm, and the repair is tied to the fingerprint of the exact
+                        state you were shown — so it cannot act on data that changed while the dialog sat open. There is
+                        no automatic self-healing.
+                    </p>
+
+                    <h3>The safety copies</h3>
+                    <p>
+                        MorrowTab keeps a rolling last-good copy of your records on each computer after every clean
+                        load, and writes a separate pre-replacement copy the moment a full replace runs. Both are local
+                        availability copies only — never part of your synced data and never in an exported backup.
+                    </p>
+                </section>
+                <section class="manual-topic" id="shortcuts">
+                    <h2>Keyboard shortcuts</h2>
+                    <p>
+                        Everything MorrowTab can do with a pointer it can also do from the keyboard. These are the
+                        shortcuts on the new tab page, plus the one browser-level command.
+                    </p>
+
+                    <div class="table-wrap">
+                        <table>
+                            <caption>MorrowTab 1.0.0 keyboard shortcuts.</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Keys</th>
+                                    <th scope="col">What it does</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><kbd>/</kbd></th>
+                                    <td>Focus the search field and select what is in it</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Ctrl</kbd> + <kbd>K</kbd></th>
+                                    <td>Focus and select the search field, even while typing elsewhere
+                                        (<kbd>Cmd</kbd> + <kbd>K</kbd> on a Mac keyboard)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Alt</kbd> + <kbd>1</kbd> –
+                                        <kbd>9</kbd></th>
+                                    <td>Switch to the first through ninth board, in board order</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Alt</kbd> + <kbd>↑</kbd> /
+                                        <kbd>Alt</kbd> + <kbd>↓</kbd></th>
+                                    <td>In the search field: cycle backwards and forwards through that board's search
+                                        engines</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>↑</kbd> / <kbd>↓</kbd></th>
+                                    <td>Move through the saved search suggestions, opening the list if it is closed</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Enter</kbd></th>
+                                    <td>In the suggestion list: put the highlighted suggestion in the field without
+                                        submitting it</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Esc</kbd></th>
+                                    <td>Close the suggestion list, a menu or a dialog without losing what you typed</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Alt</kbd> + <kbd>←</kbd> /
+                                        <kbd>Alt</kbd> + <kbd>→</kbd></th>
+                                    <td>On a focused column handle: move that column one position (layout unlocked)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Alt</kbd> + <kbd>↑</kbd> /
+                                        <kbd>Alt</kbd> + <kbd>↓</kbd></th>
+                                    <td>On a focused link handle: move that link up or down inside its column (layout
+                                        unlocked)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Alt</kbd> + <kbd>←</kbd> /
+                                        <kbd>Alt</kbd> + <kbd>→</kbd></th>
+                                    <td>On a focused link handle: move that link to the previous or next column (layout
+                                        unlocked)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Alt</kbd> + <kbd>↑</kbd> /
+                                        <kbd>Alt</kbd> + <kbd>↓</kbd></th>
+                                    <td>In Manage boards or Manage search engines: reorder the focused board or engine
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>↑</kbd> <kbd>↓</kbd>
+                                        <kbd>Home</kbd> <kbd>End</kbd></th>
+                                    <td>Move through a custom menu — the board picker, the engine picker, the daily
+                                        quote select or a column's options menu. Typing a letter jumps to a match.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>←</kbd> <kbd>→</kbd>
+                                        <kbd>↑</kbd> <kbd>↓</kbd></th>
+                                    <td>On the Background color swatches: choose and apply a background immediately</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><kbd>Alt</kbd> + <kbd>Shift</kbd> +
+                                        <kbd>S</kbd></th>
+                                    <td>Open the Quick Save popup from anywhere in the browser (suggested default — see
+                                        below)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="shortcut-note">
+                        <strong><kbd>/</kbd> is ignored while the caret is in a text field</strong>, an
+                        input, a select or an editable area — otherwise you could not type a slash. Use
+                        <kbd>Ctrl</kbd> + <kbd>K</kbd> in that situation; it works wherever the caret is.
+                        Neither shortcut fires while a dialog or a custom menu is open.
+                    </p>
+                    <p class="shortcut-note">
+                        <strong><kbd>Alt</kbd> + <kbd>Shift</kbd> +
+                        <kbd>S</kbd> is a suggested default, not a guarantee.</strong> Chrome silently
+                        declines to assign a suggested shortcut that collides with an existing binding, so it may not be
+                        active on your machine. Confirm or change it at <code>chrome://extensions/shortcuts</code>. It
+                        opens the popup; you still pick a destination and press Save.
+                    </p>
+                    <p class="shortcut-note">
+                        There is no <kbd>Ctrl</kbd> + <kbd>Z</kbd> undo. Undo is the button
+                        in the six-second toast described under <a href="#rearranging">Rearranging things</a>.
+                    </p>
+                </section>
+                <section class="manual-topic" id="accessibility">
+                    <h2>Accessibility</h2>
+                    <p>
+                        MorrowTab is built to be used without a mouse and without relying on color, and those
+                        expectations are checked before a release rather than left to chance.
+                    </p>
+
+                    <h3>Keyboard and focus</h3>
+                    <ul>
+                        <li>The board picker, engine picker, daily quote select and column menus are custom menus that
+                            support arrow keys, <kbd>Home</kbd>, <kbd>End</kbd>, typeahead,
+                            <kbd>Enter</kbd>, <kbd>Space</kbd> and
+                            <kbd>Esc</kbd>.</li>
+                        <li>Closing a dialog returns focus to the control that opened it. If that control was
+                            re-rendered away in the meantime, focus goes to the search field rather than nowhere.</li>
+                        <li>Editors open with focus already in the field you need.</li>
+                        <li>A dialog can be dismissed by clicking its backdrop, but only when the press both starts and
+                            ends on the backdrop — so drag-selecting text inside a field never closes it and throws away
+                            what you typed.</li>
+                        <li>Drag handles publish their own shortcuts through <code>aria-keyshortcuts</code>, so a
+                            screen reader can announce them.</li>
+                    </ul>
+
+                    <h3>Announcements</h3>
+                    <ul>
+                        <li>Two live regions mirror every toast — one polite, one assertive for errors.</li>
+                        <li>Reordering is announced as "Moved <em>name</em> to position 3 of 5".</li>
+                        <li>The suggestion list reports its state: how many more characters are needed, that there are
+                            no saved searches for this engine, or how many suggestions are available.</li>
+                        <li>Toasts render above open dialogs, so an <strong>Undo</strong> button is never stranded
+                            behind a modal.</li>
+                    </ul>
+
+                    <h3>Display</h3>
+                    <ul>
+                        <li>At 200% browser zoom the page and the board area must not gain a horizontal scrollbar, and
+                            Settings must stay inside the viewport with its content reachable and keyboard focus
+                            trapped. This is checked as a release gate.</li>
+                        <li>In Windows high-contrast (forced-colors) mode, meaning is carried by system colors,
+                            explicit borders, selected-state highlighting and visible focus — never by gradients,
+                            shadows, translucency or background imagery.</li>
+                        <li><code>prefers-reduced-motion</code> is honored throughout.</li>
+                        <li>Light and dark follow your system setting. Modal dialogs always use a dedicated light or
+                            dark palette rather than inheriting the page's gradient, so form text keeps its contrast
+                            whichever background you chose.</li>
+                        <li>The layout is responsive down to 320 pixels wide; below about 1080 pixels the search form
+                            moves to its own full-width row so the toolbar controls cannot collide.</li>
+                    </ul>
+                </section>
+                <section class="manual-topic" id="troubleshooting">
+                    <h2>Troubleshooting</h2>
+                    <p>
+                        The most common questions, with what MorrowTab is actually doing in each case.
+                    </p>
+
+                    <details>
+                        <summary>My boards have not appeared on my other computer</summary>
+                        <p>
+                            MorrowTab writes to your browser's own extension sync, so the other computer must be signed
+                            into the same browser profile with sync switched on and extension data included. Give it a
+                            little time — sync is not instant — and open a new tab to pick up changes.
+                        </p>
+                        <p>
+                            Some things are meant not to travel: which board is selected, saved search suggestions, an
+                            uploaded background, the cached nature photo and the remembered Quick Save destination are
+                            all per-computer by design. If those are what you were expecting, they are working as
+                            intended.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>A save failed and the page reloaded</summary>
+                        <p>
+                            When a write cannot be completed safely, MorrowTab reports the reason and refreshes rather
+                            than leaving the board in a half-saved state. Two messages are common. "Browser Sync is full
+                            or temporarily rate-limited. No local fallback was used." means your sync budget is
+                            exhausted or you have saved a great many times in quick succession — check the usage line in
+                            Settings and, if it is near 100 KB or 250 links, delete something. "Synced MorrowTab data
+                            changed before this edit was saved. Review the refreshed board and try again." means another
+                            tab or computer got there first; look at the refreshed board and redo the change.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>I cannot drag anything</summary>
+                        <p>
+                            The layout starts locked on every page. Press the padlock button beside Settings — you
+                            should see "Drag and drop enabled — drag a handle or press Alt + arrow keys" and the drag
+                            handles appear. The unlocked state is per tab and is deliberately forgotten on reload.
+                        </p>
+                        <p>
+                            If columns drag but links do not, check whether <strong>Order links by most used</strong> is
+                            on. That setting sorts columns for you and pauses manual link ordering by drag and by
+                            keyboard alike.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Pressing / does nothing</summary>
+                        <p>
+                            <kbd>/</kbd> is ignored while the caret is in a text field. Use
+                            <kbd>Ctrl</kbd> + <kbd>K</kbd>
+                            (<kbd>Cmd</kbd> + <kbd>K</kbd> on a Mac keyboard), which works
+                            while you are typing elsewhere. Neither shortcut fires while a dialog or a custom menu is
+                            open &mdash; close it first.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Alt+Shift+S does not open Quick Save</summary>
+                        <p>
+                            That combination is only a <em>suggested</em> default. Chrome silently declines to assign a
+                            suggested shortcut that collides with something already bound, so it may never have been
+                            registered. Open <code>chrome://extensions/shortcuts</code>, find MorrowTab, and set the key
+                            combination you want. The toolbar button always works regardless.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>The Save button in the popup is grayed out</summary>
+                        <p>
+                            Only <code>http</code> and <code>https</code> pages can be saved. On a
+                            <code>chrome://</code> page, a local <code>file://</code> page or another extension's page
+                            the popup says "Only http(s) pages can be saved." An unusually long or malformed address
+                            gives "This page's address is too long or invalid to save."
+                        </p>
+                        <p>
+                            The button is also disabled until your synced data has loaded. If the popup reports "Synced
+                            MorrowTab data needs the full app first.", open MorrowTab with the button underneath — only
+                            the full app performs repairs — then try again.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Search suggestions are not appearing</summary>
+                        <p>
+                            Suggestions come only from searches you have already submitted on this computer, and the
+                            list stays closed until you have typed at least five characters. Each engine keeps its own
+                            history, so switching engines shows a different set. Check that <strong>Save search
+                            suggestions</strong> is on in Settings, and remember that clearing them or deleting a search
+                            engine removes that engine's history.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Search says it is unavailable</summary>
+                        <p>
+                            If <em>Browser default</em> cannot be reached you will see "Browser default search is
+                            unavailable. Reload MorrowTab after checking the extension's search permission." Reload the
+                            tab first. If it persists, check MorrowTab's permissions in your browser's extensions page.
+                            In the meantime, any search engine you added yourself still works — it is an ordinary
+                            navigation.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Links show letters instead of site icons</summary>
+                        <p>
+                            MorrowTab prefers a brand icon bundled inside the extension, then your browser's own local
+                            icon store, then a two-letter badge. A site with neither a bundled icon nor an icon your
+                            browser has already cached will show initials — that is the intended last step, not an
+                            error. If the warning "Favicons are unavailable" appears at startup, reload the page; if it
+                            persists, reinstall MorrowTab from <code>chrome://extensions</code>.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>No quote is showing</summary>
+                        <p>
+                            Check the <strong>Daily quote</strong> setting first — <strong>Off</strong> hides it
+                            entirely. In <strong>Text</strong> or either picture mode, a quote should always appear:
+                            MorrowTab ships a catalog of quotes and falls back to it when the network is unavailable.
+                            If a picture mode shows text instead of an image, the image for today's quote could not be
+                            used; your setting is untouched and the picture returns when a usable one does.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>The nature background is not changing</summary>
+                        <p>
+                            An uploaded background always takes priority — while one is set, the daily photo will not
+                            even be fetched, and the status says so. Remove the uploaded image first. Otherwise, a fresh
+                            photo is selected once a day; if a refresh fails, the previous verified photo stays on
+                            screen rather than leaving you with a blank background.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>A "Synced data needs repair" banner appeared</summary>
+                        <p>
+                            Changes from two computers merged into a state MorrowTab will not guess about. Your links
+                            and search still work; the boards are read-only for now. The banner itself notes that this
+                            can resolve on its own while your computers finish syncing, so waiting a few minutes is a
+                            reasonable first step. If it does not clear, use <strong>Download snapshot</strong> to keep
+                            a copy, then <strong>Repair…</strong> — or <strong>Restore local copy…</strong>, remembering
+                            that restoring discards changes made on other computers after that copy was taken. Nothing
+                            is written until you confirm. See <a href="#recovery">When sync goes wrong</a>.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>I imported a backup and lost what I had</summary>
+                        <p>
+                            Importing a full backup replaces everything currently synced — that is what the "Replace
+                            synced data?" confirmation warns about. Before the replacement MorrowTab copies your
+                            previous data onto that computer, so open Settings and look for <strong>Restore pre-import
+                            copy…</strong>. It only appears on the computer where the replacement happened.
+                        </p>
+                        <p>
+                            Importing an exported <em>column</em> is different: it is additive, it does not replace
+                            anything, and the toast offers <strong>Undo</strong>.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Undo did nothing</summary>
+                        <p>
+                            Undo lasts six seconds and covers six operations only: deleting a board, a column or a link,
+                            moving a column to another board, importing a column file, and adding a link by dragging it
+                            in from outside. It also refuses when your data changed in the meantime, reporting "Could
+                            not restore — the surrounding data changed after deletion." — which is what stops it from
+                            overwriting newer work from another computer.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>MorrowTab says a board, column or list is full</summary>
+                        <p>
+                            The ceilings are 30 boards, 40 columns per board (120 in total), 200 links per column and
+                            250 in total, and 20 search engines per board (80 in total), inside a 100 KB sync budget.
+                            The usage line in Settings shows where you stand, using exactly the arithmetic a save uses.
+                            See <a href="#limits">How much MorrowTab can hold</a>.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Something else is wrong</summary>
+                        <p>
+                            Support runs through FixQuotes. Describe what you did, what you expected and what happened,
+                            and include your browser and its version.
+                        </p>
+                        <p>
+                            <a href="https://fixquotes.com/docs/contact/?category=morrowtab" target="_blank"
+                                rel="noopener">Contact FixQuotes about MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>
+                        </p>
+                    </details>
+
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">✉️</span>
+                        <div>
+                            <h3>One support channel</h3>
+                            <p>
+                                Questions, bug reports and feature requests all go to the same place:
+                                <a href="contact.html">the contact page</a>, which hands you over to the FixQuotes
+                                support form.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size screenshot"
+        aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Close image preview">&times;</button>
+        <img id="lightboxImg" alt="">
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h2>MorrowTab</h2>
+                    <ul>
+                        <li><a href="./#install">Availability</a></li>
+                        <li><a href="manual.html">User manual</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Support</h2>
+                    <ul>
+                        <li><a href="manual.html#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="manual.html#shortcuts">Keyboard shortcuts</a></li>
+                        <li><a href="contact.html">Contact FixQuotes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Legal</h2>
+                    <ul>
+                        <li><a href="privacy.html">Privacy policy</a></li>
+                        <li><a href="https://www.pexels.com/" target="_blank" rel="noopener">Photos by Pexels<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                        <li><a href="https://fixquotes.com/" target="_blank" rel="noopener">Quotes by FixQuotes<span class="visually-hidden"> (opens in a new tab)</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Requirements</h2>
+                    <ul>
+                        <li>Google Chrome 114+</li>
+                        <li>Microsoft Edge 114+</li>
+                        <li>Version 1.0.0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FixQuotes. MorrowTab is a browser extension by FixQuotes.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
