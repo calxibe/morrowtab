@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" role="img" aria-labelledby="title desc">
+  <title id="title">MorrowTab horizontal logo for dark backgrounds</title>
+  <desc id="desc">The MorrowTab icon beside the name and the words Boards, Search and Daily Quotes.</desc>
+  <g transform="translate(20 20) scale(.35)">
+    <rect x="40" y="40" width="944" height="944" rx="215" fill="#151e4c" stroke="#7380ff" stroke-opacity=".55" stroke-width="4"/>
+    <g fill="none" stroke="#ffd166" stroke-width="54" stroke-linecap="round">
+      <path d="M512 142v78"/><path d="m350 220-55-55"/><path d="m674 220 55-55"/>
+    </g>
+    <circle cx="512" cy="425" r="157" fill="#ffd166"/>
+    <path d="M224 384 650 487c42 10 69 49 63 92l-27 179c-6 42-46 68-87 58l-397-96c-41-10-67-48-61-89l27-179c6-42 15-78 56-68Z" fill="#fff"/>
+    <path d="M270 474 474 404c22-8 46-8 68-1l251 78c38 12 61 48 55 88l-27 125c-6 41-32 71-72 80l-421 94c-50 11-94-26-94-77V550c0-35 14-64 36-76Z" fill="#18c8be"/>
+    <path d="M401 487 817 371c43-12 85 20 85 64v252c0 41-27 75-67 86L420 889c-43 12-85-20-85-64V573c0-41 27-75 66-86Z" fill="#6574f7"/>
+  </g>
+  <text x="420" y="203" fill="#fff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="142" font-weight="800" letter-spacing="-5">MorrowTab</text>
+  <text x="428" y="285" fill="#cbd2e6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="600" letter-spacing="1">Boards, Search &amp; Daily Quotes</text>
+</svg>

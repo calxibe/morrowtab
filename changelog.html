@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>MorrowTab Changelog - Release Notes</title>
+    <meta name="description"
+        content="Release notes for MorrowTab. Version 1.0.0 is the first release: boards of organized links, search through your browser's own default provider, Quick Save, nine backgrounds, a daily FixQuotes quote, and sync through your browser profile.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0b12">
+    <link rel="canonical" href="https://calxibe.github.io/morrowtab/changelog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MorrowTab">
+    <meta property="og:title" content="MorrowTab Changelog - Release Notes">
+    <meta property="og:description"
+        content="MorrowTab 1.0.0 is the first release. This page lists what it contains — boards, browser-default search, Quick Save, backgrounds, the daily quote, and browser-profile sync.">
+    <meta property="og:url" content="https://calxibe.github.io/morrowtab/changelog.html">
+    <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MorrowTab Changelog - Release Notes">
+    <meta name="twitter:description"
+        content="Version 1.0.0 is the first release of MorrowTab. Here is everything that shipped in it.">
+    <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css?v=20260831-1">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="./" class="logo">
+                <img src="img/icon48.png" alt="" aria-hidden="true" class="logo-icon" width="48" height="48">
+                <span class="logo-text">Morrow<span>Tab</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav" aria-label="Main">
+                <a href="./#install">Availability</a>
+                <a href="manual.html">Manual</a>
+                <a href="changelog.html" class="active" aria-current="page">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <span class="section-badge">Changelog</span>
+                <h1>MorrowTab Release Notes</h1>
+
+                <p class="subtitle">
+                    MorrowTab 1.0.0 is the first release, so there is exactly one entry below and nothing before it.
+                    Rather than list what changed — nothing has, yet — this page describes what 1.0.0 actually
+                    contains. The version is fixed at 1.0.0, and it is on its way to the Chrome Web Store and
+                    Microsoft Edge Add-ons.
+                </p>
+
+                <p class="updated">Last updated <time datetime="2026-08-31">August 31, 2026</time>.</p>
+            </div>
+        </section>
+
+        <div class="container content">
+            <article class="version-card">
+                <h2>1.0.0</h2>
+                <p class="version-date">First release</p>
+
+                <h3>New</h3>
+                <ul>
+                    <li>Replaces the new tab in Chrome and Edge with a board of your own links: a board picker on the
+                        left, a search box in the middle, and columns of links below.</li>
+                    <li>Up to 30 boards, each with its own columns, links, extra search engines and ordering. Switch
+                        from the picker or with <kbd>Alt</kbd> + <kbd>1</kbd>–<kbd>9</kbd>, and the browser tab title shows the active board's name.</li>
+                    <li>Every column carries a <span aria-hidden="true">⋯</span> menu that can open all its links,
+                        rename the column, move it to another board, export it, give it an accent color, or delete
+                        it.</li>
+                    <li>The link editor holds a web address, an optional name, an optional 200-character description, a
+                        destination column that can belong to any board, and a per-link <strong>Opens in</strong>
+                        override.</li>
+                    <li>A Quick Save popup on the toolbar, titled <strong>Save to MorrowTab</strong>: it previews the
+                        current tab, lets you pick a board and column and edit the title, and saves that one page. The
+                        suggested shortcut <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> opens the same popup — it does not save in one press.</li>
+                    <li>Quick Save can create a new <strong>Saved</strong> column as it saves, remembers the last
+                        destination on that computer, and warns once when the board already holds that address.</li>
+                    <li>A starter board called <strong>Popular websites</strong> — 50 links in five columns (News,
+                        Streaming, Social media, Everyday tools and Shopping). It is drawn from a file inside the
+                        extension and is not written to sync until your first edit.</li>
+                    <li>A welcome page on first install only. It introduces Quick Save, boards, search, rearranging and
+                        the quote modes, and never reappears after an update.</li>
+                    <li>Deleting a link, a column or a board leaves a six-second <strong>Undo</strong> in the toast.
+                    </li>
+                    <li>Drag a link in from another window to drop it straight onto a column, or paste an
+                        <code>http(s)</code> address anywhere on the page to open a prefilled add-link dialog.</li>
+                </ul>
+
+                <h3>Search</h3>
+                <ul>
+                    <li><strong>Browser default</strong> is permanently first in the engine picker and selected on
+                        every fresh tab. It submits through the provider your Chrome or Edge profile is already set to;
+                        MorrowTab never sets or replaces your default search engine.</li>
+                    <li>Add your own engines from any HTTP(S) template containing <code>{query}</code>. Up to 80
+                        engines, 20 per board.</li>
+                    <li>Mark an engine <strong>Visible on all boards</strong> or keep it to a single board. Every board
+                        still keeps its own engine order.</li>
+                    <li>Saved suggestions come from your own completed searches and nothing else — up to 50 per engine,
+                        offered once you have typed five characters, at most eight at a time, and stored on that
+                        computer only.</li>
+                    <li>Settings can stop new suggestions being saved, and can clear the saved ones outright.</li>
+                    <li>The placeholder reads <em>Search with &lt;name&gt;</em>, or <em>Chat with &lt;name&gt;</em>
+                        when the template points at chatgpt.com.</li>
+                    <li><kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd>
+                        focuses the search box; <kbd>Alt</kbd> + <kbd>↑</kbd> and <kbd>Alt</kbd> + <kbd>↓</kbd> cycle the board's engines.</li>
+                    <li>Searches open in the current tab, or in a new one if you turn that on.</li>
+                </ul>
+
+                <h3>Organizing</h3>
+                <ul>
+                    <li>Every new tab starts with the layout locked, so a stray drag cannot rearrange anything. The
+                        padlock unlocks it for that page alone, and a reload or a new tab starts locked again.</li>
+                    <li><kbd>Alt</kbd> plus the arrow keys moves columns and links without dragging, and
+                        each move is announced for screen readers.</li>
+                    <li>Move a whole column, with its links, to another board in a single write — with Undo.</li>
+                    <li>Export one column as a JSON file and import it onto another board. A column import is added
+                        alongside what is already there, with fresh identifiers and an Undo.</li>
+                    <li><strong>Order links by most used</strong> sorts each column by a per-link click count, and
+                        <strong>Reset usage</strong> clears those counts. Manual link reordering pauses while it is on.
+                    </li>
+                    <li>Columns wrap onto a new row when another readable card no longer fits — there is no sideways
+                        strip and nothing slides off the edge of the screen.</li>
+                    <li>A column of six or more links switches to a denser row style on its own.</li>
+                    <li>Saving an address the board already holds warns inline and lets you keep both copies; it never
+                        blocks the save.</li>
+                </ul>
+
+                <h3>Appearance</h3>
+                <ul>
+                    <li>Nine background choices, shared across every board: <strong>Auto</strong>, which follows your
+                        system between a plain white page and a dark surface, plus eight gradients — Purple, Blue,
+                        Green, Pink, Dark, Teal, Red and Violet.</li>
+                    <li>Column spacing is Comfortable or Compact, and the board layout is either <em>Capped cards</em>,
+                        which keeps columns at a readable width and centers incomplete rows, or <em>Fill each row</em>,
+                        which lets them expand.</li>
+                    <li>Eight accent colors for any column — blue, purple, yellow, amber, green, teal, red and gray —
+                        plus <em>No color</em>.</li>
+                    <li>The FixQuotes Quote of the Day in four modes: <strong>Text</strong> (the default), Picture at
+                        the bottom, Picture at the top, and <strong>Off</strong>. Off hides it and makes no quote
+                        request at all.</li>
+                    <li>An optional Daily Pexels nature background: one curated high-resolution photo a day, fetched
+                        through FixQuotes, cached on that computer, and always shown with its
+                        <em>Photo by &lt;name&gt; on Pexels</em> credit. It is off until you switch it on.</li>
+                    <li>Or upload your own background image. It stays on that computer, never enters sync, and takes
+                        priority over the curated photo.</li>
+                    <li>Link icons come from a brand library bundled inside the extension, then your browser's own
+                        icon store, then a two-letter badge. MorrowTab calls no outside icon service.</li>
+                </ul>
+
+                <h3>Your data</h3>
+                <ul>
+                    <li>Boards, columns, links, search engines, the shared settings and the per-link click count are
+                        written to your browser's own extension sync, tied to the profile you are already signed into.
+                        There is no MorrowTab account and no MorrowTab server holding a copy.</li>
+                    <li>Browser extension sync is not end-to-end encrypted, so board names, link titles, addresses and
+                        search templates should be treated as non-confidential.</li>
+                    <li>Nine records stay on one computer and never sync: the selected board, the Quick Save
+                        destination, saved search suggestions and their on/off preference, an uploaded background, the
+                        cached nature photo, the cached quote, and two safety snapshots.</li>
+                    <li>Export a plaintext JSON backup of everything synced. Importing one replaces all synced data
+                        after a confirmation, and keeps a restorable copy of what it replaced on that computer.</li>
+                    <li>Ceilings enforced before anything is written: 30 boards, 120 columns (40 per board), 250 links
+                        (200 per column), 80 search engines (20 per board), 500 sync records and 100 KB in total.
+                        Settings shows a live <em>Synced data: N of 100 KB · N of 250 links</em> readout using the same
+                        arithmetic.</li>
+                    <li>Every write is taken under a lock and compared against the exact data it was based on, so two
+                        open tabs cannot quietly overwrite each other.</li>
+                    <li>If records from two computers ever merge inconsistently, MorrowTab opens a read-only recovery
+                        view where links and search still work, offers a diagnostic snapshot to download, and repairs
+                        nothing until you confirm it.</li>
+                    <li>Three remote addresses, for two features you can switch off: <code>fixquotes.com</code> for the daily
+                        quote — which is on by default — and <code>api.fixquotes.com</code> plus
+                        <code>images.pexels.com</code> for the opt-in nature background. Those requests carry no
+                        cookies, no referrer and no query string; the Pexels image URL carries only the sizing
+                        parameters FixQuotes chose.</li>
+                    <li><strong>Fetch page titles when adding links</strong> is off by default. Turning it on still
+                        makes the browser ask your permission for each site before a page is read.</li>
+                    <li>No analytics, no telemetry, no advertising tracker, no content scripts and no remote code.</li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <ul>
+                    <li>The board picker, engine picker and quote setting are custom menus that work with the mouse,
+                        touch, the arrow keys, <kbd>Home</kbd> and <kbd>End</kbd>, and
+                        keyboard typeahead.</li>
+                    <li>Every dialog keeps keyboard focus inside it and returns focus to the control that opened it.
+                    </li>
+                    <li>Reordering is announced in full — for example <em>Moved Research to position 3 of 5</em> — and
+                        a polite status region and an assertive alert region mirror the toasts.</li>
+                    <li>Drag handles publish their own shortcuts through <code>aria-keyshortcuts</code>, so a keyboard
+                        user is told which keys move the thing they are holding.</li>
+                    <li>The page stays usable at 200% browser zoom without gaining horizontal scrolling, and Settings
+                        stays inside the viewport with its content reachable. This is checked as an automated release
+                        gate.</li>
+                    <li>Windows forced-colors mode is supported with real borders, selected states and visible focus
+                        rather than gradients and shadows, and <code>prefers-reduced-motion</code> collapses the
+                        animations.</li>
+                </ul>
+
+                <h3>Platform</h3>
+                <ul>
+                    <li>A Manifest V3 extension for Chrome and Edge on Chromium 114 or newer. 114 is the floor because
+                        MorrowTab uses the Popover API for its menus, autocomplete and toasts, along with Web Locks,
+                        CSS <code>:has()</code> and <code>color-mix()</code>.</li>
+                    <li>Permissions are <code>storage</code>, <code>favicon</code>, <code>search</code> and
+                        <code>activeTab</code>, with standing host access limited to <code>fixquotes.com</code>,
+                        <code>api.fixquotes.com</code> and <code>images.pexels.com</code>.</li>
+                    <li>The optional all-sites permission grants nothing at install. It is requested one origin at a
+                        time, only when page-title fetching is on and only for the site you just typed in.</li>
+                    <li>No content scripts. The background service worker registers a single listener and does one
+                        thing: open the welcome page the first time the extension is installed.</li>
+                    <li>The extension's own content security policy allows no remote script, and limits images to the
+                        extension itself, <code>data:</code> URLs, <code>fixquotes.com</code> and
+                        <code>images.pexels.com</code>.</li>
+                    <li>Brand icons are a bundled subset of the MIT-licensed theSVG Color collection, converted to
+                        plain SVG files at build time. Product names and logos remain the trademarks of their owners,
+                        and their inclusion does not imply any endorsement.</li>
+                </ul>
+            </article>
+
+            <div class="note-box">
+                <span class="icon" aria-hidden="true">📌</span>
+                <div>
+                    <h3>What goes on this page next</h3>
+                    <p>
+                        Later releases will be added here, newest first, each in its own card with its version number
+                        and release date.
+                    </p>
+                    <p>
+                        For how any of the above behaves in practice, see the <a href="manual.html">user manual</a>;
+                        for what is stored and what is sent, see the <a href="privacy.html">privacy policy</a>. If
+                        something here does not match what you see, <a href="contact.html">get in touch</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h2>MorrowTab</h2>
+                    <ul>
+                        <li><a href="./#install">Availability</a></li>
+                        <li><a href="manual.html">User manual</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Support</h2>
+                    <ul>
+                        <li><a href="manual.html#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="manual.html#shortcuts">Keyboard shortcuts</a></li>
+                        <li><a href="contact.html">Contact FixQuotes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Legal</h2>
+                    <ul>
+                        <li><a href="privacy.html">Privacy policy</a></li>
+                        <li><a href="https://www.pexels.com/" target="_blank" rel="noopener">Photos by Pexels<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                        <li><a href="https://fixquotes.com/" target="_blank" rel="noopener">Quotes by FixQuotes<span class="visually-hidden"> (opens in a new tab)</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Requirements</h2>
+                    <ul>
+                        <li>Google Chrome 114+</li>
+                        <li>Microsoft Edge 114+</li>
+                        <li>Version 1.0.0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FixQuotes. MorrowTab is a browser extension by FixQuotes.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

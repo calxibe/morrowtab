@@ -1,0 +1,174 @@
+[
+  {
+    "name": "newtab-light",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "newtab-light_thumb.webp"
+  },
+  {
+    "name": "newtab-dark",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "newtab-dark_thumb.webp"
+  },
+  {
+    "name": "newtab-theme-violet",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "newtab-theme-violet_thumb.webp"
+  },
+  {
+    "name": "newtab-theme-green",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "newtab-theme-green_thumb.webp"
+  },
+  {
+    "name": "settings-light",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "settings-light_thumb.webp"
+  },
+  {
+    "name": "settings-dark",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "settings-dark_thumb.webp"
+  },
+  {
+    "name": "board-picker",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "board-picker_thumb.webp"
+  },
+  {
+    "name": "search-suggestions",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "search-suggestions_thumb.webp"
+  },
+  {
+    "name": "boards-manager",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "boards-manager_thumb.webp"
+  },
+  {
+    "name": "search-engine-picker",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "search-engine-picker_thumb.webp"
+  },
+  {
+    "name": "search-engines-manager",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "search-engines-manager_thumb.webp"
+  },
+  {
+    "name": "link-editor",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "link-editor_thumb.webp"
+  },
+  {
+    "name": "column-menu",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "column-menu_thumb.webp"
+  },
+  {
+    "name": "newtab-mobile",
+    "width": 828,
+    "height": 1792,
+    "widths": [
+      768
+    ],
+    "thumbnail": "newtab-mobile_thumb.webp"
+  },
+  {
+    "name": "quick-save-popup",
+    "width": 640,
+    "height": 1120,
+    "widths": [
+      640
+    ],
+    "thumbnail": "quick-save-popup_thumb.webp"
+  },
+  {
+    "name": "welcome",
+    "width": 1920,
+    "height": 2924,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "welcome_thumb.webp"
+  }
+]

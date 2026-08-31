@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Privacy Policy - MorrowTab</title>
+    <meta name="description"
+        content="The MorrowTab privacy policy: every storage key the extension writes, every network request it can make, every permission it declares, what an exported backup contains, and how to delete your data.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0b12">
+    <link rel="canonical" href="https://calxibe.github.io/morrowtab/privacy.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MorrowTab">
+    <meta property="og:title" content="Privacy Policy - MorrowTab">
+    <meta property="og:description"
+        content="Every storage key MorrowTab writes, every network request it can make, every permission it declares, and what an exported backup does and does not contain.">
+    <meta property="og:url" content="https://calxibe.github.io/morrowtab/privacy.html">
+    <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy - MorrowTab">
+    <meta name="twitter:description"
+        content="What MorrowTab stores, where it stores it, and the four addresses it can ever contact.">
+    <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css?v=20260831-1">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="./" class="logo">
+                <img src="img/icon48.png" alt="" aria-hidden="true" class="logo-icon" width="48" height="48">
+                <span class="logo-text">Morrow<span>Tab</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav" aria-label="Main">
+                <a href="./#install">Availability</a>
+                <a href="manual.html">Manual</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html" class="active" aria-current="page">Privacy</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <span class="section-badge">Privacy</span>
+                <h1>What MorrowTab stores, and where.</h1>
+                <p class="subtitle">
+                    MorrowTab is a new tab page for Chrome and Edge. It has no account, no login, and no server of its
+                    own. This policy lists every storage key the extension writes, every address it can contact, every
+                    permission it declares, and exactly what an exported backup does and does not contain.
+                </p>
+                <p class="updated">Effective <time datetime="2026-08-31">August 31, 2026</time></p>
+            </div>
+        </section>
+
+        <div class="container content">
+            <div class="highlight">
+                <h2>The short version</h2>
+                <ul>
+                    <li>Your boards, columns, links, extra search engines, shared settings and a per-link click count
+                        are written to your browser's own extension sync storage. FixQuotes never receives a copy —
+                        but Chrome extension sync is <strong>not</strong> end-to-end encrypted, so treat what you store
+                        as non-confidential.</li>
+                    <li>Nine other records — including your saved search suggestions, your uploaded background and the
+                        cached daily quote — stay in local extension storage on one computer, in plain text, and are
+                        never synced and never exported.</li>
+                    <li>MorrowTab can contact four kinds of address, and no others:
+                        <code>fixquotes.com</code> for the daily quote, <code>api.fixquotes.com</code> and
+                        <code>images.pexels.com</code> for the opt-in nature background, and a single site you name if
+                        you turn on page-title autofill and grant that one site access.</li>
+                    <li>The daily quote is <strong>on by default</strong> and requests
+                        <code>fixquotes.com</code> at most once per local day. Setting it to <strong>Off</strong> stops
+                        that request completely.</li>
+                    <li>There is no analytics, no telemetry, no advertising tracker and no remote code in the
+                        extension. This website runs no analytics and sets no cookies.</li>
+                </ul>
+            </div>
+
+            <section id="publisher">
+                <h2>1. Who publishes MorrowTab</h2>
+                <p>
+                    MorrowTab is published by <strong>FixQuotes</strong>. You can read about the publisher on the
+                    <a href="https://fixquotes.com/docs/about/" target="_blank" rel="noopener">FixQuotes about
+                        page<span class="visually-hidden"> (opens in a new tab)</span></a>.
+                </p>
+                <p>
+                    This policy covers the browser extension declared as <em>MorrowTab — Boards, Search &amp; Daily
+                        Quotes</em>, version 1.0.0, a Manifest V3 extension for Chrome and Edge on Chromium 114 or
+                    newer, together with this website. MorrowTab 1.0.0 is on its way to the Chrome Web Store and
+                    Microsoft Edge Add-ons; this policy is the one that will apply to those listings.
+                </p>
+                <p>
+                    Questions about this policy, and every other kind of support request, go through one route:
+                    <a href="https://fixquotes.com/docs/contact/?category=morrowtab" target="_blank"
+                        rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>. There is no in-extension
+                    feedback form and no separate MorrowTab support address.
+                </p>
+                <p>
+                    MorrowTab has no user account. There is nothing to register, nothing to sign in to, and no
+                    FixQuotes-side profile associated with your use of the extension.
+                </p>
+            </section>
+
+            <section id="synced">
+                <h2>2. What syncs through your browser</h2>
+                <p>
+                    MorrowTab writes its shared data to <code>chrome.storage.sync</code>, the browser's own extension
+                    sync area. That data travels through the sync service of the browser profile you are signed into
+                    — Google's for Chrome, Microsoft's for Edge. FixQuotes operates no server for it and receives no
+                    copy of it.
+                </p>
+                <p>
+                    Exactly five record shapes are ever written there, all under the <code>Plugin.</code> prefix. Any
+                    other key is refused before the write happens.
+                </p>
+
+                <h3>Plugin.meta</h3>
+                <p>
+                    One record holding <code>schemaVersion</code>, <code>boardOrder</code> (the order your boards
+                    appear in), and a <code>settings</code> object: <code>theme</code>, <code>density</code>,
+                    <code>openLinksInNewTab</code>, <code>layout</code>, <code>openSearchInNewTab</code>,
+                    <code>orderLinksByUsage</code>, <code>dailyQuoteMode</code> and <code>backgroundMode</code>. These
+                    are single shared settings, not per-board ones.
+                </p>
+
+                <h3>Plugin.board.&lt;id&gt;</h3>
+                <p>
+                    One record per board: <code>id</code>, <code>name</code> (the board name you typed),
+                    <code>columnOrder</code>, <code>searchEngineIds</code>, and <code>lastSearchEngineId</code>.
+                </p>
+
+                <h3>Plugin.column.&lt;id&gt;</h3>
+                <p>
+                    One record per column: <code>id</code>, <code>title</code> (the column heading you typed),
+                    <code>boardId</code>, <code>linkIds</code>, and an optional <code>color</code> holding the accent
+                    you picked.
+                </p>
+
+                <h3>Plugin.link.&lt;id&gt;</h3>
+                <p>
+                    One record per saved link: <code>id</code>, <code>title</code>, <code>url</code>,
+                    <code>boardId</code>, <code>columnId</code>, an optional <code>newTab</code> for a per-link "opens
+                    in" override, and an optional <code>clicks</code> integer. The record format also allows an
+                    optional <code>description</code> of up to 200 characters, typed into the link editor's
+                    Description field. Quick Save never writes one.
+                </p>
+                <p>
+                    <strong>About <code>clicks</code>:</strong> every left-click and middle-click on a saved link
+                    increments that link's counter, and the new value is written into the synced record. This happens
+                    whether or not "Order links by most used" is switched on. It is a plain integer — there are no
+                    dates, no times and no sequence stored with it — but it is a usage signal, it syncs with the rest
+                    of your data, and it is included in an exported backup. "Reset usage" in Settings clears every
+                    counter after confirmation.
+                </p>
+
+                <h3>Plugin.searchEngine.&lt;id&gt;</h3>
+                <p>
+                    One record per extra search engine you add: <code>id</code>, <code>name</code>,
+                    <code>urlTemplate</code> (the address template containing <code>{query}</code>),
+                    <code>boardId</code>, and <code>visibleOnAllBoards</code>. The permanently-first "Browser default"
+                    option is built in and is not a stored record.
+                </p>
+
+                <h3>What is not in there</h3>
+                <p>
+                    Link records carry no timestamp, no visit history and no browsing log. The text you type into the
+                    search box is never written to sync. Nothing about the pages you visit is written to sync unless
+                    you deliberately save that page as a link.
+                </p>
+
+                <h3>Sync is not end-to-end encrypted</h3>
+                <p>
+                    Chrome's extension sync is not end-to-end encrypted, and whatever encryption your browser applies
+                    to synced data is your browser's feature, not MorrowTab's. MorrowTab adds no encryption of its
+                    own. <strong>Treat board names, column headings, link titles, saved addresses and custom search
+                        templates as non-confidential.</strong> If something should not sit in your browser profile's
+                    sync data, do not save it in MorrowTab.
+                </p>
+
+                <h3>There is no MorrowTab sync switch</h3>
+                <p>
+                    MorrowTab has no in-extension control to turn sync on or off. It follows the sync settings of the
+                    browser profile itself. If your browser profile is not syncing extension data, MorrowTab's records
+                    simply stay in that profile's storage on that computer; if it is, they travel with the profile.
+                    That choice belongs to your browser's own settings, not to MorrowTab.
+                </p>
+
+                <h3>How much can go in</h3>
+                <p>
+                    MorrowTab enforces its own ceilings before every write: at most 500 stored records, 8 KB per
+                    record and 100 KB in total, within caps of 30 boards, 120 columns (40 per board), 250 links (200
+                    per column) and 80 search engines (20 per board). Exceeding any of them means the write is
+                    refused, not truncated.
+                </p>
+            </section>
+
+            <section id="local">
+                <h2>3. What stays on this computer</h2>
+                <p>
+                    Nine records live in <code>chrome.storage.local</code>. They belong to one browser profile on one
+                    computer. None of them is synced, none of them appears in an exported backup, and none of them is
+                    written to web <code>localStorage</code>.
+                </p>
+                <ul>
+                    <li><code>Plugin.localActiveBoardId</code> — which board this computer is currently showing.</li>
+                    <li><code>Plugin.localQuickSaveTarget</code> — the board and column Quick Save last saved to, as
+                        <code>{ boardId, columnId }</code>.</li>
+                    <li><code>Plugin.localSearchHistory</code> — the search text you submitted, kept per search
+                        engine so it can be offered back as autocomplete. Each entry is normalized and capped at 512
+                        characters, de-duplicated case-insensitively, and limited to 50 entries per engine. There is
+                        no time-based expiry; entries for engines you delete are dropped on the next load.</li>
+                    <li><code>Plugin.localSearchHistoryEnabled</code> — whether new queries are recorded. It defaults
+                        to on, and the "Save search suggestions" toggle in Settings controls it.</li>
+                    <li><code>Plugin.localBackgroundImage</code> — a background image you uploaded, downscaled to a
+                        2560 px maximum side and re-encoded as a WebP data URL. The original file is never uploaded
+                        anywhere and never enters sync.</li>
+                    <li><code>Plugin.localPexelsNatureBackground</code> — the cached nature photo, if you turned that
+                        feature on, stored as a verified WebP data URL alongside the SHA-256 digest it is re-checked
+                        against on every read.</li>
+                    <li><code>Plugin.localDailyQuote</code> — the cached quote of the day, so the page can render
+                        before any request is made.</li>
+                    <li><code>Plugin.localLastGoodSnapshot</code> — a rolling copy of the last cleanly-loaded synced
+                        records, kept so a damaged sync state can be recognized.</li>
+                    <li><code>Plugin.localPreReplaceSnapshot</code> — a copy of the synced records a backup import
+                        replaced, kept so an unwanted import stays reversible.</li>
+                </ul>
+                <p>
+                    All nine are ordinary extension storage values held in plain text inside your browser profile
+                    directory. MorrowTab does not encrypt them, and anyone with access to that profile on that
+                    computer can read them.
+                </p>
+            </section>
+
+            <section id="requests">
+                <h2>4. Every network request MorrowTab can make</h2>
+                <p>
+                    The extension declares three fixed hosts plus one optional, per-site permission. The table below
+                    is the complete list of requests the code can issue.
+                </p>
+
+                <div class="table-wrap table-wrap-requests">
+                    <table>
+                        <caption>MorrowTab 1.0.0 makes no network request other than the four below.</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Host</th>
+                                <th scope="col">When</th>
+                                <th scope="col">What is sent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><code>fixquotes.com</code></th>
+                                <td>While the daily quote is set to Text, Picture (bottom) or Picture (top). Text is
+                                    the default, so a fresh install does make this request. At most one attempt per
+                                    local calendar day: once the day's quote is cached, other tabs use the cache. Setting the quote to
+                                    <strong>Off</strong> aborts any request in flight and makes no further one.</td>
+                                <td>A <code>GET</code> of
+                                    <code>https://fixquotes.com/feeds/qotd-v2.json</code>: no cookies or credentials,
+                                    no referrer, no query string, no request body, no identifier of any kind.
+                                    Redirects are refused and the attempt times out after 8 seconds. In the two
+                                    Picture modes the quote image is then loaded from the same host.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>api.fixquotes.com</code></th>
+                                <td>Only while the opt-in "Daily Pexels nature" background is switched on. It is off
+                                    on a fresh install, and an uploaded background takes priority and suppresses the
+                                    request entirely.</td>
+                                <td>A <code>GET</code> of
+                                    <code>https://api.fixquotes.com/public/morrowtab/nature-background</code> for the
+                                    photo's metadata: no cookies or credentials, no referrer, no query string.
+                                    Redirects are refused and the attempt times out after 10 seconds.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>images.pexels.com</code></th>
+                                <td>Immediately after that metadata request, to download the photograph it names.
+                                    Never on its own, and never while the nature background is off.</td>
+                                <td>A <code>GET</code> of the photo address returned in the metadata, which must be
+                                    an <code>https://images.pexels.com/photos/…</code> URL: no cookies or credentials,
+                                    no referrer, redirects refused. Pexels is a third party operating its own image
+                                    service.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">The one site you typed</th>
+                                <td>Only when both are true: "Fetch page titles when adding links" is on (it is off
+                                    by default) <em>and</em> you granted that single site's access at your browser's
+                                    own permission prompt. It never runs while you edit an existing link.</td>
+                                <td>A <code>GET</code> of the exact address you typed, 400 ms after you stop typing:
+                                    no cookies or credentials, no referrer, <code>Accept: text/html,application/xhtml+xml</code>, a
+                                    7-second timeout, and the response read is capped at 1 MB. Only the page's
+                                    <code>&lt;title&gt;</code> is used, sanitized and cut to 160 characters.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box">
+                    <span class="icon" aria-hidden="true">🌐</span>
+                    <div>
+                        <h3>What a request unavoidably reveals</h3>
+                        <p>
+                            Any request from your computer to any server reveals your IP address and your browser's
+                            user-agent string to whichever server answers it. That is true of the four requests above.
+                            MorrowTab controls what it sends — no cookies, no referrer and no identifier, and no
+                            query string on either FixQuotes request; the Pexels image URL carries only the sizing
+                            parameters FixQuotes chose, and a page-title request uses the address you typed — but it
+                            cannot control what those servers choose to log, and
+                            <code>images.pexels.com</code> is operated by a third party whose logging is outside
+                            MorrowTab's control entirely. MorrowTab is not anonymous, and this policy does not claim
+                            it is.
+                        </p>
+                        <p>
+                            The contents of your boards are never part of any of these requests. Neither is the text
+                            you type into the search box.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Two things that are not requests to MorrowTab</h3>
+                <p>
+                    <strong>Searching.</strong> "Browser default" hands your query to the browser itself, which sends
+                    it to whichever provider your profile is configured to use. A custom engine is an ordinary
+                    navigation to your own template with the query inserted. Either way the search goes straight to
+                    the engine, exactly as if you had typed it in the address bar. It never passes through a FixQuotes
+                    server: the quote feed and the nature-background endpoint are the only FixQuotes addresses
+                    MorrowTab contacts, and neither has anything to do with search.
+                </p>
+                <p>
+                    <strong>Site icons.</strong> MorrowTab downloads no favicons. It prefers icons bundled inside the
+                    extension, and otherwise asks the browser for its own locally-stored icon through a
+                    <code>chrome-extension://…/_favicon/</code> address. What the browser does behind that endpoint is
+                    the browser's behavior, not MorrowTab's. When no icon is available a two-letter badge is drawn
+                    instead.
+                </p>
+            </section>
+
+            <section id="permissions">
+                <h2>5. Each permission, and why it is there</h2>
+                <p>
+                    MorrowTab declares no content scripts and no <code>tabs</code> permission, so it cannot read,
+                    watch or modify the pages you browse.
+                </p>
+
+                <div class="table-wrap">
+                    <table>
+                        <caption>The complete permission list from MorrowTab 1.0.0's manifest.</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Permission</th>
+                                <th scope="col">Why MorrowTab needs it</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><code>storage</code></th>
+                                <td>Keeps your boards, columns, links, extra search engines and shared settings in
+                                    the browser's sync storage, and the nine per-computer records in local storage.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>favicon</code></th>
+                                <td>Lets a saved link show the browser's own locally-cached site icon. It is checked
+                                    at runtime, and when it is unavailable MorrowTab draws a two-letter badge instead
+                                    of fetching anything.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>search</code></th>
+                                <td>Powers the permanently-first "Browser default" option, which submits through the
+                                    provider already configured in your browser profile. MorrowTab never sets or
+                                    replaces your default search engine.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>activeTab</code></th>
+                                <td>Lets the Quick Save popup read the title and address of the tab you are on, and
+                                    only at the moment you open the popup from the toolbar button or the keyboard
+                                    shortcut. It grants no standing access to any site.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>https://fixquotes.com/*</code></th>
+                                <td>Fetches the Quote of the Day, and its image in the Picture modes. The code
+                                    accepts only credential-free HTTPS addresses whose host is exactly
+                                    <code>fixquotes.com</code>.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>https://api.fixquotes.com/*</code></th>
+                                <td>Fetches the metadata for the opt-in daily nature photo. The host is validated to
+                                    be exactly <code>api.fixquotes.com</code>. MorrowTab holds no Pexels API key; the
+                                    curated selection is made on the FixQuotes side.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>https://images.pexels.com/*</code></th>
+                                <td>Downloads the actual photograph for that background, only once you have switched
+                                    it on. The host is validated to be exactly <code>images.pexels.com</code> and the
+                                    credit link to be exactly <code>www.pexels.com</code>.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>https://*/*</code> (optional)</th>
+                                <td>Declared as an <em>optional</em> host permission, so the store listing shows it,
+                                    but nothing is granted when you install. It is requested one origin at a time,
+                                    from your browser's own prompt, and only for the off-by-default page-title
+                                    autofill. Decline and MorrowTab simply asks you to type the title yourself.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    The extension's own Content-Security-Policy is
+                    <code>script-src 'self'</code>, <code>style-src 'self'</code>, <code>object-src 'none'</code>,
+                    <code>base-uri 'none'</code>, with images restricted to the extension itself,
+                    <code>data:</code> URLs, <code>fixquotes.com</code> and <code>images.pexels.com</code>. No script
+                    is ever loaded or executed from a remote source.
+                </p>
+            </section>
+
+            <section id="backup">
+                <h2>6. What a backup contains</h2>
+                <p>
+                    "Export backup" in Settings writes a file named
+                    <code>morrowtab-backup-YYYY-MM-DD.json</code> to your own computer through the browser's normal
+                    download. It is never uploaded anywhere. It has exactly four top-level fields:
+                </p>
+                <ul>
+                    <li><code>application</code> — the string <code>"MorrowTab"</code>.</li>
+                    <li><code>schemaVersion</code> — <code>1</code>.</li>
+                    <li><code>exportedAt</code> — the timestamp of the export.</li>
+                    <li><code>records</code> — the synced record set described in section 2: meta and settings,
+                        boards, columns, links (including each link's <code>clicks</code> count), and search engines.
+                    </li>
+                </ul>
+                <p>
+                    <strong>The file is plain text.</strong> It is not encrypted and it cannot be password-protected.
+                    Anyone who opens it can read your board names, link titles, saved addresses and search templates,
+                    so store it the way you would store any other file containing that information.
+                </p>
+                <p>A backup deliberately excludes every one of the nine device-local records:</p>
+                <ul>
+                    <li>your saved search suggestions and the "Save search suggestions" preference;</li>
+                    <li>your uploaded background image, and the cached nature photo — no image bytes are ever
+                        exported;</li>
+                    <li>the cached daily quote;</li>
+                    <li>the board this computer is showing, and the remembered Quick Save destination;</li>
+                    <li>both local safety snapshots.</li>
+                </ul>
+                <p>
+                    Restoring a full backup <strong>replaces</strong> everything currently synced, after a
+                    confirmation. Before it does, the records it is about to replace are copied to
+                    <code>Plugin.localPreReplaceSnapshot</code> on that computer, and "Restore pre-import copy…"
+                    brings them back. Importing a single exported column is different: it adds that column to the
+                    current board rather than replacing anything.
+                </p>
+                <p>
+                    Two other files can be produced on request, and both are written locally by the browser, never
+                    uploaded: a single-column export, and — from the recovery view — a raw, unrepaired diagnostic
+                    snapshot of the synced records. The diagnostic snapshot contains your data verbatim, so treat it
+                    as you would a backup if you ever send it anywhere.
+                </p>
+            </section>
+
+            <section id="analytics">
+                <h2>7. No analytics, telemetry or trackers</h2>
+                <p>
+                    There is no analytics library, no telemetry, no beacon, no WebSocket, no
+                    <code>XMLHttpRequest</code>, no <code>EventSource</code> and no third-party script anywhere in the
+                    extension. There is no advertising tracker and no advertising identifier. Nothing measures how
+                    you use MorrowTab and reports it anywhere.
+                </p>
+                <p>
+                    There is no remote code of any kind: everything MorrowTab runs is shipped inside the extension
+                    package and is loaded from it. Apart from the four requests listed in section 4, the only other
+                    fetches in the code read two files bundled inside the extension itself — the brand-icon library
+                    and the starter board.
+                </p>
+                <p>
+                    FixQuotes does not sell, rent or share the contents of your boards, and could not: MorrowTab
+                    operates no server that receives them, and there is no MorrowTab-side database in which they could
+                    appear.
+                </p>
+                <p>
+                    <strong>This website.</strong> These pages are static files. They run no analytics, set no
+                    cookies, embed no third-party scripts and show no consent banner — which is why you have not been
+                    asked to dismiss one. As with any website, the host that serves these pages may keep its own
+                    server logs, which is outside MorrowTab's control.
+                </p>
+            </section>
+
+            <section id="credits">
+                <h2>8. Credits and third-party material</h2>
+
+                <h3>Bundled brand icons</h3>
+                <p>
+                    MorrowTab ships 49 brand icons covering 63 domains inside the extension package. They are a
+                    generated subset of the theSVG Color icon collection (also called The SVG Company Icon Set),
+                    distributed as <code>@iconify-json/thesvg-color</code> version 1.2.5, collection author
+                    thesvg.org, under the MIT license, Copyright &copy; 2025 thesvg.org. The full license text is
+                    reproduced in the extension's third-party notices.
+                </p>
+                <p>
+                    The icon data is converted to self-contained SVG files during development. MorrowTab includes no
+                    Iconify runtime and never contacts an Iconify API or any other third-party icon service.
+                </p>
+
+                <h3>Fallback site icons</h3>
+                <p>
+                    When a saved link has no bundled brand icon, MorrowTab asks Chromium for its own locally-stored
+                    favicon through the browser's <code>_favicon</code> endpoint, and falls back to a generated
+                    two-letter badge. MorrowTab downloads no favicons itself.
+                </p>
+
+                <h3>Quotes</h3>
+                <p>
+                    The Quote of the Day comes from <a href="https://fixquotes.com/" target="_blank"
+                        rel="noopener">FixQuotes<span class="visually-hidden"> (opens in a new tab)</span></a>. A catalog of 150 quotes ships inside the extension, so the quote
+                    area renders before — and without — any network access; the daily refresh from the FixQuotes feed
+                    then runs at most once per local day unless the quote is set to Off.
+                </p>
+
+                <h3>Photographs</h3>
+                <p>
+                    The optional daily nature photographs come from <a href="https://www.pexels.com/" target="_blank"
+                        rel="noopener">Pexels<span class="visually-hidden"> (opens in a new tab)</span></a>. They are downloaded at the moment they are used and are not
+                    bundled with the extension. Attribution is required and is shown in the product: MorrowTab
+                    rejects the photo metadata unless it carries the exact credit
+                    <em>Photo by &lt;photographer&gt; on Pexels</em> pointing at Pexels' own pages. MorrowTab holds no
+                    Pexels API key.
+                </p>
+
+                <h3>Trademarks</h3>
+                <p>
+                    Product names and logos are the trademarks of their respective owners. Their inclusion in the
+                    bundled icon set does not imply any partnership with, sponsorship by, or endorsement from those
+                    companies.
+                </p>
+            </section>
+
+            <section id="deleting">
+                <h2>9. Deleting your data</h2>
+                <p>These are the controls MorrowTab actually gives you:</p>
+                <ul>
+                    <li><strong>Clear saved suggestions</strong> (Settings) — asks for confirmation, then permanently
+                        removes the saved search text from this computer. It does not change whether future searches
+                        are recorded.</li>
+                    <li><strong>Save search suggestions</strong> (Settings) — switch it off and existing suggestions
+                        are kept but nothing new is recorded.</li>
+                    <li><strong>Remove image</strong> (Settings) — removes the background image you uploaded from
+                        this computer.</li>
+                    <li><strong>Daily Pexels nature</strong> (Settings) — switching it off stops all further requests
+                        to <code>api.fixquotes.com</code> and <code>images.pexels.com</code>.</li>
+                    <li><strong>Reset usage</strong> (Settings) — clears every per-link click count, after
+                        confirmation.</li>
+                    <li><strong>Deleting a link, column or board</strong> — deleting a column also removes its links,
+                        and each deletion leaves a six-second <strong>Undo</strong> in the toast.</li>
+                    <li><strong>Import backup…</strong> (Settings) — replaces everything currently synced, after
+                        confirmation, while keeping a restorable copy of what it replaced on this computer.</li>
+                </ul>
+
+                <div class="note-box">
+                    <span class="icon" aria-hidden="true">🗑️</span>
+                    <div>
+                        <h3>There is no single "delete everything" button</h3>
+                        <p>
+                            MorrowTab has no one-click erase-all control. Removing everything means using the
+                            controls above and then removing the extension from Chrome or Edge; what happens to
+                            already-synced records after that is handled by your browser's own sync, not by MorrowTab.
+                        </p>
+                        <p>
+                            There is also no server-side copy to request the deletion of. FixQuotes does not receive
+                            or store your boards, links, settings or search text, so there is no account to close and
+                            no deletion request to file for that content. The data is in your browser's storage, and
+                            only you can reach it.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="changes">
+                <h2>10. Changes to this policy</h2>
+                <p>
+                    This policy describes MorrowTab 1.0.0. If a later version changes what is stored, what is
+                    requested, or which permissions are declared, this page will be updated before that version is
+                    published, and the effective date at the top will change with it.
+                </p>
+                <p>
+                    Material changes will be summarized on the <a href="changelog.html">changelog</a> alongside the
+                    release that introduced them, so you can see what changed and when. The version of this policy in
+                    force is always the one on this page.
+                </p>
+                <p>
+                    If anything here is unclear, or you believe something on this page does not match what the
+                    extension does, please tell us through
+                    <a href="https://fixquotes.com/docs/contact/?category=morrowtab" target="_blank"
+                        rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
+                </p>
+                <p class="updated">Effective <time datetime="2026-08-31">August 31, 2026</time> · MorrowTab 1.0.0</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h2>MorrowTab</h2>
+                    <ul>
+                        <li><a href="./#install">Availability</a></li>
+                        <li><a href="manual.html">User manual</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Support</h2>
+                    <ul>
+                        <li><a href="manual.html#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="manual.html#shortcuts">Keyboard shortcuts</a></li>
+                        <li><a href="contact.html">Contact FixQuotes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Legal</h2>
+                    <ul>
+                        <li><a href="privacy.html">Privacy policy</a></li>
+                        <li><a href="https://www.pexels.com/" target="_blank" rel="noopener">Photos by Pexels<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                        <li><a href="https://fixquotes.com/" target="_blank" rel="noopener">Quotes by FixQuotes<span class="visually-hidden"> (opens in a new tab)</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Requirements</h2>
+                    <ul>
+                        <li>Google Chrome 114+</li>
+                        <li>Microsoft Edge 114+</li>
+                        <li>Version 1.0.0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FixQuotes. MorrowTab is a browser extension by FixQuotes.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

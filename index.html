@@ -1,16 +1,908 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Morrowtab</title>
-  <style>
-    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
-    body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #0b1020; color: #f7f8fc; }
-    h1 { margin: 0; font-size: clamp(3rem, 12vw, 8rem); letter-spacing: -0.06em; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>MorrowTab - Board-Based New Tab for Chrome and Edge</title>
+    <meta name="description"
+        content="MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through your browser's own default provider, and a daily FixQuotes quote. Synced through your browser profile, with no account and no MorrowTab server.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FixQuotes">
+    <meta name="theme-color" content="#0a0b12">
+    <link rel="canonical" href="https://calxibe.github.io/morrowtab/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MorrowTab">
+    <meta property="og:title" content="MorrowTab - Board-Based New Tab for Chrome and Edge">
+    <meta property="og:description"
+        content="MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through your browser's own default provider, and a daily FixQuotes quote. No account, no MorrowTab server.">
+    <meta property="og:url" content="https://calxibe.github.io/morrowtab/">
+    <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MorrowTab - Board-Based New Tab for Chrome and Edge">
+    <meta name="twitter:description"
+        content="Boards of organized links, your browser's own search provider, and a daily quote — every time you open a tab.">
+    <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="img/icon128.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css?v=20260831-1">
+    <script src="index.js" defer></script>
+
+
+
+
+
+
+
+    <script type="application/ld+json">
+    {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "MorrowTab",
+            "alternateName": "MorrowTab — Boards, Search & Daily Quotes",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Chrome 114 or newer, Microsoft Edge 114 or newer",
+            "softwareVersion": "1.0.0",
+            "url": "https://calxibe.github.io/morrowtab/",
+            "image": "https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png",
+            "description": "MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through the browser's own default provider, and a daily FixQuotes quote. It syncs through the browser profile and has no account and no server of its own.",
+            "publisher": {
+                    "@type": "Organization",
+                    "name": "FixQuotes",
+                    "url": "https://fixquotes.com/docs/about/"
+            },
+            "isAccessibleForFree": true,
+            "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+            }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                    {
+                            "@type": "Question",
+                            "name": "Does MorrowTab change my search engine?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "No. The default option is called Browser default, and it hands your query to whatever provider Chrome or Edge is already configured with. MorrowTab never sets, replaces or proposes a search engine of its own, and it ships with no provider preconfigured. Any extra engine in the list is one you added yourself."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "What does it cost?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Nothing. MorrowTab is free, with no paid tier, no trial period and nothing to buy inside the extension. There is no account to upgrade, because there is no account."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "Do I need an account?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "No. There is no MorrowTab account, no login, and no MorrowTab server. Your boards are stored by your browser’s own extension sync, which follows the browser profile you are already signed into. If that profile is syncing extension data, your boards appear on your other computers with nothing else to set up; if it is not, they simply stay on the one computer."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "Does MorrowTab connect to the internet?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Only for features you can switch off, and only to addresses you can name in advance. The daily quote is set to Text out of the box and fetches fixquotes.com once per local day; setting it to Off stops that entirely. If you switch on the optional daily nature background, MorrowTab asks api.fixquotes.com which photo to show and fetches it from images.pexels.com. One more address is possible, and only if you ask for it: with Fetch page titles when adding links switched on, MorrowTab requests the one site whose address you just typed, after your browser asks your permission for it. Nothing else, and no analytics."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "Can it read the pages I browse?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "No. MorrowTab has no content scripts, so it never runs on the sites you visit. The toolbar popup sees the title and address of the tab you are on, and only at the moment you click the button. The one exception is entirely up to you: if you switch on Fetch page titles when adding links, Chrome asks your permission for each individual site before MorrowTab reads that page’s title."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "How much can I save?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Up to 30 boards, 120 columns (40 per board), 250 links (200 per column) and 80 search engines, inside a 100 KB sync budget. Those are deliberate ceilings set below what browser extension sync allows, so a save fails with a clear message rather than quietly losing data. Settings shows how much of the budget you are using."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "Is my data encrypted?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Not by MorrowTab. Browser extension sync is not end-to-end encrypted, so treat board names, link titles, saved addresses and search templates as non-confidential. Exported backups are plain, readable JSON files, and the records MorrowTab keeps on your own computer are stored in plain text under your browser profile."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "Which browsers does it work in?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Google Chrome and Microsoft Edge on Chromium 114 or newer. That floor is real: MorrowTab relies on the Popover API, Web Locks, CSS :has() and color-mix(). There is no Firefox or Safari build."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "Can I get my data out again?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. Settings exports everything synced — boards, columns, links, search engines and shared settings — as one readable JSON file saved to your own computer, and imports it back. You can also export a single column and drop it into another board. Backgrounds, saved search suggestions and cached images stay on the computer that made them and are deliberately excluded from the file."
+                            }
+                    }
+            ]
+    }
+    </script>
 </head>
+
 <body>
-  <main><h1>Morrowtab</h1></main>
+    <div class="bg-glow"></div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="header-inner">
+            <a href="./" class="logo" aria-current="page">
+                <img src="img/icon48.png" alt="" aria-hidden="true" class="logo-icon" width="48" height="48">
+                <span class="logo-text">Morrow<span>Tab</span></span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="site-nav" aria-label="Main">
+                <a href="./#install">Availability</a>
+                <a href="manual.html">Manual</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Every New Tab,<br>Organized Your Way</h1>
+
+                <p class="subtitle">
+                    MorrowTab replaces the new tab in Chrome and Edge with boards of links you actually use, a search
+                    box that runs through your browser's own default provider, and a daily FixQuotes quote. Keep one
+                    board for work and another for everything else, each with its own columns, links and extra search
+                    engines. They travel through the browser profile you are already signed into, so there is no
+                    MorrowTab account to create and no MorrowTab server holding your data.
+                </p>
+
+                <div class="cta-buttons" id="install" role="group" aria-label="Get started">
+                    <a href="manual.html" class="btn btn-primary">Read the manual</a>
+                    <a href="#screenshots" class="btn btn-secondary">See it in action</a>
+                </div>
+
+                <p class="cta-note">
+                    MorrowTab 1.0.0 is on its way to the Chrome Web Store and Microsoft Edge Add-ons. This page will
+                    link straight to both listings the day they go live.
+                </p>
+
+                <ul class="browser-support">
+                    <li>
+                        <img src="img/chrome.svg" alt="" width="22" height="22" aria-hidden="true">
+                        Google Chrome 114 or newer
+                    </li>
+                    <li>
+                        <img src="img/edge.svg" alt="" width="22" height="22" aria-hidden="true">
+                        Microsoft Edge 114 or newer
+                    </li>
+                </ul>
+
+                <div class="supported-section">
+                    <div class="supported-box">
+                        <h2>Boards, links and search</h2>
+                        <p class="supported-copy">
+                            Group links into columns on as many boards as you need. Search runs through whatever
+                            provider Chrome or Edge is already set to — MorrowTab never substitutes its own — and you
+                            can add extra engines from any HTTP(S) template containing <code>{query}</code>.
+                        </p>
+                        <div class="format-tags">
+                            <span class="format-tag">Multiple boards</span>
+                            <span class="format-tag">Browser default search</span>
+                            <span class="format-tag">Custom search engines</span>
+                            <span class="format-tag">Quick Save popup</span>
+                            <span class="format-tag">Keyboard reordering</span>
+                        </div>
+                    </div>
+                    <div class="supported-box">
+                        <h2>Clear about what leaves your machine</h2>
+                        <p class="supported-copy">
+                            Boards sync through your browser's own extension sync. MorrowTab can reach three fixed
+                            addresses, for two features you can switch off: <code>fixquotes.com</code> for the daily
+                            quote, which is on out of the box, plus <code>api.fixquotes.com</code> and
+                            <code>images.pexels.com</code> for the opt-in nature background. One more address is
+                            possible only if you turn on page-title autofill and grant that one site access. There is
+                            no analytics, no advertising tracker, and no remote code.
+                        </p>
+                        <div class="format-tags">
+                            <span class="format-tag">No account</span>
+                            <span class="format-tag">Three known hosts</span>
+                            <span class="format-tag">No content scripts</span>
+                            <span class="format-tag">JSON export</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Preview</span>
+                    <h2>See It in Action</h2>
+                    <p class="section-desc">
+                        Every shot is the real extension. The board pictures use the bundled
+                        "Popular websites" starter board a fresh install shows you; the search picture has a few
+                        queries already saved on that computer.
+                    </p>
+                </div>
+
+                <div class="screenshot-tabs" role="tablist" aria-label="MorrowTab screenshots">
+                    <button class="screenshot-tab" type="button" role="tab" id="tab-newtab"
+                        aria-controls="panel-newtab" aria-selected="true" tabindex="0">New tab</button>
+                    <button class="screenshot-tab" type="button" role="tab" id="tab-settings"
+                        aria-controls="panel-settings" aria-selected="false" tabindex="-1">Settings</button>
+                    <button class="screenshot-tab" type="button" role="tab" id="tab-search"
+                        aria-controls="panel-search" aria-selected="false" tabindex="-1">Search</button>
+                    <button class="screenshot-tab" type="button" role="tab" id="tab-quicksave"
+                        aria-controls="panel-quicksave" aria-selected="false" tabindex="-1">Quick Save</button>
+                </div>
+
+                <p class="screenshot-note">Select a picture to open it full size.</p>
+
+                <div class="screenshot-showcase">
+                    <div class="screenshot-panel" id="panel-newtab" role="tabpanel" aria-labelledby="tab-newtab"
+                        tabindex="0">
+                        <button class="screenshot-card" type="button"
+                            data-fullsrc="img/screenshots/newtab-light.png">
+                            <span class="screenshot-label">Light</span>
+                            <picture>
+                                <source type="image/avif"
+                                    srcset="img/screenshots/newtab-light-768.avif 768w, img/screenshots/newtab-light-1280.avif 1280w, img/screenshots/newtab-light-1920.avif 1920w"
+                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                <source type="image/webp"
+                                    srcset="img/screenshots/newtab-light-768.webp 768w, img/screenshots/newtab-light-1280.webp 1280w, img/screenshots/newtab-light-1920.webp 1920w"
+                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                <img src="img/screenshots/newtab-light.png" width="1920" height="1200"
+                                    alt="The MorrowTab new tab page in light mode: a board picker reading Popular websites, a centered search box set to Browser default, and five columns of links titled News, Streaming, Social media, Everyday tools and Shopping"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <div class="screenshot-variants">
+                            <button class="screenshot-variant" type="button" aria-pressed="true"
+                                data-previewsrc="img/screenshots/newtab-light.png"
+                                data-fullsrc="img/screenshots/newtab-light.png"
+                                data-avif="img/screenshots/newtab-light-768.avif 768w, img/screenshots/newtab-light-1280.avif 1280w, img/screenshots/newtab-light-1920.avif 1920w"
+                                data-webp="img/screenshots/newtab-light-768.webp 768w, img/screenshots/newtab-light-1280.webp 1280w, img/screenshots/newtab-light-1920.webp 1920w"
+                                data-alt="The MorrowTab new tab page in light mode, showing five columns of links"
+                                data-label="Light">Light</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/newtab-dark.png"
+                                data-fullsrc="img/screenshots/newtab-dark.png"
+                                data-avif="img/screenshots/newtab-dark-768.avif 768w, img/screenshots/newtab-dark-1280.avif 1280w, img/screenshots/newtab-dark-1920.avif 1920w"
+                                data-webp="img/screenshots/newtab-dark-768.webp 768w, img/screenshots/newtab-dark-1280.webp 1280w, img/screenshots/newtab-dark-1920.webp 1920w"
+                                data-alt="The same MorrowTab board on the dark surface the Auto theme uses when the system is in dark mode"
+                                data-label="Dark">Dark</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/newtab-theme-violet.png"
+                                data-fullsrc="img/screenshots/newtab-theme-violet.png"
+                                data-avif="img/screenshots/newtab-theme-violet-768.avif 768w, img/screenshots/newtab-theme-violet-1280.avif 1280w, img/screenshots/newtab-theme-violet-1920.avif 1920w"
+                                data-webp="img/screenshots/newtab-theme-violet-768.webp 768w, img/screenshots/newtab-theme-violet-1280.webp 1280w, img/screenshots/newtab-theme-violet-1920.webp 1920w"
+                                data-alt="The same MorrowTab board with the Violet gradient background applied"
+                                data-label="Violet">Violet</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/newtab-theme-green.png"
+                                data-fullsrc="img/screenshots/newtab-theme-green.png"
+                                data-avif="img/screenshots/newtab-theme-green-768.avif 768w, img/screenshots/newtab-theme-green-1280.avif 1280w, img/screenshots/newtab-theme-green-1920.avif 1920w"
+                                data-webp="img/screenshots/newtab-theme-green-768.webp 768w, img/screenshots/newtab-theme-green-1280.webp 1280w, img/screenshots/newtab-theme-green-1920.webp 1920w"
+                                data-alt="The same MorrowTab board with the Green gradient background applied"
+                                data-label="Green">Green</button>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-panel" id="panel-settings" role="tabpanel" aria-labelledby="tab-settings"
+                        tabindex="0" hidden>
+                        <button class="screenshot-card" type="button"
+                            data-fullsrc="img/screenshots/settings-light.png">
+                            <span class="screenshot-label">Light</span>
+                            <picture>
+                                <source type="image/avif"
+                                    srcset="img/screenshots/settings-light-768.avif 768w, img/screenshots/settings-light-1280.avif 1280w, img/screenshots/settings-light-1920.avif 1920w"
+                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                <source type="image/webp"
+                                    srcset="img/screenshots/settings-light-768.webp 768w, img/screenshots/settings-light-1280.webp 1280w, img/screenshots/settings-light-1920.webp 1920w"
+                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                <img src="img/screenshots/settings-light.png" width="1920" height="1200"
+                                    alt="The MorrowTab Settings dialog: a Background color grid of nine swatches, Daily Pexels nature and Upload background image controls, a Backup section, and a Layout and links column with the daily quote mode and toggles"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <div class="screenshot-variants">
+                            <button class="screenshot-variant" type="button" aria-pressed="true"
+                                data-previewsrc="img/screenshots/settings-light.png"
+                                data-fullsrc="img/screenshots/settings-light.png"
+                                data-avif="img/screenshots/settings-light-768.avif 768w, img/screenshots/settings-light-1280.avif 1280w, img/screenshots/settings-light-1920.avif 1920w"
+                                data-webp="img/screenshots/settings-light-768.webp 768w, img/screenshots/settings-light-1280.webp 1280w, img/screenshots/settings-light-1920.webp 1920w"
+                                data-alt="The MorrowTab Settings dialog in its light palette"
+                                data-label="Light">Light</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/settings-dark.png"
+                                data-fullsrc="img/screenshots/settings-dark.png"
+                                data-avif="img/screenshots/settings-dark-768.avif 768w, img/screenshots/settings-dark-1280.avif 1280w, img/screenshots/settings-dark-1920.avif 1920w"
+                                data-webp="img/screenshots/settings-dark-768.webp 768w, img/screenshots/settings-dark-1280.webp 1280w, img/screenshots/settings-dark-1920.webp 1920w"
+                                data-alt="The MorrowTab Settings dialog in its dark palette"
+                                data-label="Dark">Dark</button>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-panel" id="panel-search" role="tabpanel" aria-labelledby="tab-search"
+                        tabindex="0" hidden>
+                        <button class="screenshot-card" type="button"
+                            data-fullsrc="img/screenshots/search-suggestions.png"
+                            aria-label="Open full size: the search box with saved suggestions">
+                            <span class="screenshot-label">Saved suggestions</span>
+                            <picture>
+                                <source type="image/avif"
+                                    srcset="img/screenshots/search-suggestions-768.avif 768w, img/screenshots/search-suggestions-1280.avif 1280w, img/screenshots/search-suggestions-1920.avif 1920w"
+                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                <source type="image/webp"
+                                    srcset="img/screenshots/search-suggestions-768.webp 768w, img/screenshots/search-suggestions-1280.webp 1280w, img/screenshots/search-suggestions-1920.webp 1920w"
+                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                <img src="img/screenshots/search-suggestions.png" width="1920" height="1200"
+                                    alt="The MorrowTab search box with the word design typed in, and a suggestion panel below it listing three earlier searches from this computer"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                    </div>
+
+                    <div class="screenshot-panel" id="panel-quicksave" role="tabpanel" aria-labelledby="tab-quicksave"
+                        tabindex="0" hidden>
+                        <button class="screenshot-card" type="button"
+                            data-fullsrc="img/screenshots/quick-save-popup.png"
+                            aria-label="Open full size: the Quick Save popup">
+                            <span class="screenshot-label">Quick Save</span>
+                            <picture>
+                                <source type="image/avif" srcset="img/screenshots/quick-save-popup-640.avif 640w"
+                                    sizes="(min-width: 720px) 360px, calc(100vw - 48px)">
+                                <source type="image/webp" srcset="img/screenshots/quick-save-popup-640.webp 640w"
+                                    sizes="(min-width: 720px) 360px, calc(100vw - 48px)">
+                                <img src="img/screenshots/quick-save-popup.png" width="640" height="1120"
+                                    alt="The MorrowTab toolbar popup titled Save to MorrowTab, previewing the current page, with Board, Column and Title fields above a Save current tab button"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Features</span>
+                    <h2>What MorrowTab Actually Does</h2>
+                    <p class="section-desc">
+                        A new tab page, a toolbar Quick Save, and a set of controls that stay out of the way until you
+                        want them.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon boards" aria-hidden="true">🗂️</div>
+                        <h3>Boards for different contexts</h3>
+                        <p>
+                            Each board owns its own columns, links, extra search engines and ordering, so work,
+                            personal and research links never share a screen.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Switch boards from the picker or with <kbd>Alt</kbd> + <kbd>1</kbd>–<kbd>9</kbd></li>
+                            <li>Move a whole column to another board in one step, with undo</li>
+                            <li>The active board is remembered per computer, not synced</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon search" aria-hidden="true">🔍</div>
+                        <h3>Search that stays yours</h3>
+                        <p>
+                            <strong>Browser default</strong> is always first and always selected on a fresh tab. It
+                            submits through your browser's own configured provider — MorrowTab never sets or replaces
+                            your default search engine.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Add engines from any HTTP(S) template with <code>{query}</code></li>
+                            <li>Share one engine across every board, or keep it to a single board</li>
+                            <li><kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd> focuses the search box</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon quote" aria-hidden="true">🌅</div>
+                        <h3>A daily quote, and an optional photo</h3>
+                        <p>
+                            The FixQuotes Quote of the Day shows as text at the bottom by default, or as a picture
+                            above or below your cards. Turn it Off and MorrowTab makes no quote request at all.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Four modes: Text, Picture (bottom), Picture (top), Off</li>
+                            <li>Opt in to one curated Pexels nature photo a day, with its photographer credit</li>
+                            <li>Or upload your own background, kept on that computer only</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon sync" aria-hidden="true">🔄</div>
+                        <h3>Sync without an account</h3>
+                        <p>
+                            Boards, columns, links, search engines and shared settings ride your browser's own
+                            extension sync. There is no MorrowTab login and no MorrowTab server holding a copy.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Every write is taken under a lock and checked against the data it was based on</li>
+                            <li>Export and import a plain JSON backup of everything synced</li>
+                            <li>If two computers ever merge badly, you get a read-only recovery view instead of a
+                                broken page</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon appearance" aria-hidden="true">🎨</div>
+                        <h3>Nine backgrounds and two densities</h3>
+                        <p>
+                            Auto follows your system between a plain white page and a dark surface. The other eight
+                            are gradients: Purple, Blue, Green, Pink, Dark, Teal, Red and Violet.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Comfortable or compact column spacing</li>
+                            <li>Capped cards or fill-each-row layout — columns wrap, never scroll sideways</li>
+                            <li>Give any column one of eight accent colors, or none</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon keyboard" aria-hidden="true">⌨️</div>
+                        <h3>Keyboard and undo throughout</h3>
+                        <p>
+                            Boards start locked so a stray drag cannot rearrange them. Unlock to reveal the drag
+                            handles, then move things by dragging one or by focusing one and pressing
+                            <kbd>Alt</kbd> plus the arrow keys.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Deleting a board, column or link leaves a six-second <strong>Undo</strong> in the
+                                toast</li>
+                            <li><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> opens Quick Save from anywhere</li>
+                            <li>Unlocking is per-tab and never saved, so every new tab starts locked</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <span class="icon" aria-hidden="true">💡</span>
+                    <div>
+                        <h3>There is more in the manual</h3>
+                        <p>
+                            Per-link "opens in" overrides, usage-based ordering, duplicate warnings, drag-and-drop
+                            from other windows, single-column export and import, and the recovery tools all have their
+                            own sections.
+                        </p>
+                        <p>
+                            The <a href="manual.html">user manual</a> covers every one of them, with screenshots
+                            of the main screens.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shortcuts">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Keyboard</span>
+                    <h2>Without Touching the Mouse</h2>
+                    <p class="section-desc">
+                        Everything you rearrange by dragging can also be moved from the keyboard, and the search box is a
+                        single keystroke away.
+                    </p>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <caption>The shortcuts you will use most. The <a href="manual.html#shortcuts">manual</a> documents
+                            the rest, including menu typeahead and the Background color swatches.</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Keys</th>
+                                <th scope="col">What it does</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd></th>
+                                <td>Focus the search field from anywhere on the page</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><kbd>Alt</kbd> + <kbd>1</kbd> &hellip;
+                                    <kbd>9</kbd></th>
+                                <td>Switch to the first through ninth board</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><kbd>Alt</kbd> + <kbd>&uarr;</kbd> / <kbd>&darr;</kbd></th>
+                                <td>Cycle the board&rsquo;s search engines, from inside the search field</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><kbd>Alt</kbd> + arrow keys</th>
+                                <td>Move a column, link, board or search engine while a drag handle has focus</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>Enter</kbd> <kbd>Esc</kbd></th>
+                                <td>Move through saved suggestions, accept one, or close the panel</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></th>
+                                <td>Open the Quick Save popup from any tab</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="shortcut-note">
+                    <kbd>/</kbd> is ignored while the caret is already in a text field, so
+                    <kbd>Ctrl</kbd> + <kbd>K</kbd> is the one to use while typing.
+                    Neither fires while a dialog or a menu is open.
+                    <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> is a
+                    suggested default &mdash; Chrome silently declines a shortcut that collides with one you already
+                    have, so check or change it at <code>chrome://extensions/shortcuts</code>.
+                </p>
+            </div>
+        </section>
+
+        <section id="limits">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Honest limits</span>
+                    <h2>How Much Fits</h2>
+                    <p class="section-desc">
+                        Browser extension sync is a small, shared budget, so MorrowTab enforces its own ceilings well
+                        inside it and tells you before a write fails. These are the real numbers.
+                    </p>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <caption>MorrowTab 1.0.0 enforces every limit below before it writes anything.</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Item</th>
+                                <th scope="col">Maximum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Boards</th>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Columns</th>
+                                <td>120 in total, 40 per board</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Links</th>
+                                <td>250 in total, 200 per column</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Search engines</th>
+                                <td>80 in total, 20 per board</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Synced data</th>
+                                <td>100 KB across 500 records</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Saved search suggestions</th>
+                                <td>50 per engine, stored on that computer only</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box">
+                    <span class="icon" aria-hidden="true">📊</span>
+                    <div>
+                        <h3>You can see where you stand</h3>
+                        <p>
+                            Settings shows a live readout — for example <em>Synced data: 9 of 100 KB · 50 of 250
+                            links</em> — using the same byte arithmetic the validator uses before a save.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="privacy-summary">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Privacy</span>
+                    <h2>Where Your Data Goes</h2>
+                    <p class="section-desc">
+                        The short version. The <a href="privacy.html">privacy policy</a> lists every storage key and
+                        every request by name.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Synced through your browser</h3>
+                        <p>
+                            Board names, column titles, link titles and URLs, search templates, shared settings and a
+                            per-link click count go into <code>chrome.storage.sync</code> — the browser's own
+                            extension sync, tied to the profile you are signed into.
+                        </p>
+                        <p>
+                            Chrome extension sync is not end-to-end encrypted, so treat board names and saved
+                            addresses as non-confidential.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Kept on one computer</h3>
+                        <p>
+                            Your selected board, saved search suggestions and whether new ones are recorded, an uploaded
+                            background, the cached nature photo, the cached quote, the remembered Quick Save
+                            destination and two safety snapshots stay in local extension storage.
+                        </p>
+                        <p>
+                            None of them syncs, and none of them is included in an exported backup.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Three fixed addresses</h3>
+                        <p>
+                            <code>fixquotes.com</code> for the daily quote, plus <code>api.fixquotes.com</code> and
+                            <code>images.pexels.com</code> for the opt-in nature background, plus one site you name
+                            yourself if you switch on page-title autofill. The two FixQuotes requests carry no
+                            cookies, no referrer and no query string; the Pexels image URL carries only the sizing
+                            parameters FixQuotes chose.
+                        </p>
+                        <p>
+                            The daily quote is on by default; setting it to <strong>Off</strong> stops the request
+                            entirely.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Questions</span>
+                    <h2>Common Questions</h2>
+                </div>
+
+                <div class="faq-list">
+                    <details>
+                        <summary>Does MorrowTab change my search engine?</summary>
+                        <p>
+                            No. The default option is called <strong>Browser default</strong>, and it hands your query
+                            to whatever provider Chrome or Edge is already configured with. MorrowTab never sets,
+                            replaces or proposes a search engine of its own, and it ships with no provider
+                            preconfigured. Any extra engine in the list is one you added yourself.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>What does it cost?</summary>
+                        <p>
+                            Nothing. MorrowTab is free, with no paid tier, no trial period and nothing to buy inside
+                            the extension. There is no account to upgrade, because there is no account.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Do I need an account?</summary>
+                        <p>
+                            No. There is no MorrowTab account, no login, and no MorrowTab server. Your boards are
+                            stored by your browser&rsquo;s own extension sync, which follows the browser profile you
+                            are already signed into. If that profile is syncing extension data, your boards appear on
+                            your other computers with nothing else to set up; if it is not, they simply stay on the
+                            one computer.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Does MorrowTab connect to the internet?</summary>
+                        <p>
+                            Only for features you can switch off, and only to addresses you can name in advance.
+                            The daily quote is set to
+                            <strong>Text</strong> out of the box and fetches <code>fixquotes.com</code> once per local
+                            day; setting it to <strong>Off</strong> stops that entirely. If you switch on the optional
+                            daily nature background, MorrowTab asks <code>api.fixquotes.com</code> which photo to show
+                            and fetches it from <code>images.pexels.com</code>. One more address is possible, and only if you
+                            ask for it: with <strong>Fetch page titles when adding links</strong> switched on, MorrowTab
+                            requests the one site whose address you just typed, after your browser asks your
+                            permission for it. Nothing else, and no analytics.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Can it read the pages I browse?</summary>
+                        <p>
+                            No. MorrowTab has no content scripts, so it never runs on the sites you visit. The toolbar
+                            popup sees the title and address of the tab you are on, and only at the moment you click
+                            the button. The one exception is entirely up to you: if you switch on
+                            <strong>Fetch page titles when adding links</strong>, Chrome asks your permission for each
+                            individual site before MorrowTab reads that page&rsquo;s title.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>How much can I save?</summary>
+                        <p>
+                            Up to 30 boards, 120 columns (40 per board), 250 links (200 per column) and 80 search
+                            engines, inside a 100&nbsp;KB sync budget. Those are deliberate ceilings set below what
+                            browser extension sync allows, so a save fails with a clear message rather than quietly
+                            losing data. Settings shows how much of the budget you are using.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Is my data encrypted?</summary>
+                        <p>
+                            Not by MorrowTab. Browser extension sync is not end-to-end encrypted, so treat board names,
+                            link titles, saved addresses and search templates as non-confidential. Exported backups are
+                            plain, readable JSON files, and the records MorrowTab keeps on your own computer are stored
+                            in plain text under your browser profile.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Which browsers does it work in?</summary>
+                        <p>
+                            Google Chrome and Microsoft Edge on Chromium 114 or newer. That floor is real: MorrowTab
+                            relies on the Popover API, Web Locks, CSS <code>:has()</code> and
+                            <code>color-mix()</code>. There is no Firefox or Safari build.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Can I get my data out again?</summary>
+                        <p>
+                            Yes. Settings exports everything synced &mdash; boards, columns, links, search engines and
+                            shared settings &mdash; as one readable JSON file saved to your own computer, and imports
+                            it back. You can also export a single column and drop it into another board. Backgrounds,
+                            saved search suggestions and cached images stay on the computer that made them and are
+                            deliberately excluded from the file.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="more-extensions">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">More from FixQuotes</span>
+                    <h2>Other FixQuotes Tools</h2>
+                    <p class="section-desc">Five more browser extensions and apps from the same publisher, covering
+                        video rotation, code formatting, ad blocking, tab sharing and page notes.</p>
+                </div>
+                <div class="extensions-grid">
+                    <a href="https://clipturn.app/" class="extension-card" target="_blank" rel="noopener">
+                        <div class="extension-icon">
+                            <img src="img/plugins/clipturn-logo.svg" alt="" class="extension-logo" width="48"
+                                height="48" aria-hidden="true">
+                        </div>
+                        <h3>ClipTurn</h3>
+                        <p>Rotate videos like photos in Windows 11, from File Explorer or the app.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    <a href="https://prettify.cloud" class="extension-card" target="_blank" rel="noopener">
+                        <div class="extension-icon">
+                            <img src="img/plugins/codeprettify-logo.svg" alt="" class="extension-logo" width="48"
+                                height="48" aria-hidden="true">
+                        </div>
+                        <h3>CodePrettify</h3>
+                        <p>Format JS, JSON, CSS, YAML, XML, and RSS right in your browser.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    <a href="https://fixguard.org/" class="extension-card" target="_blank" rel="noopener">
+                        <div class="extension-icon">
+                            <img src="img/plugins/fixguard-logo.svg" alt="" class="extension-logo" width="48"
+                                height="48" aria-hidden="true">
+                        </div>
+                        <h3>FixGuard</h3>
+                        <p>Block ads, hide cookie banners, and browse clean with zero tracking.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    <a href="https://notepin.cloud/" class="extension-card" target="_blank" rel="noopener">
+                        <div class="extension-icon">
+                            <img src="img/plugins/notepin-logo.svg" alt="" class="extension-logo" width="48"
+                                height="48" aria-hidden="true">
+                        </div>
+                        <h3>NotePin</h3>
+                        <p>Save notes for any web page, with the page URL already attached.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
+                    <a href="https://tabconnect.app/" class="extension-card" target="_blank" rel="noopener">
+                        <div class="extension-icon">
+                            <img src="img/plugins/tabconnect-logo.svg" alt="" class="extension-logo" width="48"
+                                height="48" aria-hidden="true">
+                        </div>
+                        <h3>TabConnect</h3>
+                        <p>Share browser tabs with short passwords and encrypted remote viewing.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size screenshot"
+        aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Close image preview">&times;</button>
+        <img id="lightboxImg" alt="">
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h2>MorrowTab</h2>
+                    <ul>
+                        <li><a href="./#install">Availability</a></li>
+                        <li><a href="manual.html">User manual</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Support</h2>
+                    <ul>
+                        <li><a href="manual.html#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="manual.html#shortcuts">Keyboard shortcuts</a></li>
+                        <li><a href="contact.html">Contact FixQuotes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Legal</h2>
+                    <ul>
+                        <li><a href="privacy.html">Privacy policy</a></li>
+                        <li><a href="https://www.pexels.com/" target="_blank" rel="noopener">Photos by Pexels<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                        <li><a href="https://fixquotes.com/" target="_blank" rel="noopener">Quotes by FixQuotes<span class="visually-hidden"> (opens in a new tab)</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Requirements</h2>
+                    <ul>
+                        <li>Google Chrome 114+</li>
+                        <li>Microsoft Edge 114+</li>
+                        <li>Version 1.0.0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FixQuotes. MorrowTab is a browser extension by FixQuotes.</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>

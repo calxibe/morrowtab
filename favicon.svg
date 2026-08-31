@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">MorrowTab app icon</title>
+  <desc id="desc">A warm rising sun behind three overlapping cards on a midnight rounded square.</desc>
+  <defs>
+    <linearGradient id="plate" x1="118" y1="82" x2="905" y2="950" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1b285f"/><stop offset="0.52" stop-color="#151e4c"/><stop offset="1" stop-color="#0d1437"/>
+    </linearGradient>
+    <radialGradient id="plateGlow" cx="0" cy="0" r="1" gradientTransform="translate(498 356) rotate(90) scale(612)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2b3a83" stop-opacity="0.25"/><stop offset="0.72" stop-color="#172151" stop-opacity="0.08"/><stop offset="1" stop-color="#0d1437" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sun" x1="416" y1="282" x2="604" y2="538" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffdd70"/><stop offset="1" stop-color="#ffc247"/>
+    </linearGradient>
+    <linearGradient id="whiteCard" x1="178" y1="376" x2="650" y2="738" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/><stop offset="1" stop-color="#f3f5fb"/>
+    </linearGradient>
+    <linearGradient id="tealCard" x1="252" y1="418" x2="763" y2="804" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20d6c9"/><stop offset="1" stop-color="#0fb6b0"/>
+    </linearGradient>
+    <linearGradient id="indigoCard" x1="368" y1="432" x2="865" y2="804" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#716aff"/><stop offset="1" stop-color="#5664ef"/>
+    </linearGradient>
+    <filter id="plateShadow" x="-10%" y="-10%" width="120%" height="125%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#070c24" flood-opacity="0.24"/>
+    </filter>
+    <filter id="cardShadow" x="-18%" y="-18%" width="140%" height="150%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="13" stdDeviation="13" flood-color="#070c24" flood-opacity="0.25"/>
+    </filter>
+    <clipPath id="plateClip"><rect x="40" y="40" width="944" height="944" rx="215"/></clipPath>
+  </defs>
+  <g filter="url(#plateShadow)"><rect x="40" y="40" width="944" height="944" rx="215" fill="url(#plate)"/></g>
+  <g clip-path="url(#plateClip)"><rect x="40" y="40" width="944" height="944" fill="url(#plateGlow)"/></g>
+  <g fill="none" stroke="url(#sun)" stroke-width="46" stroke-linecap="round">
+    <path d="M512 142v78"/><path d="m350 220-55-55"/><path d="m674 220 55-55"/>
+  </g>
+  <circle cx="512" cy="425" r="157" fill="url(#sun)"/>
+  <g filter="url(#cardShadow)">
+    <path d="M224 384 650 487c42 10 69 49 63 92l-27 179c-6 42-46 68-87 58l-397-96c-41-10-67-48-61-89l27-179c6-42 15-78 56-68Z" fill="url(#whiteCard)"/>
+    <path d="M270 474 474 404c22-8 46-8 68-1l251 78c38 12 61 48 55 88l-27 125c-6 41-32 71-72 80l-421 94c-50 11-94-26-94-77V550c0-35 14-64 36-76Z" fill="url(#tealCard)"/>
+    <path d="M401 487 817 371c43-12 85 20 85 64v252c0 41-27 75-67 86L420 889c-43 12-85-20-85-64V573c0-41 27-75 66-86Z" fill="url(#indigoCard)"/>
+  </g>
+  <rect x="40.75" y="40.75" width="942.5" height="942.5" rx="214.25" fill="none" stroke="#7380ff" stroke-opacity="0.24" stroke-width="1.5"/>
+</svg>
