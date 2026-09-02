@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab User Manual - Boards, Search, Sync and Settings</title>
     <meta name="description"
-        content="The complete MorrowTab 1.0.0 user manual: boards and columns, search engines, Quick Save, backgrounds and themes, the daily quote, backup and import, sync limits, keyboard shortcuts and troubleshooting.">
+        content="The complete MorrowTab user manual: boards and columns, search engines, Quick Save, backgrounds and themes, the daily quote, backup and import, sync limits, keyboard shortcuts and troubleshooting.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MorrowTab User Manual">
     <meta name="twitter:description"
-        content="The complete guide to MorrowTab 1.0.0 — boards, search, Quick Save, appearance, backup, limits and shortcuts.">
+        content="The complete guide to MorrowTab — boards, search, Quick Save, appearance, backup, limits and shortcuts.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -41,7 +41,7 @@
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260831-1">
+    <link rel="stylesheet" href="style.css?v=20260902-2">
     <script src="index.js" defer></script>
     <script src="manual.js" defer></script>
 
@@ -50,14 +50,13 @@
         "@context": "https://schema.org",
         "@type": "TechArticle",
         "headline": "MorrowTab User Manual",
-        "description": "The complete MorrowTab 1.0.0 user manual: boards and columns, search engines, saved search suggestions, Quick Save, rearranging, appearance, the daily quote, backgrounds, backup and import, storage limits, syncing, recovery, keyboard shortcuts, accessibility and troubleshooting.",
+        "description": "The complete MorrowTab user manual: boards and columns, search engines, saved search suggestions, Quick Save, rearranging, appearance, the daily quote, backgrounds, backup and import, storage limits, syncing, recovery, keyboard shortcuts, accessibility and troubleshooting.",
         "inLanguage": "en",
         "about": {
             "@type": "SoftwareApplication",
             "name": "MorrowTab",
             "applicationCategory": "BrowserApplication",
-            "operatingSystem": "Chrome, Microsoft Edge",
-            "softwareVersion": "1.0.0"
+            "operatingSystem": "Chrome, Microsoft Edge"
         },
         "publisher": {
             "@type": "Organization",
@@ -106,7 +105,7 @@
                     board a fresh install shows you, through boards, columns, links and search engines, to backups,
                     storage limits, keyboard shortcuts and what to do when something looks wrong.
                 </p>
-                <p class="updated">Covers MorrowTab 1.0.0 · Chrome and Edge 114 or newer</p>
+                <p class="updated">Chrome and Edge 114 or newer</p>
             </div>
         </section>
 
@@ -179,7 +178,7 @@
 
                     <h3>What it is not</h3>
                     <p>
-                        MorrowTab has no account and no MorrowTab server holding your data. Your boards travel through
+                        MorrowTab has no account or server holding your synced board graph. Your boards travel through
                         the extension sync your browser already runs for the profile you are signed into. There is no
                         bookmark import, no tags, no widgets, no to-do list and no AI features — a link carries
                         a title, an address, an optional one-line description, an optional <em>Opens in</em> override, and
@@ -194,8 +193,10 @@
                                 The daily quote is set to <strong>Text</strong> out of the box, and in that mode
                                 MorrowTab asks <code>fixquotes.com</code> for the quote of the day once per local day.
                                 Setting the quote to <strong>Off</strong> stops that request entirely. The curated
-                                nature background is separate and is off until you switch it on. Those are the only
-                                features that reach the network on their own.
+                                nature background is also enabled for a new sample setup and its read-only preview;
+                                it contacts the public FixQuotes API and Pexels image host while enabled. Turn it off
+                                in Settings to stop those requests. Existing background choices are unchanged. These
+                                are the only features that reach the network on their own.
                             </p>
                         </div>
                     </div>
@@ -206,21 +207,22 @@
                     <div class="note-box">
                         <span class="icon" aria-hidden="true">📦</span>
                         <div>
-                            <h3>MorrowTab 1.0.0 is not published yet</h3>
+                            <h3>MorrowTab is available for Microsoft Edge</h3>
                             <p>
-                                MorrowTab is on its way to the <strong>Chrome Web Store</strong> and
-                                <strong>Microsoft Edge Add-ons</strong>. It is not listed on either store today, so
-                                there is nothing to install yet. This page will carry direct links to both listings the
-                                day they go live.
+                                Install MorrowTab from
+                                <a href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
+                                    target="_blank" rel="noopener">Microsoft Edge Add-ons<span
+                                        class="visually-hidden"> (opens in a new tab)</span></a>. The Chrome Web Store
+                                listing is coming soon.
                             </p>
                         </div>
                     </div>
 
-                    <h3>What installing will involve</h3>
+                    <h3>What installing involves</h3>
                     <p>
-                        Once the listings are live, installing MorrowTab is an ordinary one-click store install — the
-                        same <em>Add to Chrome</em> or <em>Get</em> button as any other extension. Nothing needs to be
-                        downloaded by hand, unpacked, or configured first. After the install completes:
+                        Installing MorrowTab from Microsoft Edge Add-ons is an ordinary one-click store install. The
+                        Chrome Web Store will work the same way once its listing is live. Nothing needs to be downloaded
+                        by hand, unpacked, or configured first. After the install completes:
                     </p>
                     <ol>
                         <li>
@@ -235,10 +237,10 @@
                             an update or a browser restart, and it cannot be reopened from inside the extension.
                         </li>
                         <li>
-                            <strong>The starter board appears.</strong> Your first new tab shows a ready-made
-                            <em>Popular websites</em> board. It is rendered from a file inside the extension and
-                            <strong>nothing is written to sync until your first edit</strong> — see
-                            <a href="#first-board">Your first board</a>.
+                            <strong>Choose how to begin.</strong> Select <strong>Start with sample board</strong> if this
+                            is your first MorrowTab setup. If you already use MorrowTab elsewhere, select
+                            <strong>Use my synced boards</strong> so the sample is not published while Browser Sync
+                            loads your existing data — see <a href="#first-board">Your first board</a>.
                         </li>
                     </ol>
 
@@ -252,16 +254,15 @@
                             <source type="image/webp"
                                 srcset="img/screenshots/welcome-768.webp 768w, img/screenshots/welcome-1280.webp 1280w, img/screenshots/welcome-1920.webp 1920w"
                                 sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
-                            <img src="img/screenshots/welcome.png" width="1920" height="2924"
+                            <img src="img/screenshots/welcome.png" width="1920" height="3135"
                                 alt="The MorrowTab welcome page, headed Everything you reach for, thoughtfully arranged, with four cards covering Quick Save, boards and search, rearranging and quote modes, and a privacy panel beneath them"
                                 loading="lazy" decoding="async">
                         </picture>
                             <span class="screenshot-hint">Open full size</span>
                         </button>
                         <figcaption>
-                            The one-time welcome page. It covers the essentials in about thirty seconds and then gets
-                            out of the way; the note under the buttons reads "Your starter board stays virtual until you
-                            make your first change."
+                            The one-time welcome page. Its two clear routes start a genuinely new setup with the sample
+                            board or open MorrowTab without publishing sample data while existing boards arrive.
                         </figcaption>
                     </figure>
 
@@ -288,52 +289,85 @@
                 <section class="manual-topic" id="first-board">
                     <h2>Your first board</h2>
                     <p>
-                        A fresh install opens on a board called <strong>Popular websites</strong>. It holds exactly 50
+                        Starting a new sample setup opens a board called <strong>Popular websites</strong>. It holds exactly 50
                         links in five columns of ten: <em>News</em>, <em>Streaming</em>, <em>Social media</em>,
                         <em>Everyday tools</em> and <em>Shopping</em>. No search engines are configured on it —
                         <em>Browser default</em> covers search without putting any provider into your synced data.
                     </p>
 
                     <figure class="manual-figure">
-                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/newtab-light.png">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/newtab-auto-nature.png">
                             <picture>
                             <source type="image/avif"
-                                srcset="img/screenshots/newtab-light-768.avif 768w, img/screenshots/newtab-light-1280.avif 1280w, img/screenshots/newtab-light-1920.avif 1920w"
+                                srcset="img/screenshots/newtab-auto-nature-768.avif 768w, img/screenshots/newtab-auto-nature-1280.avif 1280w, img/screenshots/newtab-auto-nature-1920.avif 1920w"
                                 sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
                             <source type="image/webp"
-                                srcset="img/screenshots/newtab-light-768.webp 768w, img/screenshots/newtab-light-1280.webp 1280w, img/screenshots/newtab-light-1920.webp 1920w"
+                                srcset="img/screenshots/newtab-auto-nature-768.webp 768w, img/screenshots/newtab-auto-nature-1280.webp 1280w, img/screenshots/newtab-auto-nature-1920.webp 1920w"
                                 sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
-                            <img src="img/screenshots/newtab-light.png" width="1920" height="1200"
-                                alt="The MorrowTab new tab page showing the Popular websites board: a board picker at the top left, a centered search box set to Browser default, and five columns of links titled News, Streaming, Social media, Everyday tools and Shopping"
+                            <img src="img/screenshots/newtab-auto-nature.png" width="1920" height="1200"
+                                alt="The default MorrowTab setup with Auto and Daily Pexels nature enabled, showing the Popular websites board, browser-default search and five columns of links over a coastal night photograph"
                                 loading="lazy" decoding="async">
                         </picture>
                             <span class="screenshot-hint">Open full size</span>
                         </button>
                         <figcaption>
-                            The starter board on a fresh install. The board picker sits at the top left, the search form
-                            in the middle, and the layout lock and Settings buttons at the right.
+                            The starter board with the default Auto color theme and Daily Pexels nature enabled.
+                            The board picker sits at the top left, the search form in the middle, and the layout lock
+                            and Settings buttons at the right. The nature photo changes daily.
                         </figcaption>
                     </figure>
 
-                    <h3>The starter board is virtual until you change something</h3>
+                    <h3>Choose a new setup or your existing synced boards</h3>
                     <p>
-                        While your synced storage is empty, that board is read from a file bundled inside the
-                        extension. Opening or reloading a new tab does not write it anywhere. The first time you
-                        actually change something — rename a column, delete a link, add a board — MorrowTab takes a
-                        lock, checks once more that nothing has arrived through sync in the meantime, and then writes
-                        the whole starter board <em>plus</em> your change in a single save. That is the same protected write
-                        every later change uses &mdash; see <a href="#sync">How syncing works</a>.
+                        An empty result from Browser Sync is ambiguous. This may be your first MorrowTab installation,
+                        or a new or long-offline computer may still be waiting for your existing records. MorrowTab
+                        therefore reads <em>Popular websites</em> from its bundled file and shows it as a read-only
+                        preview. Edits, passive usage counts and Quick Save cannot publish the sample board; Settings,
+                        Export and editing menus are unavailable until your boards arrive or you complete setup.
                     </p>
                     <p>
-                        One thing to expect from that first save: the starter board stops being a template and
-                        becomes ordinary data of yours, so its 5 columns and 50 links start counting towards your
-                        totals. Anything you do not want is yours to delete.
+                        The one-time welcome page asks first. <strong>Start with sample board</strong> initializes a
+                        genuinely new setup before the new-tab page is shown, so a new user arrives at a normal editable
+                        board instead of a permanent warning. <strong>Use my synced boards</strong> opens MorrowTab
+                        without publishing sample data. If the new-tab page still has only the empty-Sync preview,
+                        a required <strong>Choose how to begin</strong> chooser explains why some controls are
+                        unavailable. <strong>New to MorrowTab</strong> appears first, followed by the choices for
+                        existing users. Existing boards and a successfully started sample setup skip the chooser.
+                    </p>
+                    <ul>
+                        <li><strong>Use sample board</strong> asks for confirmation before starting a genuinely new
+                            setup. It is the first and only highlighted primary action. If you already use MorrowTab on
+                            another computer, wait for Sync instead.</li>
+                        <li><strong>Check Sync</strong> checks again for your boards. If nothing has arrived or the
+                            check fails, the chooser stays open and explains the result. It never starts a sample setup.</li>
+                        <li><strong>Import backup…</strong> opens the existing import flow for an optional backup.
+                            This and Check Sync use the same neutral button style as Settings utilities.</li>
+                    </ul>
+                    <p>
+                        You must complete setup or wait for your synced boards before using the page. The chooser
+                        has no close X, and neither <kbd>Escape</kbd> nor a click outside it dismisses it. Keyboard
+                        focus starts on <strong>Use sample board</strong> and stays inside the chooser, rather than
+                        focusing the heading or search input. No sample data is saved merely because it is shown.
                     </p>
                     <p>
-                        Two consequences worth knowing. First, if data does arrive through sync while the starter is on
-                        screen, your pending change is stopped and the page refreshes to show the real data rather than
-                        overwriting it. Second, the starter is never merged into storage that already has content, so a
-                        future update to the bundled starter can never bring back a link or column you deleted.
+                        Import and sample setup temporarily close the chooser before the file picker or confirmation
+                        appears. Cancelling the picker or a setup/import confirmation returns to the chooser while no
+                        setup exists. Unreadable files, malformed JSON or a single-column export return immediately
+                        with an explanation. If readable backup JSON fails validation after you press
+                        <strong>Replace</strong>, the confirmation stays open for retry; <strong>Cancel</strong>
+                        returns to the chooser. It closes when setup or import succeeds, real Sync data arrives, or the
+                        separate recovery view takes over. Recovery still keeps its own editing safeguards.
+                    </p>
+                    <p>
+                        Both new-user routes take the same Sync lock and check one last time immediately before writing.
+                        Any schema marker, actor checkpoint, legacy record or incomplete checkpoint cancels
+                        initialization and the page refreshes. Only a still-empty store receives an actor-owned schema-2
+                        checkpoint containing the exact starter; its 5 columns and 50 links then become ordinary synced
+                        data and count towards your totals. The browser provides no signal that cloud delivery is
+                        definitely complete, which is why this decision is explicit. Anything already visible in Sync
+                        blocks the starter. Data can still arrive immediately after that local check; schema 2 keeps
+                        those records rather than replacing their device checkpoint, but sample items and default
+                        settings may merge. This is why neither an install event nor a timer starts setup automatically.
                     </p>
 
                     <h3>Making it yours</h3>
@@ -573,20 +607,65 @@
                             link falls back to the address's hostname.
                         </li>
                         <li>
-                            <strong>Description</strong> <em>(optional · 200 characters)</em> — placeholder "A short
-                            note shown beside the link name". It appears as a second line on the card.
+                            <strong>Description</strong> <em>(optional · 200 characters)</em> — a single-line text
+                            field with the placeholder "A short note shown beside the link name". It appears as a
+                            second line on the card.
                         </li>
                         <li>
                             <strong>Column</strong> — with more than one board, this select groups every board's
                             columns with the current board first, so a link can be moved to another board from the
-                            editor. Its click count and its <em>Opens in</em> choice travel with it.
+                            editor. Its click count, <em>Opens in</em> choice and inactivity timeout travel with it.
                         </li>
                         <li>
                             <strong>Opens in</strong> — <em>Follow the shared setting</em>, <em>New tab</em>, or
                             <em>Current tab</em>. This is the per-link override of the Settings toggle
                             <strong>Open saved links in a new tab</strong>.
                         </li>
+                        <li>
+                            <strong>Auto-close</strong> — choose <em>Off (default)</em>, <em>After 5 minutes
+                                inactive</em>, <em>After 10 minutes inactive</em>, <em>After 15 minutes inactive</em>,
+                            <em>After 30 minutes inactive</em>, <em>After 60 minutes inactive</em>, or <em>After 120
+                                minutes inactive</em>. The explanation beneath this field remains hidden while
+                            <em>Off (default)</em> is selected and appears after you choose a timeout. Choosing a
+                            timeout also chooses <em>New tab</em>; changing <strong>Opens in</strong> away from
+                            <em>New tab</em> switches the timeout back off.
+                        </li>
                     </ul>
+                    <p>
+                        This option applies only to tabs MorrowTab itself opens from that saved link, including
+                        <strong>Open all links</strong>. A tab opened in the background starts its countdown at once;
+                        one opened in front starts when you leave it. Returning resets the timer, so the next time you
+                        leave it receives the full interval again. Navigating within the original hostname keeps the
+                        protection available, while navigating to another hostname disables automatic closing for
+                        that tab permanently. MorrowTab also refuses to close a tab that is active, pinned, playing
+                        audio, still loading, or no longer on the original hostname. Tabs opened from the browser's
+                        context menu, or with <kbd>Shift</kbd> or <kbd>Alt</kbd>, remain ordinary untracked tabs.
+                    </p>
+                    <div class="note-box">
+                        <span class="icon" aria-hidden="true">🔐</span>
+                        <div>
+                            <h3>Allow auto-close on each computer</h3>
+                            <p>
+                                The first time you save an inactivity timeout, or open a synced timed link on a
+                                computer without access, Chrome or Edge asks for the optional web-navigation
+                                permission. No prompt is needed if access is already granted.
+                                Chromium labels this permission "Read your browsing
+                                history". MorrowTab uses its navigation events only for tab IDs that MorrowTab opened,
+                                only to compare the current hostname with that link's original hostname. It does not
+                                store a browsing history or read page contents. Declining in the editor leaves the link unchanged.
+                                Permission grants belong to that browser installation and do not sync with the link.
+                            </p>
+                            <p>
+                                If you decline while opening, the link still opens once as a normal tab without
+                                automatic closing. MorrowTab remembers that it has asked on this computer, including
+                                after new tabs and reloads, and does not automatically prompt again. A quiet notice
+                                offers <strong>Enable auto-close</strong> if you want to try again. Granting it applies
+                                to future timed openings, not a tab already opened normally. You can also explicitly
+                                retry by saving an enabled timeout in the link editor. <strong>Open all links</strong>
+                                shares one permission request for the timed links in that action.
+                            </p>
+                        </div>
+                    </div>
                     <p>
                         Deleting a link is only available inside the <em>Edit link</em> dialog. It confirms with "This
                         link will be removed from the current board." and leaves a six-second <strong>Undo</strong>.
@@ -637,17 +716,38 @@
 
                     <h3>Link icons</h3>
                     <p>
-                        Each link shows a badge. MorrowTab tries a brand icon bundled inside the extension first, then
-                        the browser's own local favicon store, then a two-letter badge built from the title. It
-                        downloads no icons and calls no icon service. If the browser's favicon access is unavailable at
-                        startup you may see a warning suggesting a reload or reinstall from
-                        <code>chrome://extensions</code>; links keep working, with bundled icons and initials.
+                        Each link shows a badge. A working brand icon bundled inside the extension comes first and
+                        needs no download. For other links, MorrowTab uses a previously downloaded icon when available,
+                        or the browser's native icon or initials while a missing icon is retrieved. This lets another
+                        computer acquire icons even if you have never opened those sites there; a generic browser
+                        globe does not prevent a download attempt.
+                    </p>
+                    <p>
+                        <strong>Download website icons</strong> in Settings is on by default and applies only to this
+                        computer. Eligible lookups send just the exact hostname, including its subdomain or
+                        <code>www</code>, to the FixQuotes API. They do not send the link's path, query, title or
+                        credentials. FixQuotes fetches public website artwork directly, without a third-party favicon
+                        service, and returns a verified small PNG. The icon cache holds up to 128 entries within
+                        256 KiB; successful icons are fresh for seven days and usable stale for at most 30 days, while
+                        explicit no-icon or blocked results wait 24 hours before retrying. Transport failures start
+                        with a five-minute retry delay that increases to at most 24 hours, with a shared cooldown.
+                        Neither the cache nor the setting syncs or
+                        appears in a backup.
+                    </p>
+                    <p>
+                        Switching downloads off stops new requests but keeps the reusable cache. Obvious internal or
+                        reserved names and private IP literals are excluded; a public-looking intranet hostname cannot
+                        always be recognized. Turn the setting off before showing sensitive internal links if you do
+                        not want their hostnames disclosed to FixQuotes. Some private, login-only or unavailable sites
+                        may still show a native globe or initials. Links remain usable if the icon service is unavailable.
                     </p>
                 </section>
                 <section class="manual-topic" id="search">
                     <h2>Searching from the new tab</h2>
                     <p>
-                        The search field takes focus the moment a new tab opens, so you can start typing straight away.
+                        The search field takes focus when a new tab opens, so you can start typing straight away,
+                        unless the required first-run chooser is open. Complete setup or wait for your synced boards
+                        before searching.
                         Press <kbd>Enter</kbd> or the <strong>Search</strong> button to submit.
                     </p>
 
@@ -861,10 +961,10 @@
                         suggestions but stops saving new ones." It is on unless you turn it off.
                     </p>
                     <p>
-                        The <strong>Clear saved suggestions</strong> button beneath it asks "Clear saved search
-                        suggestions?" and warns that this "permanently removes all saved search suggestions from this
-                        computer. It does not change whether future searches are saved." The button is disabled when
-                        there is nothing stored.
+                        While saving is on, the <strong>Clear saved suggestions</strong> button beneath it asks "Clear
+                        saved search suggestions?" and warns that this "permanently removes all saved search
+                        suggestions from this computer. It does not change whether future searches are saved." The
+                        button is hidden when saving is off and disabled when there is nothing stored.
                     </p>
 
                     <div class="note-box">
@@ -889,13 +989,13 @@
                     </p>
 
                     <figure class="manual-figure">
-                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/quick-save-popup.png"
+                        <button class="screenshot-card screenshot-card--popup" type="button" data-fullsrc="img/screenshots/quick-save-popup.png"
                             aria-label="Open full size: the Quick Save popup">
                             <picture>
                             <source type="image/avif" srcset="img/screenshots/quick-save-popup-640.avif 640w"
-                                sizes="(min-width: 720px) 320px, calc(100vw - 48px)">
+                                sizes="min(320px, 40svh, calc(100vw - 48px))">
                             <source type="image/webp" srcset="img/screenshots/quick-save-popup-640.webp 640w"
-                                sizes="(min-width: 720px) 320px, calc(100vw - 48px)">
+                                sizes="min(320px, 40svh, calc(100vw - 48px))">
                             <img src="img/screenshots/quick-save-popup.png" width="640" height="1120"
                                 alt="The MorrowTab toolbar popup titled Save to MorrowTab, previewing the current tab's title and address above Board, Column and Title fields, a Save current tab button and an Open MorrowTab button"
                                 loading="lazy" decoding="async">
@@ -1068,10 +1168,11 @@
 
                     <h3>Resetting</h3>
                     <p>
-                        <strong>Reset usage</strong> asks "Reset link usage?" and explains that "This clears the stored
-                        click counts for every link on every board." The action button reads <strong>Reset</strong> and
-                        success shows "Link usage reset". If there is nothing to clear you get "No link usage is stored
-                        yet."; if another computer already cleared it, "No link usage is stored anymore."
+                        While usage ordering is on, <strong>Reset usage</strong> asks "Reset link usage?" and explains
+                        that "This clears the stored click counts for every link on every board." The action is hidden
+                        when usage ordering is off. Its confirmation button reads <strong>Reset</strong> and success
+                        shows "Link usage reset". If there is nothing to clear you get "No link usage is stored yet.";
+                        if another computer already cleared it, "No link usage is stored anymore."
                     </p>
 
                     <div class="note-box">
@@ -1114,7 +1215,8 @@
                         </button>
                         <figcaption>
                             Settings, with the nine background swatches at the top left and the "Layout and links"
-                            controls on the right.
+                            controls on the right. This example has Daily Pexels nature switched off; new sample setups
+                            start with it checked.
                         </figcaption>
                     </figure>
 
@@ -1127,7 +1229,8 @@
                         <strong>Violet</strong>.
                     </p>
                     <p>
-                        <strong>Auto</strong> is the default and the only flat one: a plain white page when your system
+                        <strong>Auto</strong> is the default color theme and the only flat one: when no background photo
+                        is shown, it gives a plain white page when your system
                         is in light mode, and a dark gray surface when it is in dark mode, switching live as the system
                         does. The other eight are gradients. There is no separate light/dark switch — <em>Dark</em> is
                         simply one of the nine choices, and everything else follows the operating system.
@@ -1252,7 +1355,7 @@
                 <section class="manual-topic" id="backgrounds">
                     <h2>Nature photos and your own image</h2>
                     <p>
-                        Two optional background images sit below <em>Background color</em> in Settings. Their shared
+                        Two background-image choices sit below <em>Background color</em> in Settings. Their shared
                         help line reads: "Daily nature downloads one curated, high-resolution Pexels photo through
                         FixQuotes and caches it only on this computer. An uploaded image takes priority; the theme still
                         colors buttons and accents."
@@ -1260,9 +1363,11 @@
 
                     <h3>Daily Pexels nature</h3>
                     <p>
-                        The checkbox <strong>Daily Pexels nature</strong> is off until you tick it — this one really is
-                        opt-in, and a fresh install makes no request for it at all. When it is on, MorrowTab asks the
-                        FixQuotes public API once a day for one manually curated photograph, downloads it from Pexels'
+                        The checkbox <strong>Daily Pexels nature</strong> starts checked for a new sample setup.
+                        The read-only sample preview also enables it, so both may contact the public FixQuotes API
+                        and Pexels image host. Existing synced or imported background choices are unchanged: an
+                        absent preference or a theme-only choice stays off. When enabled, MorrowTab asks the
+                        FixQuotes public API for one manually curated daily photograph, downloads it from Pexels'
                         own image host, verifies it, and caches a compact copy on that computer. The status line then
                         reads "Today's curated Pexels nature photo is cached on this computer."
                     </p>
@@ -1309,15 +1414,20 @@
                     <p>
                         The <strong>Backup</strong> section of Settings introduces itself as "Save synced MorrowTab data
                         to a plaintext file on this computer, or restore a saved backup." It holds three buttons and one
-                        live readout.
+                        live readout. Schema 2 handles ordinary online and long-offline computers automatically, so
+                        users do not need to make or import backups as part of normal syncing. A backup remains useful
+                        for optional disaster recovery or a deliberate point-in-time copy.
                     </p>
 
                     <h3>Export backup</h3>
                     <p>
                         <strong>Export backup</strong> writes <code>morrowtab-backup-YYYY-MM-DD.json</code> to your
                         downloads and confirms with "Backup exported". The file contains four fields — the application
-                        name, a schema version, the time it was exported, and your synced records: settings and board
-                        order, boards, columns, links (with their click counts) and search engines.
+                        name, a schema version, the time it was exported, and the recovered logical data MorrowTab is
+                        showing: settings and board
+                        order, boards, columns, links (with their click counts and any configured inactivity timeout)
+                        and search engines. It does not contain actor IDs, causal clocks, competing register values,
+                        checkpoint envelopes, compressed bytes or chunks.
                     </p>
                     <p>
                         It is a plain, readable JSON file. It is not encrypted and not password-protected, so store it
@@ -1335,6 +1445,10 @@
                         <li>Which board is currently selected</li>
                         <li>The remembered Quick Save destination</li>
                         <li>Both local safety copies described below</li>
+                        <li>This computer's random schema-2 actor identity</li>
+                        <li>The managed-tab safety marker and auto-close permission-prompt marker</li>
+                        <li>Downloaded website icons, their hostname metadata, and the icon-download preference</li>
+                        <li>Currently managed tab IDs, hostnames and live auto-close countdowns</li>
                     </ul>
 
                     <h3>Import backup…</h3>
@@ -1345,10 +1459,13 @@
                         be undone. The confirm button reads <strong>Replace</strong>; success shows "Backup imported".
                     </p>
                     <p>
-                        The file is validated first: it must carry the settings record, must not claim a newer schema
-                        than this version understands, and must not contain the old active-board field that 1.0.0 no
-                        longer accepts. The whole graph is sanitized and checked against every storage limit before
-                        anything is written, and a partly-failed write is rolled back.
+                        The file is validated first: it must carry a complete logical graph and must not claim a newer
+                        schema than the current release understands. A strictly valid schema-1 MorrowTab backup is
+                        sanitized, upgraded to schema 2 and published as a fresh local-actor checkpoint; invalid or
+                        incomplete legacy files change nothing. Every storage limit is checked before anything is
+                        written. If the browser reports that publication itself failed, MorrowTab stays fail-closed;
+                        later cleanup never touches another actor's data and never undoes a checkpoint that already
+                        verified as committed.
                     </p>
 
                     <h3>Restore pre-import copy…</h3>
@@ -1389,7 +1506,7 @@
 
                     <div class="table-wrap">
                         <table>
-                            <caption>Every limit MorrowTab 1.0.0 enforces before it writes.</caption>
+                            <caption>Every limit MorrowTab enforces before it writes.</caption>
                             <thead>
                                 <tr>
                                     <th scope="col">Item</th>
@@ -1414,11 +1531,11 @@
                                     <td>80 in total, 20 per board</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Synced records</th>
+                                    <th scope="row">Sync transport items</th>
                                     <td>500</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Bytes per synced record</th>
+                                    <th scope="row">Bytes per transport item</th>
                                     <td>8,000</td>
                                 </tr>
                                 <tr>
@@ -1473,35 +1590,73 @@
                     <p>
                         MorrowTab has no account, no login and no server of its own. Your boards are written to the
                         extension sync storage that Chrome or Edge already runs for the profile you are signed into, and
-                        that is what carries them to another computer. MorrowTab never receives a copy.
+                        that is what carries them to another computer. FixQuotes receives no copy of the synced graph.
+                        Its separate website-icon lookup receives only an eligible link's hostname when downloads are enabled.
+                    </p>
+                    <p>
+                        Schema 2 gives each browser profile a random actor identity and its own compact CRDT checkpoint.
+                        A computer updates only its checkpoint, never another computer's. The checkpoint is canonical
+                        data plus causal counters, gzip-compressed, base64-encoded and split into bounded items when
+                        needed. Declared sizes and a SHA-256 digest are checked before MorrowTab uses it. Compression
+                        saves Sync space; it does not encrypt the contents.
                     </p>
 
                     <h3>What syncs</h3>
                     <ul>
                         <li>Board names and their order</li>
                         <li>Column headings, their order, and any accent color</li>
-                        <li>Link titles, addresses, optional descriptions, per-link <em>Opens in</em> overrides, and
-                            click counts</li>
+                        <li>Link titles, addresses, optional descriptions, per-link <em>Opens in</em> overrides,
+                            configured inactivity timeouts, and click counts</li>
                         <li>Search engine names, templates, scope and per-board ordering</li>
                         <li>The shared settings: background, spacing, layout, quote mode, background mode, usage
                             ordering and both "open in a new tab" toggles</li>
+                        <li>Pseudonymous actor IDs, logical counters and causal context needed to merge those changes</li>
                     </ul>
 
                     <h3>What stays on one computer</h3>
                     <p>
-                        Nine things are deliberately local and are never written to sync or included in a backup: the
-                        selected board, the remembered Quick Save destination, saved search suggestions and their
-                        on/off preference, an uploaded background image, the cached nature photo, the cached daily
-                        quote, and the two safety copies (a rolling last-good copy and a pre-replacement copy).
+                        Thirteen preferences, caches and safety values stay only on one computer and out of backups: the
+                        selected board, remembered Quick Save destination, saved search suggestions and their on/off
+                        preference, an uploaded background image, cached nature photo, cached daily quote, two safety
+                        copies, the favicon cache and its download preference, the managed-tab fail-closed marker,
+                        and a Boolean remembering whether auto-close
+                        permission has been offered. That last value avoids repeated automatic prompts after a refusal;
+                        it contains no tab or browsing history. The separate random actor identity is stored
+                        locally too and excluded from backups, but appears as pseudonymous metadata in the checkpoint
+                        this profile publishes.
+                    </p>
+                    <p>
+                        Live auto-close state is more temporary still. Managed tab IDs, original hostnames and current
+                        countdowns live only in extension session storage. They are not synced, exported, or restored
+                        after the browser session ends, the extension reloads, or an update is installed.
+                    </p>
+
+                    <h3>Upgrading existing data</h3>
+                    <p>
+                        The current release automatically upgrades a strictly valid schema-1 Sync graph. MorrowTab
+                        validates the complete graph, preserves accepted boards, settings, columns, links and search
+                        engines, changes the logical schema marker to 2, and seeds the first actor checkpoint. Invalid
+                        or incomplete legacy data stays read-only and unchanged. A newer-schema marker makes older
+                        MorrowTab releases refuse writes, but update every computer before editing.
                     </p>
 
                     <h3>How a save is made</h3>
                     <p>
-                        Every write takes an exclusive lock across all MorrowTab pages in that browser profile and then
-                        compares a fingerprint of the exact data it was based on. If anything changed in the meantime
-                        the save is refused rather than applied blindly, and you are told to review the refreshed board.
-                        If a write succeeds but a related cleanup fails, the change is rolled back — and the rollback
-                        will never overwrite a value that changed remotely while it ran.
+                        If Sync returns no complete checkpoint, MorrowTab does not treat that as permission to save. The starter
+                        stays read-only until data arrives, you import an optional disaster-recovery backup, or you
+                        explicitly confirm a genuinely new setup. The final locked check refuses initialization when it
+                        sees any schema marker, actor checkpoint, legacy record, missing chunk set or partial payload.
+                    </p>
+                    <p>
+                        Every write takes an exclusive lock across all MorrowTab pages in that browser profile,
+                        materializes every valid actor checkpoint, and records the change with this actor's next logical
+                        counter plus the causal context it observed. The full logical graph and encoded checkpoint are
+                        validated before only this actor's payload is published. Its immutable chunks, schema marker
+                        and actor-owned pointer are submitted together in one multi-key Sync write, so one logical save
+                        consumes one Chrome write operation. Another computer may still receive those keys in stages;
+                        it uses the prior complete checkpoint or stays read-only until the new checkpoint verifies.
+                        Obsolete chunks owned by this actor are removed after editing has been idle for ten seconds;
+                        failed cleanup backs off and never touches another computer's checkpoint.
                     </p>
                     <p>
                         If the browser cannot provide that locking, MorrowTab refuses to write at all rather than risk
@@ -1512,12 +1667,24 @@
 
                     <h3>Two computers at once</h3>
                     <p>
-                        The lock covers the pages on one browser profile, not two separate computers. Simultaneous
-                        edits on two machines still resolve as last-write-wins once sync catches up, and in rare cases a
-                        merge can leave the record set inconsistent — which is what <a href="#recovery">the recovery
-                        view</a> exists for. If an editor is open on something another device just changed, the editor
-                        closes itself with "An item being edited changed on another synced device. The editor was
-                        closed."
+                        The lock covers pages on one profile; causal merge handles separate computers. Edits to
+                        different records or fields both survive. A later value replaces one it had already observed.
+                        Concurrent values for the same field resolve deterministically on every device while remaining
+                        detectable. A live edit concurrent with a delete is kept; a delete made after seeing an edit
+                        wins, and an explicit later recreation wins again.
+                    </p>
+                    <p>
+                        Fields that must agree are normalized together after that choice. A link's selected column
+                        supplies its board, and an auto-close timeout is kept only while the merged link explicitly
+                        opens in a new tab. Two valid concurrent moves or open-mode edits therefore cannot combine into
+                        an impossible link.
+                    </p>
+                    <p>
+                        Child ownership decides membership, while board, column and link ID arrays are ordering hints.
+                        MorrowTab keeps a valid listed order and appends ownership-valid children omitted by a stale
+                        array, so an older laptop cannot hide a newer link merely by reconnecting. If an editor is open
+                        on something another device just changed, it can still close and ask you to review the merged
+                        result before editing again.
                     </p>
 
                     <div class="note-box">
@@ -1525,11 +1692,11 @@
                         <div>
                             <h3>Extension sync is not end-to-end encrypted</h3>
                             <p>
-                                Board names, column headings, link titles, saved addresses and search templates travel
-                                through your browser's sync service. Treat them as non-confidential: they are not the
-                                place for anything secret. Exported backups are plaintext for the same reason. Whether
-                                and how sync data is encrypted at rest is a matter for your browser's own sync
-                                settings, not something MorrowTab adds.
+                                Board names, column headings, link titles, saved addresses, search templates, random
+                                actor IDs and causal counters travel through your browser's sync service. Treat them as
+                                non-confidential: they are not the place for anything secret. Checkpoint compression and
+                                exported backups are not encryption. Whether and how Sync is encrypted at rest is a
+                                matter for your browser's settings, not something MorrowTab adds.
                             </p>
                         </div>
                     </div>
@@ -1537,9 +1704,25 @@
                 <section class="manual-topic" id="recovery">
                     <h2>When sync goes wrong</h2>
                     <p>
-                        If changes from several computers merge into a set of records that no longer hangs together —
-                        a column pointing at a board that is gone, say — MorrowTab does not guess and does not silently
-                        rewrite. It opens a <strong>read-only recovery view</strong> instead of a broken page.
+                        Schema 2 normally merges online and long-offline computers automatically. If a checkpoint is
+                        incomplete or corrupt, a legacy graph is incomplete, or the merged logical data still fails
+                        strict validation, MorrowTab does not guess or publish a repair. It opens a
+                        <strong>read-only recovery view</strong> instead of a broken page.
+                    </p>
+                    <p>
+                        If no actor checkpoint can be decoded at all, recovery shows no invented board and disables
+                        snapshot download and automatic repair. <strong>Import backup…</strong> remains available, and
+                        <strong>Restore local copy…</strong> or <strong>Restore pre-import copy…</strong> appears when
+                        this computer has that validated safety copy. Those user-confirmed replacements are the only
+                        writes offered in that state. The same restore-only screen is used when a checkpoint decodes
+                        but contains no usable board.
+                    </p>
+                    <p>
+                        Recovery uses the same schema-2 materialization rules: a child's declared owner decides where
+                        it belongs, while parent arrays decide ordering only. Valid omitted items are appended to their
+                        owner instead of being treated as deleted. Concurrent record/field values follow the causal
+                        rules described above. Routine convergence does not require a backup; local copies and exported
+                        backups remain optional fallbacks if the available checkpoints themselves cannot be validated.
                     </p>
 
                     <h3>What you see</h3>
@@ -1562,8 +1745,10 @@
                     <ul>
                         <li>
                             <strong>Download snapshot</strong> — writes <code>morrowtab-snapshot-YYYY-MM-DD.json</code>
-                            containing the raw, unrepaired records. Do this first if you want a copy of the current
-                            state before anything changes.
+                            containing the recovered, validated logical boards/settings/columns/links/search engines
+                            shown by recovery. It uses an importable MorrowTab record wrapper, not opaque compressed
+                            checkpoint envelopes or chunks. Do this first if you want a portable copy before anything
+                            changes.
                         </li>
                         <li>
                             <strong>Restore local copy…</strong> — shown only when this computer holds a usable last-good
@@ -1576,18 +1761,19 @@
                         <li>
                             <strong>Repair…</strong> — asks "Repair synced data?" and explains that it keeps everything
                             shown on the boards, lists what would be dropped or corrected, and notes that "The repaired
-                            data will be written to Sync for every computer." Success shows "Synced data repaired".
+                            data will be published as a schema-2 checkpoint for every computer." Success shows "Synced
+                            data repaired".
                         </li>
                     </ul>
                     <p>
-                        Nothing is written until you confirm, and the repair is tied to the fingerprint of the exact
-                        state you were shown — so it cannot act on data that changed while the dialog sat open. There is
-                        no automatic self-healing.
+                        Nothing is written until you confirm, and the repair is tied to the exact state you were shown,
+                        so it cannot act on data that changed while the dialog sat open. Normal causal merging is
+                        automatic; this explicit confirmation applies only to a state that still cannot validate.
                     </p>
 
                     <h3>The safety copies</h3>
                     <p>
-                        MorrowTab keeps a rolling last-good copy of your records on each computer after every clean
+                        MorrowTab keeps a rolling last-good logical copy on each computer after every clean
                         load, and writes a separate pre-replacement copy the moment a full replace runs. Both are local
                         availability copies only — never part of your synced data and never in an exported backup.
                     </p>
@@ -1601,7 +1787,7 @@
 
                     <div class="table-wrap">
                         <table>
-                            <caption>MorrowTab 1.0.0 keyboard shortcuts.</caption>
+                            <caption>MorrowTab keyboard shortcuts.</caption>
                             <thead>
                                 <tr>
                                     <th scope="col">Keys</th>
@@ -1641,7 +1827,8 @@
                                 </tr>
                                 <tr>
                                     <th scope="row"><kbd>Esc</kbd></th>
-                                    <td>Close the suggestion list, a menu or a dialog without losing what you typed</td>
+                                    <td>Close the suggestion list, a menu or an ordinary dialog without losing what
+                                        you typed; the required setup chooser cannot be dismissed</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><kbd>Alt</kbd> + <kbd>←</kbd> /
@@ -1776,6 +1963,25 @@
                     </details>
 
                     <details>
+                        <summary>I see “Choose how to begin”</summary>
+                        <p>
+                            Browser Sync returned no MorrowTab records on this computer, but that does not
+                            prove the cloud profile is empty. The sample board is deliberately read-only while existing
+                            data may still be arriving. If you have used MorrowTab before, do not choose <strong>Use
+                            sample board</strong>: wait and use <strong>Check Sync</strong>. An optional known-good backup
+                            remains available for disaster recovery, not routine syncing. Starting a genuinely new setup
+                            performs one final check and is cancelled by any schema marker, actor checkpoint, legacy
+                            record or partial chunk set. The required chooser explains why Settings and editing are
+                            unavailable. It has no close X, and Escape or clicking outside cannot dismiss it. Checking
+                            still-empty Sync leaves it open with an explanation and never turns the preview into saved
+                            data. Cancelling the picker or confirmation returns to the chooser, as do unreadable files,
+                            malformed JSON and single-column exports. A validation error after <strong>Replace</strong>
+                            keeps the retry confirmation open; choose <strong>Cancel</strong> to return. See
+                            <a href="#first-board">Your first board</a>.
+                        </p>
+                    </details>
+
+                    <details>
                         <summary>A save failed and the page reloaded</summary>
                         <p>
                             When a write cannot be completed safely, MorrowTab reports the reason and refreshes rather
@@ -1832,9 +2038,11 @@
                             gives "This page's address is too long or invalid to save."
                         </p>
                         <p>
-                            The button is also disabled until your synced data has loaded. If the popup reports "Synced
-                            MorrowTab data needs the full app first.", open MorrowTab with the button underneath — only
-                            the full app performs repairs — then try again.
+                            The button is also disabled until your synced data has loaded. If the popup says "Sync data
+                            has not arrived here. Open MorrowTab to check again or start a new setup.", open the full app
+                            and follow its waiting banner; start a setup only if you have never used MorrowTab before. If
+                            it instead reports "Synced MorrowTab data needs the full app first.", open MorrowTab with the
+                            button underneath — only the full app performs repairs — then try again.
                         </p>
                     </details>
 
@@ -1861,13 +2069,17 @@
                     </details>
 
                     <details>
-                        <summary>Links show letters instead of site icons</summary>
+                        <summary>Links show letters or generic globes instead of site icons</summary>
                         <p>
-                            MorrowTab prefers a brand icon bundled inside the extension, then your browser's own local
-                            icon store, then a two-letter badge. A site with neither a bundled icon nor an icon your
-                            browser has already cached will show initials — that is the intended last step, not an
-                            error. If the warning "Favicons are unavailable" appears at startup, reload the page; if it
-                            persists, reinstall MorrowTab from <code>chrome://extensions</code>.
+                            Check that <strong>Download website icons</strong> is enabled in Settings on this computer.
+                            For a link without a working bundled brand, MorrowTab can retrieve its public-site icon
+                            through FixQuotes and cache it locally, even when the browser returns a generic globe.
+                            Explicit no-icon or blocked results wait 24 hours before another attempt; connection
+                            failures start with a shorter five-minute retry delay that increases after repeated
+                            failures. A private, login-only or
+                            unavailable site may remain a native icon or initials. This does not mean the link failed
+                            to sync; icons and the download setting are deliberately local. Disabling downloads stops
+                            new requests but does not remove cached artwork.
                         </p>
                     </details>
 
@@ -2007,7 +2219,6 @@
                     <ul>
                         <li>Google Chrome 114+</li>
                         <li>Microsoft Edge 114+</li>
-                        <li>Version 1.0.0</li>
                     </ul>
                 </div>
             </div>

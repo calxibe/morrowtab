@@ -1,5 +1,16 @@
 [
   {
+    "name": "newtab-auto-nature",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "newtab-auto-nature_thumb.webp"
+  },
+  {
     "name": "newtab-light",
     "width": 1920,
     "height": 1200,
@@ -163,7 +174,7 @@
   {
     "name": "welcome",
     "width": 1920,
-    "height": 2924,
+    "height": 3135,
     "widths": [
       1920,
       1280,

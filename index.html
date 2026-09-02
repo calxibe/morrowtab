@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab - Board-Based New Tab for Chrome and Edge</title>
     <meta name="description"
-        content="MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through your browser's own default provider, and a daily FixQuotes quote. Synced through your browser profile, with no account and no MorrowTab server.">
+        content="MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through your browser's own default provider, and a daily FixQuotes quote. Synced through your browser profile, with no MorrowTab account.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab - Board-Based New Tab for Chrome and Edge">
     <meta property="og:description"
-        content="MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through your browser's own default provider, and a daily FixQuotes quote. No account, no MorrowTab server.">
+        content="MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through your browser's own default provider, and a daily FixQuotes quote. No MorrowTab account needed.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -41,14 +41,8 @@
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260831-1">
+    <link rel="stylesheet" href="style.css?v=20260902-2">
     <script src="index.js" defer></script>
-
-
-
-
-
-
 
     <script type="application/ld+json">
     {
@@ -58,7 +52,6 @@
             "alternateName": "MorrowTab — Boards, Search & Daily Quotes",
             "applicationCategory": "BrowserApplication",
             "operatingSystem": "Chrome 114 or newer, Microsoft Edge 114 or newer",
-            "softwareVersion": "1.0.0",
             "url": "https://calxibe.github.io/morrowtab/",
             "image": "https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png",
             "description": "MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through the browser's own default provider, and a daily FixQuotes quote. It syncs through the browser profile and has no account and no server of its own.",
@@ -102,7 +95,7 @@
                             "name": "Do I need an account?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "No. There is no MorrowTab account, no login, and no MorrowTab server. Your boards are stored by your browser’s own extension sync, which follows the browser profile you are already signed into. If that profile is syncing extension data, your boards appear on your other computers with nothing else to set up; if it is not, they simply stay on the one computer."
+                                    "text": "No. There is no MorrowTab account or login. Your boards are stored by your browser’s own extension sync, which follows the browser profile you are already signed into. If that profile is syncing extension data, your boards appear on your other computers with nothing else to set up; if it is not, they simply stay on the one computer."
                             }
                     },
                     {
@@ -110,7 +103,7 @@
                             "name": "Does MorrowTab connect to the internet?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Only for features you can switch off, and only to addresses you can name in advance. The daily quote is set to Text out of the box and fetches fixquotes.com once per local day; setting it to Off stops that entirely. If you switch on the optional daily nature background, MorrowTab asks api.fixquotes.com which photo to show and fetches it from images.pexels.com. One more address is possible, and only if you ask for it: with Fetch page titles when adding links switched on, MorrowTab requests the one site whose address you just typed, after your browser asks your permission for it. Nothing else, and no analytics."
+                                    "text": "Only for features you can switch off, and only to addresses you can name in advance. The daily quote is set to Text out of the box and fetches fixquotes.com once per local day; setting it to Off stops that entirely. The daily nature background starts enabled for new sample setups and their read-only previews: MorrowTab asks api.fixquotes.com which photo to show and fetches it from images.pexels.com. Turn it off in Settings to stop those requests; existing background choices remain unchanged. Download website icons is also on by default: it sends only an eligible saved hostname to api.fixquotes.com so FixQuotes can fetch that public site's icon directly. Turn it off on a computer to stop new icon requests there; the reusable cache stays local. One more address is possible, and only if you ask for it: with Fetch page titles when adding links switched on, MorrowTab requests the one site whose address you just typed, after your browser asks your permission for it. Nothing else, and no analytics."
                             }
                     },
                     {
@@ -194,29 +187,20 @@
                     box that runs through your browser's own default provider, and a daily FixQuotes quote. Keep one
                     board for work and another for everything else, each with its own columns, links and extra search
                     engines. They travel through the browser profile you are already signed into, so there is no
-                    MorrowTab account to create and no MorrowTab server holding your data.
+                    MorrowTab account to create or server holding your synced board graph.
                 </p>
 
-                <div class="cta-buttons" id="install" role="group" aria-label="Get started">
-                    <a href="manual.html" class="btn btn-primary">Read the manual</a>
-                    <a href="#screenshots" class="btn btn-secondary">See it in action</a>
+                <div class="cta-buttons" id="install" role="group" aria-label="Install MorrowTab">
+                    <a href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
+                        class="btn btn-primary" target="_blank" rel="noopener">
+                        <img src="img/edge.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                        Add to Edge — Free<span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                    <span class="btn btn-secondary" role="link" aria-disabled="true">
+                        <img src="img/chrome.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                        Chrome — Coming soon
+                    </span>
                 </div>
-
-                <p class="cta-note">
-                    MorrowTab 1.0.0 is on its way to the Chrome Web Store and Microsoft Edge Add-ons. This page will
-                    link straight to both listings the day they go live.
-                </p>
-
-                <ul class="browser-support">
-                    <li>
-                        <img src="img/chrome.svg" alt="" width="22" height="22" aria-hidden="true">
-                        Google Chrome 114 or newer
-                    </li>
-                    <li>
-                        <img src="img/edge.svg" alt="" width="22" height="22" aria-hidden="true">
-                        Microsoft Edge 114 or newer
-                    </li>
-                </ul>
 
                 <div class="supported-section">
                     <div class="supported-box">
@@ -238,9 +222,12 @@
                         <h2>Clear about what leaves your machine</h2>
                         <p class="supported-copy">
                             Boards sync through your browser's own extension sync. MorrowTab can reach three fixed
-                            addresses, for two features you can switch off: <code>fixquotes.com</code> for the daily
+                            addresses, for features you can switch off: <code>fixquotes.com</code> for the daily
                             quote, which is on out of the box, plus <code>api.fixquotes.com</code> and
-                            <code>images.pexels.com</code> for the opt-in nature background. One more address is
+                            <code>images.pexels.com</code> for nature photos, enabled for new sample setups and previews.
+                            Existing background choices stay unchanged. Website-icon downloads, on by default,
+                            send only an eligible link's hostname to <code>api.fixquotes.com</code>; the icon cache and
+                            its switch stay on each computer. One more address is
                             possible only if you turn on page-title autofill and grant that one site access. There is
                             no analytics, no advertising tracker, and no remote code.
                         </p>
@@ -261,9 +248,10 @@
                     <span class="section-badge">Preview</span>
                     <h2>See It in Action</h2>
                     <p class="section-desc">
-                        Every shot is the real extension. The board pictures use the bundled
-                        "Popular websites" starter board a fresh install shows you; the search picture has a few
-                        queries already saved on that computer.
+                        Every shot is the real extension, using the bundled "Popular websites" starter board.
+                        Auto + Nature shows the default setup: the Auto color theme with Daily Pexels nature enabled.
+                        The photo changes daily; the other theme previews switch nature photos off to show their colors.
+                        The search picture has a few queries already saved on that computer.
                     </p>
                 </div>
 
@@ -284,23 +272,30 @@
                     <div class="screenshot-panel" id="panel-newtab" role="tabpanel" aria-labelledby="tab-newtab"
                         tabindex="0">
                         <button class="screenshot-card" type="button"
-                            data-fullsrc="img/screenshots/newtab-light.png">
-                            <span class="screenshot-label">Light</span>
+                            data-fullsrc="img/screenshots/newtab-auto-nature.png">
+                            <span class="screenshot-label">Auto + Nature</span>
                             <picture>
                                 <source type="image/avif"
-                                    srcset="img/screenshots/newtab-light-768.avif 768w, img/screenshots/newtab-light-1280.avif 1280w, img/screenshots/newtab-light-1920.avif 1920w"
+                                    srcset="img/screenshots/newtab-auto-nature-768.avif 768w, img/screenshots/newtab-auto-nature-1280.avif 1280w, img/screenshots/newtab-auto-nature-1920.avif 1920w"
                                     sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
                                 <source type="image/webp"
-                                    srcset="img/screenshots/newtab-light-768.webp 768w, img/screenshots/newtab-light-1280.webp 1280w, img/screenshots/newtab-light-1920.webp 1920w"
+                                    srcset="img/screenshots/newtab-auto-nature-768.webp 768w, img/screenshots/newtab-auto-nature-1280.webp 1280w, img/screenshots/newtab-auto-nature-1920.webp 1920w"
                                     sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
-                                <img src="img/screenshots/newtab-light.png" width="1920" height="1200"
-                                    alt="The MorrowTab new tab page in light mode: a board picker reading Popular websites, a centered search box set to Browser default, and five columns of links titled News, Streaming, Social media, Everyday tools and Shopping"
+                                <img src="img/screenshots/newtab-auto-nature.png" width="1920" height="1200"
+                                    alt="The default MorrowTab setup with the Auto color theme and Daily Pexels nature enabled: the Popular websites starter board with five columns of links over a coastal night photograph, with its photographer credit visible"
                                     loading="lazy" decoding="async">
                             </picture>
                             <span class="screenshot-hint">Open full size</span>
                         </button>
                         <div class="screenshot-variants">
                             <button class="screenshot-variant" type="button" aria-pressed="true"
+                                data-previewsrc="img/screenshots/newtab-auto-nature.png"
+                                data-fullsrc="img/screenshots/newtab-auto-nature.png"
+                                data-avif="img/screenshots/newtab-auto-nature-768.avif 768w, img/screenshots/newtab-auto-nature-1280.avif 1280w, img/screenshots/newtab-auto-nature-1920.avif 1920w"
+                                data-webp="img/screenshots/newtab-auto-nature-768.webp 768w, img/screenshots/newtab-auto-nature-1280.webp 1280w, img/screenshots/newtab-auto-nature-1920.webp 1920w"
+                                data-alt="The default MorrowTab setup with the Auto color theme and Daily Pexels nature enabled: the Popular websites starter board with five columns of links over a coastal night photograph, with its photographer credit visible"
+                                data-label="Auto + Nature">Auto + Nature</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
                                 data-previewsrc="img/screenshots/newtab-light.png"
                                 data-fullsrc="img/screenshots/newtab-light.png"
                                 data-avif="img/screenshots/newtab-light-768.avif 768w, img/screenshots/newtab-light-1280.avif 1280w, img/screenshots/newtab-light-1920.avif 1920w"
@@ -390,15 +385,14 @@
 
                     <div class="screenshot-panel" id="panel-quicksave" role="tabpanel" aria-labelledby="tab-quicksave"
                         tabindex="0" hidden>
-                        <button class="screenshot-card" type="button"
+                        <button class="screenshot-card screenshot-card--popup" type="button"
                             data-fullsrc="img/screenshots/quick-save-popup.png"
                             aria-label="Open full size: the Quick Save popup">
-                            <span class="screenshot-label">Quick Save</span>
                             <picture>
                                 <source type="image/avif" srcset="img/screenshots/quick-save-popup-640.avif 640w"
-                                    sizes="(min-width: 720px) 360px, calc(100vw - 48px)">
+                                    sizes="min(360px, 40svh, calc(100vw - 48px))">
                                 <source type="image/webp" srcset="img/screenshots/quick-save-popup-640.webp 640w"
-                                    sizes="(min-width: 720px) 360px, calc(100vw - 48px)">
+                                    sizes="min(360px, 40svh, calc(100vw - 48px))">
                                 <img src="img/screenshots/quick-save-popup.png" width="640" height="1120"
                                     alt="The MorrowTab toolbar popup titled Save to MorrowTab, previewing the current page, with Board, Column and Title fields above a Save current tab button"
                                     loading="lazy" decoding="async">
@@ -460,7 +454,7 @@
                         </p>
                         <ul class="feature-list">
                             <li>Four modes: Text, Picture (bottom), Picture (top), Off</li>
-                            <li>Opt in to one curated Pexels nature photo a day, with its photographer credit</li>
+                            <li>New setups start with a credited daily Pexels nature photo; switch it off in Settings</li>
                             <li>Or upload your own background, kept on that computer only</li>
                         </ul>
                     </div>
@@ -470,7 +464,7 @@
                         <h3>Sync without an account</h3>
                         <p>
                             Boards, columns, links, search engines and shared settings ride your browser's own
-                            extension sync. There is no MorrowTab login and no MorrowTab server holding a copy.
+                            extension sync. There is no MorrowTab login or server holding a copy of that synced graph.
                         </p>
                         <ul class="feature-list">
                             <li>Every write is taken under a lock and checked against the data it was based on</li>
@@ -604,7 +598,7 @@
 
                 <div class="table-wrap">
                     <table>
-                        <caption>MorrowTab 1.0.0 enforces every limit below before it writes anything.</caption>
+                        <caption>MorrowTab enforces every limit below before it writes anything.</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Item</th>
@@ -694,14 +688,15 @@
                         <h3>Three fixed addresses</h3>
                         <p>
                             <code>fixquotes.com</code> for the daily quote, plus <code>api.fixquotes.com</code> and
-                            <code>images.pexels.com</code> for the opt-in nature background, plus one site you name
+                            <code>images.pexels.com</code> while nature photos are enabled, plus one site you name
                             yourself if you switch on page-title autofill. The two FixQuotes requests carry no
                             cookies, no referrer and no query string; the Pexels image URL carries only the sizing
                             parameters FixQuotes chose.
                         </p>
                         <p>
-                            The daily quote is on by default; setting it to <strong>Off</strong> stops the request
-                            entirely.
+                            The daily quote and new sample setup's nature background are on by default, including in
+                            the read-only preview. Switch either off in Settings to stop its requests. Existing
+                            background choices are preserved.
                         </p>
                     </div>
                 </div>
@@ -735,7 +730,7 @@
                     <details>
                         <summary>Do I need an account?</summary>
                         <p>
-                            No. There is no MorrowTab account, no login, and no MorrowTab server. Your boards are
+                            No. There is no MorrowTab account or login. Your boards are
                             stored by your browser&rsquo;s own extension sync, which follows the browser profile you
                             are already signed into. If that profile is syncing extension data, your boards appear on
                             your other computers with nothing else to set up; if it is not, they simply stay on the
@@ -748,9 +743,14 @@
                             Only for features you can switch off, and only to addresses you can name in advance.
                             The daily quote is set to
                             <strong>Text</strong> out of the box and fetches <code>fixquotes.com</code> once per local
-                            day; setting it to <strong>Off</strong> stops that entirely. If you switch on the optional
-                            daily nature background, MorrowTab asks <code>api.fixquotes.com</code> which photo to show
-                            and fetches it from <code>images.pexels.com</code>. One more address is possible, and only if you
+                            day; setting it to <strong>Off</strong> stops that entirely. The daily nature background
+                            starts enabled for new sample setups and their read-only previews: MorrowTab asks
+                            <code>api.fixquotes.com</code> which photo to show and fetches it from
+                            <code>images.pexels.com</code>. Turn it off in Settings to stop those requests; existing
+                            background choices remain unchanged. <strong>Download website icons</strong> is also on
+                            by default: it sends only an eligible saved hostname to <code>api.fixquotes.com</code>
+                            so FixQuotes can fetch that public site's icon directly. Turn it off on a computer to stop
+                            new icon requests there; the reusable cache stays local. One more address is possible, and only if you
                             ask for it: with <strong>Fetch page titles when adding links</strong> switched on, MorrowTab
                             requests the one site whose address you just typed, after your browser asks your
                             permission for it. Nothing else, and no analytics.
@@ -894,7 +894,6 @@
                     <ul>
                         <li>Google Chrome 114+</li>
                         <li>Microsoft Edge 114+</li>
-                        <li>Version 1.0.0</li>
                     </ul>
                 </div>
             </div>

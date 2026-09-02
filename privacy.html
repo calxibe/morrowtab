@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Privacy Policy - MorrowTab</title>
     <meta name="description"
-        content="The MorrowTab privacy policy: every storage key the extension writes, every network request it can make, every permission it declares, what an exported backup contains, and how to delete your data.">
+        content="The MorrowTab privacy policy: what schema-2 Sync stores, every network request the extension can make, every permission it declares, backup contents, and deletion controls.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="Privacy Policy - MorrowTab">
     <meta property="og:description"
-        content="Every storage key MorrowTab writes, every network request it can make, every permission it declares, and what an exported backup does and does not contain.">
+        content="What MorrowTab stores in schema-2 Sync and on each computer, every request and permission, and what a backup does and does not contain.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/privacy.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -41,7 +41,7 @@
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260831-1">
+    <link rel="stylesheet" href="style.css?v=20260902-2">
     <script src="index.js" defer></script>
 </head>
 
@@ -78,10 +78,10 @@
                 <h1>What MorrowTab stores, and where.</h1>
                 <p class="subtitle">
                     MorrowTab is a new tab page for Chrome and Edge. It has no account, no login, and no server of its
-                    own. This policy lists every storage key the extension writes, every address it can contact, every
-                    permission it declares, and exactly what an exported backup does and does not contain.
+                    own. This policy lists the user data and protocol metadata it stores, every address it can contact,
+                    every permission it declares, and exactly what an exported backup does and does not contain.
                 </p>
-                <p class="updated">Effective <time datetime="2026-08-31">August 31, 2026</time></p>
+                <p class="updated">Effective <time datetime="2026-09-02">September 2, 2026</time></p>
             </div>
         </section>
 
@@ -89,20 +89,32 @@
             <div class="highlight">
                 <h2>The short version</h2>
                 <ul>
-                    <li>Your boards, columns, links, extra search engines, shared settings and a per-link click count
-                        are written to your browser's own extension sync storage. FixQuotes never receives a copy —
-                        but Chrome extension sync is <strong>not</strong> end-to-end encrypted, so treat what you store
-                        as non-confidential.</li>
-                    <li>Nine other records — including your saved search suggestions, your uploaded background and the
-                        cached daily quote — stay in local extension storage on one computer, in plain text, and are
-                        never synced and never exported.</li>
+                    <li>Your boards, columns, links, extra search engines, shared settings, per-link click counts and
+                        configured auto-close intervals are written to your browser's own extension sync storage inside
+                        compressed actor checkpoints with causal counters. FixQuotes receives no copy of that synced graph — but Chrome
+                        extension sync is <strong>not</strong> end-to-end encrypted, so treat it as non-confidential.</li>
+                    <li>Thirteen preferences, caches and safety values — including saved search suggestions, uploaded
+                        background, cached quote, downloaded icons and their download preference — stay only in local
+                        extension storage. A separate random actor ID
+                        is stored locally and also appears in this computer's synced causal metadata. None is exported.</li>
+                    <li>If you enable link auto-close, live managed tab IDs, original hostnames and countdown state
+                        stay in extension session storage only. They are never synced, exported or kept after the
+                        browser session ends.</li>
                     <li>MorrowTab can contact four kinds of address, and no others:
-                        <code>fixquotes.com</code> for the daily quote, <code>api.fixquotes.com</code> and
-                        <code>images.pexels.com</code> for the opt-in nature background, and a single site you name if
+                        <code>fixquotes.com</code> for the daily quote, <code>api.fixquotes.com</code> for nature metadata
+                        and website-icon lookup, <code>images.pexels.com</code> for nature photos, and a site you name if
                         you turn on page-title autofill and grant that one site access.</li>
                     <li>The daily quote is <strong>on by default</strong> and requests
                         <code>fixquotes.com</code> at most once per local day. Setting it to <strong>Off</strong> stops
                         that request completely.</li>
+                    <li>The nature background is <strong>on for new sample setups and their read-only previews</strong>,
+                        which may request photo metadata from <code>api.fixquotes.com</code> and photo bytes from
+                        <code>images.pexels.com</code>. Turning it off in Settings stops those requests. Existing
+                        background choices are unchanged; an absent or theme-only preference stays off.</li>
+                    <li><strong>Download website icons is on by default on each computer.</strong> For a link without
+                        a working bundled icon, eligible lookups send only its hostname to FixQuotes, not its complete
+                        address or title. FixQuotes retrieves public website artwork directly. Turn this setting off
+                        on a computer to stop new icon requests there; cached icons remain.</li>
                     <li>There is no analytics, no telemetry, no advertising tracker and no remote code in the
                         extension. This website runs no analytics and sets no cookies.</li>
                 </ul>
@@ -117,9 +129,12 @@
                 </p>
                 <p>
                     This policy covers the browser extension declared as <em>MorrowTab — Boards, Search &amp; Daily
-                        Quotes</em>, version 1.0.0, a Manifest V3 extension for Chrome and Edge on Chromium 114 or
-                    newer, together with this website. MorrowTab 1.0.0 is on its way to the Chrome Web Store and
-                    Microsoft Edge Add-ons; this policy is the one that will apply to those listings.
+                        Quotes</em>, a Manifest V3 extension for Chrome and Edge on Chromium 114 or
+                    newer, together with this website. MorrowTab is distributed through
+                    <a href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
+                        target="_blank" rel="noopener">Microsoft Edge Add-ons<span class="visually-hidden"> (opens in
+                            a new tab)</span></a>, and its Chrome Web Store listing is coming soon. This policy applies
+                    to both distributions.
                 </p>
                 <p>
                     Questions about this policy, and every other kind of support request, go through one route:
@@ -142,9 +157,26 @@
                     copy of it.
                 </p>
                 <p>
-                    Exactly five record shapes are ever written there, all under the <code>Plugin.</code> prefix. Any
-                    other key is refused before the write happens.
+                    Schema 2 separates your logical MorrowTab data from the way it is transported. Each browser
+                    profile creates a random actor identifier and publishes only its own compressed checkpoint. A
+                    checkpoint includes the logical records below plus counters and causal context needed to merge
+                    work from online and long-offline computers without one computer replacing another's copy.
                 </p>
+                <p>
+                    The checkpoint is canonical JSON compressed with gzip, base64-encoded and divided into bounded
+                    Sync items when necessary. Its envelope declares compressed and uncompressed sizes and a SHA-256
+                    digest; MorrowTab validates the complete item set, sizes, digest and decoded records before using
+                    it. This compression saves space. <strong>It is not encryption.</strong> Exact transport key names
+                    are intentionally not part of this policy because they carry no additional user data and may change
+                    without changing what is collected.
+                </p>
+                <p>
+                    A normal save submits that profile's new chunks, schema marker and actor pointer in one multi-key
+                    browser Sync write. Superseded chunks owned by the same actor are removed after editing becomes
+                    idle; a failed cleanup backs off and retries. Another profile's actor checkpoint is never removed
+                    by that routine.
+                </p>
+                <p>Your content materializes into five logical record shapes:</p>
 
                 <h3>Plugin.meta</h3>
                 <p>
@@ -172,17 +204,19 @@
                 <p>
                     One record per saved link: <code>id</code>, <code>title</code>, <code>url</code>,
                     <code>boardId</code>, <code>columnId</code>, an optional <code>newTab</code> for a per-link "opens
-                    in" override, and an optional <code>clicks</code> integer. The record format also allows an
-                    optional <code>description</code> of up to 200 characters, typed into the link editor's
-                    Description field. Quick Save never writes one.
+                    in" override, an optional <code>autoCloseMinutes</code> set to 5, 10, 15, 30, 60 or 120 only when
+                    <code>newTab</code> is true, and an optional <code>clicks</code> integer. The record format also
+                    allows an optional <code>description</code> of up to 200 characters, typed into the link editor's
+                    single-line Description field. Quick Save never writes a description or inactivity timeout.
                 </p>
                 <p>
                     <strong>About <code>clicks</code>:</strong> every left-click and middle-click on a saved link
-                    increments that link's counter, and the new value is written into the synced record. This happens
+                    increments that link's usage value, and the new value is included in the synced logical record. This happens
                     whether or not "Order links by most used" is switched on. It is a plain integer — there are no
-                    dates, no times and no sequence stored with it — but it is a usage signal, it syncs with the rest
-                    of your data, and it is included in an exported backup. "Reset usage" in Settings clears every
-                    counter after confirmation.
+                    dates or times in the value itself — but schema 2 surrounds changes with pseudonymous actor and
+                    logical-counter metadata. The usage value syncs with the rest of your data and is included in an
+                    exported backup. "Reset usage" appears while usage ordering
+                    is enabled and clears every counter after confirmation.
                 </p>
 
                 <h3>Plugin.searchEngine.&lt;id&gt;</h3>
@@ -193,20 +227,44 @@
                     option is built in and is not a stored record.
                 </p>
 
+                <h3>How conflicts are represented</h3>
+                <p>
+                    Record presence and each top-level field have causal version metadata; shared settings are tracked
+                    separately per setting. The metadata consists of the random actor IDs, increasing logical counters
+                    and the counters a device had already observed. It contains no hardware serial number, operating
+                    system account, wall-clock activity time, IP address, tab history or browsing log.
+                </p>
+                <p>
+                    Causally later changes replace values they observed. Concurrent changes to different records or
+                    fields both survive. Concurrent values for the same field remain represented and choose one
+                    deterministic result on every computer. A live edit concurrent with a delete is kept; a delete
+                    made after observing an edit wins, and an explicit later recreation wins again. Child ownership
+                    establishes membership, while board/column/link ordering arrays are only ordering hints, so an
+                    older ordering list cannot hide a newer item.
+                </p>
+                <p>
+                    The current schema-2 release validates and automatically upgrades a complete schema-1 MorrowTab graph before
+                    publishing its first schema-2 checkpoint. Incomplete or invalid legacy data is unchanged and
+                    read-only. A newer-schema marker also makes schema-1 releases refuse writes, although every
+                    computer should still be updated to the current release before editing.
+                </p>
+
                 <h3>What is not in there</h3>
                 <p>
-                    Link records carry no timestamp, no visit history and no browsing log. The text you type into the
-                    search box is never written to sync. Nothing about the pages you visit is written to sync unless
-                    you deliberately save that page as a link.
+                    The configured <code>autoCloseMinutes</code> value is a setting, not activity history. Logical link
+                    records carry no wall-clock timestamp, tab ID, live deadline, visit history or browsing log. The text you type into
+                    the search box is never written to sync. Nothing about the pages you visit is written to sync
+                    unless you deliberately save that page as a link.
                 </p>
 
                 <h3>Sync is not end-to-end encrypted</h3>
                 <p>
                     Chrome's extension sync is not end-to-end encrypted, and whatever encryption your browser applies
                     to synced data is your browser's feature, not MorrowTab's. MorrowTab adds no encryption of its
-                    own. <strong>Treat board names, column headings, link titles, saved addresses and custom search
-                        templates as non-confidential.</strong> If something should not sit in your browser profile's
-                    sync data, do not save it in MorrowTab.
+                    own; gzip and base64 only make checkpoints smaller and transportable. <strong>Treat board names,
+                        column headings, link titles, saved addresses, custom search templates, random actor IDs and
+                        logical counters as non-confidential.</strong> If something should not sit in your browser
+                    profile's sync data, do not save it in MorrowTab.
                 </p>
 
                 <h3>There is no MorrowTab sync switch</h3>
@@ -219,21 +277,33 @@
 
                 <h3>How much can go in</h3>
                 <p>
-                    MorrowTab enforces its own ceilings before every write: at most 500 stored records, 8 KB per
-                    record and 100 KB in total, within caps of 30 boards, 120 columns (40 per board), 250 links (200
-                    per column) and 80 search engines (20 per board). Exceeding any of them means the write is
-                    refused, not truncated.
+                    MorrowTab enforces its own ceilings before every write: at most 500 Sync transport items, 8 KB per
+                    item and 100 KB in total, within logical caps of 30 boards, 120 columns (40 per board), 250 links
+                    (200 per column) and 80 search engines (20 per board). Checkpoint chunks use a smaller internal
+                    target. Exceeding any limit means the write is refused, not truncated.
+                </p>
+                <p>
+                    Zero records can mean a genuinely new profile or Sync that has not hydrated yet. Missing chunks,
+                    partial legacy records, corrupt compressed bytes and size/hash mismatches also remain read-only.
+                    None of those states is treated as permission to publish the sample board or delete arrived data.
+                    A new user can explicitly choose <strong>Start with sample board</strong> on the welcome page; a
+                    returning user can choose <strong>Use my synced boards</strong>, which writes nothing while Sync
+                    catches up.
                 </p>
             </section>
 
             <section id="local">
                 <h2>3. What stays on this computer</h2>
                 <p>
-                    Nine records live in <code>chrome.storage.local</code>. They belong to one browser profile on one
-                    computer. None of them is synced, none of them appears in an exported backup, and none of them is
-                    written to web <code>localStorage</code>.
+                    Fourteen records live in <code>chrome.storage.local</code>. They belong to one browser profile on one
+                    computer. Their local copies do not appear in exported backups and none is written to web
+                    <code>localStorage</code>. The schema-2 actor identifier is also included as pseudonymous metadata
+                    in the checkpoint that this profile publishes; the other thirteen values are not synced.
                 </p>
                 <ul>
+                    <li>A persistent schema-2 actor identifier — a random installation ID used with logical counters
+                        so this profile can own its checkpoint and merge causally. It is not derived from hardware,
+                        your browser account or personal information.</li>
                     <li><code>Plugin.localActiveBoardId</code> — which board this computer is currently showing.</li>
                     <li><code>Plugin.localQuickSaveTarget</code> — the board and column Quick Save last saved to, as
                         <code>{ boardId, columnId }</code>.</li>
@@ -246,8 +316,8 @@
                     <li><code>Plugin.localBackgroundImage</code> — a background image you uploaded, downscaled to a
                         2560 px maximum side and re-encoded as a WebP data URL. The original file is never uploaded
                         anywhere and never enters sync.</li>
-                    <li><code>Plugin.localPexelsNatureBackground</code> — the cached nature photo, if you turned that
-                        feature on, stored as a verified WebP data URL alongside the SHA-256 digest it is re-checked
+                    <li><code>Plugin.localPexelsNatureBackground</code> — the nature photo cached while that feature
+                        is enabled, stored as a verified WebP data URL alongside the SHA-256 digest it is re-checked
                         against on every read.</li>
                     <li><code>Plugin.localDailyQuote</code> — the cached quote of the day, so the page can render
                         before any request is made.</li>
@@ -255,11 +325,48 @@
                         records, kept so a damaged sync state can be recognized.</li>
                     <li><code>Plugin.localPreReplaceSnapshot</code> — a copy of the synced records a backup import
                         replaced, kept so an unwanted import stays reversible.</li>
+                    <li><code>Plugin.managedTabs.failClosed</code> — a temporary Boolean safety marker written only
+                        if the background worker cannot safely persist or cancel an automatic-close deadline. It
+                        contains no tab ID, hostname, URL or timer.</li>
+                    <li><code>Plugin.localAutoClosePermissionPrompted</code> — a Boolean remembering that this
+                        installation has already offered the optional auto-close permission, so a refusal does not
+                        trigger another automatic prompt on later clicks, new tabs or reloads. It contains no tab ID,
+                        hostname, URL or browsing history and is not itself a permission grant.</li>
+                    <li><code>Plugin.localFaviconCache</code> — up to 128 hostname-keyed icon entries within 256 KiB,
+                        containing verified small PNG images and expiry metadata. Successful icons stay fresh for
+                        seven days and can be used stale for at most 30 days. Explicit no-icon or blocked results are
+                        remembered for 24 hours. Transport failures start with a five-minute retry delay and back off
+                        to at most 24 hours, with a shared cooldown to reduce requests during outages.</li>
+                    <li><code>Plugin.localFaviconDownloadsEnabled</code> — whether this computer downloads missing or
+                        stale website icons. It defaults to on. Turning it off stops new requests without deleting
+                        the reusable icon cache.</li>
                 </ul>
                 <p>
-                    All nine are ordinary extension storage values held in plain text inside your browser profile
+                    All fourteen are ordinary extension storage values held in plain text inside your browser profile
                     directory. MorrowTab does not encrypt them, and anyone with access to that profile on that
                     computer can read them.
+                </p>
+
+                <h3>Plugin.managedTabs (session only)</h3>
+                <p>
+                    If at least one saved link has an inactivity timeout and MorrowTab opens it, the background worker
+                    writes one temporary registry to <code>chrome.storage.session</code>. It is keyed by the managed
+                    tab ID; each entry contains that tab's window ID, the original hostname with a leading
+                    <code>www.</code> removed, the selected number of minutes, and either the time it entered the
+                    background or <code>null</code> while its countdown is stopped. The single alarm name
+                    <code>Plugin.managedTabs.autoClose</code> carries no additional data.
+                </p>
+                <p>
+                    This registry exists only so a suspended Manifest V3 worker can safely resume the current browser
+                    session. It is not written to Sync or local storage, is not exported, and is cleared when the
+                    browser session ends or the extension is reloaded, disabled, removed or updated. MorrowTab does not
+                    rebuild it from saved links, so no old tab is closed after a restart.
+                </p>
+                <p>
+                    If the Boolean fail-closed marker is present when a background worker starts, automatic closing
+                    stays disabled while the worker removes the session registry and its alarm. Only after both are
+                    cleared does it remove the marker and allow newly opened managed tabs. The marker is never synced
+                    or exported.
                 </p>
             </section>
 
@@ -272,7 +379,7 @@
 
                 <div class="table-wrap table-wrap-requests">
                     <table>
-                        <caption>MorrowTab 1.0.0 makes no network request other than the four below.</caption>
+                        <caption>When each extension network request is made and what it sends.</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Host</th>
@@ -295,9 +402,10 @@
                             </tr>
                             <tr>
                                 <th scope="row"><code>api.fixquotes.com</code></th>
-                                <td>Only while the opt-in "Daily Pexels nature" background is switched on. It is off
-                                    on a fresh install, and an uploaded background takes priority and suppresses the
-                                    request entirely.</td>
+                                <td>Only while "Daily Pexels nature" is enabled. New sample setups and their read-only
+                                    previews enable it by default; existing background choices are preserved. Turning
+                                    it off stops background requests. An uploaded background takes priority and
+                                    suppresses the request entirely.</td>
                                 <td>A <code>GET</code> of
                                     <code>https://api.fixquotes.com/public/morrowtab/nature-background</code> for the
                                     photo's metadata: no cookies or credentials, no referrer, no query string.
@@ -311,6 +419,20 @@
                                     an <code>https://images.pexels.com/photos/…</code> URL: no cookies or credentials,
                                     no referrer, redirects refused. Pexels is a third party operating its own image
                                     service.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>api.fixquotes.com</code></th>
+                                <td>While <strong>Download website icons</strong> is enabled on this computer (the
+                                    default), when a link has no working bundled icon and its downloaded icon is
+                                    missing or due for refresh. Fresh cached icons avoid requests. Turning the
+                                    setting off stops new icon requests and keeps cached icons.</td>
+                                <td>A <code>POST</code> to
+                                    <code>https://api.fixquotes.com/public/morrowtab/favicon</code> with JSON
+                                    <code>{ "hostname": "..." }</code>. It preserves the exact subdomain, including
+                                    <code>www</code>, but contains no saved path, query, fragment, title, username or
+                                    password. Cookies and referrers are omitted. FixQuotes retrieves the artwork
+                                    directly from public websites and returns a verified 32×32 PNG; no third-party
+                                    favicon service is used.</td>
                             </tr>
                             <tr>
                                 <th scope="row">The one site you typed</th>
@@ -332,9 +454,10 @@
                         <h3>What a request unavoidably reveals</h3>
                         <p>
                             Any request from your computer to any server reveals your IP address and your browser's
-                            user-agent string to whichever server answers it. That is true of the four requests above.
+                            user-agent string to whichever server answers it. That is true of the requests above.
                             MorrowTab controls what it sends — no cookies, no referrer and no identifier, and no
-                            query string on either FixQuotes request; the Pexels image URL carries only the sizing
+                            query string on the FixQuotes requests; icon lookup carries a hostname in its POST body.
+                            The Pexels image URL carries only the sizing
                             parameters FixQuotes chose, and a page-title request uses the address you typed — but it
                             cannot control what those servers choose to log, and
                             <code>images.pexels.com</code> is operated by a third party whose logging is outside
@@ -342,40 +465,68 @@
                             it is.
                         </p>
                         <p>
-                            The contents of your boards are never part of any of these requests. Neither is the text
-                            you type into the search box.
+                            The complete synced board graph is never uploaded to these endpoints, and neither is the
+                            text you type into the search box. Website-icon lookup does reveal a saved link's hostname
+                            to FixQuotes. Keeping it in a POST body avoids putting it in the application request URL;
+                            it is not a guarantee against body, infrastructure or operational logging.
+                        </p>
+                        <p>
+                            Icon lookup rejects private IP literals and obvious internal or reserved hostnames, but
+                            cannot reliably distinguish a public-looking intranet hostname from a public website.
+                            Turn <strong>Download website icons</strong> off before showing sensitive internal links
+                            if disclosing their hostnames is unsuitable. Private or login-only artwork may remain
+                            unavailable. The public website sees a request from FixQuotes, not your browser's cookies
+                            or saved URL path.
+                        </p>
+                        <p>
+                            FixQuotes keeps validated website icons in a shared server-side folder, named from the
+                            requested hostname, so different computers and users can reuse the same PNG without
+                            contacting that website again. These files survive server restarts and are retained
+                            until removed by the operator; there is no automatic expiry. The filenames reveal which
+                            hostnames have cached icons, but contain no user identifier, saved URL path or board
+                            contents. They are not per-user records. Turning downloads off on your computer does not
+                            delete this shared server cache.
+                        </p>
+                        <p>
+                            A separate bounded in-memory cache holds up to 256 hostname results within 4 MiB;
+                            no-icon results are cached there for 24 hours. An additional in-memory image-validation
+                            cache holds up to 256 verified images within 4 MiB. Short-lived rate-limit buckets use a hash
+                            of the client IP address. Those in-memory values disappear when the process restarts.
+                            This route uses no database and adds no per-request application log. This does not
+                            describe or disable infrastructure access logs.
                         </p>
                     </div>
                 </div>
 
-                <h3>Two things that are not requests to MorrowTab</h3>
+                <h3>Search and local icon fallbacks</h3>
                 <p>
                     <strong>Searching.</strong> "Browser default" hands your query to the browser itself, which sends
                     it to whichever provider your profile is configured to use. A custom engine is an ordinary
                     navigation to your own template with the query inserted. Either way the search goes straight to
                     the engine, exactly as if you had typed it in the address bar. It never passes through a FixQuotes
-                    server: the quote feed and the nature-background endpoint are the only FixQuotes addresses
-                    MorrowTab contacts, and neither has anything to do with search.
+                    server: the quote, nature-background and favicon endpoints have nothing to do with search.
                 </p>
                 <p>
-                    <strong>Site icons.</strong> MorrowTab downloads no favicons. It prefers icons bundled inside the
-                    extension, and otherwise asks the browser for its own locally-stored icon through a
-                    <code>chrome-extension://…/_favicon/</code> address. What the browser does behind that endpoint is
-                    the browser's behavior, not MorrowTab's. When no icon is available a two-letter badge is drawn
-                    instead.
+                    <strong>Local fallbacks.</strong> A working icon bundled inside the extension needs no remote
+                    lookup. Otherwise a cached downloaded icon can be used, while the browser's own
+                    <code>chrome-extension://…/_favicon/</code> result or a two-letter badge provides a fallback.
+                    Chromium may return a generic globe on a computer that has not seen that site; this does not
+                    suppress an eligible download while the setting is enabled.
                 </p>
             </section>
 
             <section id="permissions">
                 <h2>5. Each permission, and why it is there</h2>
                 <p>
-                    MorrowTab declares no content scripts and no <code>tabs</code> permission, so it cannot read,
-                    watch or modify the pages you browse.
+                    MorrowTab declares no content scripts and no <code>tabs</code> permission, so it cannot read or
+                    change page contents. Link auto-close uses the optional <code>webNavigation</code> permission to
+                    receive navigation events, but the worker considers only tab IDs that MorrowTab itself created and
+                    compares only their top-level hostname. It stores no navigation log.
                 </p>
 
                 <div class="table-wrap">
                     <table>
-                        <caption>The complete permission list from MorrowTab 1.0.0's manifest.</caption>
+                        <caption>The complete permission list from MorrowTab's manifest.</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Permission</th>
@@ -386,14 +537,21 @@
                             <tr>
                                 <th scope="row"><code>storage</code></th>
                                 <td>Keeps your boards, columns, links, extra search engines and shared settings in
-                                    the browser's sync storage, and the nine per-computer records in local storage.
+                                    the browser's sync storage, the fourteen per-computer records in local storage, and
+                                    the live managed-tab registry in session storage.
                                 </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>alarms</code></th>
+                                <td>Schedules one wake-up for the earliest managed tab that may be ready to close.
+                                    The worker rechecks every safety condition before closing anything; no alarm is
+                                    created for a link whose timeout is off.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>favicon</code></th>
                                 <td>Lets a saved link show the browser's own locally-cached site icon. It is checked
-                                    at runtime, and when it is unavailable MorrowTab draws a two-letter badge instead
-                                    of fetching anything.</td>
+                                    at runtime; missing access skips only that native lookup. Bundled icons,
+                                    downloaded icons and initials remain available independently.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>search</code></th>
@@ -408,6 +566,20 @@
                                     shortcut. It grants no standing access to any site.</td>
                             </tr>
                             <tr>
+                                <th scope="row"><code>webNavigation</code> (optional)</th>
+                                <td>Requested from your action when you save an enabled <strong>Auto-close</strong>
+                                    timeout, first open a synced timed link without this device's access, or choose
+                                    <strong>Enable auto-close</strong> in the notice. No prompt is needed when access
+                                    is already granted. Chromium describes it as "Read your browsing history". MorrowTab uses
+                                    the events only for tabs MorrowTab opened, to keep same-host navigation eligible
+                                    and permanently cancel closing after another hostname is reached. Declining an
+                                    editor save leaves the link unchanged; declining while opening still opens an
+                                    ordinary tab without automatic closing. The local prompt marker prevents repeated
+                                    automatic requests after a refusal. The notice action explicitly retries for future
+                                    timed openings, not tabs already opened normally. The permission belongs to that
+                                    browser installation and does not sync. No page content or browsing log is stored.</td>
+                            </tr>
+                            <tr>
                                 <th scope="row"><code>https://fixquotes.com/*</code></th>
                                 <td>Fetches the Quote of the Day, and its image in the Picture modes. The code
                                     accepts only credential-free HTTPS addresses whose host is exactly
@@ -415,14 +587,16 @@
                             </tr>
                             <tr>
                                 <th scope="row"><code>https://api.fixquotes.com/*</code></th>
-                                <td>Fetches the metadata for the opt-in daily nature photo. The host is validated to
-                                    be exactly <code>api.fixquotes.com</code>. MorrowTab holds no Pexels API key; the
-                                    curated selection is made on the FixQuotes side.</td>
+                                <td>Fetches metadata while the daily nature photo is enabled and resolves eligible
+                                    website icons while <strong>Download website icons</strong> is enabled. The host is
+                                    validated to be exactly <code>api.fixquotes.com</code>; these features have separate
+                                    controls. MorrowTab holds no Pexels API key. The icon route uses this existing
+                                    permission, without new website access or a third-party icon provider.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>https://images.pexels.com/*</code></th>
-                                <td>Downloads the actual photograph for that background, only once you have switched
-                                    it on. The host is validated to be exactly <code>images.pexels.com</code> and the
+                                <td>Downloads the actual photograph while that background is enabled, including in
+                                    new sample setups and previews. The host must be exactly <code>images.pexels.com</code> and the
                                     credit link to be exactly <code>www.pexels.com</code>.</td>
                             </tr>
                             <tr>
@@ -448,16 +622,17 @@
             <section id="backup">
                 <h2>6. What a backup contains</h2>
                 <p>
-                    "Export backup" in Settings writes a file named
+                    "Export backup" in Settings writes an optional disaster-recovery or point-in-time file named
                     <code>morrowtab-backup-YYYY-MM-DD.json</code> to your own computer through the browser's normal
                     download. It is never uploaded anywhere. It has exactly four top-level fields:
                 </p>
                 <ul>
                     <li><code>application</code> — the string <code>"MorrowTab"</code>.</li>
-                    <li><code>schemaVersion</code> — <code>1</code>.</li>
+                    <li><code>schemaVersion</code> — <code>2</code>.</li>
                     <li><code>exportedAt</code> — the timestamp of the export.</li>
-                    <li><code>records</code> — the synced record set described in section 2: meta and settings,
-                        boards, columns, links (including each link's <code>clicks</code> count), and search engines.
+                    <li><code>records</code> — the materialized logical record set described in section 2: meta and settings,
+                        boards, columns, links (including each link's <code>clicks</code> count and configured
+                        <code>autoCloseMinutes</code> value), and search engines.
                     </li>
                 </ul>
                 <p>
@@ -465,21 +640,30 @@
                     Anyone who opens it can read your board names, link titles, saved addresses and search templates,
                     so store it the way you would store any other file containing that information.
                 </p>
-                <p>A backup deliberately excludes every one of the nine device-local records:</p>
+                <p>
+                    A backup is not required for normal schema-2 convergence between computers. It deliberately
+                    excludes actor IDs, logical clocks, causal alternatives, delete markers, checkpoint compression
+                    envelopes and chunks, plus every one of the fourteen device-local records:
+                </p>
                 <ul>
+                    <li>the schema-2 actor identity used by this browser profile;</li>
                     <li>your saved search suggestions and the "Save search suggestions" preference;</li>
                     <li>your uploaded background image, and the cached nature photo — no image bytes are ever
                         exported;</li>
                     <li>the cached daily quote;</li>
                     <li>the board this computer is showing, and the remembered Quick Save destination;</li>
-                    <li>both local safety snapshots.</li>
+                    <li>both local safety snapshots;</li>
+                    <li>the managed-tab fail-closed safety marker and the auto-close permission-prompt marker.</li>
+                    <li>the downloaded favicon cache, including hostname metadata, and its download preference.</li>
                 </ul>
+                <p>The session-only <code>Plugin.managedTabs</code> registry and its live countdowns are also excluded.</p>
                 <p>
                     Restoring a full backup <strong>replaces</strong> everything currently synced, after a
                     confirmation. Before it does, the records it is about to replace are copied to
                     <code>Plugin.localPreReplaceSnapshot</code> on that computer, and "Restore pre-import copy…"
-                    brings them back. Importing a single exported column is different: it adds that column to the
-                    current board rather than replacing anything.
+                    brings them back. A valid schema-1 MorrowTab backup is fully validated and upgraded to schema 2
+                    during import. Importing a single exported column is different: it adds that column to the current
+                    board rather than replacing anything.
                 </p>
                 <p>
                     Two other files can be produced on request, and both are written locally by the browser, never
@@ -499,14 +683,15 @@
                 </p>
                 <p>
                     There is no remote code of any kind: everything MorrowTab runs is shipped inside the extension
-                    package and is loaded from it. Apart from the four requests listed in section 4, the only other
-                    fetches in the code read two files bundled inside the extension itself — the brand-icon library
-                    and the starter board.
+                    package and is loaded from it. Apart from the requests listed in section 4, resource loading reads
+                    packaged extension files or the browser's native favicon endpoint. Downloaded website icons are
+                    normalized image data, never executable code.
                 </p>
                 <p>
-                    FixQuotes does not sell, rent or share the contents of your boards, and could not: MorrowTab
-                    operates no server that receives them, and there is no MorrowTab-side database in which they could
-                    appear.
+                    The synced board graph is stored by the browser, not uploaded to a MorrowTab account or board
+                    database. Website-icon lookup is a separate functional request that discloses an eligible saved
+                    hostname to FixQuotes and causes FixQuotes to contact that public website for its icon. It does
+                    not send your complete saved address, title, board name or search text.
                 </p>
                 <p>
                     <strong>This website.</strong> These pages are static files. They run no analytics, set no
@@ -523,7 +708,7 @@
                 <p>
                     MorrowTab ships 49 brand icons covering 63 domains inside the extension package. They are a
                     generated subset of the theSVG Color icon collection (also called The SVG Company Icon Set),
-                    distributed as <code>@iconify-json/thesvg-color</code> version 1.2.5, collection author
+                    distributed as <code>@iconify-json/thesvg-color</code>, collection author
                     thesvg.org, under the MIT license, Copyright &copy; 2025 thesvg.org. The full license text is
                     reproduced in the extension's third-party notices.
                 </p>
@@ -534,9 +719,12 @@
 
                 <h3>Fallback site icons</h3>
                 <p>
-                    When a saved link has no bundled brand icon, MorrowTab asks Chromium for its own locally-stored
-                    favicon through the browser's <code>_favicon</code> endpoint, and falls back to a generated
-                    two-letter badge. MorrowTab downloads no favicons itself.
+                    For a saved link without a working bundled icon, MorrowTab can download a verified small PNG
+                    through FixQuotes and cache it on this computer. FixQuotes fetches public website artwork
+                    directly, not through a third-party favicon provider. These runtime images are not part of the
+                    bundled MIT icon collection. Site names and logos remain the property of their respective owners
+                    and their display does not imply endorsement. Native browser icons or initials remain available
+                    when no downloaded icon can be obtained.
                 </p>
 
                 <h3>Quotes</h3>
@@ -549,7 +737,7 @@
 
                 <h3>Photographs</h3>
                 <p>
-                    The optional daily nature photographs come from <a href="https://www.pexels.com/" target="_blank"
+                    The switchable daily nature photographs come from <a href="https://www.pexels.com/" target="_blank"
                         rel="noopener">Pexels<span class="visually-hidden"> (opens in a new tab)</span></a>. They are downloaded at the moment they are used and are not
                     bundled with the extension. Attribution is required and is shown in the product: MorrowTab
                     rejects the photo metadata unless it carries the exact credit
@@ -569,22 +757,45 @@
                 <h2>9. Deleting your data</h2>
                 <p>These are the controls MorrowTab actually gives you:</p>
                 <ul>
-                    <li><strong>Clear saved suggestions</strong> (Settings) — asks for confirmation, then permanently
-                        removes the saved search text from this computer. It does not change whether future searches
-                        are recorded.</li>
+                    <li><strong>Clear saved suggestions</strong> (Settings) — appears while saving suggestions is on,
+                        asks for confirmation, then permanently removes the saved search text from this computer. It
+                        does not change whether future searches are recorded.</li>
                     <li><strong>Save search suggestions</strong> (Settings) — switch it off and existing suggestions
                         are kept but nothing new is recorded.</li>
                     <li><strong>Remove image</strong> (Settings) — removes the background image you uploaded from
                         this computer.</li>
                     <li><strong>Daily Pexels nature</strong> (Settings) — switching it off stops all further requests
-                        to <code>api.fixquotes.com</code> and <code>images.pexels.com</code>.</li>
-                    <li><strong>Reset usage</strong> (Settings) — clears every per-link click count, after
-                        confirmation.</li>
+                        for nature metadata and photos. The separate website-icon setting can still use
+                        <code>api.fixquotes.com</code>.</li>
+                    <li><strong>Download website icons</strong> (Settings) — switching it off stops new favicon
+                        requests on this computer. Cached icons remain available; the preference and cache do not
+                        sync and are excluded from backups.</li>
+                    <li><strong>Reset usage</strong> (Settings) — appears while usage ordering is on and clears every
+                        per-link click count after confirmation.</li>
+                    <li><strong>Auto-close</strong> (link editor) — setting a link back to Off removes its
+                        synced timeout. Closing the tab, ending the browser session, reloading the extension, or
+                        revoking its optional navigation permission removes the corresponding live tracking state.
+                        The local permission-prompt marker remains, preventing repeated automatic prompts; choosing
+                        <strong>Enable auto-close</strong> in the notice or saving an enabled timeout explicitly asks
+                        again when access is missing.</li>
                     <li><strong>Deleting a link, column or board</strong> — deleting a column also removes its links,
                         and each deletion leaves a six-second <strong>Undo</strong> in the toast.</li>
                     <li><strong>Import backup…</strong> (Settings) — replaces everything currently synced, after
                         confirmation, while keeping a restorable copy of what it replaced on this computer.</li>
                 </ul>
+
+                <p>
+                    Schema 2 represents a deletion with causal metadata so a stale offline checkpoint cannot mistake
+                    an intentional deletion for missing data. The marker carries actor/counter context, not a new
+                    browsing record. A current causal tombstone can retain the deleted record's former fields, and a
+                    profile's pointer may retain one prior checkpoint while the Sync budget permits it. Unreferenced
+                    superseded chunks can also remain briefly while idle cleanup is pending, or longer if the browser
+                    rejects cleanup until a later retry. Those values are not shown in the board or included in a normal
+                    exported backup, but they can remain inside compressed Sync transport data; older profiles can
+                    retain them too until they return and publish again.
+                    Physical retention inside the browser's sync service is controlled by Google or Microsoft, not
+                    FixQuotes.
+                </p>
 
                 <div class="note-box">
                     <span class="icon" aria-hidden="true">🗑️</span>
@@ -608,9 +819,9 @@
             <section id="changes">
                 <h2>10. Changes to this policy</h2>
                 <p>
-                    This policy describes MorrowTab 1.0.0. If a later version changes what is stored, what is
-                    requested, or which permissions are declared, this page will be updated before that version is
-                    published, and the effective date at the top will change with it.
+                    This policy describes the current MorrowTab release. If a future release changes what is stored,
+                    what is requested, or which permissions are declared, this page will be updated before that
+                    release is published, and the effective date at the top will change with it.
                 </p>
                 <p>
                     Material changes will be summarized on the <a href="changelog.html">changelog</a> alongside the
@@ -623,7 +834,7 @@
                     <a href="https://fixquotes.com/docs/contact/?category=morrowtab" target="_blank"
                         rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
                 </p>
-                <p class="updated">Effective <time datetime="2026-08-31">August 31, 2026</time> · MorrowTab 1.0.0</p>
+                <p class="updated">Effective <time datetime="2026-09-02">September 2, 2026</time></p>
             </section>
         </div>
     </main>
@@ -661,7 +872,6 @@
                     <ul>
                         <li>Google Chrome 114+</li>
                         <li>Microsoft Edge 114+</li>
-                        <li>Version 1.0.0</li>
                     </ul>
                 </div>
             </div>
