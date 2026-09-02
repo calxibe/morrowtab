@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab Changelog - Release Notes</title>
     <meta name="description"
-        content="Release notes for MorrowTab. Version 1.0.0 is the first release: boards of organized links, search through your browser's own default provider, Quick Save, nine backgrounds, a daily FixQuotes quote, and sync through your browser profile.">
+        content="Release notes for MorrowTab 1.0.2, introducing safer multi-computer Sync for desktops and laptops that may be offline for long periods.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab Changelog - Release Notes">
     <meta property="og:description"
-        content="MorrowTab 1.0.0 is the first release. This page lists what it contains — boards, browser-default search, Quick Save, backgrounds, the daily quote, and browser-profile sync.">
+        content="MorrowTab 1.0.2 prevents stale and newly installed computers from silently replacing newer synced boards and links.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/changelog.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MorrowTab Changelog - Release Notes">
     <meta name="twitter:description"
-        content="Version 1.0.0 is the first release of MorrowTab. Here is everything that shipped in it.">
+        content="MorrowTab 1.0.2 adds conflict-aware Sync designed for several intermittently connected computers.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -41,7 +41,7 @@
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260831-1">
+    <link rel="stylesheet" href="style.css?v=20260902-2">
     <script src="index.js" defer></script>
 </head>
 
@@ -78,17 +78,123 @@
                 <h1>MorrowTab Release Notes</h1>
 
                 <p class="subtitle">
-                    MorrowTab 1.0.0 is the first release, so there is exactly one entry below and nothing before it.
-                    Rather than list what changed — nothing has, yet — this page describes what 1.0.0 actually
-                    contains. The version is fixed at 1.0.0, and it is on its way to the Chrome Web Store and
-                    Microsoft Edge Add-ons.
+                    MorrowTab 1.0.2 redesigns Sync for people who use several computers, including laptops that may
+                    stay offline for long periods. The earlier release notes remain below. The 1.0.2 release is now
+                    available from <a
+                        href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
+                        target="_blank" rel="noopener">Microsoft Edge Add-ons<span class="visually-hidden"> (opens in
+                            a new tab)</span></a>; its Chrome Web Store listing is coming soon.
                 </p>
 
-                <p class="updated">Last updated <time datetime="2026-08-31">August 31, 2026</time>.</p>
+                <p class="updated">Last updated <time datetime="2026-09">September 2026</time>.</p>
             </div>
         </section>
 
         <div class="container content">
+            <article class="version-card">
+                <h2>1.0.2</h2>
+                <p class="version-date"><time datetime="2026-09">September 2026</time></p>
+
+                <h3>New</h3>
+                <ul>
+                    <li>Computers can now download missing website icons through FixQuotes without opening every
+                        saved link first. Only the hostname is sent; each computer's icon cache stays outside Sync
+                        and backups. FixQuotes also stores reusable PNG copies in a shared server cache, reducing
+                        repeat requests to the same websites. <strong>Download website icons</strong> is on by
+                        default and can be switched off in Settings without deleting cached icons.</li>
+                    <li>Each computer now keeps its own compact, validated Sync checkpoint instead of overwriting one
+                        shared copy. A laptop returning after days offline can merge its work without replacing newer
+                        boards and links from another computer.</li>
+                    <li>Changes are merged by record and field. Editing different links or settings on different
+                        computers preserves both changes, while simultaneous edits to the same field resolve the same
+                        way everywhere and remain detectable.</li>
+                    <li>Deletion is conflict-aware: a delete made after seeing an edit is respected, while an unseen
+                        edit made concurrently is kept instead of being silently destroyed.</li>
+                    <li>If that concurrent edit belongs to a link whose column or board was deleted elsewhere, the
+                        retained owner chain is restored too, so the saved link cannot survive only as an orphan.</li>
+                    <li>Concurrent link moves now resolve to one real destination column and its board. Open-mode and
+                        auto-close changes likewise cannot combine into a setting that no computer saved.</li>
+                </ul>
+
+                <h3>Changed</h3>
+                <ul>
+                    <li>Column and board order no longer decides whether an item exists. A valid link or column keeps
+                        its declared owner even when an older computer sends a stale ordering list.</li>
+                    <li>Existing valid data is upgraded automatically from Sync schema 1 to schema 2. Older MorrowTab
+                        versions become read-only after migration; update every computer to 1.0.2 before editing.</li>
+                    <li>Empty, incomplete, corrupted or still-arriving Sync data stays read-only. It cannot publish the
+                        sample board or replace a partially delivered setup.</li>
+                    <li>Backup files remain available as optional disaster recovery and point-in-time copies, but
+                        ordinary syncing between computers no longer depends on making or importing them regularly.</li>
+                    <li>Sync checkpoints are compressed to fit the browser's extension-storage budget and validated
+                        before use. Compression is not encryption; synced content still follows the browser profile's
+                        normal extension-sync privacy model.</li>
+                    <li>Each ordinary save uses one multi-key Sync write, while obsolete local checkpoint chunks are
+                        cleaned up after editing becomes idle. This avoids exhausting Chrome's rapid-write allowance
+                        during a normal burst of changes.</li>
+                    <li>Even if no checkpoint or usable board can be recovered yet, the page stays read-only and still
+                        offers backup import plus validated local safety-copy restores instead of leaving recovery
+                        actions unreachable.</li>
+                    <li>New users no longer land on a permanent-looking empty-Sync warning. The first-install welcome
+                        page now offers <strong>Start with sample board</strong>, which initializes before the board is
+                        revealed, and <strong>Use my synced boards</strong>, which waits without publishing sample data.
+                        Every starter path still performs the final locked empty-store check.</li>
+                    <li>A required <strong>Choose how to begin</strong> chooser explains why Settings and editing are
+                        unavailable while the sample board is only a preview. <strong>New to MorrowTab</strong> comes
+                        first; use the sample board, check Sync, or import a backup. There is no close X, and Escape
+                        or an outside click cannot dismiss it. Cancelled imports return to the chooser; validation
+                        errors after <strong>Replace</strong> keep the retry confirmation available. Existing boards
+                        skip the chooser.</li>
+                    <li>Daily nature photos now start enabled for new sample setups and their read-only previews.
+                        Turn the setting off to stop the public FixQuotes/Pexels background requests. Existing
+                        background choices are left unchanged.</li>
+                    <li>Opening a synced Auto-close link on another computer now offers the needed permission on
+                        first use. Declining still opens the link normally, without an error warning or repeated
+                        automatic prompts. Choose <strong>Enable auto-close</strong> in the notice to try again for
+                        future openings.</li>
+                </ul>
+            </article>
+
+            <article class="version-card">
+                <h2>1.0.1</h2>
+                <p class="version-date"><time datetime="2026-09">September 2026</time></p>
+
+                <h3>New</h3>
+                <ul>
+                    <li>Saved links can now use Auto-close after their MorrowTab-opened tab has been inactive for 5,
+                        10, 15 or 30 minutes, 1 hour, or 2 hours.</li>
+                    <li>Returning to a managed tab resets its full timer. Navigating to another site permanently
+                        disables automatic closing for that tab, and active, pinned, audible or loading tabs are never
+                        closed.</li>
+                    <li>The feature is off for every link by default and requests the browser's optional navigation
+                        permission only when you first enable it.</li>
+                </ul>
+
+                <h3>Changed</h3>
+                <ul>
+                    <li>The link editor now aligns labels and fields in two clear columns on wider screens, then
+                        stacks them naturally on smaller screens. Description is now a single-line field. The
+                        inactivity control is named <strong>Auto-close</strong>, with each choice stating the inactive
+                        time directly and its explanation appearing only after a timeout is selected.</li>
+                    <li>Balanced the wide Settings layout into equal columns and aligned related actions in compact,
+                        equal-size groups.</li>
+                    <li>Reserved indigo for selected states and primary actions. Upload, backup and import controls
+                        now use a neutral utility style, while maintenance actions stay quiet until hover or focus.</li>
+                    <li>Standardized Settings text controls on a 40px height and aligned the right-column action
+                        controls.</li>
+                    <li><strong>Clear saved suggestions</strong> and <strong>Reset usage</strong> now appear only while
+                        their associated setting is enabled, without a redundant separator above the action.</li>
+                    <li>Column cards now settle into a clearly darker hover state with a quick, smooth fade.</li>
+                    <li>On a newly installed or long-offline computer, the sample board now stays read-only while
+                        existing boards may still be arriving. You can check Sync again or import a backup; starting a
+                        truly new synced setup requires a clear warning about overwriting an existing setup's board
+                        order and settings, plus one final check for arrived data.</li>
+                    <li>If computers merge a valid board, column or link with an older ordering list, recovery now keeps
+                        the still-present item in its declared owner instead of treating it as deleted. Repair remains
+                        read-only until you confirm it; items whose owner is genuinely gone remain excluded.</li>
+                </ul>
+            </article>
+
             <article class="version-card">
                 <h2>1.0.0</h2>
                 <p class="version-date">First release</p>
@@ -304,7 +410,7 @@
                     <ul>
                         <li>Google Chrome 114+</li>
                         <li>Microsoft Edge 114+</li>
-                        <li>Version 1.0.0</li>
+                        <li>Version 1.0.2</li>
                     </ul>
                 </div>
             </div>

@@ -575,8 +575,7 @@ kbd {
     text-decoration: none;
 }
 
-/* .btn-icon is unused today; it is the hook the Chrome and Edge store buttons
-   will need once the listings exist. */
+/* Browser-store icons inside the install buttons. */
 .btn svg,
 .btn .btn-icon {
     display: block;
@@ -585,12 +584,19 @@ kbd {
     flex-shrink: 0;
 }
 
-/* For the store buttons once the listings exist and one of them is pending. */
+/* Pending store listings are visibly muted as well as labelled in the text. */
 .btn[aria-disabled="true"] {
     cursor: default;
-    opacity: 0.72;
+    border-color: var(--border);
+    background: color-mix(in srgb, var(--surface) 88%, var(--text-muted) 12%);
+    color: var(--text-muted);
     box-shadow: none;
     pointer-events: none;
+}
+
+.btn[aria-disabled="true"] .btn-icon {
+    filter: grayscale(1);
+    opacity: 0.68;
 }
 
 .cta-buttons {
@@ -963,6 +969,13 @@ main:has(> .page-hero) .section-desc {
     height: auto;
     background: var(--surface-light);
     object-fit: contain;
+}
+
+/* The popup is a 4:7 portrait capture, not a full-width desktop screenshot.
+   Limiting its width to 40svh also keeps its height below 70% of the viewport. */
+.screenshot-card--popup {
+    max-width: min(360px, 40svh);
+    margin-inline: auto;
 }
 
 /* Bottom-left, not top-left: the product's own board picker sits in the top-left
@@ -1529,6 +1542,10 @@ main:has(> .content) > .page-hero > .container {
 
 .manual-figure .screenshot-card {
     box-shadow: none;
+}
+
+.manual-figure .screenshot-card--popup {
+    max-width: min(320px, 40svh);
 }
 
 .manual-figure .screenshot-card:hover {
