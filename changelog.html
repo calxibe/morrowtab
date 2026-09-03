@@ -78,8 +78,10 @@
                 <h1>MorrowTab Release Notes</h1>
 
                 <p class="subtitle">
-                    MorrowTab 1.0.2 redesigns Sync for people who use several computers, including laptops that may
-                    stay offline for long periods. The earlier release notes remain below. The 1.0.2 release is now
+                    MorrowTab 1.0.3 lets a search engine appear on exactly the boards you choose, and fixes a set of
+                    correctness and security problems: an accidental file drop no longer replaces your new-tab page,
+                    timed links close reliably again, and Sync refuses malformed records from
+                    another computer. The earlier release notes remain below. MorrowTab 1.0.2 is
                     available from <a
                         href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
                         target="_blank" rel="noopener">Microsoft Edge Add-ons<span class="visually-hidden"> (opens in
@@ -91,6 +93,57 @@
         </section>
 
         <div class="container content">
+            <article class="version-card">
+                <h2>1.0.3</h2>
+                <p class="version-date"><time datetime="2026-09">September 2026</time></p>
+
+                <h3>New</h3>
+                <ul>
+                    <li>A search engine can now be shown on exactly the boards you choose. Turning
+                        <strong>Visible on all boards</strong> off reveals a list of your boards to tick, instead of
+                        quietly limiting the engine to the board you created it on. Boards that already hold the
+                        maximum of 20 search engines are marked <strong>Full</strong>. An engine kept on a single
+                        board works exactly as before.</li>
+                    <li>Settings is reorganised into <strong>Appearance</strong>, <strong>Links &amp; search</strong>
+                        and <strong>Data &amp; privacy</strong>, chosen from a list down the side, so one group of
+                        settings is on screen at a time instead of everything at once. On narrow windows the list
+                        becomes a row of buttons above the settings.</li>
+                    <li><strong>Manage search engines</strong> now lists all of them, not just the ones on the board
+                        you opened it from. The engines on the current board stay at the top and can be reordered;
+                        the rest are listed below and can still be edited or deleted, so a search engine is never
+                        stranded on a board you have to go looking for.</li>
+                </ul>
+
+                <h3>Fixed</h3>
+                <ul>
+                    <li>Dropping a file onto the new-tab page no longer navigates away from it. Open dialogs, a
+                        half-typed search, and the tab's chosen search engine now survive an accidental drop.
+                        Dragging links, columns, boards and search engines to rearrange them is unchanged.</li>
+                    <li>Links that close themselves after a set time are closed reliably again. When several such
+                        links came due together — after <strong>Open all links</strong>, for example — only one
+                        closed and the rest silently restarted their full countdown. Ordinary browsing in other tabs
+                        could also keep postponing a due tab indefinitely. MorrowTab now does far less background
+                        work as you browse.</li>
+                    <li>Repairing inconsistent synced data no longer discards recent changes from another computer
+                        whose latest update was still arriving.</li>
+                    <li>Exporting a column now keeps the order you arranged its links in. With <strong>Order links by
+                        most used</strong> switched on, exporting and re-importing a column previously replaced your
+                        manual order with the click-count order.</li>
+                    <li>Adding a link with an <code>http://</code> address no longer asks for site access that could
+                        never be granted. MorrowTab now says that page titles can only be fetched from
+                        <code>https://</code> addresses.</li>
+                    <li>The daily-quote setting is no longer announced twice by screen readers, and keyboard focus no
+                        longer stops on a hidden copy of that control in Settings.</li>
+                </ul>
+
+                <h3>Changed</h3>
+                <ul>
+                    <li>Sync is stricter about the shape of data arriving from another computer. A malformed or
+                        tampered record is now refused outright rather than being applied to the page, and valid
+                        boards, columns and links are unaffected.</li>
+                </ul>
+            </article>
+
             <article class="version-card">
                 <h2>1.0.2</h2>
                 <p class="version-date"><time datetime="2026-09">September 2026</time></p>
