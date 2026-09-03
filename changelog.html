@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab Changelog - Release Notes</title>
     <meta name="description"
-        content="Release notes for MorrowTab 1.0.2, introducing safer multi-computer Sync for desktops and laptops that may be offline for long periods.">
+        content="Release notes for MorrowTab 1.0.4, fixing incomplete cross-computer Sync delivery so boards, links and search engines cannot silently appear missing.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab Changelog - Release Notes">
     <meta property="og:description"
-        content="MorrowTab 1.0.2 prevents stale and newly installed computers from silently replacing newer synced boards and links.">
+        content="MorrowTab 1.0.4 protects still-arriving synced data and prevents an older incomplete copy from opening as current.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/changelog.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MorrowTab Changelog - Release Notes">
     <meta name="twitter:description"
-        content="MorrowTab 1.0.2 adds conflict-aware Sync designed for several intermittently connected computers.">
+        content="MorrowTab 1.0.4 keeps still-arriving Sync data read-only and preserves boards, links and search engines until delivery completes.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -78,10 +78,11 @@
                 <h1>MorrowTab Release Notes</h1>
 
                 <p class="subtitle">
-                    MorrowTab 1.0.3 lets a search engine appear on exactly the boards you choose, and fixes a set of
-                    correctness and security problems: an accidental file drop no longer replaces your new-tab page,
-                    timed links close reliably again, and Sync refuses malformed records from
-                    another computer. The earlier release notes remain below. MorrowTab 1.0.2 is
+                    MorrowTab 1.0.4 fixes a Sync delivery bug that could make another computer open an older copy with
+                    boards, columns, links or search engines apparently missing. Still-arriving checkpoint pieces are
+                    now preserved and remain read-only until the matching Sync data arrives, while confirmed Repair
+                    can cleanly remove a checkpoint that is complete but permanently invalid. The earlier release
+                    notes remain below. MorrowTab 1.0.3 is
                     available from <a
                         href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
                         target="_blank" rel="noopener">Microsoft Edge Add-ons<span class="visually-hidden"> (opens in
@@ -93,6 +94,24 @@
         </section>
 
         <div class="container content">
+            <article class="version-card">
+                <h2>1.0.4</h2>
+                <p class="version-date"><time datetime="2026-09">September 2026</time></p>
+
+                <h3>Fixed</h3>
+                <ul>
+                    <li>Repair no longer disconnects another computer's first synced update because one of its
+                        checkpoint pieces is still arriving. MorrowTab now waits whether or not that computer has an
+                        older complete copy to use meanwhile.</li>
+                    <li>If checkpoint pieces arrive before their matching pointer, MorrowTab now stays read-only
+                        instead of opening an older, incomplete copy as though it were current. Boards, columns, links
+                        and search engines return automatically when the remaining Sync item arrives.</li>
+                    <li>When you confirm Repair for a checkpoint that is complete but permanently invalid, MorrowTab
+                        now removes all of that unusable checkpoint's Sync pieces, so the same recovery warning does
+                        not return. Still-arriving checkpoints are never removed this way.</li>
+                </ul>
+            </article>
+
             <article class="version-card">
                 <h2>1.0.3</h2>
                 <p class="version-date"><time datetime="2026-09">September 2026</time></p>
@@ -124,8 +143,8 @@
                         closed and the rest silently restarted their full countdown. Ordinary browsing in other tabs
                         could also keep postponing a due tab indefinitely. MorrowTab now does far less background
                         work as you browse.</li>
-                    <li>Repairing inconsistent synced data no longer discards recent changes from another computer
-                        whose latest update was still arriving.</li>
+                    <li>Repairing inconsistent synced data no longer discards a still-arriving update from another
+                        computer when MorrowTab can temporarily use that computer's previous complete copy.</li>
                     <li>Exporting a column now keeps the order you arranged its links in. With <strong>Order links by
                         most used</strong> switched on, exporting and re-importing a column previously replaced your
                         manual order with the click-count order.</li>
@@ -463,7 +482,7 @@
                     <ul>
                         <li>Google Chrome 114+</li>
                         <li>Microsoft Edge 114+</li>
-                        <li>Version 1.0.2</li>
+                        <li>Version 1.0.3</li>
                     </ul>
                 </div>
             </div>
