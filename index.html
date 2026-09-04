@@ -49,7 +49,7 @@
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             "name": "MorrowTab",
-            "alternateName": "MorrowTab — Boards, Search & Daily Quotes",
+            "alternateName": "MorrowTab: Links & Calendar",
             "applicationCategory": "BrowserApplication",
             "operatingSystem": "Chrome 114 or newer, Microsoft Edge 114 or newer",
             "url": "https://calxibe.github.io/morrowtab/",
@@ -103,7 +103,7 @@
                             "name": "Does MorrowTab connect to the internet?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Only for features you can switch off, and only to addresses you can name in advance. The daily quote is set to Text out of the box and fetches fixquotes.com once per local day; setting it to Off stops that entirely. The daily nature background starts enabled for new sample setups and their read-only previews: MorrowTab asks api.fixquotes.com which photo to show and fetches it from images.pexels.com. Turn it off in Settings to stop those requests; existing background choices remain unchanged. Download website icons is also on by default: it sends only an eligible saved hostname to api.fixquotes.com so FixQuotes can fetch that public site's icon directly. Turn it off on a computer to stop new icon requests there; the reusable cache stays local. One more address is possible, and only if you ask for it: with Fetch page titles when adding links switched on, MorrowTab requests the one site whose address you just typed, after your browser asks your permission for it. Nothing else, and no analytics."
+                                    "text": "Only for features you can switch off, and only to addresses you can name in advance. The daily quote is set to Text out of the box and fetches fixquotes.com once per local day; setting it to Off stops that entirely. The daily nature background starts enabled for new sample setups and their read-only previews: MorrowTab asks api.fixquotes.com which photo to show and fetches it from images.pexels.com. Turn it off in Settings to stop those requests; existing background choices remain unchanged. Download website icons is also on by default: it sends only an eligible saved hostname to api.fixquotes.com so FixQuotes can fetch that public site's icon directly. Turn it off on a computer to stop new icon requests there; the reusable cache stays local. Beyond those, MorrowTab only contacts addresses you name yourself, each after your browser asks your permission for that one site: with Fetch page titles when adding links switched on, the site whose address you just typed; and on a calendar board, the private feed address of each calendar you subscribe to. Nothing else, and no analytics."
                             }
                     },
                     {
@@ -798,10 +798,11 @@
                             background choices remain unchanged. <strong>Download website icons</strong> is also on
                             by default: it sends only an eligible saved hostname to <code>api.fixquotes.com</code>
                             so FixQuotes can fetch that public site's icon directly. Turn it off on a computer to stop
-                            new icon requests there; the reusable cache stays local. One more address is possible, and only if you
-                            ask for it: with <strong>Fetch page titles when adding links</strong> switched on, MorrowTab
-                            requests the one site whose address you just typed, after your browser asks your
-                            permission for it. Nothing else, and no analytics.
+                            new icon requests there; the reusable cache stays local. Beyond those, MorrowTab only
+                            contacts addresses you name yourself, each after your browser asks your permission for
+                            that one site: with <strong>Fetch page titles when adding links</strong> switched on, the
+                            site whose address you just typed; and on a calendar board, the private feed address of
+                            each calendar you subscribe to. Nothing else, and no analytics.
                         </p>
                     </details>
                     <details>
