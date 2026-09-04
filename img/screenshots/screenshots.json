@@ -154,6 +154,61 @@
     "thumbnail": "column-menu_thumb.webp"
   },
   {
+    "name": "calendar-agenda",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "calendar-agenda_thumb.webp"
+  },
+  {
+    "name": "calendar-week",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "calendar-week_thumb.webp"
+  },
+  {
+    "name": "calendar-month",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "calendar-month_thumb.webp"
+  },
+  {
+    "name": "calendar-manager",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "calendar-manager_thumb.webp"
+  },
+  {
+    "name": "calendar-editor",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "calendar-editor_thumb.webp"
+  },
+  {
     "name": "newtab-mobile",
     "width": 828,
     "height": 1792,
