@@ -252,13 +252,16 @@
                         Every shot is the real extension, using the bundled "Popular websites" starter board.
                         Auto + Nature shows the default setup: the Auto color theme with Daily Pexels nature enabled.
                         The photo changes daily; the other theme previews switch nature photos off to show their colors.
-                        The search picture has a few queries already saved on that computer.
+                        The search picture has a few queries already saved on that computer, and the calendar board
+                        shows two sample calendars with fictional events.
                     </p>
                 </div>
 
                 <div class="screenshot-tabs" role="tablist" aria-label="MorrowTab screenshots">
                     <button class="screenshot-tab" type="button" role="tab" id="tab-newtab"
                         aria-controls="panel-newtab" aria-selected="true" tabindex="0">New tab</button>
+                    <button class="screenshot-tab" type="button" role="tab" id="tab-calendar"
+                        aria-controls="panel-calendar" aria-selected="false" tabindex="-1">Calendar</button>
                     <button class="screenshot-tab" type="button" role="tab" id="tab-settings"
                         aria-controls="panel-settings" aria-selected="false" tabindex="-1">Settings</button>
                     <button class="screenshot-tab" type="button" role="tab" id="tab-search"
@@ -324,6 +327,49 @@
                                 data-webp="img/screenshots/newtab-theme-green-768.webp 768w, img/screenshots/newtab-theme-green-1280.webp 1280w, img/screenshots/newtab-theme-green-1920.webp 1920w"
                                 data-alt="The same MorrowTab board with the Green gradient background applied"
                                 data-label="Green">Green</button>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-panel" id="panel-calendar" role="tabpanel" aria-labelledby="tab-calendar"
+                        tabindex="0" hidden>
+                        <button class="screenshot-card" type="button"
+                            data-fullsrc="img/screenshots/calendar-agenda.png">
+                            <span class="screenshot-label">Agenda</span>
+                            <picture>
+                                <source type="image/avif"
+                                    srcset="img/screenshots/calendar-agenda-768.avif 768w, img/screenshots/calendar-agenda-1280.avif 1280w, img/screenshots/calendar-agenda-1920.avif 1920w"
+                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                <source type="image/webp"
+                                    srcset="img/screenshots/calendar-agenda-768.webp 768w, img/screenshots/calendar-agenda-1280.webp 1280w, img/screenshots/calendar-agenda-1920.webp 1920w"
+                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                <img src="img/screenshots/calendar-agenda.png" width="1920" height="1200"
+                                    alt="A MorrowTab calendar board in the Agenda layout over the nature photo: two calendar chips named Work and Family, then Today and the days ahead listing meetings with their times, an all-day birthday and a weekend trip"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <div class="screenshot-variants">
+                            <button class="screenshot-variant" type="button" aria-pressed="true"
+                                data-previewsrc="img/screenshots/calendar-agenda.png"
+                                data-fullsrc="img/screenshots/calendar-agenda.png"
+                                data-avif="img/screenshots/calendar-agenda-768.avif 768w, img/screenshots/calendar-agenda-1280.avif 1280w, img/screenshots/calendar-agenda-1920.avif 1920w"
+                                data-webp="img/screenshots/calendar-agenda-768.webp 768w, img/screenshots/calendar-agenda-1280.webp 1280w, img/screenshots/calendar-agenda-1920.webp 1920w"
+                                data-alt="A MorrowTab calendar board in the Agenda layout over the nature photo: two calendar chips named Work and Family, then Today and the days ahead listing meetings with their times, an all-day birthday and a weekend trip"
+                                data-label="Agenda">Agenda</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/calendar-week.png"
+                                data-fullsrc="img/screenshots/calendar-week.png"
+                                data-avif="img/screenshots/calendar-week-768.avif 768w, img/screenshots/calendar-week-1280.avif 1280w, img/screenshots/calendar-week-1920.avif 1920w"
+                                data-webp="img/screenshots/calendar-week-768.webp 768w, img/screenshots/calendar-week-1280.webp 1280w, img/screenshots/calendar-week-1920.webp 1920w"
+                                data-alt="The same calendar board in the Week layout: seven day columns across the full width with today ringed, the week number and date range in the heading, and Previous, Today and Next buttons"
+                                data-label="Week">Week</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/calendar-month.png"
+                                data-fullsrc="img/screenshots/calendar-month.png"
+                                data-avif="img/screenshots/calendar-month-768.avif 768w, img/screenshots/calendar-month-1280.avif 1280w, img/screenshots/calendar-month-1920.avif 1920w"
+                                data-webp="img/screenshots/calendar-month-768.webp 768w, img/screenshots/calendar-month-1280.webp 1280w, img/screenshots/calendar-month-1920.webp 1920w"
+                                data-alt="The same calendar board in the Month layout: a grid of the whole month with a week number beside each row, today marked, and short event lines in each day"
+                                data-label="Month">Month</button>
                         </div>
                     </div>
 
