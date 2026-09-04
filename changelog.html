@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab Changelog - Release Notes</title>
     <meta name="description"
-        content="Release notes for MorrowTab 1.0.4, fixing incomplete cross-computer Sync delivery so boards, links and search engines cannot silently appear missing.">
+        content="Release notes for MorrowTab 1.0.5, which adds calendar boards: a read-only two-week agenda from your Google and Outlook calendars on the new tab.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab Changelog - Release Notes">
     <meta property="og:description"
-        content="MorrowTab 1.0.4 protects still-arriving synced data and prevents an older incomplete copy from opening as current.">
+        content="MorrowTab 1.0.5 adds calendar boards that show your Google and Outlook calendars, read-only, on the new tab.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/changelog.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MorrowTab Changelog - Release Notes">
     <meta name="twitter:description"
-        content="MorrowTab 1.0.4 keeps still-arriving Sync data read-only and preserves boards, links and search engines until delivery completes.">
+        content="MorrowTab 1.0.5 adds calendar boards: subscribe with a calendar's private iCal address and see the next two weeks on every new tab.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -78,11 +78,10 @@
                 <h1>MorrowTab Release Notes</h1>
 
                 <p class="subtitle">
-                    MorrowTab 1.0.4 fixes a Sync delivery bug that could make another computer open an older copy with
-                    boards, columns, links or search engines apparently missing. Still-arriving checkpoint pieces are
-                    now preserved and remain read-only until the matching Sync data arrives, while confirmed Repair
-                    can cleanly remove a checkpoint that is complete but permanently invalid. The earlier release
-                    notes remain below. MorrowTab 1.0.3 is
+                    MorrowTab 1.0.5 adds calendar boards: a new board type that shows the next two weeks from your
+                    Google and Outlook calendars, read-only, right on the new tab. Subscribe with each calendar's
+                    private iCal address, give it a color, and the agenda syncs to your other computers with the
+                    board. The earlier release notes remain below. MorrowTab 1.0.3 is
                     available from <a
                         href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
                         target="_blank" rel="noopener">Microsoft Edge Add-ons<span class="visually-hidden"> (opens in
@@ -94,6 +93,59 @@
         </section>
 
         <div class="container content">
+            <article class="version-card">
+                <h2>1.0.5</h2>
+                <p class="version-date"><time datetime="2026-09">September 2026</time></p>
+
+                <h3>New</h3>
+                <ul>
+                    <li><strong>Calendar boards.</strong> When you add a board you can now choose
+                        <strong>Calendar</strong> instead of <strong>Links</strong>. A calendar board shows your
+                        Google and Outlook calendars read-only on the new tab, built from up to ten calendars you
+                        subscribe to with their private iCal addresses: Google Calendar's <em>Secret address in iCal
+                        format</em> and Outlook's <em>Publish a calendar</em> link. Timed events show their times,
+                        all-day events appear on every day they cover, past events fade and the meeting in progress
+                        is highlighted. Nothing is ever written back to Google or Outlook.</li>
+                    <li><strong>Copy the address from</strong> shortcuts in the calendar editor and on the empty
+                        board open Google Calendar settings, Outlook for work or school, or Outlook.com in a new tab,
+                        right where the iCal address is handed out.</li>
+                    <li>Each calendar gets a name and one of the eight accent colors, and the list syncs with the
+                        board, so your other computers show the same calendars once they are allowed to read those
+                        addresses. MorrowTab asks for that permission when you save a calendar, and offers
+                        <strong>Allow access</strong> on the board if a synced calendar arrives without it.</li>
+                    <li>Three layouts: choose <strong>Agenda</strong> (today, tomorrow and the days ahead that have
+                        something on), <strong>Week</strong> or <strong>Month</strong> with the switch beneath the
+                        calendar chips, and page through weeks or months with Previous, Today and Next. The week view
+                        names its week number and the month view shows one beside every row. Click a chip to hide
+                        that calendar until you click it again. The layout and hidden calendars are remembered on the
+                        computer you made the choice on.</li>
+                    <li>Every calendar chip ends in a small ↗ that opens that calendar in a new tab, where events
+                        are created and edited. While a calendar downloads, its dot spins in place without moving
+                        anything else, and a failed download is reported in a line beneath the chips, with the
+                        previously downloaded events kept on screen.</li>
+                    <li>Calendars refresh on their own when a new tab opens, while a calendar board stays open, and on
+                        <strong>Refresh</strong>. Because Google and Outlook update these private addresses only every
+                        few hours, a change you just made can take that long to appear.</li>
+                    <li><strong>Manage calendars</strong> (from the board's <strong>Calendars…</strong> button) lists,
+                        edits and removes subscriptions, with the usual six-second <strong>Undo</strong> after a
+                        removal.</li>
+                    <li><strong>Manage board</strong> replaces the rename pencil in the board list. Its dialog still
+                        renames the board, and for a calendar board also chooses a 12-hour or 24-hour clock (or lets
+                        your browser language decide) and whether Week and Month use the full page width.</li>
+                    <li>Settings → Appearance gains a <strong>Board picker</strong> choice: keep the dropdown, or
+                        show every board as a button side by side in the toolbar, with a Manage boards button at
+                        the end. The choice syncs with your other settings.</li>
+                </ul>
+
+                <h3>Changed</h3>
+                <ul>
+                    <li>Over a photo background the calendar's surfaces are solid rather than glassy, so events stay
+                        readable in every layout.</li>
+                    <li>Quick Save, the link editor's column list, <strong>Move to board…</strong> and column import
+                        offer links boards only; a calendar board has no columns to save into.</li>
+                </ul>
+            </article>
+
             <article class="version-card">
                 <h2>1.0.4</h2>
                 <p class="version-date"><time datetime="2026-09">September 2026</time></p>
@@ -109,6 +161,9 @@
                     <li>When you confirm Repair for a checkpoint that is complete but permanently invalid, MorrowTab
                         now removes all of that unusable checkpoint's Sync pieces, so the same recovery warning does
                         not return. Still-arriving checkpoints are never removed this way.</li>
+                    <li>Rearranging boards, columns, links or search engines now reaches another computer even when
+                        both computers independently started from the same earlier layout. An untouched baseline order
+                        can no longer override a real rearrangement.</li>
                 </ul>
             </article>
 

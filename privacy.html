@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Privacy Policy - MorrowTab">
     <meta name="twitter:description"
-        content="What MorrowTab stores, where it stores it, and the four addresses it can ever contact.">
+        content="What MorrowTab stores, where it stores it, and the five kinds of address it can ever contact.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -93,17 +93,18 @@
                         configured auto-close intervals are written to your browser's own extension sync storage inside
                         compressed actor checkpoints with causal counters. FixQuotes receives no copy of that synced graph — but Chrome
                         extension sync is <strong>not</strong> end-to-end encrypted, so treat it as non-confidential.</li>
-                    <li>Thirteen preferences, caches and safety values — including saved search suggestions, uploaded
-                        background, cached quote, downloaded icons and their download preference — stay only in local
+                    <li>Fifteen preferences, caches and safety values — including saved search suggestions, uploaded
+                        background, cached quote, downloaded icons and their download preference, and cached calendar events — stay only in local
                         extension storage. A separate random actor ID
                         is stored locally and also appears in this computer's synced causal metadata. None is exported.</li>
                     <li>If you enable link auto-close, live managed tab IDs, original hostnames and countdown state
                         stay in extension session storage only. They are never synced, exported or kept after the
                         browser session ends.</li>
-                    <li>MorrowTab can contact four kinds of address, and no others:
+                    <li>MorrowTab can contact five kinds of address, and no others:
                         <code>fixquotes.com</code> for the daily quote, <code>api.fixquotes.com</code> for nature metadata
-                        and website-icon lookup, <code>images.pexels.com</code> for nature photos, and a site you name if
-                        you turn on page-title autofill and grant that one site access.</li>
+                        and website-icon lookup, <code>images.pexels.com</code> for nature photos, a site you name if
+                        you turn on page-title autofill and grant that one site access, and the private feed address
+                        of each calendar you subscribe a calendar board to, after you grant that site access.</li>
                     <li>The daily quote is <strong>on by default</strong> and requests
                         <code>fixquotes.com</code> at most once per local day. Setting it to <strong>Off</strong> stops
                         that request completely.</li>
@@ -295,10 +296,10 @@
             <section id="local">
                 <h2>3. What stays on this computer</h2>
                 <p>
-                    Fourteen records live in <code>chrome.storage.local</code>. They belong to one browser profile on one
+                    Sixteen records live in <code>chrome.storage.local</code>. They belong to one browser profile on one
                     computer. Their local copies do not appear in exported backups and none is written to web
                     <code>localStorage</code>. The schema-2 actor identifier is also included as pseudonymous metadata
-                    in the checkpoint that this profile publishes; the other thirteen values are not synced.
+                    in the checkpoint that this profile publishes; the other fifteen values are not synced.
                 </p>
                 <ul>
                     <li>A persistent schema-2 actor identifier — a random installation ID used with logical counters
@@ -340,9 +341,17 @@
                     <li><code>Plugin.localFaviconDownloadsEnabled</code> — whether this computer downloads missing or
                         stale website icons. It defaults to on. Turning it off stops new requests without deleting
                         the reusable icon cache.</li>
+                    <li><code>Plugin.localCalendarCache</code> — for each calendar feed a calendar board subscribes
+                        to, the time it was last downloaded, whether that worked, the last error, and the events
+                        for the coming weeks (titles, times, locations and descriptions). It exists only on a
+                        computer that has downloaded a feed, and an entry is deleted as soon as no board references
+                        that feed any more.</li>
+                    <li><code>Plugin.localCalendarView</code> — which calendars you have hidden on a calendar board and
+                        whether it shows the agenda, week or month layout. Written only when you change one of them;
+                        it contains the hidden calendars' feed addresses and nothing else.</li>
                 </ul>
                 <p>
-                    All fourteen are ordinary extension storage values held in plain text inside your browser profile
+                    All sixteen are ordinary extension storage values held in plain text inside your browser profile
                     directory. MorrowTab does not encrypt them, and anyone with access to that profile on that
                     computer can read them.
                 </p>
@@ -373,8 +382,9 @@
             <section id="requests">
                 <h2>4. Every network request MorrowTab can make</h2>
                 <p>
-                    The extension declares three fixed hosts plus one optional, per-site permission. The table below
-                    is the complete list of requests the code can issue.
+                    The extension declares three fixed hosts plus one optional, per-site permission that two
+                    features use, each for a site you name yourself. The table below is the complete list of
+                    requests the code can issue.
                 </p>
 
                 <div class="table-wrap table-wrap-requests">
@@ -443,6 +453,24 @@
                                     no cookies or credentials, no referrer, <code>Accept: text/html,application/xhtml+xml</code>, a
                                     7-second timeout, and the response read is capped at 1 MB. Only the page's
                                     <code>&lt;title&gt;</code> is used, sanitized and cut to 160 characters.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">The calendar feeds you subscribe</th>
+                                <td>Only on a calendar board, and only for a feed address you added yourself and
+                                    whose site you allowed at your browser's own permission prompt (asked when you
+                                    save the calendar, or from the board's <strong>Allow access</strong> button). A
+                                    feed is fetched when a calendar board opens and its copy is older than 30 minutes
+                                    (5 minutes after a failure), once a minute while the board stays visible if it has
+                                    gone stale, and when you press <strong>Refresh</strong>. Removing the calendar
+                                    stops its requests.</td>
+                                <td>A <code>GET</code> of the exact private iCal address you pasted (a
+                                    <code>webcal://</code> address is stored as <code>https://</code>): no cookies or
+                                    credentials, no referrer, <code>Accept: text/calendar</code>, a 15-second timeout,
+                                    at most 32 MB, and the answer must be an iCalendar file. Event titles, times,
+                                    locations and descriptions from that file are kept only on this computer; nothing
+                                    is ever sent to Google, Microsoft or FixQuotes, and MorrowTab never writes to a
+                                    calendar. The feed address itself syncs with the board, and anyone who obtains it
+                                    can read that calendar, so treat it like a password.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -537,7 +565,7 @@
                             <tr>
                                 <th scope="row"><code>storage</code></th>
                                 <td>Keeps your boards, columns, links, extra search engines and shared settings in
-                                    the browser's sync storage, the fourteen per-computer records in local storage, and
+                                    the browser's sync storage, the sixteen per-computer records in local storage, and
                                     the live managed-tab registry in session storage.
                                 </td>
                             </tr>
@@ -603,8 +631,11 @@
                                 <th scope="row"><code>https://*/*</code> (optional)</th>
                                 <td>Declared as an <em>optional</em> host permission, so the store listing shows it,
                                     but nothing is granted when you install. It is requested one origin at a time,
-                                    from your browser's own prompt, and only for the off-by-default page-title
-                                    autofill. Decline and MorrowTab simply asks you to type the title yourself.</td>
+                                    from your browser's own prompt, for two things only: the off-by-default
+                                    page-title autofill, and the site of a calendar feed you add to a calendar board.
+                                    Decline the first and MorrowTab simply asks you to type the title yourself;
+                                    decline the second and the calendar stays saved but shows an
+                                    <strong>Allow access</strong> button instead of events.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -643,10 +674,13 @@
                 <p>
                     A backup is not required for normal schema-2 convergence between computers. It deliberately
                     excludes actor IDs, logical clocks, causal alternatives, delete markers, checkpoint compression
-                    envelopes and chunks, plus every one of the fourteen device-local records:
+                    envelopes and chunks, plus every one of the sixteen device-local records:
                 </p>
                 <ul>
                     <li>the schema-2 actor identity used by this browser profile;</li>
+                    <li>the cached calendar feeds and their downloaded events (the feed addresses themselves are
+                        part of the synced board and therefore of the backup);</li>
+                    <li>which calendars are hidden and which calendar layout is shown;</li>
                     <li>your saved search suggestions and the "Save search suggestions" preference;</li>
                     <li>your uploaded background image, and the cached nature photo — no image bytes are ever
                         exported;</li>

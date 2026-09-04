@@ -121,6 +121,7 @@
                         <li><a href="#install">Installing MorrowTab</a></li>
                         <li><a href="#first-board">Your first board</a></li>
                         <li><a href="#boards">Managing boards</a></li>
+                        <li><a href="#calendar-boards">Calendar boards</a></li>
                         <li><a href="#columns">Columns</a></li>
                         <li><a href="#links">Adding and editing links</a></li>
                         <li><a href="#search">Searching from the new tab</a></li>
@@ -415,12 +416,22 @@
                         </figcaption>
                     </figure>
 
-                    <h3>Creating and renaming</h3>
+                    <h3>Creating and managing</h3>
                     <p>
-                        <strong>Add board</strong> opens a dialog titled <em>New board</em> with one field,
-                        <strong>Board name</strong>, and the placeholder "For example, Cyber security". The button reads
-                        <strong>Create board</strong>. Renaming reuses the same dialog with the title
-                        <em>Rename board</em> and the button <strong>Save name</strong>.
+                        <strong>Add board</strong> opens a dialog titled <em>New board</em> with a
+                        <strong>Board name</strong> field (placeholder "For example, Cyber security") and a
+                        <strong>Board type</strong> choice: <strong>Links</strong>, the usual columns of saved links,
+                        or <strong>Calendar</strong>, a read-only agenda from calendars you subscribe to (see
+                        <a href="#calendar-boards">Calendar boards</a>). The button reads
+                        <strong>Create board</strong>.
+                    </p>
+                    <p>
+                        Each row's <strong>Manage board</strong> button opens the same dialog titled
+                        <em>Manage board</em>, with the name field and the button <strong>Save changes</strong>. A
+                        calendar board adds two choices there: <strong>Time format</strong> — Automatic (your
+                        browser's language decides), 12-hour or 24-hour — and <strong>Use the full width in Week and
+                        Month</strong>, on by default; the agenda keeps its narrower reading width either way. The
+                        type is chosen once and managing never converts a board.
                     </p>
                     <p>
                         A new board starts empty. It reuses any search engines you marked as visible on all boards, but
@@ -470,13 +481,123 @@
 
                     <h3>What is per board and what is shared</h3>
                     <ul>
-                        <li><strong>Per board:</strong> columns, links, which extra engines appear, their order, and
-                            their order.</li>
+                        <li><strong>Per board:</strong> its type, columns, links, subscribed calendars, which extra
+                            engines appear, and their order.</li>
                         <li><strong>Shared across every board:</strong> the background color, spacing, board layout,
                             the daily quote mode, the background mode, usage ordering, and both "open in a new tab"
                             settings.</li>
                         <li><strong>Per computer:</strong> which board is currently selected.</li>
                     </ul>
+                </section>
+                <section class="manual-topic" id="calendar-boards">
+                    <h2>Calendar boards</h2>
+                    <p>
+                        A calendar board shows the next two weeks from your Google and Outlook calendars on the new
+                        tab, read-only. It keeps the search bar and the board's search engines, and shows an agenda
+                        where a links board would show columns. Nothing you do in MorrowTab changes a calendar, and
+                        nothing is sent to Google, Microsoft or FixQuotes: the extension simply downloads each
+                        calendar's private feed and reads it on your computer.
+                    </p>
+
+                    <h3>Creating one</h3>
+                    <p>
+                        Open <strong>Manage boards…</strong>, choose <strong>Add board</strong>, give it a name and
+                        pick <strong>Calendar</strong> under <strong>Board type</strong>. The new board opens with an
+                        <strong>Add calendar</strong> button. A calendar board holds up to ten calendars.
+                    </p>
+
+                    <h3>Finding a calendar's address</h3>
+                    <p>
+                        The empty calendar board and the calendar editor both offer <strong>Copy the address
+                        from</strong> shortcuts that open the right settings page in a new tab: <strong>Google
+                        Calendar</strong>, <strong>Outlook (work or school)</strong> and <strong>Outlook.com</strong>.
+                        If Outlook opens with the wrong account, switch accounts there first. Then:
+                    </p>
+                    <ul>
+                        <li><strong>Google Calendar:</strong> open Google Calendar's settings, choose the calendar
+                            in the left list, and under <em>Integrate calendar</em> copy the <strong>Secret address
+                            in iCal format</strong>. Each calendar has its own; repeat for every calendar you want,
+                            even when they belong to the same account.</li>
+                        <li><strong>Outlook (Microsoft 365 or Outlook.com):</strong> open Settings →
+                            <em>Calendar</em> → <em>Shared calendars</em>, and under <strong>Publish a
+                            calendar</strong> choose the calendar and <em>Can view all details</em>, then copy the
+                            <strong>ICS</strong> link. Some organizations disable publishing; if the option is
+                            missing, ask your administrator. Repeat in each account.</li>
+                    </ul>
+                    <p>
+                        Paste the address into <strong>iCal address</strong>. Both <code>https://</code> and
+                        <code>webcal://</code> addresses work; MorrowTab stores the <code>https://</code> form. Give the
+                        calendar a name and one of the eight colors, or no color, then save. Your browser asks whether
+                        MorrowTab may read that site; allow it, and the events appear within a few seconds. If you
+                        decline, the calendar is still saved and its chip on the board offers
+                        <strong>Allow access</strong> to ask again.
+                    </p>
+                    <p>
+                        The address is a secret: anyone who has it can read that calendar. It syncs with the board so
+                        your other computers show the same calendars (each computer asks for site access once), and
+                        it appears in a backup file. Treat both like a password. To revoke an address, reset it in
+                        Google Calendar or unpublish it in Outlook; removing the calendar from MorrowTab only stops
+                        MorrowTab from using it.
+                    </p>
+
+                    <h3>Reading the agenda</h3>
+                    <p>
+                        The board lists <strong>Today</strong> and <strong>Tomorrow</strong> always, then only the
+                        later days that have something on, up to fourteen days ahead; otherwise it says "Nothing else
+                        in the next 14 days". Each event shows its start and end in your local time (or "09:00 →"
+                        when it ends on another day), its title, its location, and the calendar it comes from when
+                        the board has more than one. All-day events read <em>All day</em> and appear on every day
+                        they cover, counted as "2 of 3" while they span days. Events that have finished today fade;
+                        the one happening now is outlined. Hover an event to read its description.
+                    </p>
+                    <p>
+                        Above the agenda, one chip per calendar shows its color and name; its dot spins while the
+                        calendar downloads. The small ↗ at the end of a chip opens that calendar in a new tab, where
+                        you create and edit events. If a download fails, the chip gains a warning sign and a line
+                        beneath the chips names the calendar and the reason, while the previously downloaded events
+                        stay on screen. The line beside <strong>Refresh</strong> tells you when the calendars were
+                        last updated.
+                    </p>
+
+                    <h3>Layouts and hiding a calendar</h3>
+                    <p>
+                        The switch beneath the chips chooses <strong>Agenda</strong>, <strong>Week</strong> or
+                        <strong>Month</strong>. Week shows the current week as seven columns, starting on your
+                        locale's first weekday, with today marked and the week number in its heading; Month shows
+                        whole weeks with the week number at the left of each row, days outside the month dimmed and
+                        at most four events per day, then "+n more" (hover it for the rest). Week numbers follow your
+                        browser language's week rules — ISO 8601 for European languages. Both grids have Previous,
+                        Today and Next; the page position resets when you open a new tab.
+                    </p>
+                    <p>
+                        Click a calendar's chip to hide that calendar; its name is struck through and its events
+                        disappear from every layout until you click it again. Hidden calendars are still refreshed,
+                        so showing one again is instant. The layout and the hidden calendars are remembered on this
+                        computer only, and other MorrowTab tabs on it follow along.
+                    </p>
+
+                    <h3>How current it is</h3>
+                    <p>
+                        MorrowTab downloads a calendar again when a calendar board opens and its copy is older than
+                        30 minutes, once a minute while the board stays on screen if it has gone stale, and whenever
+                        you press <strong>Refresh</strong>. Google and Outlook, however, regenerate these private
+                        addresses only every few hours, so an event you have just added or moved can take that long to
+                        show up. Use the board to see what the day holds, not as a meeting alarm.
+                    </p>
+
+                    <h3>Managing calendars</h3>
+                    <p>
+                        <strong>Calendars…</strong> opens <em>Manage calendars</em>, which lists the board's
+                        calendars in the order you added them and shows only the site and last part of each address.
+                        Edit changes the name, address or color; Remove asks first and then offers a six-second
+                        <strong>Undo</strong>. Deleting the whole board removes its calendars with it, and the
+                        confirmation says how many.
+                    </p>
+                    <p>
+                        A calendar board has no columns, so it is never offered as a place to save a link: Quick
+                        Save, the link editor, <strong>Move to board…</strong> and column import list links boards
+                        only. Pasting an address while a calendar board is open does nothing.
+                    </p>
                 </section>
                 <section class="manual-topic" id="columns">
                     <h2>Columns</h2>
@@ -1265,6 +1386,23 @@
                     <p>
                         In both, cards size themselves to their contents, long titles are shortened with an ellipsis
                         rather than wrapping, and columns wrap onto new rows instead of scrolling sideways.
+                    </p>
+
+                    <h3>Board picker</h3>
+                    <p>
+                        Two options for the top-left board picker:
+                    </p>
+                    <ul>
+                        <li><strong>Dropdown — one compact menu in the toolbar.</strong> The default, described under
+                            <a href="#boards">Managing boards</a>.</li>
+                        <li><strong>Buttons — every board as a button, side by side.</strong> One button per board in
+                            your board order, the current one filled in, and a <strong>Manage boards…</strong> button
+                            at the end of the group. With many boards the group wraps onto another line; on a narrow
+                            window it shares the top row with the lock and Settings buttons as the dropdown does.</li>
+                    </ul>
+                    <p>
+                        The choice syncs with your other settings. Keyboard shortcuts, the tab title and the board
+                        manager behave the same either way.
                     </p>
 
                     <h3>Column accents</h3>
