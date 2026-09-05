@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab Changelog - Release Notes</title>
     <meta name="description"
-        content="Release notes for MorrowTab 1.0.6 and 1.0.5: calendar boards, a read-only two-week agenda from your Google and Outlook calendars on the new tab.">
+        content="Release notes for MorrowTab 1.0.8: clearer calendar labels over photo backgrounds, with day names and dates kept together.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab Changelog - Release Notes">
     <meta property="og:description"
-        content="MorrowTab 1.0.6 refines the calendar agenda that 1.0.5 introduced: your Google and Outlook calendars, read-only, on the new tab.">
+        content="MorrowTab 1.0.8 makes calendar labels easier to read over photo backgrounds.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/changelog.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MorrowTab Changelog - Release Notes">
     <meta name="twitter:description"
-        content="MorrowTab 1.0.6 and 1.0.5: subscribe with a calendar’s private iCal address and see the next two weeks on every new tab.">
+        content="MorrowTab 1.0.8 makes calendar labels easier to read over photo backgrounds.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -78,10 +78,9 @@
                 <h1>MorrowTab Release Notes</h1>
 
                 <p class="subtitle">
-                    MorrowTab 1.0.6 makes the calendar agenda easier to scan, on top of the calendar boards 1.0.5 added: a new board type that shows the next two weeks from your
-                    Google and Outlook calendars, read-only, right on the new tab. Subscribe with each calendar's
-                    private iCal address, give it a color, and the agenda syncs to your other computers with the
-                    board. The earlier release notes remain below. MorrowTab 1.0.3 is
+                    MorrowTab 1.0.8 makes calendar labels easier to read over photo backgrounds.
+                    Calendar boards show the next two weeks from your Google and Outlook calendars, read-only,
+                    right on the new tab. The earlier release notes remain below. MorrowTab 1.0.3 is
                     available from <a
                         href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
                         target="_blank" rel="noopener">Microsoft Edge Add-ons<span class="visually-hidden"> (opens in
@@ -93,6 +92,31 @@
         </section>
 
         <div class="container content">
+            <article class="version-card">
+                <h2>1.0.8</h2>
+                <p class="version-date"><time datetime="2026-09">September 2026</time></p>
+
+                <h3>Changed</h3>
+                <ul>
+                    <li>Day names, dates, empty-day messages and other calendar labels now have a subtle dark outline and shadow around the letters
+                        over photographs, so they stay clear even over bright or detailed scenery.</li>
+                    <li>Each day name stays together with its date, even when that day has many events.</li>
+                </ul>
+            </article>
+
+            <article class="version-card">
+                <h2>1.0.7</h2>
+                <p class="version-date"><time datetime="2026-09">September 2026</time></p>
+
+                <h3>Fixed</h3>
+                <ul>
+                    <li>Removing a calendar now stops its pending download, so a late response cannot restore
+                        its cached events after removal. Undo still restores the subscription normally.</li>
+                    <li>Oversized calendar downloads stop as soon as they exceed the size limit, keeping the
+                        last successfully loaded events available.</li>
+                </ul>
+            </article>
+
             <article class="version-card">
                 <h2>1.0.6</h2>
                 <p class="version-date"><time datetime="2026-09">September 2026</time></p>
