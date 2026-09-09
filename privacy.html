@@ -546,7 +546,7 @@
             <section id="permissions">
                 <h2>5. Each permission, and why it is there</h2>
                 <p>
-                    MorrowTab runs an automatic content script only on top-level HTTPS Zoom recording pages matching <code>https://*.zoom.us/rec/*</code>. It reads video source addresses and adds a dismissible download overlay that updates as the player loads. Closing it stops watching the player; “Download Zoom recording” in the context menu reopens it on the chosen Zoom page or clicked frame on the same origin. Addresses stay on that page and are not saved to Sync. Saving a video uses the Zoom document's normal referrer policy and browser session context. MorrowTab declares no <code>tabs</code> permission. Choosing the Google Maps context-menu item
+                    MorrowTab runs an automatic content script only on top-level HTTPS Zoom recording pages matching <code>https://*.zoom.us/rec/*</code>. It reads video source addresses and adds a dismissible download overlay that updates as the player loads. Closing it stops watching the player; refresh the recording page to show it again. There is no Zoom context-menu action. Addresses stay on that page and are not saved to Sync. Saving a video uses the Zoom document's normal referrer policy and browser session context. MorrowTab declares no <code>tabs</code> permission. Choosing the Google Maps context-menu item
                     provides the selected text to MorrowTab and sends it to Google as a search in a new tab. Link auto-close uses the optional <code>webNavigation</code> permission to
                     receive navigation events, but the worker considers only tab IDs that MorrowTab itself created and
                     compares only their top-level hostname. It stores no navigation log.
@@ -563,16 +563,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><code>scripting</code></th>
-                                <td>Opens or reopens the download overlay when you choose the Zoom recording menu, using temporary activeTab access.</td>
-                            </tr>
-                            <tr>
                                 <th scope="row">Zoom recording page access</th>
                                 <td>The content script matches <code>https://*.zoom.us/rec/*</code> so the download overlay appears automatically. It reads the page title and video sources, watches for player changes while open, and keeps this information on the page. It does not run automatically on other Zoom pages.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>contextMenus</code></th>
-                                <td>Adds Save to MorrowTab, Google Maps selection search and the Zoom recording menu. Save to MorrowTab opens a dialog with the current page address and title; nothing is saved until you confirm. Selected text is sent to Google only when you choose this action; it is not saved by MorrowTab.</td>
+                                <td>Adds Save to MorrowTab and Google Maps selection search. Save to MorrowTab opens a dialog with the current page address and title; nothing is saved until you confirm. Selected text is sent to Google only when you choose this action; it is not saved by MorrowTab.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>storage</code></th>
@@ -602,8 +598,7 @@
                             <tr>
                                 <th scope="row"><code>activeTab</code></th>
                                 <td>Grants temporary access after a toolbar, keyboard or context-menu action. Quick Save
-                                    reads the current page title and address; the Zoom menu reads video source addresses
-                                    on the chosen Zoom page. It grants no standing access to any site.</td>
+                                    reads the current page title and address. It grants no standing access to any site.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>webNavigation</code> (optional)</th>
