@@ -20,7 +20,7 @@ Use the user manual for detailed information about boards, calendar boards, colu
 - [Privacy policy](https://calxibe.github.io/morrowtab/privacy.html): What is stored in browser sync, what stays only on one computer, every network request the extension can make, what an exported backup contains, and how the website itself behaves.
 - [Contact MorrowTab support](https://calxibe.github.io/morrowtab/contact.html): MorrowTab's handoff page for support, feedback and questions, all handled by FixQuotes.
 - [FixQuotes support form](https://apps.fixquotes.com/contact/?category=morrowtab): The only support channel for MorrowTab.
-- [About FixQuotes](https://fixquotes.com/docs/about/): Information about the publisher.
+- [About FixQuotes](https://apps.fixquotes.com/): Information about the publisher.
 
 ## Optional
 
