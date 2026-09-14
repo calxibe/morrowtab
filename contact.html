@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Contact MorrowTab - Support from FixQuotes</title>
     <meta name="description"
-        content="One support route for MorrowTab, handled by FixQuotes. What to put in a bug report, where to send a privacy question, and how to suggest something for a future version.">
+        content="Contact FixQuotes about MorrowTab support, privacy, FixQuotes Sync account deletion, bug reports and feature suggestions.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="Contact MorrowTab - Support from FixQuotes">
     <meta property="og:description"
-        content="One support route for MorrowTab, handled by FixQuotes. What to put in a bug report, where to send a privacy question, and how to suggest something for a future version.">
+        content="Contact FixQuotes about MorrowTab support, privacy, FixQuotes Sync account deletion, bug reports and feature suggestions.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/contact.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -77,9 +77,10 @@
                 <span class="section-badge">Contact</span>
                 <h1>Get in touch about MorrowTab</h1>
                 <p class="subtitle">
-                    MorrowTab is built and published by FixQuotes, and one route reaches the people who work on it: the
-                    FixQuotes contact page, with the MorrowTab category already selected for you. That route is the only
-                    support channel — there is no forum, no mailing list and no second inbox. Before you write, it is
+                    MorrowTab is built and published by FixQuotes. The private support route is the FixQuotes contact
+                    page, with the MorrowTab category already selected for you; the live page may also offer FixQuotes'
+                    Discord community for quicker public conversation. Use the contact form for privacy matters and
+                    FixQuotes Sync account deletion. Before you write, it is
                     worth reading the troubleshooting section of the manual, because it already covers the problems
                     that come up most.
                 </p>
@@ -126,21 +127,29 @@
                         <div class="feature-icon sync" aria-hidden="true">🔒</div>
                         <h3>A question about your data</h3>
                         <p>
-                            The <a href="privacy.html">privacy policy</a> lists every storage key MorrowTab writes and
-                            every address it can reach. If your question is not answered there, ask — but please leave
-                            your own data out of the message.
+                            The <a href="privacy.html">privacy policy</a> describes every storage area and record
+                            category, and every address MorrowTab can reach. If your question is not answered there,
+                            ask — but please leave your own data out of the message.
                         </p>
                         <ul class="feature-list">
                             <li>Do not attach an exported backup. It is plain JSON, and it contains every board name,
                                 link title and address you have saved</li>
-                            <li>Boards travel through your browser's own extension sync, which is not end-to-end
-                                encrypted, so treat board names and saved addresses as non-confidential</li>
-                            <li>MorrowTab can reach three fixed addresses — <code>fixquotes.com</code>,
-                                <code>api.fixquotes.com</code> and <code>images.pexels.com</code> — plus one site you
-                                name yourself, if you turn on page-title autofill and grant that site access</li>
+                            <li>Browser Sync is the default and sends no board copy to FixQuotes. Optional FixQuotes
+                                Sync creates an email-based account and stores a server-readable copy after you
+                                explicitly connect it. MorrowTab adds no application-level encryption to Browser
+                                Sync, and FixQuotes Sync is not end-to-end encrypted</li>
+                            <li><code>fixquotes.com</code>, <code>api.fixquotes.com</code> and
+                                <code>images.pexels.com</code> support quotes, optional sync, nature photos and icons.
+                                Calendar and page-title requests go only to addresses you add and approve</li>
                             <li>Website-icon downloads are on by default and disclose only an eligible saved hostname
                                 to FixQuotes, not the complete link or title. Turn <strong>Download website icons</strong>
                                 off on a computer to stop those requests there</li>
+                            <li>The Zoom overlay runs only on Zoom recording pages, reads the page title and direct
+                                video sources locally, and does not store or send that information to FixQuotes</li>
+                            <li>To delete a FixQuotes Sync account, use the MorrowTab contact form and write
+                                <strong>FixQuotes Sync account deletion</strong>. Deletion requires fresh verification
+                                through the email address on that account. Signing out or uninstalling does not delete
+                                the server account</li>
                         </ul>
                     </div>
 
@@ -158,9 +167,8 @@
                                 usage-based ordering and column export already exist</li>
                             <li>MorrowTab is a Chromium extension, so anything that would need Firefox or Safari is out
                                 of scope</li>
-                            <li>The 100 KB byte budget comes from browser extension sync; the item ceilings
-                                (30 boards, 250 links, 200 per column) are MorrowTab's own, chosen to stay safely
-                                inside it</li>
+                            <li>Browser Sync has a 100 KB and 250-link budget. Optional FixQuotes Sync raises those
+                                totals to 4 MB and 5,000 links; the 30-board and 200-links-per-column ceilings remain</li>
                         </ul>
                     </div>
                 </div>

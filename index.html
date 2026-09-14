@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab - Board-Based New Tab for Chrome and Edge</title>
     <meta name="description"
-        content="MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through your browser's own default provider, and a daily FixQuotes quote. Synced through your browser profile, with no MorrowTab account.">
+        content="MorrowTab replaces the new tab in Chrome and Edge with organized links, calendar boards and search. Use Browser Sync by default or optional FixQuotes Sync for more space.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab - Board-Based New Tab for Chrome and Edge">
     <meta property="og:description"
-        content="MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through your browser's own default provider, and a daily FixQuotes quote. No MorrowTab account needed.">
+        content="Organized links, calendar boards and search on every new tab. Use Browser Sync by default or optional email-based FixQuotes Sync for more space.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -54,7 +54,7 @@
             "operatingSystem": "Chrome 114 or newer, Microsoft Edge 114 or newer",
             "url": "https://calxibe.github.io/morrowtab/",
             "image": "https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png",
-            "description": "MorrowTab replaces the new tab in Chrome and Edge with boards of organized links, search through the browser's own default provider, and a daily FixQuotes quote. It syncs through the browser profile and has no account and no server of its own.",
+            "description": "MorrowTab replaces the new tab in Chrome and Edge with organized links, calendar boards, search through the browser's own default provider, and a daily FixQuotes quote. It uses Browser Sync by default and offers optional email-based FixQuotes Sync for more space.",
             "publisher": {
                     "@type": "Organization",
                     "name": "FixQuotes",
@@ -87,7 +87,7 @@
                             "name": "What does it cost?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Nothing. MorrowTab is free, with no paid tier, no trial period and nothing to buy inside the extension. There is no account to upgrade, because there is no account."
+                                    "text": "Nothing. MorrowTab is free, with no paid tier, no trial period and nothing to buy inside the extension. The optional FixQuotes Sync account is free too."
                             }
                     },
                     {
@@ -95,7 +95,7 @@
                             "name": "Do I need an account?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "No. There is no MorrowTab account or login. Your boards are stored by your browser’s own extension sync, which follows the browser profile you are already signed into. If that profile is syncing extension data, your boards appear on your other computers with nothing else to set up; if it is not, they simply stay on the one computer."
+                                    "text": "Not for Browser Sync. It follows the Chrome or Edge profile you are already signed into. FixQuotes Sync is an optional alternative for more space and Chrome-to-Edge syncing; it creates a FixQuotes account after you enter an email address and verify a one-use code."
                             }
                     },
                     {
@@ -103,7 +103,7 @@
                             "name": "Does MorrowTab connect to the internet?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Only for features you can switch off, and only to addresses you can name in advance. The daily quote is set to Text out of the box and fetches fixquotes.com once per local day; setting it to Off stops that entirely. The daily nature background starts enabled for new sample setups and their read-only previews: MorrowTab asks api.fixquotes.com which photo to show and fetches it from images.pexels.com. Turn it off in Settings to stop those requests; existing background choices remain unchanged. Download website icons is also on by default: it sends only an eligible saved hostname to api.fixquotes.com so FixQuotes can fetch that public site's icon directly. Turn it off on a computer to stop new icon requests there; the reusable cache stays local. Beyond those, MorrowTab only contacts addresses you name yourself, each after your browser asks your permission for that one site: with Fetch page titles when adding links switched on, the site whose address you just typed; and on a calendar board, the private feed address of each calendar you subscribe to. Nothing else, and no analytics."
+                                    "text": "Yes, for clearly scoped features. The daily quote is set to Text out of the box and fetches fixquotes.com once per local day; setting it to Off stops that entirely. The daily nature background starts enabled for new sample setups and their read-only previews: MorrowTab asks api.fixquotes.com which photo to show and fetches it from images.pexels.com. Turn it off in Settings to stop those requests; existing background choices remain unchanged. Download website icons is also on by default: it sends only an eligible saved hostname to api.fixquotes.com so FixQuotes can fetch that public site's icon directly. Turn it off on a computer to stop new icon requests there; the reusable cache stays local. Beyond those, MorrowTab only contacts addresses you name yourself, each after your browser asks your permission for that one site: with Fetch page titles when adding links switched on, the site whose address you just typed; and on a calendar board, the private feed address of each calendar you subscribe to. Optional FixQuotes Sync sends sign-in requests and, only after you connect it, your board data to api.fixquotes.com. The Zoom overlay runs on Zoom recording pages but does not send the page title or media sources to FixQuotes. There is no analytics."
                             }
                     },
                     {
@@ -111,7 +111,7 @@
                             "name": "Can it read the pages I browse?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "No. MorrowTab has no content scripts, so it never runs on the sites you visit. The toolbar popup sees the title and address of the tab you are on, and only at the moment you click the button. The one exception is entirely up to you: if you switch on Fetch page titles when adding links, Chrome asks your permission for each individual site before MorrowTab reads that page’s title."
+                                    "text": "Only in narrowly scoped cases. The toolbar popup sees the title and address of the current tab when you open it. If you enable Fetch page titles when adding links, Chrome asks for access to that individual site. MorrowTab also runs automatically on Zoom recording pages at https://*.zoom.us/rec/*, where it reads the page title and direct video sources to build a local download overlay. It does not save or upload that Zoom information."
                             }
                     },
                     {
@@ -119,7 +119,7 @@
                             "name": "How much can I save?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Up to 30 boards, 120 columns (40 per board), 250 links (200 per column) and 80 search engines, inside a 100 KB sync budget. Those are deliberate ceilings set below what browser extension sync allows, so a save fails with a clear message rather than quietly losing data. Settings shows how much of the budget you are using."
+                                    "text": "Browser Sync supports up to 30 boards, 120 columns (40 per board), 250 links (200 per column) and 80 search engines inside a 100 KB budget. Optional FixQuotes Sync raises the overall limits to 5,000 links and 4 MB; the other ceilings stay the same. Settings shows the active provider and how much of its budget you are using."
                             }
                     },
                     {
@@ -127,7 +127,7 @@
                             "name": "Is my data encrypted?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Not by MorrowTab. Browser extension sync is not end-to-end encrypted, so treat board names, link titles, saved addresses and search templates as non-confidential. Exported backups are plain, readable JSON files, and the records MorrowTab keeps on your own computer are stored in plain text under your browser profile."
+                                    "text": "Not end-to-end. Browser Sync follows the browser provider's security, and FixQuotes Sync uses HTTPS but stores a server-readable copy. Treat board names, link titles, saved addresses, search templates and private calendar feed addresses as non-confidential. Exported backups are plain JSON, and local extension records are readable in the browser profile."
                             }
                     },
                     {
@@ -183,11 +183,11 @@
                 <h1>Every New Tab,<br>Organized Your Way</h1>
 
                 <p class="subtitle">
-                    MorrowTab replaces the new tab in Chrome and Edge with boards of links you actually use, a search
-                    box that runs through your browser's own default provider, and a daily FixQuotes quote. Keep one
-                    board for work and another for everything else, each with its own columns, links and extra search
-                    engines. They travel through the browser profile you are already signed into, so there is no
-                    MorrowTab account to create or server holding your synced board graph.
+                    MorrowTab replaces the new tab in Chrome and Edge with boards of links you actually use, calendar
+                    boards, a search box that runs through your browser's own default provider, and a daily FixQuotes
+                    quote. Browser Sync works through the browser profile you are already signed into and needs no
+                    MorrowTab account. If you want more room or want to sync between Chrome and Edge, you can explicitly
+                    connect an email-based FixQuotes Sync account instead.
                 </p>
 
                 <div class="cta-buttons" id="install" role="group" aria-label="Install MorrowTab">
@@ -222,21 +222,22 @@
                     <div class="supported-box">
                         <h2>Clear about what leaves your machine</h2>
                         <p class="supported-copy">
-                            Boards sync through your browser's own extension sync. MorrowTab can reach three fixed
-                            addresses, for features you can switch off: <code>fixquotes.com</code> for the daily
-                            quote, which is on out of the box, plus <code>api.fixquotes.com</code> and
-                            <code>images.pexels.com</code> for nature photos, enabled for new sample setups and previews.
-                            Existing background choices stay unchanged. Website-icon downloads, on by default,
-                            send only an eligible link's hostname to <code>api.fixquotes.com</code>; the icon cache and
-                            its switch stay on each computer. Beyond those, MorrowTab only contacts addresses you name
-                            yourself and approve one site at a time: a page whose title you let it fetch while adding
-                            a link, or a calendar feed you subscribe a calendar board to. There is
-                            no analytics, no advertising tracker, and no remote code.
+                            Browser Sync is the default. Requesting optional FixQuotes Sync sends your email address
+                            to FixQuotes and its mail provider; verifying the one-use code creates an account and
+                            device session. Your board data &mdash; including saved addresses and private calendar
+                            feed addresses &mdash; is uploaded only after you review the transfer and press
+                            <strong>Connect</strong>. It uses HTTPS but is not end-to-end encrypted.
+                            Separate switchable features use <code>fixquotes.com</code>, <code>api.fixquotes.com</code>
+                            and <code>images.pexels.com</code> for quotes, nature photos and website icons. MorrowTab can
+                            also contact a page-title or calendar-feed address that you add and approve. On Zoom
+                            recording pages, a narrowly scoped content script reads the page title and direct video
+                            sources to show local download links. There is no analytics, advertising tracker or remote
+                            code.
                         </p>
                         <div class="format-tags">
-                            <span class="format-tag">No account</span>
-                            <span class="format-tag">Three known hosts</span>
-                            <span class="format-tag">No content scripts</span>
+                            <span class="format-tag">Browser Sync by default</span>
+                            <span class="format-tag">Optional FixQuotes account</span>
+                            <span class="format-tag">Zoom pages only</span>
                             <span class="format-tag">JSON export</span>
                         </div>
                     </div>
@@ -509,16 +510,15 @@
 
                     <div class="feature-card">
                         <div class="feature-icon sync" aria-hidden="true">🔄</div>
-                        <h3>Sync without an account</h3>
+                        <h3>Choose how your boards sync</h3>
                         <p>
-                            Boards, columns, links, search engines and shared settings ride your browser's own
-                            extension sync. There is no MorrowTab login or server holding a copy of that synced graph.
+                            Browser Sync is ready without a MorrowTab account. Optional FixQuotes Sync uses an emailed
+                            sign-in code, offers more space and can connect Chrome and Edge to the same account.
                         </p>
                         <ul class="feature-list">
-                            <li>Every write is taken under a lock and checked against the data it was based on</li>
+                            <li>No board data is uploaded to FixQuotes until you review the transfer and connect</li>
+                            <li>FixQuotes Sync keeps offline changes on the computer and retries when you reconnect</li>
                             <li>Export and import a plain JSON backup of everything synced</li>
-                            <li>If two computers ever merge badly, you get a read-only recovery view instead of a
-                                broken page</li>
                         </ul>
                     </div>
 
@@ -639,8 +639,8 @@
                     <span class="section-badge">Honest limits</span>
                     <h2>How Much Fits</h2>
                     <p class="section-desc">
-                        Browser extension sync is a small, shared budget, so MorrowTab enforces its own ceilings well
-                        inside it and tells you before a write fails. These are the real numbers.
+                        Browser extension sync is a small, shared budget. Optional FixQuotes Sync raises the overall
+                        data and link ceilings; the board, column and search-engine limits stay the same.
                     </p>
                 </div>
 
@@ -664,7 +664,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Links</th>
-                                <td>250 in total, 200 per column</td>
+                                <td>250 with Browser Sync or 5,000 with FixQuotes Sync; 200 per column</td>
                             </tr>
                             <tr>
                                 <th scope="row">Search engines</th>
@@ -672,7 +672,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Synced data</th>
-                                <td>100 KB across 500 records</td>
+                                <td>100 KB across 500 records with Browser Sync; 4 MB with FixQuotes Sync</td>
                             </tr>
                             <tr>
                                 <th scope="row">Saved search suggestions</th>
@@ -687,8 +687,9 @@
                     <div>
                         <h3>You can see where you stand</h3>
                         <p>
-                            Settings shows a live readout — for example <em>Synced data: 9 of 100 KB · 50 of 250
-                            links</em> — using the same byte arithmetic the validator uses before a save.
+                            Settings shows the provider and a live readout &mdash; for example <em>Synced data: 9 of
+                            100 KB · 50 of 250 links</em>, or <em>FixQuotes data</em> after you connect &mdash; using
+                            the same byte arithmetic the validator uses before a save.
                         </p>
                     </div>
                 </div>
@@ -701,22 +702,24 @@
                     <span class="section-badge">Privacy</span>
                     <h2>Where Your Data Goes</h2>
                     <p class="section-desc">
-                        The short version. The <a href="privacy.html">privacy policy</a> lists every storage key and
-                        every request by name.
+                        The short version. The <a href="privacy.html">privacy policy</a> describes every storage area
+                        and record category, and lists every request by name.
                     </p>
                 </div>
 
                 <div class="features-grid">
                     <div class="feature-card">
-                        <h3>Synced through your browser</h3>
+                        <h3>Two sync choices</h3>
                         <p>
-                            Board names, column titles, link titles and URLs, search templates, shared settings and a
-                            per-link click count go into <code>chrome.storage.sync</code> — the browser's own
-                            extension sync, tied to the profile you are signed into.
+                            By default, board names, columns, link titles and URLs, search templates, settings,
+                            calendar feed addresses and click counts go into <code>chrome.storage.sync</code>, tied to
+                            the browser profile you are signed into. FixQuotes receives no copy in this mode.
                         </p>
                         <p>
-                            Chrome extension sync is not end-to-end encrypted, so treat board names and saved
-                            addresses as non-confidential.
+                            Optional FixQuotes Sync creates an account from your email address and stores the same board
+                            graph with FixQuotes after a separate review-and-connect step. MorrowTab adds no
+                            application-level encryption to Browser Sync, and FixQuotes Sync is not end-to-end
+                            encrypted.
                         </p>
                     </div>
 
@@ -724,8 +727,8 @@
                         <h3>Kept on one computer</h3>
                         <p>
                             Your selected board, saved search suggestions and whether new ones are recorded, an uploaded
-                            background, the cached nature photo, the cached quote, the remembered Quick Save
-                            destination and two safety snapshots stay in local extension storage.
+                            background, cached photos, icons, quotes and calendar events, the remembered Quick Save
+                            destination and safety copies stay in local extension storage.
                         </p>
                         <p>
                             None of them syncs, and none of them is included in an exported backup.
@@ -733,19 +736,18 @@
                     </div>
 
                     <div class="feature-card">
-                        <h3>Three fixed addresses</h3>
+                        <h3>Services and page access</h3>
                         <p>
-                            <code>fixquotes.com</code> for the daily quote, plus <code>api.fixquotes.com</code> and
-                            <code>images.pexels.com</code> while nature photos are enabled. Anything else is a site you
-                            name and approve yourself: page-title autofill for a link, or the calendar feeds behind a
-                            calendar board. The two FixQuotes requests carry no
-                            cookies, no referrer and no query string; the Pexels image URL carries only the sizing
-                            parameters FixQuotes chose.
+                            <code>fixquotes.com</code> supplies the daily quote; <code>api.fixquotes.com</code> provides
+                            optional sync, nature-photo metadata and website icons; and <code>images.pexels.com</code>
+                            supplies photo bytes. MorrowTab can also request a page-title or calendar-feed address that
+                            you add and approve.
                         </p>
                         <p>
-                            The daily quote and new sample setup's nature background are on by default, including in
-                            the read-only preview. Switch either off in Settings to stop its requests. Existing
-                            background choices are preserved.
+                            On <code>https://*.zoom.us/rec/*</code>, MorrowTab automatically reads the page title and
+                            direct video sources to show a download overlay. That information remains on the Zoom page;
+                            it is not saved or sent to FixQuotes. The daily quote, nature-photo and icon settings are
+                            described in the <a href="privacy.html">privacy policy</a>.
                         </p>
                     </div>
                 </div>
@@ -773,24 +775,21 @@
                         <summary>What does it cost?</summary>
                         <p>
                             Nothing. MorrowTab is free, with no paid tier, no trial period and nothing to buy inside
-                            the extension. There is no account to upgrade, because there is no account.
+                            the extension. The optional FixQuotes Sync account is free too.
                         </p>
                     </details>
                     <details>
                         <summary>Do I need an account?</summary>
                         <p>
-                            No. There is no MorrowTab account or login. Your boards are
-                            stored by your browser&rsquo;s own extension sync, which follows the browser profile you
-                            are already signed into. If that profile is syncing extension data, your boards appear on
-                            your other computers with nothing else to set up; if it is not, they simply stay on the
-                            one computer.
+                            Not for Browser Sync. It follows the Chrome or Edge profile you are already signed into.
+                            FixQuotes Sync is an optional alternative for more space and Chrome-to-Edge syncing; it
+                            creates a FixQuotes account after you enter an email address and verify a one-use code.
                         </p>
                     </details>
                     <details>
                         <summary>Does MorrowTab connect to the internet?</summary>
                         <p>
-                            Only for features you can switch off, and only to addresses you can name in advance.
-                            The daily quote is set to
+                            Yes, for clearly scoped features. The daily quote is set to
                             <strong>Text</strong> out of the box and fetches <code>fixquotes.com</code> once per local
                             day; setting it to <strong>Off</strong> stops that entirely. The daily nature background
                             starts enabled for new sample setups and their read-only previews: MorrowTab asks
@@ -803,35 +802,40 @@
                             contacts addresses you name yourself, each after your browser asks your permission for
                             that one site: with <strong>Fetch page titles when adding links</strong> switched on, the
                             site whose address you just typed; and on a calendar board, the private feed address of
-                            each calendar you subscribe to. Nothing else, and no analytics.
+                            each calendar you subscribe to. Optional FixQuotes Sync sends sign-in requests and, only
+                            after you connect it, your board data to <code>api.fixquotes.com</code>. The Zoom overlay
+                            runs on Zoom recording pages but does not send the page title or media sources to FixQuotes.
+                            There is no analytics.
                         </p>
                     </details>
                     <details>
                         <summary>Can it read the pages I browse?</summary>
                         <p>
-                            No. MorrowTab has no content scripts, so it never runs on the sites you visit. The toolbar
-                            popup sees the title and address of the tab you are on, and only at the moment you click
-                            the button. The one exception is entirely up to you: if you switch on
-                            <strong>Fetch page titles when adding links</strong>, Chrome asks your permission for each
-                            individual site before MorrowTab reads that page&rsquo;s title.
+                            Only in narrowly scoped cases. The toolbar popup sees the title and address of the current
+                            tab when you open it. If you enable <strong>Fetch page titles when adding links</strong>,
+                            Chrome asks for access to that individual site. MorrowTab also runs automatically on Zoom
+                            recording pages at <code>https://*.zoom.us/rec/*</code>, where it reads the page title and
+                            direct video sources to build a local download overlay. It does not save or upload that
+                            Zoom information.
                         </p>
                     </details>
                     <details>
                         <summary>How much can I save?</summary>
                         <p>
-                            Up to 30 boards, 120 columns (40 per board), 250 links (200 per column) and 80 search
-                            engines, inside a 100&nbsp;KB sync budget. Those are deliberate ceilings set below what
-                            browser extension sync allows, so a save fails with a clear message rather than quietly
-                            losing data. Settings shows how much of the budget you are using.
+                            Browser Sync supports up to 30 boards, 120 columns (40 per board), 250 links (200 per
+                            column) and 80 search engines inside a 100&nbsp;KB budget. Optional FixQuotes Sync raises
+                            the overall limits to 5,000 links and 4&nbsp;MB; the other ceilings stay the same. Settings
+                            shows the active provider and how much of its budget you are using.
                         </p>
                     </details>
                     <details>
                         <summary>Is my data encrypted?</summary>
                         <p>
-                            Not by MorrowTab. Browser extension sync is not end-to-end encrypted, so treat board names,
-                            link titles, saved addresses and search templates as non-confidential. Exported backups are
-                            plain, readable JSON files, and the records MorrowTab keeps on your own computer are stored
-                            in plain text under your browser profile.
+                            Not end-to-end. Browser Sync follows the browser provider's security, and FixQuotes Sync
+                            uses HTTPS but stores a server-readable copy. Treat board names, link titles, saved
+                            addresses, search templates and private calendar feed addresses as non-confidential.
+                            Exported backups are plain JSON, and local extension records are readable in the browser
+                            profile.
                         </p>
                     </details>
                     <details>
@@ -908,7 +912,7 @@
     <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size screenshot"
         aria-hidden="true">
         <button class="lightbox-close" type="button" aria-label="Close image preview">&times;</button>
-        <img id="lightboxImg" alt="">
+        <img id="lightboxImg" src="img/icon16.png" alt="">
     </div>
 
     <footer>

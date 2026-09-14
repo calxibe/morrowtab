@@ -1,7 +1,7 @@
 {
-  "name": "MorrowTab — Boards, Search & Daily Quotes",
+  "name": "MorrowTab: Links & Calendar",
   "short_name": "MorrowTab",
-  "description": "A synced new-tab homepage for Chrome and Edge: boards of organized links, browser-default search, and a daily FixQuotes quote.",
+  "description": "An organized new-tab home for links, read-only calendars, search, daily quotes, and optional Chrome-to-Edge sync.",
   "start_url": "./",
   "scope": "./",
   "display": "browser",

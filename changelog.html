@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab Changelog - Release Notes</title>
     <meta name="description"
-        content="Release notes for MorrowTab 1.0.10: reveal every event from the Month view's +n more button.">
+        content="Release notes for MorrowTab 1.0.10: optional FixQuotes Sync for more space and a fix for the Month view's +n more button.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab Changelog - Release Notes">
     <meta property="og:description"
-        content="MorrowTab 1.0.10 fixes the Month view's +n more button so it reveals every event.">
+        content="MorrowTab 1.0.10 adds optional FixQuotes Sync and fixes the Month view's +n more button.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/changelog.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MorrowTab Changelog - Release Notes">
     <meta name="twitter:description"
-        content="MorrowTab 1.0.10 fixes the Month view's +n more button so it reveals every event.">
+        content="MorrowTab 1.0.10 adds optional FixQuotes Sync and fixes the Month view's +n more button.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -78,7 +78,8 @@
                 <h1>MorrowTab Release Notes</h1>
 
                 <p class="subtitle">
-                    MorrowTab 1.0.10 makes the Month view's "+n more" button reveal every event.
+                    MorrowTab 1.0.10 adds optional FixQuotes Sync for more room and cross-browser syncing, and makes
+                    the Month view's "+n more" button reveal every event.
                     Calendar boards show the next two weeks from your Google and Outlook calendars, read-only,
                     right on the new tab. The earlier release notes remain below. MorrowTab is
                     available from <a
@@ -95,6 +96,19 @@
             <article class="version-card">
                 <h2>1.0.10</h2>
                 <p class="version-date"><time datetime="2026-09">September 2026</time></p>
+                <h3>Added</h3>
+                <ul>
+                    <li>Optional <strong>FixQuotes Sync</strong> in Settings → Data &amp; privacy. Browser Sync remains
+                        the default and needs no MorrowTab account. FixQuotes Sync uses an email address and one-use
+                        code, offers a 4 MB data budget and up to 5,000 links, and lets Chrome and Edge join the same
+                        account.</li>
+                    <li>Connecting is a separate, explicit step after sign-in. The screen identifies the board, link,
+                        settings and private calendar-feed data that will be stored with FixQuotes and states that the
+                        service uses HTTPS but is not end-to-end encrypted. Nothing is uploaded merely because the
+                        browser budget is getting full.</li>
+                    <li>Each connected computer keeps a durable offline copy and pending changes, retries when the
+                        network returns, and makes an exportable recovery copy of the boards it had before connecting.</li>
+                </ul>
                 <h3>Fixed</h3>
                 <ul>
                     <li>In Month view, click “+n more” to reveal every remaining event for that day. The button

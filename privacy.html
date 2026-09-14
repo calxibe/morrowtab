@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Privacy Policy - MorrowTab</title>
     <meta name="description"
-        content="The MorrowTab privacy policy: what schema-2 Sync stores, every network request the extension can make, every permission it declares, backup contents, and deletion controls.">
+        content="The MorrowTab privacy policy: Browser Sync, optional FixQuotes Sync, local storage, network requests, permissions, backups, retention, and deletion.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="Privacy Policy - MorrowTab">
     <meta property="og:description"
-        content="What MorrowTab stores in schema-2 Sync and on each computer, every request and permission, and what a backup does and does not contain.">
+        content="What MorrowTab stores in Browser Sync, optional FixQuotes Sync and on each computer, including recipients, retention, security and deletion.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/privacy.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Privacy Policy - MorrowTab">
     <meta name="twitter:description"
-        content="What MorrowTab stores, where it stores it, and the five kinds of address it can ever contact.">
+        content="What MorrowTab stores, why it is used, who receives it, how long it remains, and how to delete it.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -77,11 +77,12 @@
                 <span class="section-badge">Privacy</span>
                 <h1>What MorrowTab stores, and where.</h1>
                 <p class="subtitle">
-                    MorrowTab is a new tab page for Chrome and Edge. It has no account, no login, and no server of its
-                    own. This policy lists the user data and protocol metadata it stores, every address it can contact,
-                    every permission it declares, and exactly what an exported backup does and does not contain.
+                    MorrowTab is a new tab page for Chrome and Edge. It uses your browser's extension storage by
+                    default and also offers an optional, email-based FixQuotes Sync account. This policy explains
+                    what data is collected, why it is used, where it is stored, who receives it, how it is protected
+                    and retained, and how you can delete it.
                 </p>
-                <p class="updated">Effective <time datetime="2026-09-02">September 2, 2026</time></p>
+                <p class="updated">Effective <time datetime="2026-09-14">September 14, 2026</time></p>
             </div>
         </section>
 
@@ -90,21 +91,27 @@
                 <h2>The short version</h2>
                 <ul>
                     <li>Your boards, columns, links, extra search engines, shared settings, per-link click counts and
-                        configured auto-close intervals are written to your browser's own extension sync storage inside
-                        compressed actor checkpoints with causal counters. FixQuotes receives no copy of that synced graph — but Chrome
-                        extension sync is <strong>not</strong> end-to-end encrypted, so treat it as non-confidential.</li>
-                    <li>Fifteen preferences, caches and safety values — including saved search suggestions, uploaded
-                        background, cached quote, downloaded icons and their download preference, and cached calendar events — stay only in local
-                        extension storage. A separate random actor ID
-                        is stored locally and also appears in this computer's synced causal metadata. None is exported.</li>
+                        configured auto-close intervals use <strong>Browser Sync by default</strong>. Google or Microsoft
+                        operates that sync service. FixQuotes receives no copy through Browser Sync.</li>
+                    <li><strong>FixQuotes Sync is optional.</strong> Requesting a sign-in code sends your email address
+                        to FixQuotes and Mailgun. Verifying the code creates a FixQuotes Sync account and device
+                        session. Only after you review the disclosure and choose <strong>Connect to FixQuotes
+                        sync</strong> does MorrowTab upload and store your board data with FixQuotes.</li>
+                    <li>Browser Sync and FixQuotes Sync both contain saved addresses and other information you enter.
+                        Data travels over HTTPS, but neither mode is end-to-end encrypted by MorrowTab. Authorized
+                        FixQuotes server operators can read a FixQuotes cloud replica, so treat synced data as
+                        non-confidential.</li>
+                    <li>Device-only preferences, caches, recovery copies and, when applicable, a FixQuotes Sync
+                        credential and offline replica stay in local extension storage. Uploaded backgrounds,
+                        downloaded calendar events, cached images and saved search suggestions are not uploaded to
+                        FixQuotes Sync.</li>
                     <li>If you enable link auto-close, live managed tab IDs, original hostnames and countdown state
                         stay in extension session storage only. They are never synced, exported or kept after the
                         browser session ends.</li>
-                    <li>MorrowTab can contact five kinds of address, and no others:
-                        <code>fixquotes.com</code> for the daily quote, <code>api.fixquotes.com</code> for nature metadata
-                        and website-icon lookup, <code>images.pexels.com</code> for nature photos, a site you name if
-                        you turn on page-title autofill and grant that one site access, and the private feed address
-                        of each calendar you subscribe a calendar board to, after you grant that site access.</li>
+                    <li>MorrowTab contacts <code>fixquotes.com</code> for the daily quote,
+                        <code>api.fixquotes.com</code> for optional FixQuotes Sync, nature metadata and website-icon
+                        lookup, <code>images.pexels.com</code> for nature photos, and only sites or calendar feed
+                        addresses you explicitly provide and grant access to.</li>
                     <li>The daily quote is <strong>on by default</strong> and requests
                         <code>fixquotes.com</code> at most once per local day. Setting it to <strong>Off</strong> stops
                         that request completely.</li>
@@ -116,6 +123,9 @@
                         a working bundled icon, eligible lookups send only its hostname to FixQuotes, not its complete
                         address or title. FixQuotes retrieves public website artwork directly. Turn this setting off
                         on a computer to stop new icon requests there; cached icons remain.</li>
+                    <li>On Zoom recording pages, MorrowTab reads the page title and video source addresses only to
+                        provide its download overlay. That information stays on the Zoom page and is not stored in
+                        Browser Sync or FixQuotes Sync.</li>
                     <li>There is no analytics, no telemetry, no advertising tracker and no remote code in the
                         extension. This website runs no analytics and sets no cookies.</li>
                 </ul>
@@ -129,8 +139,8 @@
                         page<span class="visually-hidden"> (opens in a new tab)</span></a>.
                 </p>
                 <p>
-                    This policy covers the browser extension declared as <em>MorrowTab — Boards, Search &amp; Daily
-                        Quotes</em>, a Manifest V3 extension for Chrome and Edge on Chromium 114 or
+                    This policy covers the browser extension declared as <em>MorrowTab: Links &amp; Calendar</em>, a
+                    Manifest V3 extension for Chrome and Edge on Chromium 114 or
                     newer, together with this website. MorrowTab is distributed through
                     <a href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
                         target="_blank" rel="noopener">Microsoft Edge Add-ons<span class="visually-hidden"> (opens in
@@ -138,24 +148,29 @@
                     to both distributions.
                 </p>
                 <p>
-                    Questions about this policy, and every other kind of support request, go through one route:
+                    For a private support or privacy request, use
                     <a href="https://apps.fixquotes.com/contact/?category=morrowtab" target="_blank"
-                        rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>. There is no in-extension
-                    feedback form and no separate MorrowTab support address.
+                        rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
+                    That form is required for FixQuotes Sync account deletion; the live page may also offer FixQuotes'
+                    Discord community for general public conversation. There is no in-extension feedback form or
+                    separate MorrowTab support address.
                 </p>
                 <p>
-                    MorrowTab has no user account. There is nothing to register, nothing to sign in to, and no
-                    FixQuotes-side profile associated with your use of the extension.
+                    No account is required to install or use MorrowTab. Browser Sync uses the account and settings of
+                    your browser profile. If you voluntarily enable FixQuotes Sync, MorrowTab creates a separate
+                    FixQuotes Sync account identified by your email address; it uses one-time email codes rather than
+                    a password.
                 </p>
             </section>
 
             <section id="synced">
-                <h2>2. What syncs through your browser</h2>
+                <h2>2. Browser Sync and the shared board format</h2>
                 <p>
-                    MorrowTab writes its shared data to <code>chrome.storage.sync</code>, the browser's own extension
-                    sync area. That data travels through the sync service of the browser profile you are signed into
-                    — Google's for Chrome, Microsoft's for Edge. FixQuotes operates no server for it and receives no
-                    copy of it.
+                    Browser Sync is MorrowTab's default. It writes shared data to <code>chrome.storage.sync</code>, the
+                    browser's own extension sync area. That data travels through the sync service of the browser
+                    profile you are signed into — Google's for Chrome, Microsoft's for Edge. FixQuotes operates no
+                    server for Browser Sync and receives no copy through it. The optional FixQuotes Sync service in
+                    section 3 uses the same logical board format but has different recipients and storage.
                 </p>
                 <p>
                     Schema 2 separates your logical MorrowTab data from the way it is transported. Each browser
@@ -184,14 +199,18 @@
                     One record holding <code>schemaVersion</code>, <code>boardOrder</code> (the order your boards
                     appear in), and a <code>settings</code> object: <code>theme</code>, <code>density</code>,
                     <code>openLinksInNewTab</code>, <code>layout</code>, <code>openSearchInNewTab</code>,
-                    <code>orderLinksByUsage</code>, <code>dailyQuoteMode</code> and <code>backgroundMode</code>. These
-                    are single shared settings, not per-board ones.
+                    <code>fetchLinkTitles</code>, <code>orderLinksByUsage</code>, <code>dailyQuoteMode</code>,
+                    <code>backgroundMode</code> and <code>boardPicker</code>. These are single shared settings, not
+                    per-board ones.
                 </p>
 
                 <h3>Plugin.board.&lt;id&gt;</h3>
                 <p>
                     One record per board: <code>id</code>, <code>name</code> (the board name you typed),
-                    <code>columnOrder</code>, <code>searchEngineIds</code>, and <code>lastSearchEngineId</code>.
+                    <code>columnOrder</code>, <code>searchEngineIds</code>, and <code>lastSearchEngineId</code>. A
+                    calendar board also stores <code>kind</code>, up to ten <code>calendarFeeds</code> entries with
+                    the name, private feed address and accent color you chose, and optional <code>timeFormat</code>
+                    and <code>calendarFullWidth</code> display settings.
                 </p>
 
                 <h3>Plugin.column.&lt;id&gt;</h3>
@@ -260,20 +279,21 @@
 
                 <h3>Sync is not end-to-end encrypted</h3>
                 <p>
-                    Chrome's extension sync is not end-to-end encrypted, and whatever encryption your browser applies
-                    to synced data is your browser's feature, not MorrowTab's. MorrowTab adds no encryption of its
-                    own; gzip and base64 only make checkpoints smaller and transportable. <strong>Treat board names,
+                    Whatever encryption or sync passphrase your browser applies to extension data is the browser's
+                    feature, not MorrowTab's. MorrowTab adds no application-level or end-to-end encryption of its own;
+                    gzip and base64 only make checkpoints smaller and transportable. <strong>Treat board names,
                         column headings, link titles, saved addresses, custom search templates, random actor IDs and
                         logical counters as non-confidential.</strong> If something should not sit in your browser
                     profile's sync data, do not save it in MorrowTab.
                 </p>
 
-                <h3>There is no MorrowTab sync switch</h3>
+                <h3>How Browser Sync is controlled</h3>
                 <p>
-                    MorrowTab has no in-extension control to turn sync on or off. It follows the sync settings of the
-                    browser profile itself. If your browser profile is not syncing extension data, MorrowTab's records
-                    simply stay in that profile's storage on that computer; if it is, they travel with the profile.
-                    That choice belongs to your browser's own settings, not to MorrowTab.
+                    There is no in-extension switch for Browser Sync. It follows the sync settings of the browser
+                    profile itself. If your browser profile is not syncing extension data, those records stay in that
+                    profile's storage on that computer; if it is, they travel with the profile. Connecting to
+                    FixQuotes Sync changes which copy MorrowTab actively edits, but does not delete the existing
+                    Browser Sync records.
                 </p>
 
                 <h3>How much can go in</h3>
@@ -293,13 +313,172 @@
                 </p>
             </section>
 
-            <section id="local">
-                <h2>3. What stays on this computer</h2>
+            <section id="fixquotes-sync">
+                <h2>3. Optional FixQuotes Sync</h2>
                 <p>
-                    Sixteen records live in <code>chrome.storage.local</code>. They belong to one browser profile on one
-                    computer. Their local copies do not appear in exported backups and none is written to web
-                    <code>localStorage</code>. The schema-2 actor identifier is also included as pseudonymous metadata
-                    in the checkpoint that this profile publishes; the other fifteen values are not synced.
+                    FixQuotes Sync is an optional account-based alternative for people who need more storage or want
+                    to use the same boards across Chrome and Edge. Browser Sync remains the default. A storage-limit
+                    notice may invite you to set it up, but showing or opening that notice does not create an account
+                    or transfer board data.
+                </p>
+
+                <h3>What happens when you sign in and connect</h3>
+                <ol>
+                    <li>When you choose <strong>Send sign-in code</strong>, MorrowTab sends the normalized email
+                        address you entered to FixQuotes. FixQuotes sends a one-use, eight-digit code through Mailgun.</li>
+                    <li>When you submit the code, FixQuotes verifies it and creates or opens a FixQuotes Sync account
+                        with a random account ID and a device session. This step lets MorrowTab inspect whether that
+                        account already has boards; it does not by itself upload this computer's boards.</li>
+                    <li>MorrowTab shows the destination and data disclosure. If the account already has data, you
+                        choose whether to use it or merge it with this computer's boards. Only when you press
+                        <strong>Connect to FixQuotes sync</strong> is the selected board replica uploaded and stored.</li>
+                </ol>
+                <p>
+                    Each computer signs in separately. The service allows up to 4 MiB of serialized replica data and
+                    5,000 active links per account. MorrowTab keeps an offline working copy and queues changes locally
+                    when the service cannot be reached.
+                </p>
+
+                <h3>Information FixQuotes collects and stores</h3>
+                <ul>
+                    <li><strong>Account and authentication information:</strong> your normalized email address, a
+                        random account ID, hashed sign-in codes, failed-code counts, hashed device-session tokens,
+                        session creation and expiry times, and temporary rate-limit counters. Rate limiting uses
+                        keyed hashes of email and IP address where required; it does not store the sign-in code or
+                        device token in plaintext on the server.</li>
+                    <li><strong>Your board replica:</strong> board and column names and order; saved link addresses,
+                        titles, descriptions, board placement, opening choices, auto-close settings and click counts;
+                        custom search-engine names, address templates and visibility; shared preferences; private
+                        calendar feed names and addresses; random actor IDs, logical counters, revisions, update time,
+                        conflict values and deletion metadata described in section 2.</li>
+                    <li><strong>Request information:</strong> the FixQuotes server, Cloudflare and IIS necessarily
+                        receive the source IP address, user-agent and ordinary HTTPS request metadata. Access logs can
+                        contain date and time, request method and path, edge and client IP addresses, user agent,
+                        referrer, response status, byte counts and request duration. They do not contain the sync
+                        request body or its <code>Authorization</code> header. Sync routes bypass FixQuotes' general
+                        application request logger. Local IIS log files are currently retained for approximately 75
+                        days; upstream providers can apply their own retention.</li>
+                </ul>
+                <p>
+                    A private calendar feed address can grant anyone holding it access to that calendar. Store one
+                    with FixQuotes only if you accept that risk. FixQuotes Sync stores the address so other computers
+                    can fetch the feed; it does <strong>not</strong> upload the downloaded event titles, times,
+                    locations or descriptions.
+                </p>
+                <p>
+                    FixQuotes Sync does not upload saved search suggestions or search-box history, uploaded background
+                    images, cached quotes, downloaded website icons or nature photographs, downloaded calendar events,
+                    the local calendar layout, live tab IDs, browsing history, or Zoom page and video information.
+                </p>
+
+                <h3>Why the information is used</h3>
+                <p>
+                    FixQuotes uses the email address to deliver sign-in codes, identify the sync account, verify an
+                    account-deletion request and provide account support. Authentication and rate-limit information
+                    protects the service against unauthorized access and abuse. The board replica, revision and
+                    update information are used only to store, synchronize, merge, recover and enforce the capacity
+                    limits of the MorrowTab boards you chose to connect. They are not used for advertising, marketing,
+                    profiling or unrelated product development.
+                </p>
+
+                <h3>Who receives the information</h3>
+                <ul>
+                    <li><strong>FixQuotes</strong> operates the MorrowTab API and dedicated account database. Its
+                        authorized infrastructure and operators can process the account and board information above
+                        only as needed to provide, secure, maintain or support FixQuotes Sync.</li>
+                    <li><strong>Cloudflare</strong> processes API traffic and infrastructure metadata as a service
+                        provider used to route and protect FixQuotes requests. It is not authorized to use MorrowTab
+                        data for advertising or another independent purpose.</li>
+                    <li><strong>Mailgun</strong> processes your email address, the sender, subject, one-time-code
+                        message and delivery metadata as FixQuotes' email delivery provider. For the FixQuotes mail
+                        domain, message content is retained for three days and delivery-event metadata is normally
+                        retained for about 30 days. Open and click tracking are disabled for these messages. A hard
+                        bounce or complaint can create a suppression record containing the address; Mailgun keeps that
+                        record until FixQuotes removes it or closes the account, and may keep a deleted suppression in
+                        disaster-recovery backups for up to 30 days. Requesting a code does not subscribe you to a
+                        newsletter or marketing email.</li>
+                    <li><strong>Google or Microsoft</strong> processes the Browser Sync data in section 2 when that
+                        feature is enabled in your Chrome or Edge profile. They do not receive FixQuotes device tokens
+                        through MorrowTab.</li>
+                    <li>The other functional recipients — Pexels, a calendar-feed host, a page-title site, a search
+                        provider or a public website whose icon FixQuotes retrieves — receive only the requests
+                        described in section 5 when you use the corresponding feature.</li>
+                </ul>
+                <p>
+                    FixQuotes does not sell MorrowTab user data, share it with advertisers or data brokers, use it for
+                    personalized advertising, or use it to determine creditworthiness or lending eligibility. It may
+                    disclose information only to service providers needed to operate the feature, when you direct it,
+                    to investigate abuse or security incidents, or when legally required.
+                </p>
+
+                <h3>Security and human access</h3>
+                <p>
+                    FixQuotes Sync requests use HTTPS, refuse redirects and omit cookies and referrers. The device
+                    token is sent only in the HTTPS <code>Authorization</code> header. Server-side sign-in codes and
+                    device tokens are stored as cryptographic hashes, and the authentication key is kept outside the
+                    web root with restricted system-administrator access. On this computer, MorrowTab keeps the device
+                    token in extension local storage and restricts that storage to trusted extension contexts; anyone
+                    who can access the browser profile or operating-system account may still be able to read it.
+                </p>
+                <p>
+                    <strong>FixQuotes Sync is not end-to-end encrypted.</strong> HTTPS protects data in transit, but
+                    the server must be able to read the board replica to validate, store and return it. MorrowTab
+                    clients perform the merge. Authorized
+                    operators may access identifiable board data only with your explicit consent for support, when
+                    necessary to investigate abuse or a security incident, when legally required, or where the data
+                    has been aggregated and de-identified for internal service operations. Do not store information
+                    in MorrowTab that must remain confidential from the service operator.
+                </p>
+
+                <h3>Retention, access and deletion</h3>
+                <p>
+                    A sign-in code expires after ten minutes, can be used once and stops working after five failed
+                    attempts. A device session expires after 30 days; when the service is reachable, signing out
+                    revokes that computer's current server session. At most 20 device sessions are retained for an
+                    account. Expired challenge,
+                    session and rate-limit rows are removed by later cleanup; expiry is enforced even before a row is
+                    physically removed. Rate-limit records use one-minute, ten-minute or one-hour windows.
+                </p>
+                <p>
+                    The account email, account ID and latest board replica remain while the FixQuotes Sync account is
+                    active. You can access and correct board content by signing in and editing it in MorrowTab. Signing
+                    out or uninstalling the extension does not delete the server account, because another connected
+                    computer may still use it. To delete the FixQuotes Sync account, board replica and all server
+                    sessions, submit a request through the
+                    <a href="https://apps.fixquotes.com/contact/?category=morrowtab" target="_blank"
+                        rel="noopener">FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
+                    FixQuotes will require fresh verification of the account email before completing deletion.
+                </p>
+                <p>
+                    Account deletion removes the active account, board replica, sign-in challenges and device
+                    sessions from the service database. FixQuotes maintains multiple infrastructure and database
+                    backup or recovery layers for disaster recovery. Deleted data can remain in those recovery copies;
+                    they are not used for ordinary service operation or restored selectively for one account. Not
+                    every current layer has a verified automatic expiry or a single maximum retention period, so
+                    FixQuotes cannot promise when deleted data will leave every recovery copy. Mailgun and hosting or proxy providers control any additional delivery and
+                    infrastructure logs as described above. Deleting the FixQuotes account does not delete copies
+                    already held in Browser Sync, local extension storage or exported files; section 10 explains how
+                    to remove those separately.
+                </p>
+
+                <h3>Chrome Web Store Limited Use</h3>
+                <p>
+                    The use of information received from Google APIs will adhere to the
+                    <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use" target="_blank"
+                        rel="noopener">Chrome Web Store User Data Policy, including the Limited Use requirements<span class="visually-hidden"> (opens in a new tab)</span></a>.
+                    MorrowTab uses or transfers data obtained through Chrome APIs only to provide or improve its
+                    user-facing features, subject to the narrow security, legal and user-consent exceptions described above.
+                </p>
+            </section>
+
+            <section id="local">
+                <h2>4. What stays on this computer</h2>
+                <p>
+                    MorrowTab keeps device preferences, caches, safety and recovery values in
+                    <code>chrome.storage.local</code>. They belong to one browser profile on one computer. The schema-2
+                    actor identifier is also included as pseudonymous metadata in the board replica this profile
+                    publishes. FixQuotes Sync adds the three local values listed separately below, and one separate
+                    paint-only value is stored in web <code>localStorage</code> as described after them.
                 </p>
                 <ul>
                     <li>A persistent schema-2 actor identifier — a random installation ID used with logical counters
@@ -342,18 +521,42 @@
                         stale website icons. It defaults to on. Turning it off stops new requests without deleting
                         the reusable icon cache.</li>
                     <li><code>Plugin.localCalendarCache</code> — for each calendar feed a calendar board subscribes
-                        to, the time it was last downloaded, whether that worked, the last error, and the events
-                        for the coming weeks (titles, times, locations and descriptions). It exists only on a
+                        to, the feed address, download and success times, success state, last error, a content
+                        fingerprint, and the events for the coming weeks. An event can contain its source UID, feed
+                        address, all-day flag or start/end values, title, location, description and a direct event
+                        link when the feed supplies enough information. It exists only on a
                         computer that has downloaded a feed, and an entry is deleted as soon as no board references
                         that feed any more.</li>
                     <li><code>Plugin.localCalendarView</code> — which calendars you have hidden on a calendar board and
                         whether it shows the agenda, week or month layout. Written only when you change one of them;
-                        it contains the hidden calendars' feed addresses and nothing else.</li>
+                        it contains the selected layout and hidden feed addresses, but no downloaded event data.</li>
                 </ul>
+                <p>If you sign in to or connect FixQuotes Sync, MorrowTab also keeps:</p>
+                <ul>
+                    <li><code>Plugin.localCloudSession</code> — the FixQuotes account ID, normalized email address,
+                        service address, device-session expiry and the bearer device token. The token is deliberately
+                        excluded from Browser Sync and exported backups.</li>
+                    <li><code>Plugin.localCloudSync</code> — the account ID, email, service address, local actor ID,
+                        complete offline board replica, pending-edit marker, server revision, last successful sync
+                        time and latest error state. Keeping the replica locally lets you continue editing offline.</li>
+                    <li><code>Plugin.localBeforeCloudSync</code> — a recovery copy of the logical board records that
+                        were active immediately before this computer first connected to FixQuotes Sync. It can be
+                        exported separately from Settings.</li>
+                </ul>
+                <h3>morrowtab.appearance (web localStorage)</h3>
                 <p>
-                    All sixteen are ordinary extension storage values held in plain text inside your browser profile
-                    directory. MorrowTab does not encrypt them, and anyone with access to that profile on that
-                    computer can read them.
+                    The new-tab page writes one device-local appearance cache to its own extension origin's web
+                    <code>localStorage</code> so the next tab can paint without a theme flash. It contains the last
+                    rendered theme, density, layout, daily-quote mode, whether custom or nature backgrounds were
+                    active, the reserved quote height and the document title. The document title can include the name
+                    of the board that was visible. The values are validated before use, overwritten as the appearance
+                    changes, and never enter Browser Sync, FixQuotes Sync or an exported backup.
+                </p>
+                <p>
+                    These are ordinary extension storage values held in plain text inside your browser profile
+                    directory. MorrowTab does not encrypt them. After a FixQuotes credential is created, MorrowTab
+                    restricts local extension storage to trusted extension contexts, but anyone with access to that
+                    browser profile or operating-system account may still be able to read it.
                 </p>
 
                 <h3>Plugin.managedTabs (session only)</h3>
@@ -380,7 +583,7 @@
             </section>
 
             <section id="requests">
-                <h2>4. Every network request MorrowTab can make</h2>
+                <h2>5. Every network request MorrowTab can make</h2>
                 <p>
                     The extension declares three fixed hosts plus one optional, per-site permission that two
                     features use, each for a site you name yourself. The table below is the complete list of
@@ -409,6 +612,20 @@
                                     no referrer, no query string, no request body, no identifier of any kind.
                                     Redirects are refused and the attempt times out after 8 seconds. In the two
                                     Picture modes the quote image is then loaded from the same host.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>api.fixquotes.com</code></th>
+                                <td>When you voluntarily use FixQuotes Sync: requesting and verifying a one-time
+                                    email code, checking the account's existing state, connecting, synchronizing,
+                                    retrying queued edits or signing out. No account or board request is made if you
+                                    do not use the FixQuotes Sync controls.</td>
+                                <td>HTTPS requests under
+                                    <code>/public/morrowtab/sync</code>. Code requests send the normalized email;
+                                    verification sends the random challenge ID and eight-digit code. Authenticated
+                                    requests send the device token in the <code>Authorization</code> header. State
+                                    uploads send the server revision and complete board replica described in sections
+                                    2 and 3. Cookies, referrers and URL credentials are omitted, redirects are
+                                    refused, responses are not cached, and each request times out after 15 seconds.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>api.fixquotes.com</code></th>
@@ -451,8 +668,9 @@
                                     own permission prompt. It never runs while you edit an existing link.</td>
                                 <td>A <code>GET</code> of the exact address you typed, 400 ms after you stop typing:
                                     no cookies or credentials, no referrer, <code>Accept: text/html,application/xhtml+xml</code>, a
-                                    7-second timeout, and the response read is capped at 1 MB. Only the page's
-                                    <code>&lt;title&gt;</code> is used, sanitized and cut to 160 characters.</td>
+                                    7-second timeout. A declared response larger than 1 MB is rejected; otherwise
+                                    MorrowTab uses at most the first 1 MB to find the page's <code>&lt;title&gt;</code>,
+                                    then sanitizes and cuts it to 160 characters.</td>
                             </tr>
                             <tr>
                                 <th scope="row">The calendar feeds you subscribe</th>
@@ -467,10 +685,11 @@
                                     <code>webcal://</code> address is stored as <code>https://</code>): no cookies or
                                     credentials, no referrer, <code>Accept: text/calendar</code>, a 15-second timeout,
                                     at most 32 MB, and the answer must be an iCalendar file. Event titles, times,
-                                    locations and descriptions from that file are kept only on this computer; nothing
-                                    is ever sent to Google, Microsoft or FixQuotes, and MorrowTab never writes to a
-                                    calendar. The feed address itself syncs with the board, and anyone who obtains it
-                                    can read that calendar, so treat it like a password.</td>
+                                    locations and descriptions downloaded from that file are kept only on this
+                                    computer and are not uploaded by MorrowTab; MorrowTab never writes to a calendar.
+                                    The feed address itself syncs with the board through Browser Sync or FixQuotes
+                                    Sync, and anyone who obtains it can read that calendar, so treat it like a
+                                    password.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -483,9 +702,9 @@
                         <p>
                             Any request from your computer to any server reveals your IP address and your browser's
                             user-agent string to whichever server answers it. That is true of the requests above.
-                            MorrowTab controls what it sends — no cookies, no referrer and no identifier, and no
-                            query string on the FixQuotes requests; icon lookup carries a hostname in its POST body.
-                            The Pexels image URL carries only the sizing
+                            MorrowTab omits cookies and referrers. Quote, nature and icon requests carry no account
+                            credential; authenticated FixQuotes Sync requests necessarily carry the device token in
+                            the authorization header. Icon lookup carries a hostname in its POST body. The Pexels image URL carries only the sizing
                             parameters FixQuotes chose, and a page-title request uses the address you typed — but it
                             cannot control what those servers choose to log, and
                             <code>images.pexels.com</code> is operated by a third party whose logging is outside
@@ -493,10 +712,12 @@
                             it is.
                         </p>
                         <p>
-                            The complete synced board graph is never uploaded to these endpoints, and neither is the
-                            text you type into the search box. Website-icon lookup does reveal a saved link's hostname
-                            to FixQuotes. Keeping it in a POST body avoids putting it in the application request URL;
-                            it is not a guarantee against body, infrastructure or operational logging.
+                            FixQuotes Sync uploads the complete board replica only after you explicitly connect it.
+                            The quote, nature and website-icon endpoints never receive that replica, and no endpoint
+                            receives the text you type into the search box. Website-icon lookup does reveal a saved
+                            link's hostname to FixQuotes. Keeping it in a POST body avoids putting it in the
+                            application request URL; it is not a guarantee against body, infrastructure or
+                            operational logging.
                         </p>
                         <p>
                             Icon lookup rejects private IP literals and obvious internal or reserved hostnames, but
@@ -544,9 +765,9 @@
             </section>
 
             <section id="permissions">
-                <h2>5. Each permission, and why it is there</h2>
+                <h2>6. Each permission, and why it is there</h2>
                 <p>
-                    MorrowTab runs an automatic content script only on top-level HTTPS Zoom recording pages matching <code>https://*.zoom.us/rec/*</code>. It reads video source addresses and adds a dismissible download overlay that updates as the player loads. Closing it stops watching the player; refresh the recording page to show it again. There is no Zoom context-menu action. Addresses stay on that page and are not saved to Sync. Saving a video uses the Zoom document's normal referrer policy and browser session context. MorrowTab declares no <code>tabs</code> permission. Choosing the Google Maps context-menu item
+                    MorrowTab runs an automatic content script only on top-level HTTPS Zoom recording pages matching <code>https://*.zoom.us/rec/*</code>. It reads video source addresses and adds a dismissible download overlay that updates as the player loads. Closing it stops watching the player; refresh the recording page to show it again. There is no Zoom context-menu action. Addresses stay on that page and are not stored in Browser Sync or FixQuotes Sync. Saving a video uses the Zoom document's normal referrer policy and browser session context. MorrowTab declares no <code>tabs</code> permission. Choosing the Google Maps context-menu item
                     provides the selected text to MorrowTab and sends it to Google as a search in a new tab. Link auto-close uses the optional <code>webNavigation</code> permission to
                     receive navigation events, but the worker considers only tab IDs that MorrowTab itself created and
                     compares only their top-level hostname. It stores no navigation log.
@@ -573,15 +794,19 @@
                             <tr>
                                 <th scope="row"><code>storage</code></th>
                                 <td>Keeps your boards, columns, links, extra search engines and shared settings in
-                                    the browser's sync storage, the sixteen per-computer records in local storage, and
-                                    the live managed-tab registry in session storage.
+                                    the browser's sync storage, device preferences, caches, safety and recovery data
+                                    in local storage, the optional FixQuotes Sync credential and offline replica in
+                                    local storage, and the live managed-tab registry in session storage.
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>alarms</code></th>
-                                <td>Schedules one wake-up for the earliest managed tab that may be ready to close.
-                                    The worker rechecks every safety condition before closing anything; no alarm is
-                                    created for a link whose timeout is off.</td>
+                                <td>Schedules a wake-up for the earliest managed tab that may be ready to close, and
+                                    retries queued FixQuotes Sync changes once per minute while the optional service
+                                    is connected. Alarms let the Manifest V3 worker resume after suspension. The
+                                    worker rechecks every safety condition before closing anything; no auto-close
+                                    alarm is created for a link whose timeout is off. This permission does not collect
+                                    browsing history, run analytics or display notifications.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>favicon</code></th>
@@ -623,10 +848,12 @@
                             <tr>
                                 <th scope="row"><code>https://api.fixquotes.com/*</code></th>
                                 <td>Fetches metadata while the daily nature photo is enabled and resolves eligible
-                                    website icons while <strong>Download website icons</strong> is enabled. The host is
-                                    validated to be exactly <code>api.fixquotes.com</code>; these features have separate
-                                    controls. MorrowTab holds no Pexels API key. The icon route uses this existing
-                                    permission, without new website access or a third-party icon provider.</td>
+                                    website icons while <strong>Download website icons</strong> is enabled. It also
+                                    provides email authentication and board storage only when you use the separate,
+                                    optional FixQuotes Sync controls. The host is validated to be exactly
+                                    <code>api.fixquotes.com</code>; these features have separate controls. MorrowTab
+                                    holds no Pexels API key. The icon route uses this existing permission, without new
+                                    website access or a third-party icon provider.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>https://images.pexels.com/*</code></th>
@@ -658,11 +885,11 @@
             </section>
 
             <section id="backup">
-                <h2>6. What a backup contains</h2>
+                <h2>7. What a backup contains</h2>
                 <p>
                     "Export backup" in Settings writes an optional disaster-recovery or point-in-time file named
                     <code>morrowtab-backup-YYYY-MM-DD.json</code> to your own computer through the browser's normal
-                    download. It is never uploaded anywhere. It has exactly four top-level fields:
+                    download. The file itself is never uploaded by MorrowTab. It has exactly four top-level fields:
                 </p>
                 <ul>
                     <li><code>application</code> — the string <code>"MorrowTab"</code>.</li>
@@ -681,7 +908,7 @@
                 <p>
                     A backup is not required for normal schema-2 convergence between computers. It deliberately
                     excludes actor IDs, logical clocks, causal alternatives, delete markers, checkpoint compression
-                    envelopes and chunks, plus every one of the sixteen device-local records:
+                    envelopes and chunks, plus device-local preferences, caches, safety values and credentials:
                 </p>
                 <ul>
                     <li>the schema-2 actor identity used by this browser profile;</li>
@@ -696,11 +923,18 @@
                     <li>both local safety snapshots;</li>
                     <li>the managed-tab fail-closed safety marker and the auto-close permission-prompt marker.</li>
                     <li>the downloaded favicon cache, including hostname metadata, and its download preference.</li>
+                    <li>the FixQuotes Sync email, account ID, service metadata, device token, server revision and
+                        sync status. The exported logical records still contain your current board content, whether
+                        Browser Sync or FixQuotes Sync is active.</li>
+                    <li>the separate pre-cloud recovery copy. When present, Settings offers its own explicit export
+                        control.</li>
+                    <li>the <code>morrowtab.appearance</code> web <code>localStorage</code> paint cache.</li>
                 </ul>
                 <p>The session-only <code>Plugin.managedTabs</code> registry and its live countdowns are also excluded.</p>
                 <p>
-                    Restoring a full backup <strong>replaces</strong> everything currently synced, after a
-                    confirmation. Before it does, the records it is about to replace are copied to
+                    Restoring a full backup <strong>replaces</strong> the current active logical board records, after
+                    a confirmation. If FixQuotes Sync is active, that replacement becomes the local cloud working
+                    copy and is queued for synchronization. Before replacement, the existing records are copied to
                     <code>Plugin.localPreReplaceSnapshot</code> on that computer, and "Restore pre-import copy…"
                     brings them back. A valid schema-1 MorrowTab backup is fully validated and upgraded to schema 2
                     during import. Importing a single exported column is different: it adds that column to the current
@@ -715,7 +949,7 @@
             </section>
 
             <section id="analytics">
-                <h2>7. No analytics, telemetry or trackers</h2>
+                <h2>8. No analytics, telemetry or trackers</h2>
                 <p>
                     There is no analytics library, no telemetry, no beacon, no WebSocket, no
                     <code>XMLHttpRequest</code>, no <code>EventSource</code> and no third-party script anywhere in the
@@ -724,26 +958,28 @@
                 </p>
                 <p>
                     There is no remote code of any kind: everything MorrowTab runs is shipped inside the extension
-                    package and is loaded from it. Apart from the requests listed in section 4, resource loading reads
+                    package and is loaded from it. Apart from the requests listed in section 5, resource loading reads
                     packaged extension files or the browser's native favicon endpoint. Downloaded website icons are
                     normalized image data, never executable code.
                 </p>
                 <p>
-                    The synced board graph is stored by the browser, not uploaded to a MorrowTab account or board
-                    database. Website-icon lookup is a separate functional request that discloses an eligible saved
-                    hostname to FixQuotes and causes FixQuotes to contact that public website for its icon. It does
-                    not send your complete saved address, title, board name or search text.
+                    Browser Sync stores the board replica with the browser provider, while optional FixQuotes Sync
+                    stores it in the FixQuotes account database after you connect. Neither is analytics. Website-icon
+                    lookup is a separate functional request that discloses an eligible saved hostname to FixQuotes
+                    and causes FixQuotes to contact that public website for its icon. It does not send your complete
+                    saved address, title, board name or search text.
                 </p>
                 <p>
                     <strong>This website.</strong> These pages are static files. They run no analytics, set no
                     cookies, embed no third-party scripts and show no consent banner — which is why you have not been
-                    asked to dismiss one. As with any website, the host that serves these pages may keep its own
-                    server logs, which is outside MorrowTab's control.
+                    asked to dismiss one. GitHub Pages serves the website and necessarily receives ordinary request
+                    metadata such as your IP address and user-agent; GitHub controls any resulting infrastructure or
+                    security logs.
                 </p>
             </section>
 
             <section id="credits">
-                <h2>8. Credits and third-party material</h2>
+                <h2>9. Credits and third-party material</h2>
 
                 <h3>Bundled brand icons</h3>
                 <p>
@@ -795,7 +1031,7 @@
             </section>
 
             <section id="deleting">
-                <h2>9. Deleting your data</h2>
+                <h2>10. Deleting your data</h2>
                 <p>These are the controls MorrowTab actually gives you:</p>
                 <ul>
                     <li><strong>Clear saved suggestions</strong> (Settings) — appears while saving suggestions is on,
@@ -820,9 +1056,13 @@
                         <strong>Enable auto-close</strong> in the notice or saving an enabled timeout explicitly asks
                         again when access is missing.</li>
                     <li><strong>Deleting a link, column or board</strong> — deleting a column also removes its links,
-                        and each deletion leaves a six-second <strong>Undo</strong> in the toast.</li>
+                        and each deletion leaves a six-second <strong>Undo</strong> in the toast. The deletion is then
+                        propagated through whichever sync mode is active.</li>
                     <li><strong>Import backup…</strong> (Settings) — replaces everything currently synced, after
                         confirmation, while keeping a restorable copy of what it replaced on this computer.</li>
+                    <li><strong>Sign out</strong> (FixQuotes Sync) — sends a request to revoke this computer's current
+                        server session. It completes only while the service is reachable and then keeps the offline
+                        board replica. It does not delete the FixQuotes account or its server copy.</li>
                 </ul>
 
                 <p>
@@ -835,30 +1075,37 @@
                     exported backup, but they can remain inside compressed Sync transport data; older profiles can
                     retain them too until they return and publish again.
                     Physical retention inside the browser's sync service is controlled by Google or Microsoft, not
-                    FixQuotes.
+                    FixQuotes. The same causal record format is used by FixQuotes Sync, so its latest cloud replica
+                    can also retain a deletion marker and former fields for an item that is no longer displayed.
+                    Deleting the FixQuotes account removes that active cloud replica.
                 </p>
 
                 <div class="note-box">
                     <span class="icon" aria-hidden="true">🗑️</span>
                     <div>
-                        <h3>There is no single "delete everything" button</h3>
+                        <h3>Removing every copy requires separate steps</h3>
                         <p>
-                            MorrowTab has no one-click erase-all control. Removing everything means using the
-                            controls above and then removing the extension from Chrome or Edge; what happens to
-                            already-synced records after that is handled by your browser's own sync, not by MorrowTab.
+                            To delete a FixQuotes Sync account, its board replica and all server sessions, submit a
+                            request through the
+                            <a href="https://apps.fixquotes.com/contact/?category=morrowtab" target="_blank"
+                                rel="noopener">FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
+                            Fresh verification of the account email is required. As explained in section 3, deletion
+                            from backup and recovery copies is not necessarily immediate; not every current layer has
+                            a verified automatic expiry, so no maximum removal time is promised.
                         </p>
                         <p>
-                            There is also no server-side copy to request the deletion of. FixQuotes does not receive
-                            or store your boards, links, settings or search text, so there is no account to close and
-                            no deletion request to file for that content. The data is in your browser's storage, and
-                            only you can reach it.
+                            Removing the extension from a browser profile deletes that installation's local and
+                            session storage, including its device token, offline cloud replica and caches. It does not
+                            delete FixQuotes account data, Browser Sync data held by Google or Microsoft, local copies
+                            on another computer, or files you exported. Use the browser provider's own sync-data
+                            controls for its copy and delete exported files through your operating system.
                         </p>
                     </div>
                 </div>
             </section>
 
             <section id="changes">
-                <h2>10. Changes to this policy</h2>
+                <h2>11. Changes to this policy</h2>
                 <p>
                     This policy describes the current MorrowTab release. If a future release changes what is stored,
                     what is requested, or which permissions are declared, this page will be updated before that
@@ -875,7 +1122,7 @@
                     <a href="https://apps.fixquotes.com/contact/?category=morrowtab" target="_blank"
                         rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
                 </p>
-                <p class="updated">Effective <time datetime="2026-09-02">September 2, 2026</time></p>
+                <p class="updated">Effective <time datetime="2026-09-14">September 14, 2026</time></p>
             </section>
         </div>
     </main>
