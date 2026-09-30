@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab Changelog - Release Notes</title>
     <meta name="description"
-        content="Release notes for MorrowTab 1.0.10: optional FixQuotes Sync for more space and a fix for the Month view's +n more button.">
+        content="Release notes for MorrowTab 1.0.11: safer FixQuotes Sync reconnection and a production service encryption update.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
     <meta name="theme-color" content="#0a0b12">
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab Changelog - Release Notes">
     <meta property="og:description"
-        content="MorrowTab 1.0.10 adds optional FixQuotes Sync and fixes the Month view's +n more button.">
+        content="MorrowTab 1.0.11 improves FixQuotes Sync reconnection, alongside server-side encryption at rest.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/changelog.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MorrowTab Changelog - Release Notes">
     <meta name="twitter:description"
-        content="MorrowTab 1.0.10 adds optional FixQuotes Sync and fixes the Month view's +n more button.">
+        content="MorrowTab 1.0.11 improves FixQuotes Sync reconnection, alongside server-side encryption at rest.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -78,8 +78,8 @@
                 <h1>MorrowTab Release Notes</h1>
 
                 <p class="subtitle">
-                    MorrowTab 1.0.10 adds optional FixQuotes Sync for more room and cross-browser syncing, and makes
-                    the Month view's "+n more" button reveal every event.
+                    MorrowTab 1.0.11 improves FixQuotes Sync reconnection and keeps your local boards safe while
+                    you confirm a merge. The production sync service now also encrypts stored account emails and board data.
                     Calendar boards show the next two weeks from your Google and Outlook calendars, read-only,
                     right on the new tab. The earlier release notes remain below. MorrowTab is
                     available from <a
@@ -93,6 +93,24 @@
         </section>
 
         <div class="container content">
+            <article class="version-card">
+                <h2>1.0.11</h2>
+                <p class="version-date"><time datetime="2026-09-30">September 30, 2026</time> · Release preparation</p>
+                <h3>Fixed</h3>
+                <ul>
+                    <li>Reconnecting to the same FixQuotes account no longer fails just because the account ID
+                        uses different letter casing.</li>
+                    <li>If your account was recreated for the same verified email, you can explicitly confirm a
+                        merge of the boards kept on this computer. Local boards, offline edits and the pre-sync
+                        recovery copy are preserved. Signing in alone does not upload your boards.</li>
+                </ul>
+                <h3>Service update</h3>
+                <ul>
+                    <li>The production FixQuotes Sync service now encrypts stored account emails and board data.
+                        Existing accounts and authentication were preserved. This is server-side encryption at rest,
+                        not end-to-end encryption; authorized server operators can still access synced data.</li>
+                </ul>
+            </article>
             <article class="version-card">
                 <h2>1.0.10</h2>
                 <p class="version-date"><time datetime="2026-09">September 2026</time></p>
