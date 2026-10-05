@@ -77,6 +77,17 @@
     "thumbnail": "settings-dark_thumb.webp"
   },
   {
+    "name": "saved-link-search",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "saved-link-search_thumb.webp"
+  },
+  {
     "name": "board-picker",
     "width": 1920,
     "height": 1200,
@@ -229,12 +240,45 @@
   {
     "name": "welcome",
     "width": 1920,
-    "height": 3135,
+    "height": 1693,
     "widths": [
       1920,
       1280,
       768
     ],
     "thumbnail": "welcome_thumb.webp"
+  },
+  {
+    "name": "calendar-agenda-light",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "calendar-agenda-light_thumb.webp"
+  },
+  {
+    "name": "calendar-week-light",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "calendar-week-light_thumb.webp"
+  },
+  {
+    "name": "calendar-month-light",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "calendar-month-light_thumb.webp"
   }
 ]

@@ -5,13 +5,33 @@
   "start_url": "./",
   "scope": "./",
   "display": "browser",
-  "background_color": "#0a0b12",
-  "theme_color": "#0a0b12",
+  "background_color": "#181a1d",
+  "theme_color": "#181a1d",
   "icons": [
-    { "src": "img/icon48.png", "sizes": "48x48", "type": "image/png" },
-    { "src": "img/icon128.png", "sizes": "128x128", "type": "image/png" },
-    { "src": "img/icon192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "img/icon256.png", "sizes": "256x256", "type": "image/png" },
-    { "src": "img/icon512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "img/icon48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icon128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icon256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }

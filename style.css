@@ -1,18 +1,7 @@
 /* ==========================================================================
-   MorrowTab — notepin.cloud / prettify.cloud house style, MorrowTab palette.
-
-   Structure follows the sibling sites: @font-face → :root dark → :root light
-   → reset → header → typography → hero → sections → cards → screenshots →
-   cross-promo → footer → lightbox → responsive → manual subsystem →
-   reduced-motion → forced-colors → print.
-
-   Dark is the base theme. Light is a token-only prefers-color-scheme
-   override. There is no theme toggle and no JS involved in theming.
-
-   ACCESSIBILITY RULE INHERITED FROM THE FAMILY: fill and border tokens are
-   never used as text colours. Text uses --primary-text / --accent-text,
-   which are the variants measured to clear 4.5:1 on --bg, --surface and
-   --surface-light in BOTH themes.
+   MorrowTab — neutral surfaces, consistent type and real product screenshots.
+   Dark is the base palette; light follows the system preference.
+   Fill tokens and text tokens are separate so both palettes remain readable.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -132,54 +121,40 @@
 /* --------------------------------------------------------------------------
    CSS Variables — Dark (default)
 
-   Palette comes from the MorrowTab app icon: the indigo card (#6574F7), the
-   teal card (#15C7BD) and the sunrise (#FFD166). Measured contrast:
-     --text        #e4e5ec   15.6 : bg   13.8 : surface   11.3 : surface-light
-     --text-muted  #a8acbe    8.7 : bg    7.7 : surface    6.3 : surface-light
-     --primary-text #a5adff   9.4 : bg    8.3 : surface    6.8 : surface-light
-     --accent-text  #5ee9e0  11.9 : bg   10.5 : surface    9.6 : surface-light
-     --btn-primary-ink on the darkest end of the button gradient  5.0
+   Neutral surfaces with a restrained violet accent. Verify rendered text
+   contrast in both palettes with tools/check-site.js after changing tokens.
    -------------------------------------------------------------------------- */
 :root {
-    --primary: #8f99ff;
-    --primary-light: #a5adff;
-    --primary-dark: #6574f7;
-    --primary-rgb: 143, 153, 255;
-    --accent: #3ee0d6;
-    --accent-rgb: 62, 224, 214;
+    color-scheme: dark;
+    --font-ui: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --primary: #b7b0eb;
+    --primary-light: #c6c0f2;
+    --primary-dark: #b7b0eb;
+    --primary-rgb: 183, 176, 235;
+    --accent: #b7b0eb;
+    --accent-rgb: 183, 176, 235;
     --sunrise: #ffd166;
-
-    --bg: #0a0b12;
-    --bg-gradient: linear-gradient(135deg, #0a0b12 0%, #12141f 50%, #0a0b12 100%);
-    --text: #e4e5ec;
-    --text-muted: #a8acbe;
-    --heading: #fff;
-    --surface: #181a24;
-    --surface-light: #262a3b;
-    --border: #3a4059;
-    /* Interactive outlines need 3:1 against their own fill; --border is a
-       decorative divider and deliberately softer. */
-    --border-strong: #6a7294;
-    --overlay: rgba(4, 5, 10, 0.88);
-    --shadow-strength: 0.4;
-
+    --bg: #181a1d;
+    --bg-gradient: none;
+    --text: #e7e9ee;
+    --text-muted: #b1b6c0;
+    --heading: #f5f6f8;
+    --surface: #22252a;
+    --surface-light: #2a2e34;
+    --border: #424750;
+    --border-strong: #818997;
+    --overlay: rgba(15, 15, 18, 0.92);
+    --shadow-strength: 0.2;
     --success: #4ade80;
     --warning: #fbbf24;
     --error: #f87171;
-
-    /* Primary button. White on the brand indigo is only 3.9:1, so the dark
-       theme puts near-black ink on a bright indigo gradient instead. Kept as
-       tokens so each theme picks what actually reads on its own gradient. */
     --btn-primary-from: var(--primary);
     --btn-primary-to: var(--primary-dark);
-    --btn-primary-ink: #0b0d1c;
-    --btn-primary-glow: rgba(101, 116, 247, 0.35);
-
-    /* Fill colours are not text colours. These are the text-safe variants. */
-    --primary-text: #a5adff;
-    --accent-text: #5ee9e0;
+    --btn-primary-ink: #222036;
+    --btn-primary-glow: transparent;
+    --primary-text: #c6c0f2;
+    --accent-text: #c6c0f2;
     --success-text: #4ade80;
-
     --page-max-width: 1200px;
     --page-shell-width: calc(100% - 48px);
     --anchor-offset: 96px;
@@ -190,38 +165,33 @@
    -------------------------------------------------------------------------- */
 @media (prefers-color-scheme: light) {
     :root {
-        --primary: #4d5ae0;
-        --primary-light: #4351d8;
-        --primary-dark: #3a46bd;
-        --primary-rgb: 77, 90, 224;
-        --accent: #0d7c76;
-        --accent-rgb: 13, 124, 118;
-
-        --bg: #f8f9fa;
-        --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #eceef4 50%, #f8f9fa 100%);
-        --text: #1f2937;
-        --text-muted: #565d6e;
-        --heading: #111827;
-        --surface: #ffffff;
-        --surface-light: #f2f3f8;
-        --border: #d5d9e6;
-        --border-strong: #6f7689;
-        --overlay: rgba(17, 24, 39, 0.62);
-        --shadow-strength: 0.12;
-
+        color-scheme: light;
+        --primary: #504481;
+        --primary-light: #605390;
+        --primary-dark: #44386f;
+        --primary-rgb: 80, 68, 129;
+        --accent: #504481;
+        --accent-rgb: 80, 68, 129;
+        --bg: #ffffff;
+        --bg-gradient: none;
+        --text: #30343b;
+        --text-muted: #59616e;
+        --heading: #1d232d;
+        --surface: #f8f9fb;
+        --surface-light: #f1f3f5;
+        --border: #d8dce3;
+        --border-strong: #78808e;
+        --overlay: rgba(28, 29, 33, 0.8);
+        --shadow-strength: 0.08;
         --success: #16a34a;
         --warning: #9a5b04;
         --error: #dc2626;
-
-        /* The light theme's indigo is already dark, so white ink wins here.
-           Starting at the deeper indigo takes white from 3.9:1 to 6.2:1. */
-        --btn-primary-from: #4351d8;
-        --btn-primary-to: #3a46bd;
+        --btn-primary-from: #504481;
+        --btn-primary-to: #44386f;
         --btn-primary-ink: #ffffff;
-        --btn-primary-glow: rgba(67, 81, 216, 0.3);
-
-        --primary-text: #3f4dd2;
-        --accent-text: #0b6a65;
+        --btn-primary-glow: transparent;
+        --primary-text: #504481;
+        --accent-text: #504481;
         --success-text: #166534;
     }
 }
@@ -244,7 +214,7 @@ body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-ui);
     font-size: 17px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
@@ -282,18 +252,6 @@ textarea {
     color: inherit;
 }
 
-/* Decorative background wash — the house signature. Fixed, behind everything,
-   never intercepts pointer events. */
-.bg-glow {
-    position: fixed;
-    inset: 0 0 auto;
-    height: 100vh;
-    background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(var(--primary-rgb), 0.16) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 40% at 82% 58%, rgba(var(--accent-rgb), 0.07) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
-}
 
 /* Screen-reader-only text — carries the "(opens in a new tab)" hints on
    every external link. */
@@ -343,8 +301,7 @@ header {
     top: 0;
     z-index: 100;
     border-bottom: 1px solid var(--border);
-    background: color-mix(in srgb, var(--bg) 82%, transparent);
-    backdrop-filter: blur(20px);
+    background: var(--bg);
 }
 
 .header-inner {
@@ -413,7 +370,7 @@ header {
     height: 46px;
     padding: 0;
     border: 1px solid var(--border-strong);
-    border-radius: 14px;
+    border-radius: 4px;
     background: var(--surface);
     color: var(--heading);
     cursor: pointer;
@@ -455,13 +412,13 @@ h4 {
 
 h1 {
     font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 800;
-    letter-spacing: -0.045em;
+    font-weight: 600;
+    letter-spacing: -0.04em;
 }
 
 h2 {
     font-size: clamp(1.9rem, 4vw, 2.5rem);
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.035em;
 }
 
@@ -538,26 +495,24 @@ kbd {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 16px 28px;
-    border: none;
-    border-radius: 12px;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    transition: background-color 0.16s ease, border-color 0.16s ease;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--btn-primary-from) 0%, var(--btn-primary-to) 100%);
+    background: var(--btn-primary-from);
     color: var(--btn-primary-ink);
-    box-shadow: 0 4px 20px var(--btn-primary-glow);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
+    background: var(--btn-primary-to);
     color: var(--btn-primary-ink);
-    box-shadow: 0 8px 30px var(--btn-primary-glow);
     text-decoration: none;
 }
 
@@ -568,7 +523,6 @@ kbd {
 }
 
 .btn-secondary:hover {
-    transform: translateY(-2px);
     border-color: var(--primary);
     background: var(--surface-light);
     color: var(--heading);
@@ -608,8 +562,8 @@ kbd {
 }
 
 .cta-buttons .btn {
-    padding: 16px 32px;
-    font-size: 1.1rem;
+    padding: 12px 20px;
+    font-size: 0.95rem;
 }
 
 .cta-note {
@@ -618,41 +572,12 @@ kbd {
     font-size: 0.92rem;
 }
 
-/* Availability strip under the hero CTA. */
-.browser-support {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.browser-support li {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    padding: 9px 16px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: var(--surface);
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.browser-support img {
-    display: block;
-    flex-shrink: 0;
-}
-
 /* --------------------------------------------------------------------------
    Hero
    -------------------------------------------------------------------------- */
 .hero {
-    padding: 90px 0 60px;
-    text-align: center;
+    padding: 76px 0 48px;
+    text-align: left;
 }
 
 .hero h1 {
@@ -670,80 +595,28 @@ kbd {
     scroll-margin-top: 112px;
 }
 
-.supported-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 1080px;
-    margin: 40px auto 0;
-}
-
-.supported-box {
-    padding: 24px 28px;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    background: var(--surface);
-    text-align: left;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, calc(var(--shadow-strength) * 0.45));
-}
-
-.supported-box h2 {
-    margin-bottom: 10px;
-    color: var(--text);
-    font-size: 1.08rem;
-    font-weight: 700;
-    letter-spacing: 0;
-}
-
-.supported-copy {
-    margin-bottom: 18px;
-    font-size: 0.98rem;
-    line-height: 1.65;
-}
-
-.format-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.format-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 9px 14px;
-    border: 1px solid rgba(var(--primary-rgb), 0.34);
-    border-radius: 10px;
-    background: rgba(var(--primary-rgb), 0.12);
-    color: var(--primary-text);
-    font-size: 0.92rem;
-    font-weight: 600;
-}
-
 /* --------------------------------------------------------------------------
    Sections
    -------------------------------------------------------------------------- */
 section {
-    padding: 100px 0;
+    padding: 76px 0;
 }
 
 .section-header {
-    margin-bottom: 60px;
-    text-align: center;
+    margin-bottom: 36px;
+    text-align: left;
 }
 
 .section-badge {
     display: inline-block;
     margin-bottom: 16px;
-    color: var(--primary-text);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
-/* The sibling sites make this badge a link back to a hub page. MorrowTab has
-   no hub, so it is plain text here — the rule keeps the option open. */
+/* Section labels can also contain a link. */
 .section-badge a {
     color: inherit;
 }
@@ -754,10 +627,7 @@ section {
     font-size: 1.08rem;
 }
 
-/* Centered section headers belong to the landing page, whose hero is centered
-   too. A page that opens with the left-aligned .page-hero has to keep that
-   alignment all the way down, or its body reads as centered under a
-   left-aligned heading. */
+/* Long-form pages share the hero's left alignment. */
 main:has(> .page-hero) .section-header {
     text-align: left;
 }
@@ -767,104 +637,21 @@ main:has(> .page-hero) .section-desc {
 }
 
 /* --------------------------------------------------------------------------
-   Feature cards
-   -------------------------------------------------------------------------- */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 24px;
-}
-
-.feature-card {
-    padding: 32px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: var(--surface);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--primary);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, var(--shadow-strength));
-}
-
-.feature-card h3 {
-    margin-bottom: 10px;
-}
-
-.feature-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    font-size: 24px;
-    line-height: 1;
-}
-
-.feature-icon.boards { background: rgba(101, 116, 247, 0.16); }
-.feature-icon.search { background: rgba(21, 199, 189, 0.16); }
-.feature-icon.quote { background: rgba(255, 209, 102, 0.16); }
-.feature-icon.sync { background: rgba(34, 197, 94, 0.15); }
-.feature-icon.appearance { background: rgba(168, 85, 247, 0.16); }
-.feature-icon.keyboard { background: rgba(239, 68, 68, 0.15); }
-
-.feature-list {
-    margin: 16px 0 0;
-    padding: 0;
-    list-style: none;
-    color: var(--text-muted);
-}
-
-.feature-list li {
-    position: relative;
-    padding-left: 22px;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.feature-list li + li {
-    margin-top: 8px;
-}
-
-.feature-list li::before {
-    content: "";
-    position: absolute;
-    top: 0.62em;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    background: var(--primary);
-}
-
-.feature-card p:last-child,
-.feature-list li:last-child {
-    margin-bottom: 0;
-}
-
-/* --------------------------------------------------------------------------
    Note box
    -------------------------------------------------------------------------- */
 .note-box {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-top: 60px;
-    padding: 24px 32px;
-    border: 1px solid rgba(var(--primary-rgb), 0.32);
-    border-radius: 12px;
-    background: rgba(var(--primary-rgb), 0.1);
+    gap: 0;
+    margin-top: 32px;
+    padding: 20px 24px;
+    border: 0;
+    border-left: 3px solid var(--border-strong);
+    border-radius: 0;
+    background: var(--surface-light);
 }
 
 .note-box .icon {
-    flex-shrink: 0;
-    font-size: 22px;
-    /* Match the heading's line box so the glyph sits on its first line. */
-    line-height: 1.25;
+    display: none;
 }
 
 .note-box h3,
@@ -892,21 +679,22 @@ main:has(> .page-hero) .section-desc {
 .screenshot-tabs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 24px;
+    justify-content: flex-start;
+    gap: 24px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--border);
 }
 
 .screenshot-tab {
-    padding: 10px 26px;
-    border: 1px solid var(--border-strong);
-    border-radius: 8px;
-    background: var(--surface);
+    padding: 12px 0;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
     color: var(--text-muted);
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
 .screenshot-tab:hover {
@@ -916,7 +704,6 @@ main:has(> .page-hero) .section-desc {
 
 .screenshot-tab[aria-selected="true"] {
     border-color: var(--primary);
-    background: rgba(var(--primary-rgb), 0.14);
     color: var(--primary-text);
 }
 
@@ -927,7 +714,7 @@ main:has(> .page-hero) .section-desc {
 }
 
 .screenshot-showcase {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -949,18 +736,17 @@ main:has(> .page-hero) .section-desc {
     padding: 0;
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 5px;
     background: var(--surface);
     color: inherit;
     text-align: left;
     cursor: zoom-in;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, var(--shadow-strength));
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, var(--shadow-strength));
+    transition: border-color 0.16s ease;
 }
 
 .screenshot-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 28px 80px rgba(0, 0, 0, calc(var(--shadow-strength) + 0.1));
+    border-color: var(--border-strong);
 }
 
 .screenshot-card img {
@@ -1011,24 +797,25 @@ main:has(> .page-hero) .section-desc {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .screenshot-variant {
-    min-width: 124px;
-    padding: 11px 18px;
-    border: 1px solid var(--border-strong);
-    border-radius: 999px;
-    background: var(--surface);
+    min-width: 88px;
+    min-height: 44px;
+    padding: 8px 14px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background: transparent;
     color: var(--text-muted);
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
 }
 
 .screenshot-variant[aria-pressed="true"] {
-    border-color: var(--primary);
-    background: rgba(var(--primary-rgb), 0.12);
+    border-color: var(--border-strong);
+    background: var(--surface);
     color: var(--primary-text);
 }
 
@@ -1159,67 +946,12 @@ tbody tr:last-child td {
 }
 
 /* --------------------------------------------------------------------------
-   Cross-promotion
-   -------------------------------------------------------------------------- */
-#more-extensions {
-    padding: 80px 0 40px;
-}
-
-.extensions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 24px;
-    margin-top: 40px;
-}
-
-.extension-card {
-    display: block;
-    padding: 32px 24px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: var(--surface);
-    color: var(--text);
-    text-align: center;
-    text-decoration: none;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.extension-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--primary);
-    color: var(--text);
-    text-decoration: none;
-}
-
-.extension-card h3 {
-    margin-bottom: 8px;
-}
-
-.extension-card p {
-    margin: 0;
-    font-size: 0.92rem;
-}
-
-.extension-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-}
-
-.extension-logo {
-    display: block;
-    width: 48px;
-    height: 48px;
-}
-
-/* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
 footer {
-    padding: 60px 0 40px;
+    padding: 44px 0 28px;
     border-top: 1px solid var(--border);
-    background: var(--surface);
+    background: var(--bg);
 }
 
 .footer-grid {
@@ -1231,10 +963,10 @@ footer {
 .footer-column h2 {
     margin-bottom: 14px;
     color: var(--text);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-family: 'Inter', 'Inter Fallback', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0;
 }
 
 .footer-column ul {
@@ -1273,7 +1005,7 @@ footer {
    Sub-page hero and long-form content
    -------------------------------------------------------------------------- */
 .page-hero {
-    padding: 70px 0 30px;
+    padding: 64px 0 32px;
 }
 
 .page-hero h1 {
@@ -1329,9 +1061,9 @@ main:has(> .content) > .page-hero > .container {
 .highlight {
     margin-bottom: 44px;
     padding: 24px 28px;
-    border: 1px solid rgba(var(--accent-rgb), 0.35);
-    border-radius: 14px;
-    background: rgba(var(--accent-rgb), 0.09);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface);
 }
 
 .highlight h2 {
@@ -1562,10 +1294,11 @@ main:has(> .content) > .page-hero > .container {
 /* Changelog */
 .version-card {
     margin-bottom: 24px;
-    padding: 28px 32px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: var(--surface);
+    padding: 32px 0;
+    border: 0;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
 }
 
 .version-card h2 {
@@ -1600,6 +1333,284 @@ main:has(> .content) > .page-hero > .container {
 
 .not-found .cta-buttons {
     margin-top: 32px;
+}
+
+/* --------------------------------------------------------------------------
+   Homepage and contact — distinct sections, with a shared reading rhythm
+   -------------------------------------------------------------------------- */
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: end;
+    gap: 64px;
+}
+.eyebrow {
+    margin: 0 0 18px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.hero h1 {
+    margin: 0;
+    font-size: clamp(2.4rem, 4.4vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+    text-wrap: initial;
+}
+.hero-intro .subtitle {
+    margin: 0 0 24px;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+.hero-intro .cta-buttons {
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+.install-note {
+    margin: 0;
+    font-size: 0.8rem;
+}
+.home-page #screenshots {
+    padding: 0 0 64px;
+}
+.preview-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+}
+.preview-heading h2 {
+    margin: 0;
+    font-family: 'Inter', 'Inter Fallback', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+.preview-heading p,
+.preview-caption,
+.detail-figure figcaption {
+    margin: 0;
+    font-size: 0.8rem;
+}
+.preview-caption {
+    margin-top: 16px;
+}
+.everyday-section {
+    border-top: 1px solid var(--border);
+}
+.everyday-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+}
+.everyday-grid h3 {
+    font-size: 1.12rem;
+    line-height: 1.4;
+}
+.everyday-grid p {
+    font-size: 0.95rem;
+}
+.everyday-grid a,
+.detail-copy > a,
+.practical-layout > .section-header > a {
+    font-size: 0.9rem;
+}
+.calendar-section {
+    background: var(--surface-light);
+}
+.detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.65fr);
+    align-items: center;
+    gap: 64px;
+}
+.detail-copy p:not(.eyebrow) {
+    font-size: 0.95rem;
+}
+.detail-figure {
+    min-width: 0;
+    margin: 0;
+}
+.detail-figure figcaption {
+    margin-top: 12px;
+}
+.practical-layout,
+.faq-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.65fr);
+    gap: 64px;
+}
+.practical-layout .section-header p:not(.eyebrow),
+.faq-layout .section-header p:not(.eyebrow) {
+    font-size: 0.95rem;
+}
+.practical-list {
+    margin: 0;
+}
+.practical-list > div {
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+}
+.practical-list > div:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+.practical-list dt {
+    margin-bottom: 8px;
+    color: var(--heading);
+    font-weight: 600;
+}
+.practical-list dd {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+.home-page #faq {
+    padding-top: 0;
+}
+.faq-layout .faq-list {
+    width: 100%;
+    margin: 0;
+    border-top: 1px solid var(--border);
+}
+.faq-list details p {
+    font-size: 0.95rem;
+}
+.home-page .publisher-section {
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+}
+.publisher-layout {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+}
+.publisher-layout h2 {
+    margin: 0;
+    font-family: 'Inter', 'Inter Fallback', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--text-muted);
+}
+.publisher-layout p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin: 0;
+    font-size: 0.85rem;
+}
+.contact-topics {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 860px;
+    padding-bottom: 48px;
+}
+.contact-page .page-hero .container {
+    max-width: 860px;
+}
+.contact-topics section {
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+}
+.contact-topics h2 {
+    font-family: 'Inter', 'Inter Fallback', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+.contact-topics ul {
+    padding-left: 22px;
+}
+@media (max-width: 1000px) {
+    .hero-layout {
+        gap: 32px;
+    }
+    .hero h1 {
+        font-size: clamp(2.2rem, 4.4vw, 3rem);
+    }
+    .everyday-grid {
+        gap: 28px;
+    }
+    .detail-layout,
+    .practical-layout,
+    .faq-layout {
+        gap: 36px;
+    }
+}
+@media (max-width: 900px) {
+    .detail-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .detail-copy {
+        max-width: 600px;
+    }
+}
+@media (max-width: 768px) {
+    .hero-layout,
+    .everyday-grid,
+    .practical-layout,
+    .faq-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+    .hero h1 {
+        font-size: clamp(2.2rem, 7.8vw, 3rem);
+    }
+    .hero-intro .cta-buttons {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .hero-intro .cta-buttons .btn {
+        width: auto;
+        max-width: none;
+        flex: 1 1 auto;
+        padding-inline: 14px;
+    }
+    .preview-heading {
+        display: block;
+    }
+    .preview-heading p {
+        margin-top: 8px;
+    }
+    .screenshot-tabs {
+        flex-wrap: nowrap;
+        gap: 16px;
+        overflow-x: auto;
+    }
+    .screenshot-tab {
+        flex-shrink: 0;
+        font-size: 0.8rem;
+    }
+    .screenshot-variants {
+        gap: 2px;
+    }
+    .screenshot-variant {
+        min-width: auto;
+        padding-inline: 12px;
+        font-size: 0.8rem;
+    }
+    .everyday-grid article + article {
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+    }
+    .practical-layout .section-header,
+    .faq-layout .section-header {
+        margin-bottom: 0;
+    }
+    .home-page #screenshots {
+        padding-bottom: 40px;
+    }
+    .home-page #faq {
+        padding-top: 12px;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 20px;
+    }
 }
 
 /* --------------------------------------------------------------------------
@@ -1701,11 +1712,6 @@ main:has(> .content) > .page-hero > .container {
         max-width: 320px;
     }
 
-    .feature-card,
-    .supported-box {
-        padding: 24px;
-    }
-
     .note-box {
         padding: 20px 22px;
     }
@@ -1734,27 +1740,14 @@ main:has(> .content) > .page-hero > .container {
         scroll-behavior: auto !important;
     }
 
-    .btn:hover,
-    .feature-card:hover,
-    .extension-card:hover,
-    .screenshot-card:hover {
-        transform: none;
-    }
 }
 
 /* --------------------------------------------------------------------------
    Forced colors
    -------------------------------------------------------------------------- */
 @media (forced-colors: active) {
-    .bg-glow {
-        display: none;
-    }
-
     .btn,
-    .feature-card,
-    .supported-box,
     .note-box,
-    .extension-card,
     .version-card,
     .screenshot-card,
     .screenshot-tab,
@@ -1784,7 +1777,6 @@ main:has(> .content) > .page-hero > .container {
 @media print {
     header,
     footer,
-    .bg-glow,
     .skip-link,
     .nav-toggle,
     .cta-buttons,
@@ -1849,14 +1841,15 @@ main:has(> .content) > .page-hero > .container {
 }
 
 details {
-    margin-bottom: 12px;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    background: var(--surface);
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
 }
 
 details[open] {
-    border-color: rgba(var(--primary-rgb), 0.4);
+    border-color: var(--border-strong);
 }
 
 summary {
@@ -1864,7 +1857,8 @@ summary {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 18px 24px;
+    min-height: 60px;
+    padding: 20px 0;
     color: var(--heading);
     font-weight: 600;
     list-style: none;
@@ -1889,7 +1883,7 @@ details[open] summary::after {
 }
 
 details > *:not(summary) {
-    margin-inline: 24px;
+    margin-inline: 0;
 }
 
 details > *:last-child {

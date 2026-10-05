@@ -9,10 +9,10 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab - Board-Based New Tab for Chrome and Edge</title>
     <meta name="description"
-        content="MorrowTab replaces the new tab in Chrome and Edge with organized links, calendar boards and search. Use Browser Sync by default or optional FixQuotes Sync for more space.">
+        content="Organize and find your saved links, view calendars and search the web from your new tab. Free for Chrome and Edge, with nine backgrounds and optional cross-browser sync.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
-    <meta name="theme-color" content="#0a0b12">
+    <meta name="theme-color" content="#181a1d">
     <link rel="canonical" href="https://calxibe.github.io/morrowtab/">
 
     <!-- Open Graph -->
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab - Board-Based New Tab for Chrome and Edge">
     <meta property="og:description"
-        content="Organized links, calendar boards and search on every new tab. Use Browser Sync by default or optional email-based FixQuotes Sync for more space.">
+        content="Your everyday links, calendars and search, ready when you open a tab. Free for Chrome and Edge.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MorrowTab - Board-Based New Tab for Chrome and Edge">
     <meta name="twitter:description"
-        content="Boards of organized links, your browser's own search provider, and a daily quote — every time you open a tab.">
+        content="Your everyday links, calendars and search, ready when you open a tab. Free for Chrome and Edge.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -41,7 +41,7 @@
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260902-2">
+    <link rel="stylesheet" href="style.css?v=20261005-2">
     <script src="index.js" defer></script>
 
     <script type="application/ld+json">
@@ -54,7 +54,7 @@
             "operatingSystem": "Chrome 114 or newer, Microsoft Edge 114 or newer",
             "url": "https://calxibe.github.io/morrowtab/",
             "image": "https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png",
-            "description": "MorrowTab replaces the new tab in Chrome and Edge with organized links, calendar boards, search through the browser's own default provider, and a daily FixQuotes quote. It uses Browser Sync by default and offers optional email-based FixQuotes Sync for more space.",
+            "description": "MorrowTab replaces the new tab in Chrome and Edge with organized links, calendar boards, private search across saved links, web search through the browser's own default provider, nine background choices, and a daily FixQuotes quote. It uses Browser Sync by default and offers optional email-based FixQuotes Sync for more space.",
             "publisher": {
                     "@type": "Organization",
                     "name": "FixQuotes",
@@ -76,18 +76,10 @@
             "mainEntity": [
                     {
                             "@type": "Question",
-                            "name": "Does MorrowTab change my search engine?",
-                            "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "No. The default option is called Browser default, and it hands your query to whatever provider Chrome or Edge is already configured with. MorrowTab never sets, replaces or proposes a search engine of its own, and it ships with no provider preconfigured. Any extra engine in the list is one you added yourself."
-                            }
-                    },
-                    {
-                            "@type": "Question",
                             "name": "What does it cost?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Nothing. MorrowTab is free, with no paid tier, no trial period and nothing to buy inside the extension. The optional FixQuotes Sync account is free too."
+                                    "text": "MorrowTab is free. There is no paid tier or trial, and optional FixQuotes Sync is free too."
                             }
                     },
                     {
@@ -95,23 +87,23 @@
                             "name": "Do I need an account?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Not for Browser Sync. It follows the Chrome or Edge profile you are already signed into. FixQuotes Sync is an optional alternative for more space and Chrome-to-Edge syncing; it creates a FixQuotes account after you enter an email address and verify a one-use code."
+                                    "text": "You do not need a MorrowTab account for Browser Sync. It uses the Chrome or Edge profile you are already signed into. If you choose FixQuotes Sync, you sign in with your email and a one-use code. Your boards upload after you review the transfer and choose Connect."
                             }
                     },
                     {
                             "@type": "Question",
-                            "name": "Does MorrowTab connect to the internet?",
+                            "name": "Does it change my search engine?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Yes, for clearly scoped features. The daily quote is set to Text out of the box and fetches fixquotes.com once per local day; setting it to Off stops that entirely. The daily nature background starts enabled for new sample setups and their read-only previews: MorrowTab asks api.fixquotes.com which photo to show and fetches it from images.pexels.com. Turn it off in Settings to stop those requests; existing background choices remain unchanged. Download website icons is also on by default: it sends only an eligible saved hostname to api.fixquotes.com so FixQuotes can fetch that public site's icon directly. Turn it off on a computer to stop new icon requests there; the reusable cache stays local. Beyond those, MorrowTab only contacts addresses you name yourself, each after your browser asks your permission for that one site: with Fetch page titles when adding links switched on, the site whose address you just typed; and on a calendar board, the private feed address of each calendar you subscribe to. Optional FixQuotes Sync sends sign-in requests and, only after you connect it, your board data to api.fixquotes.com. The Zoom overlay runs on Zoom recording pages but does not send the page title or media sources to FixQuotes. There is no analytics."
+                                    "text": "No. Browser default sends searches to the provider already set in Chrome or Edge. MorrowTab does not replace it. Extra search engines appear only if you add them."
                             }
                     },
                     {
                             "@type": "Question",
-                            "name": "Can it read the pages I browse?",
+                            "name": "Can I search my saved links?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Only in narrowly scoped cases. The toolbar popup sees the title and address of the current tab when you open it. If you enable Fetch page titles when adding links, Chrome asks for access to that individual site. MorrowTab also runs automatically on Zoom recording pages at https://*.zoom.us/rec/*, where it reads the page title and direct video sources to build a local download overlay. It does not save or upload that Zoom information."
+                                    "text": "Yes. Open Find saved links with the toolbar magnifier or Ctrl/Cmd + Shift + K. It searches titles, URLs and descriptions across all your links boards. Open a result or choose Show on board to jump to its original location. Queries stay on your computer, are cleared when you close the dialog, and are not added to web-search suggestions."
                             }
                     },
                     {
@@ -119,7 +111,23 @@
                             "name": "How much can I save?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Browser Sync supports up to 30 boards, 120 columns (40 per board), 250 links (200 per column) and 80 search engines inside a 100 KB budget. Optional FixQuotes Sync raises the overall limits to 5,000 links and 4 MB; the other ceilings stay the same. Settings shows the active provider and how much of its budget you are using."
+                                    "text": "Browser Sync allows up to 250 links within a 100 KB budget. FixQuotes Sync allows up to 5,000 links within 4 MB. Both support up to 30 boards, 120 columns overall, 40 columns per board, 200 links per column and 80 search engines. Settings shows how much space you are using."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "What connects to the internet?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "The daily quote requests fixquotes.com once per local day. Nature photos use api.fixquotes.com and images.pexels.com. Website icons send an eligible saved hostname to api.fixquotes.com. These features start enabled in a new sample setup; each can be turned off in Settings. Calendar feeds and page titles are fetched from addresses you add, after you grant access to that site. Optional FixQuotes Sync sends sign-in requests and, after you connect, board data to api.fixquotes.com. There is no analytics. The privacy policy lists the requests and the data they contain."
+                            }
+                    },
+                    {
+                            "@type": "Question",
+                            "name": "Can it read the pages I browse?",
+                            "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "The Quick Save popup reads the current tab's title and address when you open it. If you enable page-title fetching, the browser asks for access to each site. MorrowTab also runs on Zoom recording pages at https://*.zoom.us/rec/* to show local video download links. It reads the recording title and video sources there, without saving them or sending them to FixQuotes. See page access in the privacy policy."
                             }
                     },
                     {
@@ -127,23 +135,23 @@
                             "name": "Is my data encrypted?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Not end-to-end. Browser Sync follows the browser provider's security, and FixQuotes Sync uses HTTPS but stores a server-readable copy. Treat board names, link titles, saved addresses, search templates and private calendar feed addresses as non-confidential. Exported backups are plain JSON, and local extension records are readable in the browser profile."
+                                    "text": "MorrowTab does not add end-to-end encryption. Browser Sync uses the browser provider's security. FixQuotes Sync uses HTTPS and stores a copy that its server operators can read. Avoid saving confidential information, including private calendar feed addresses. Exported backups are plain JSON, and local records can be read from the browser profile."
                             }
                     },
                     {
                             "@type": "Question",
-                            "name": "Which browsers does it work in?",
+                            "name": "Can I export my boards?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Google Chrome and Microsoft Edge on Chromium 114 or newer. That floor is real: MorrowTab relies on the Popover API, Web Locks, CSS :has() and color-mix(). There is no Firefox or Safari build."
+                                    "text": "Yes. Export a backup in Settings to save your boards, links, search engines and shared settings in a readable JSON file. You can import it again, or export just one column. Background images, saved search suggestions and cached images stay on their own computer and are left out of the backup."
                             }
                     },
                     {
                             "@type": "Question",
-                            "name": "Can I get my data out again?",
+                            "name": "Which browsers can I use?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Yes. Settings exports everything synced — boards, columns, links, search engines and shared settings — as one readable JSON file saved to your own computer, and imports it back. You can also export a single column and drop it into another board. Backgrounds, saved search suggestions and cached images stay on the computer that made them and are deliberately excluded from the file."
+                                    "text": "Google Chrome and Microsoft Edge, version 114 or newer. There is currently no Firefox or Safari version."
                             }
                     }
             ]
@@ -152,7 +160,6 @@
 </head>
 
 <body>
-    <div class="bg-glow"></div>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
@@ -168,95 +175,47 @@
                 <span class="nav-toggle-bar"></span>
             </button>
             <nav id="site-nav" aria-label="Main">
-                <a href="./#install">Availability</a>
+                <a href="./#install">Install</a>
                 <a href="manual.html">Manual</a>
-                <a href="changelog.html">Changelog</a>
+                <a href="changelog.html">What's new</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" class="home-page">
         <section class="hero">
-            <div class="container">
-                <h1>Every New Tab,<br>Organized Your Way</h1>
-
-                <p class="subtitle">
-                    MorrowTab replaces the new tab in Chrome and Edge with boards of links you actually use, calendar
-                    boards, a search box that runs through your browser's own default provider, and a daily FixQuotes
-                    quote. Browser Sync works through the browser profile you are already signed into and needs no
-                    MorrowTab account. If you want more room or want to sync between Chrome and Edge, you can explicitly
-                    connect an email-based FixQuotes Sync account instead.
-                </p>
-
-                <div class="cta-buttons" id="install" role="group" aria-label="Install MorrowTab">
-                    <a href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
-                        class="btn btn-primary" target="_blank" rel="noopener">
-                        <img src="img/edge.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
-                        Add to Edge — Free<span class="visually-hidden"> (opens in a new tab)</span>
-                    </a>
-                    <a href="https://chromewebstore.google.com/detail/gfpandbngbmageefohholgefhmhahpff"
-                        class="btn btn-secondary" target="_blank" rel="noopener">
-                        <img src="img/chrome.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
-                        Add to Chrome — Free<span class="visually-hidden"> (opens in a new tab)</span>
-                    </a>
+            <div class="container hero-layout">
+                <div class="hero-title">
+                    <p class="eyebrow">A new tab for Chrome &amp; Edge</p>
+                    <h1>A place for the links<br>you use every day.</h1>
                 </div>
-
-                <div class="supported-section">
-                    <div class="supported-box">
-                        <h2>Boards, links and search</h2>
-                        <p class="supported-copy">
-                            Group links into columns on as many boards as you need. Search runs through whatever
-                            provider Chrome or Edge is already set to — MorrowTab never substitutes its own — and you
-                            can add extra engines from any HTTP(S) template containing <code>{query}</code>.
-                        </p>
-                        <div class="format-tags">
-                            <span class="format-tag">Multiple boards</span>
-                            <span class="format-tag">Browser default search</span>
-                            <span class="format-tag">Custom search engines</span>
-                            <span class="format-tag">Quick Save popup</span>
-                            <span class="format-tag">Keyboard reordering</span>
-                        </div>
+                <div class="hero-intro">
+                    <p class="subtitle">MorrowTab puts your saved links, calendars and search on your new tab.
+                        Keep a board for work, another for home, and find what you need without digging through bookmarks.</p>
+                    <div class="cta-buttons" id="install" role="group" aria-label="Install MorrowTab">
+                        <a href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
+                            class="btn btn-primary" target="_blank" rel="noopener">
+                            <img src="img/edge.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Edge<span class="visually-hidden"> (opens in a new tab)</span>
+                        </a>
+                        <a href="https://chromewebstore.google.com/detail/gfpandbngbmageefohholgefhmhahpff"
+                            class="btn btn-secondary" target="_blank" rel="noopener">
+                            <img src="img/chrome.svg" alt="" class="btn-icon" width="20" height="20" aria-hidden="true">
+                            Add to Chrome<span class="visually-hidden"> (opens in a new tab)</span>
+                        </a>
                     </div>
-                    <div class="supported-box">
-                        <h2>Clear about what leaves your machine</h2>
-                        <p class="supported-copy">
-                            Browser Sync is the default. Requesting optional FixQuotes Sync sends your email address
-                            to FixQuotes and its mail provider; verifying the one-use code creates an account and
-                            device session. Your board data &mdash; including saved addresses and private calendar
-                            feed addresses &mdash; is uploaded only after you review the transfer and press
-                            <strong>Connect</strong>. It uses HTTPS but is not end-to-end encrypted.
-                            Separate switchable features use <code>fixquotes.com</code>, <code>api.fixquotes.com</code>
-                            and <code>images.pexels.com</code> for quotes, nature photos and website icons. MorrowTab can
-                            also contact a page-title or calendar-feed address that you add and approve. On Zoom
-                            recording pages, a narrowly scoped content script reads the page title and direct video
-                            sources to show local download links. There is no analytics, advertising tracker or remote
-                            code.
-                        </p>
-                        <div class="format-tags">
-                            <span class="format-tag">Browser Sync by default</span>
-                            <span class="format-tag">Optional FixQuotes account</span>
-                            <span class="format-tag">Zoom pages only</span>
-                            <span class="format-tag">JSON export</span>
-                        </div>
-                    </div>
+                    <p class="install-note">Free to use. No MorrowTab account needed to get started.</p>
                 </div>
             </div>
         </section>
 
         <section id="screenshots">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">Preview</span>
-                    <h2>See It in Action</h2>
-                    <p class="section-desc">
-                        Every shot is the real extension, using the bundled "Popular websites" starter board.
-                        Auto + Nature shows the default setup: the Auto color theme with Daily Pexels nature enabled.
-                        The photo changes daily; the other theme previews switch nature photos off to show their colors.
-                        The search picture has a few queries already saved on that computer, and the calendar board
-                        shows two sample calendars with fictional events.
-                    </p>
+                <div class="preview-heading">
+                    <h2>Inside MorrowTab</h2>
+                    <p>Real screenshots. Click a picture for a closer look.</p>
                 </div>
 
                 <div class="screenshot-tabs" role="tablist" aria-label="MorrowTab screenshots">
@@ -272,9 +231,7 @@
                         aria-controls="panel-quicksave" aria-selected="false" tabindex="-1">Quick Save</button>
                 </div>
 
-                <p class="screenshot-note">Select a picture to open it full size.</p>
-
-                <div class="screenshot-showcase">
+<div class="screenshot-showcase">
                     <div class="screenshot-panel" id="panel-newtab" role="tabpanel" aria-labelledby="tab-newtab"
                         tabindex="0">
                         <button class="screenshot-card" type="button"
@@ -283,13 +240,13 @@
                             <picture>
                                 <source type="image/avif"
                                     srcset="img/screenshots/newtab-auto-nature-768.avif 768w, img/screenshots/newtab-auto-nature-1280.avif 1280w, img/screenshots/newtab-auto-nature-1920.avif 1920w"
-                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                    sizes="(min-width: 1248px) 1180px, (max-width: 768px) calc(100vw - 34px), calc(100vw - 50px)">
                                 <source type="image/webp"
                                     srcset="img/screenshots/newtab-auto-nature-768.webp 768w, img/screenshots/newtab-auto-nature-1280.webp 1280w, img/screenshots/newtab-auto-nature-1920.webp 1920w"
-                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                    sizes="(min-width: 1248px) 1180px, (max-width: 768px) calc(100vw - 34px), calc(100vw - 50px)">
                                 <img src="img/screenshots/newtab-auto-nature.png" width="1920" height="1200"
                                     alt="The default MorrowTab setup with the Auto color theme and Daily Pexels nature enabled: the Popular websites starter board with five columns of links over a coastal night photograph, with its photographer credit visible"
-                                    loading="lazy" decoding="async">
+                                    loading="eager" fetchpriority="high" decoding="async">
                             </picture>
                             <span class="screenshot-hint">Open full size</span>
                         </button>
@@ -320,14 +277,14 @@
                                 data-fullsrc="img/screenshots/newtab-theme-violet.png"
                                 data-avif="img/screenshots/newtab-theme-violet-768.avif 768w, img/screenshots/newtab-theme-violet-1280.avif 1280w, img/screenshots/newtab-theme-violet-1920.avif 1920w"
                                 data-webp="img/screenshots/newtab-theme-violet-768.webp 768w, img/screenshots/newtab-theme-violet-1280.webp 1280w, img/screenshots/newtab-theme-violet-1920.webp 1920w"
-                                data-alt="The same MorrowTab board with the Violet gradient background applied"
+                                data-alt="The same MorrowTab board on a deep purple Violet gradient, with white card text and the Find saved links, layout lock and Settings toolbar buttons"
                                 data-label="Violet">Violet</button>
                             <button class="screenshot-variant" type="button" aria-pressed="false"
                                 data-previewsrc="img/screenshots/newtab-theme-green.png"
                                 data-fullsrc="img/screenshots/newtab-theme-green.png"
                                 data-avif="img/screenshots/newtab-theme-green-768.avif 768w, img/screenshots/newtab-theme-green-1280.avif 1280w, img/screenshots/newtab-theme-green-1920.avif 1920w"
                                 data-webp="img/screenshots/newtab-theme-green-768.webp 768w, img/screenshots/newtab-theme-green-1280.webp 1280w, img/screenshots/newtab-theme-green-1920.webp 1920w"
-                                data-alt="The same MorrowTab board with the Green gradient background applied"
+                                data-alt="The same MorrowTab board on a light mint Green gradient, with dark card text and the Find saved links, layout lock and Settings toolbar buttons"
                                 data-label="Green">Green</button>
                         </div>
                     </div>
@@ -340,10 +297,10 @@
                             <picture>
                                 <source type="image/avif"
                                     srcset="img/screenshots/calendar-agenda-768.avif 768w, img/screenshots/calendar-agenda-1280.avif 1280w, img/screenshots/calendar-agenda-1920.avif 1920w"
-                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                    sizes="(min-width: 1248px) 1180px, (max-width: 768px) calc(100vw - 34px), calc(100vw - 50px)">
                                 <source type="image/webp"
                                     srcset="img/screenshots/calendar-agenda-768.webp 768w, img/screenshots/calendar-agenda-1280.webp 1280w, img/screenshots/calendar-agenda-1920.webp 1920w"
-                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                    sizes="(min-width: 1248px) 1180px, (max-width: 768px) calc(100vw - 34px), calc(100vw - 50px)">
                                 <img src="img/screenshots/calendar-agenda.png" width="1920" height="1200"
                                     alt="A MorrowTab calendar board in the Agenda layout over the nature photo: two calendar chips named Work and Family, then Today and the days ahead listing meetings with their times, an all-day birthday and a weekend trip"
                                     loading="lazy" decoding="async">
@@ -372,6 +329,27 @@
                                 data-webp="img/screenshots/calendar-month-768.webp 768w, img/screenshots/calendar-month-1280.webp 1280w, img/screenshots/calendar-month-1920.webp 1920w"
                                 data-alt="The same calendar board in the Month layout: a grid of the whole month with a week number beside each row, today marked, and short event lines in each day"
                                 data-label="Month">Month</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/calendar-agenda-light.png"
+                                data-fullsrc="img/screenshots/calendar-agenda-light.png"
+                                data-avif="img/screenshots/calendar-agenda-light-768.avif 768w, img/screenshots/calendar-agenda-light-1280.avif 1280w, img/screenshots/calendar-agenda-light-1920.avif 1920w"
+                                data-webp="img/screenshots/calendar-agenda-light-768.webp 768w, img/screenshots/calendar-agenda-light-1280.webp 1280w, img/screenshots/calendar-agenda-light-1920.webp 1920w"
+                                data-alt="A MorrowTab calendar board in light mode, with Work and Family calendars and upcoming events in the Agenda layout"
+                                data-label="Agenda (light)">Agenda (light)</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/calendar-week-light.png"
+                                data-fullsrc="img/screenshots/calendar-week-light.png"
+                                data-avif="img/screenshots/calendar-week-light-768.avif 768w, img/screenshots/calendar-week-light-1280.avif 1280w, img/screenshots/calendar-week-light-1920.avif 1920w"
+                                data-webp="img/screenshots/calendar-week-light-768.webp 768w, img/screenshots/calendar-week-light-1280.webp 1280w, img/screenshots/calendar-week-light-1920.webp 1920w"
+                                data-alt="A MorrowTab calendar board in light mode, with seven day columns showing a week of Work and Family events"
+                                data-label="Week (light)">Week (light)</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/calendar-month-light.png"
+                                data-fullsrc="img/screenshots/calendar-month-light.png"
+                                data-avif="img/screenshots/calendar-month-light-768.avif 768w, img/screenshots/calendar-month-light-1280.avif 1280w, img/screenshots/calendar-month-light-1920.avif 1920w"
+                                data-webp="img/screenshots/calendar-month-light-768.webp 768w, img/screenshots/calendar-month-light-1280.webp 1280w, img/screenshots/calendar-month-light-1920.webp 1920w"
+                                data-alt="A MorrowTab calendar board in light mode, with Work and Family events arranged in the Month grid"
+                                data-label="Month (light)">Month (light)</button>
                         </div>
                     </div>
 
@@ -383,12 +361,12 @@
                             <picture>
                                 <source type="image/avif"
                                     srcset="img/screenshots/settings-light-768.avif 768w, img/screenshots/settings-light-1280.avif 1280w, img/screenshots/settings-light-1920.avif 1920w"
-                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                    sizes="(min-width: 1248px) 1180px, (max-width: 768px) calc(100vw - 34px), calc(100vw - 50px)">
                                 <source type="image/webp"
                                     srcset="img/screenshots/settings-light-768.webp 768w, img/screenshots/settings-light-1280.webp 1280w, img/screenshots/settings-light-1920.webp 1920w"
-                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                    sizes="(min-width: 1248px) 1180px, (max-width: 768px) calc(100vw - 34px), calc(100vw - 50px)">
                                 <img src="img/screenshots/settings-light.png" width="1920" height="1200"
-                                    alt="The MorrowTab Settings dialog: a Background color grid of nine swatches, Daily Pexels nature and Upload background image controls, a Backup section, and a Layout and links column with the daily quote mode and toggles"
+                                    alt="The light MorrowTab Settings dialog with Appearance selected in the sidebar: nine background swatches including light lavender Purple, mint Green and blush Pink, photo controls, daily quote mode and column spacing"
                                     loading="lazy" decoding="async">
                             </picture>
                             <span class="screenshot-hint">Open full size</span>
@@ -399,14 +377,14 @@
                                 data-fullsrc="img/screenshots/settings-light.png"
                                 data-avif="img/screenshots/settings-light-768.avif 768w, img/screenshots/settings-light-1280.avif 1280w, img/screenshots/settings-light-1920.avif 1920w"
                                 data-webp="img/screenshots/settings-light-768.webp 768w, img/screenshots/settings-light-1280.webp 1280w, img/screenshots/settings-light-1920.webp 1920w"
-                                data-alt="The MorrowTab Settings dialog in its light palette"
+                                data-alt="The light MorrowTab Settings dialog with Appearance selected in the sidebar: nine background swatches including light lavender Purple, mint Green and blush Pink, photo controls, daily quote mode and column spacing"
                                 data-label="Light">Light</button>
                             <button class="screenshot-variant" type="button" aria-pressed="false"
                                 data-previewsrc="img/screenshots/settings-dark.png"
                                 data-fullsrc="img/screenshots/settings-dark.png"
                                 data-avif="img/screenshots/settings-dark-768.avif 768w, img/screenshots/settings-dark-1280.avif 1280w, img/screenshots/settings-dark-1920.avif 1920w"
                                 data-webp="img/screenshots/settings-dark-768.webp 768w, img/screenshots/settings-dark-1280.webp 1280w, img/screenshots/settings-dark-1920.webp 1920w"
-                                data-alt="The MorrowTab Settings dialog in its dark palette"
+                                data-alt="The dark MorrowTab Settings dialog with Appearance selected in the sidebar and the same nine background choices, including three light coloured swatches"
                                 data-label="Dark">Dark</button>
                         </div>
                     </div>
@@ -414,22 +392,38 @@
                     <div class="screenshot-panel" id="panel-search" role="tabpanel" aria-labelledby="tab-search"
                         tabindex="0" hidden>
                         <button class="screenshot-card" type="button"
-                            data-fullsrc="img/screenshots/search-suggestions.png"
-                            aria-label="Open full size: the search box with saved suggestions">
-                            <span class="screenshot-label">Saved suggestions</span>
+                            data-fullsrc="img/screenshots/saved-link-search.png"
+                            aria-label="Open full size: search in MorrowTab">
+                            <span class="screenshot-label">Find saved links</span>
                             <picture>
                                 <source type="image/avif"
-                                    srcset="img/screenshots/search-suggestions-768.avif 768w, img/screenshots/search-suggestions-1280.avif 1280w, img/screenshots/search-suggestions-1920.avif 1920w"
-                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
+                                    srcset="img/screenshots/saved-link-search-768.avif 768w, img/screenshots/saved-link-search-1280.avif 1280w, img/screenshots/saved-link-search-1920.avif 1920w"
+                                    sizes="(min-width: 1248px) 1180px, (max-width: 768px) calc(100vw - 34px), calc(100vw - 50px)">
                                 <source type="image/webp"
-                                    srcset="img/screenshots/search-suggestions-768.webp 768w, img/screenshots/search-suggestions-1280.webp 1280w, img/screenshots/search-suggestions-1920.webp 1920w"
-                                    sizes="(min-width: 1200px) 1100px, calc(100vw - 48px)">
-                                <img src="img/screenshots/search-suggestions.png" width="1920" height="1200"
-                                    alt="The MorrowTab search box with the word design typed in, and a suggestion panel below it listing three earlier searches from this computer"
+                                    srcset="img/screenshots/saved-link-search-768.webp 768w, img/screenshots/saved-link-search-1280.webp 1280w, img/screenshots/saved-link-search-1920.webp 1920w"
+                                    sizes="(min-width: 1248px) 1180px, (max-width: 768px) calc(100vw - 34px), calc(100vw - 50px)">
+                                <img src="img/screenshots/saved-link-search.png" width="1920" height="1200"
+                                    alt="The Find saved links dialog searching for google in the sample board: matching saved links show their titles, board and column, URLs and Show on board actions"
                                     loading="lazy" decoding="async">
                             </picture>
                             <span class="screenshot-hint">Open full size</span>
                         </button>
+                        <div class="screenshot-variants">
+                            <button class="screenshot-variant" type="button" aria-pressed="true"
+                                data-previewsrc="img/screenshots/saved-link-search.png"
+                                data-fullsrc="img/screenshots/saved-link-search.png"
+                                data-avif="img/screenshots/saved-link-search-768.avif 768w, img/screenshots/saved-link-search-1280.avif 1280w, img/screenshots/saved-link-search-1920.avif 1920w"
+                                data-webp="img/screenshots/saved-link-search-768.webp 768w, img/screenshots/saved-link-search-1280.webp 1280w, img/screenshots/saved-link-search-1920.webp 1920w"
+                                data-alt="The Find saved links dialog searching for google in the sample board: matching saved links show their titles, board and column, URLs and Show on board actions"
+                                data-label="Find saved links">Find saved links</button>
+                            <button class="screenshot-variant" type="button" aria-pressed="false"
+                                data-previewsrc="img/screenshots/search-suggestions.png"
+                                data-fullsrc="img/screenshots/search-suggestions.png"
+                                data-avif="img/screenshots/search-suggestions-768.avif 768w, img/screenshots/search-suggestions-1280.avif 1280w, img/screenshots/search-suggestions-1920.avif 1920w"
+                                data-webp="img/screenshots/search-suggestions-768.webp 768w, img/screenshots/search-suggestions-1280.webp 1280w, img/screenshots/search-suggestions-1920.webp 1920w"
+                                data-alt="The MorrowTab web-search box with design typed in and three suggestions from earlier searches on this computer"
+                                data-label="Web-search suggestions">Web-search suggestions</button>
+                        </div>
                     </div>
 
                     <div class="screenshot-panel" id="panel-quicksave" role="tabpanel" aria-labelledby="tab-quicksave"
@@ -450,461 +444,185 @@
                         </button>
                     </div>
                 </div>
+                <p class="preview-caption">Shown with sample links and calendars. The nature photo changes daily.</p>
             </div>
         </section>
 
-        <section id="features">
+
+        <section id="features" class="everyday-section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-badge">Features</span>
-                    <h2>What MorrowTab Actually Does</h2>
-                    <p class="section-desc">
-                        A new tab page, a toolbar Quick Save, and a set of controls that stay out of the way until you
-                        want them.
-                    </p>
+                    <p class="eyebrow">The everyday stuff</p>
+                    <h2>Less time looking for things.</h2>
                 </div>
-
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon boards" aria-hidden="true">🗂️</div>
-                        <h3>Boards for different contexts</h3>
-                        <p>
-                            Each board owns its own columns, links, extra search engines and ordering, so work,
-                            personal and research links never share a screen.
-                        </p>
-                        <ul class="feature-list">
-                            <li>Switch boards from the picker or with <kbd>Alt</kbd> + <kbd>1</kbd>–<kbd>9</kbd></li>
-                            <li>Move a whole column to another board in one step, with undo</li>
-                            <li>The active board is remembered per computer, not synced</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon search" aria-hidden="true">🔍</div>
-                        <h3>Search that stays yours</h3>
-                        <p>
-                            <strong>Browser default</strong> is always first and always selected on a fresh tab. It
-                            submits through your browser's own configured provider — MorrowTab never sets or replaces
-                            your default search engine.
-                        </p>
-                        <ul class="feature-list">
-                            <li>Add engines from any HTTP(S) template with <code>{query}</code></li>
-                            <li>Share one engine across every board, or keep it to a single board</li>
-                            <li><kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd> focuses the search box</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon quote" aria-hidden="true">🌅</div>
-                        <h3>A daily quote, and an optional photo</h3>
-                        <p>
-                            The FixQuotes Quote of the Day shows as text at the bottom by default, or as a picture
-                            above or below your cards. Turn it Off and MorrowTab makes no quote request at all.
-                        </p>
-                        <ul class="feature-list">
-                            <li>Four modes: Text, Picture (bottom), Picture (top), Off</li>
-                            <li>New setups start with a credited daily Pexels nature photo; switch it off in Settings</li>
-                            <li>Or upload your own background, kept on that computer only</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon sync" aria-hidden="true">🔄</div>
-                        <h3>Choose how your boards sync</h3>
-                        <p>
-                            Browser Sync is ready without a MorrowTab account. Optional FixQuotes Sync uses an emailed
-                            sign-in code, offers more space and can connect Chrome and Edge to the same account.
-                        </p>
-                        <ul class="feature-list">
-                            <li>No board data is uploaded to FixQuotes until you review the transfer and connect</li>
-                            <li>FixQuotes Sync keeps offline changes on the computer and retries when you reconnect</li>
-                            <li>Export and import a plain JSON backup of everything synced</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon appearance" aria-hidden="true">🎨</div>
-                        <h3>Nine backgrounds and two densities</h3>
-                        <p>
-                            Auto follows your system between a plain white page and a dark surface. The other eight
-                            are gradients: Purple, Blue, Green, Pink, Dark, Teal, Red and Violet.
-                        </p>
-                        <ul class="feature-list">
-                            <li>Comfortable or compact column spacing</li>
-                            <li>Capped cards or fill-each-row layout — columns wrap, never scroll sideways</li>
-                            <li>Give any column one of eight accent colors, or none</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon keyboard" aria-hidden="true">⌨️</div>
-                        <h3>Keyboard and undo throughout</h3>
-                        <p>
-                            Boards start locked so a stray drag cannot rearrange them. Unlock to reveal the drag
-                            handles, then move things by dragging one or by focusing one and pressing
-                            <kbd>Alt</kbd> plus the arrow keys.
-                        </p>
-                        <ul class="feature-list">
-                            <li>Deleting a board, column or link leaves a six-second <strong>Undo</strong> in the
-                                toast</li>
-                            <li><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> opens Quick Save from anywhere</li>
-                            <li>Unlocking is per-tab and never saved, so every new tab starts locked</li>
-                        </ul>
-                    </div>
+                <div class="everyday-grid">
+                    <article>
+                        <h3>Separate work from the rest.</h3>
+                        <p>Group links into columns and give each project or part of your day its own board.
+                            Move things around when your routine changes. Undo is there if you move or delete the wrong thing.</p>
+                        <a href="manual.html#boards">Working with boards <span aria-hidden="true">&rarr;</span></a>
+                    </article>
+                    <article>
+                        <h3>Save it before you forget it.</h3>
+                        <p>Found a page you want to keep? Open MorrowTab from the browser toolbar, choose a board
+                            and column, and save it. You can add a short description to remind yourself why it mattered.</p>
+                        <a href="manual.html#quick-save">Using Quick Save <span aria-hidden="true">&rarr;</span></a>
+                    </article>
+                    <article id="shortcuts">
+                        <h3>Find a link—or search the web.</h3>
+                        <p>Use the magnifier or <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> to find
+                            saved links across every board by title, URL or description. Your separate web-search box
+                            still uses the provider already set in Chrome or Edge.</p>
+                        <a href="manual.html#saved-link-search">Finding saved links <span aria-hidden="true">&rarr;</span></a>
+                    </article>
                 </div>
+            </div>
+        </section>
 
-                <div class="note-box">
-                    <span class="icon" aria-hidden="true">💡</span>
+        <section class="calendar-section">
+            <div class="container detail-layout">
+                <div class="detail-copy">
+                    <p class="eyebrow">Alongside your links</p>
+                    <h2>See what the week has in store.</h2>
+                    <p>Add a calendar board using your calendar's private feed address. Read your schedule
+                        as an agenda, a week or a whole month, then switch back to your links.</p>
+                    <p>Calendars are read-only here. Keep making changes in the calendar app you already use.</p>
+                    <a href="manual.html#calendar-boards">Set up a calendar board <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <figure class="detail-figure">
+                    <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/calendar-week-light.png"
+                        aria-label="Open the light-mode week calendar screenshot at full size">
+                        <picture>
+                            <source type="image/avif" srcset="img/screenshots/calendar-week-light-768.avif 768w, img/screenshots/calendar-week-light-1280.avif 1280w"
+                                sizes="(min-width: 1248px) 720px, (max-width: 900px) calc(100vw - 48px), 60vw">
+                            <source type="image/webp" srcset="img/screenshots/calendar-week-light-768.webp 768w, img/screenshots/calendar-week-light-1280.webp 1280w"
+                                sizes="(min-width: 1248px) 720px, (max-width: 900px) calc(100vw - 48px), 60vw">
+                            <img src="img/screenshots/calendar-week-light.png" width="1920" height="1200"
+                                alt="A MorrowTab calendar board in light mode showing a week of sample events" loading="lazy" decoding="async">
+                        </picture>
+                        <span class="screenshot-hint">Open full size</span>
+                    </button>
+                    <figcaption>Week view, with two sample calendars.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="privacy-summary" class="practical-section">
+            <div class="container practical-layout">
+                <div class="section-header">
+                    <p class="eyebrow">A few useful details</p>
+                    <h2>Set it up.<br>Make it yours.</h2>
+                    <p>Start with the sample board, or bring back your own boards through sync or a backup.</p>
+                    <a href="manual.html#first-board">Getting started <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <dl class="practical-list">
                     <div>
-                        <h3>There is more in the manual</h3>
-                        <p>
-                            Per-link "opens in" overrides, usage-based ordering, duplicate warnings, drag-and-drop
-                            from other windows, single-column export and import, and the recovery tools all have their
-                            own sections.
-                        </p>
-                        <p>
-                            The <a href="manual.html">user manual</a> covers every one of them, with screenshots
-                            of the main screens.
-                        </p>
+                        <dt>Lighter colours, deeper colours, or a photo</dt>
+                        <dd>Nine background choices include system-following Auto, light lavender Purple, mint Green
+                            and blush Pink, plus deeper shades such as Blue and Violet. Keep the daily nature photo
+                            or upload your own image instead. <a href="manual.html#appearance">Appearance options</a></dd>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="shortcuts">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">Keyboard</span>
-                    <h2>Without Touching the Mouse</h2>
-                    <p class="section-desc">
-                        Everything you rearrange by dragging can also be moved from the keyboard, and the search box is a
-                        single keystroke away.
-                    </p>
-                </div>
-
-                <div class="table-wrap">
-                    <table>
-                        <caption>The shortcuts you will use most. The <a href="manual.html#shortcuts">manual</a> documents
-                            the rest, including menu typeahead and the Background color swatches.</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">Keys</th>
-                                <th scope="col">What it does</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row"><kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd></th>
-                                <td>Focus the search field from anywhere on the page</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><kbd>Alt</kbd> + <kbd>1</kbd> &hellip;
-                                    <kbd>9</kbd></th>
-                                <td>Switch to the first through ninth board</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><kbd>Alt</kbd> + <kbd>&uarr;</kbd> / <kbd>&darr;</kbd></th>
-                                <td>Cycle the board&rsquo;s search engines, from inside the search field</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><kbd>Alt</kbd> + arrow keys</th>
-                                <td>Move a column, link, board or search engine while a drag handle has focus</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>Enter</kbd> <kbd>Esc</kbd></th>
-                                <td>Move through saved suggestions, accept one, or close the panel</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></th>
-                                <td>Open the Quick Save popup from any tab</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p class="shortcut-note">
-                    <kbd>/</kbd> is ignored while the caret is already in a text field, so
-                    <kbd>Ctrl</kbd> + <kbd>K</kbd> is the one to use while typing.
-                    Neither fires while a dialog or a menu is open.
-                    <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> is a
-                    suggested default &mdash; Chrome silently declines a shortcut that collides with one you already
-                    have, so check or change it at <code>chrome://extensions/shortcuts</code>.
-                </p>
-            </div>
-        </section>
-
-        <section id="limits">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">Honest limits</span>
-                    <h2>How Much Fits</h2>
-                    <p class="section-desc">
-                        Browser extension sync is a small, shared budget. Optional FixQuotes Sync raises the overall
-                        data and link ceilings; the board, column and search-engine limits stay the same.
-                    </p>
-                </div>
-
-                <div class="table-wrap">
-                    <table>
-                        <caption>MorrowTab enforces every limit below before it writes anything.</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">Item</th>
-                                <th scope="col">Maximum</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Boards</th>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Columns</th>
-                                <td>120 in total, 40 per board</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Links</th>
-                                <td>250 with Browser Sync or 5,000 with FixQuotes Sync; 200 per column</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Search engines</th>
-                                <td>80 in total, 20 per board</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Synced data</th>
-                                <td>100 KB across 500 records with Browser Sync; 4 MB with FixQuotes Sync</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Saved search suggestions</th>
-                                <td>50 per engine, stored on that computer only</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="note-box">
-                    <span class="icon" aria-hidden="true">📊</span>
+                    <div id="limits">
+                        <dt>Your boards on your other computers</dt>
+                        <dd>Browser Sync is the default, with room for up to 250 links. Optional FixQuotes Sync
+                            supports up to 5,000 links and works between Chrome and Edge.
+                            <a href="manual.html#sync">How sync works</a></dd>
+                    </div>
                     <div>
-                        <h3>You can see where you stand</h3>
-                        <p>
-                            Settings shows the provider and a live readout &mdash; for example <em>Synced data: 9 of
-                            100 KB · 50 of 250 links</em>, or <em>FixQuotes data</em> after you connect &mdash; using
-                            the same byte arithmetic the validator uses before a save.
-                        </p>
+                        <dt>Know where your data goes</dt>
+                        <dd>Browser Sync uses Google or Microsoft. FixQuotes receives a copy of your boards only
+                            if you connect FixQuotes Sync. Quotes, nature photos and website icons make separate requests
+                            you can turn off. There is no analytics.
+                            <a href="privacy.html">Read the privacy policy</a></dd>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="privacy-summary">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">Privacy</span>
-                    <h2>Where Your Data Goes</h2>
-                    <p class="section-desc">
-                        The short version. The <a href="privacy.html">privacy policy</a> describes every storage area
-                        and record category, and lists every request by name.
-                    </p>
-                </div>
-
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>Two sync choices</h3>
-                        <p>
-                            By default, board names, columns, link titles and URLs, search templates, settings,
-                            calendar feed addresses and click counts go into <code>chrome.storage.sync</code>, tied to
-                            the browser profile you are signed into. FixQuotes receives no copy in this mode.
-                        </p>
-                        <p>
-                            Optional FixQuotes Sync creates an account from your email address and stores the same board
-                            graph with FixQuotes after a separate review-and-connect step. MorrowTab adds no
-                            application-level encryption to Browser Sync, and FixQuotes Sync is not end-to-end
-                            encrypted.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Kept on one computer</h3>
-                        <p>
-                            Your selected board, saved search suggestions and whether new ones are recorded, an uploaded
-                            background, cached photos, icons, quotes and calendar events, the remembered Quick Save
-                            destination and safety copies stay in local extension storage.
-                        </p>
-                        <p>
-                            None of them syncs, and none of them is included in an exported backup.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Services and page access</h3>
-                        <p>
-                            <code>fixquotes.com</code> supplies the daily quote; <code>api.fixquotes.com</code> provides
-                            optional sync, nature-photo metadata and website icons; and <code>images.pexels.com</code>
-                            supplies photo bytes. MorrowTab can also request a page-title or calendar-feed address that
-                            you add and approve.
-                        </p>
-                        <p>
-                            On <code>https://*.zoom.us/rec/*</code>, MorrowTab automatically reads the page title and
-                            direct video sources to show a download overlay. That information remains on the Zoom page;
-                            it is not saved or sent to FixQuotes. The daily quote, nature-photo and icon settings are
-                            described in the <a href="privacy.html">privacy policy</a>.
-                        </p>
-                    </div>
-                </div>
+                </dl>
             </div>
         </section>
 
         <section id="faq">
-            <div class="container">
+            <div class="container faq-layout">
                 <div class="section-header">
-                    <span class="section-badge">Questions</span>
-                    <h2>Common Questions</h2>
+                    <p class="eyebrow">Before you install</p>
+                    <h2>A few questions<br>you might have.</h2>
+                    <p>Need a hand with something else?<br><a href="contact.html">Get in touch.</a></p>
                 </div>
-
                 <div class="faq-list">
                     <details>
-                        <summary>Does MorrowTab change my search engine?</summary>
-                        <p>
-                            No. The default option is called <strong>Browser default</strong>, and it hands your query
-                            to whatever provider Chrome or Edge is already configured with. MorrowTab never sets,
-                            replaces or proposes a search engine of its own, and it ships with no provider
-                            preconfigured. Any extra engine in the list is one you added yourself.
-                        </p>
-                    </details>
-                    <details>
                         <summary>What does it cost?</summary>
-                        <p>
-                            Nothing. MorrowTab is free, with no paid tier, no trial period and nothing to buy inside
-                            the extension. The optional FixQuotes Sync account is free too.
-                        </p>
+                        <p>MorrowTab is free. There is no paid tier or trial, and optional FixQuotes Sync is free too.</p>
                     </details>
                     <details>
                         <summary>Do I need an account?</summary>
-                        <p>
-                            Not for Browser Sync. It follows the Chrome or Edge profile you are already signed into.
-                            FixQuotes Sync is an optional alternative for more space and Chrome-to-Edge syncing; it
-                            creates a FixQuotes account after you enter an email address and verify a one-use code.
-                        </p>
+                        <p>You do not need a MorrowTab account for Browser Sync. It uses the Chrome or Edge profile
+                            you are already signed into. If you choose FixQuotes Sync, you sign in with your email
+                            and a one-use code. Your boards upload after you review the transfer and choose Connect.</p>
                     </details>
                     <details>
-                        <summary>Does MorrowTab connect to the internet?</summary>
-                        <p>
-                            Yes, for clearly scoped features. The daily quote is set to
-                            <strong>Text</strong> out of the box and fetches <code>fixquotes.com</code> once per local
-                            day; setting it to <strong>Off</strong> stops that entirely. The daily nature background
-                            starts enabled for new sample setups and their read-only previews: MorrowTab asks
-                            <code>api.fixquotes.com</code> which photo to show and fetches it from
-                            <code>images.pexels.com</code>. Turn it off in Settings to stop those requests; existing
-                            background choices remain unchanged. <strong>Download website icons</strong> is also on
-                            by default: it sends only an eligible saved hostname to <code>api.fixquotes.com</code>
-                            so FixQuotes can fetch that public site's icon directly. Turn it off on a computer to stop
-                            new icon requests there; the reusable cache stays local. Beyond those, MorrowTab only
-                            contacts addresses you name yourself, each after your browser asks your permission for
-                            that one site: with <strong>Fetch page titles when adding links</strong> switched on, the
-                            site whose address you just typed; and on a calendar board, the private feed address of
-                            each calendar you subscribe to. Optional FixQuotes Sync sends sign-in requests and, only
-                            after you connect it, your board data to <code>api.fixquotes.com</code>. The Zoom overlay
-                            runs on Zoom recording pages but does not send the page title or media sources to FixQuotes.
-                            There is no analytics.
-                        </p>
+                        <summary>Does it change my search engine?</summary>
+                        <p>No. Browser default sends searches to the provider already set in Chrome or Edge.
+                            MorrowTab does not replace it. Extra search engines appear only if you add them.</p>
                     </details>
                     <details>
-                        <summary>Can it read the pages I browse?</summary>
-                        <p>
-                            Only in narrowly scoped cases. The toolbar popup sees the title and address of the current
-                            tab when you open it. If you enable <strong>Fetch page titles when adding links</strong>,
-                            Chrome asks for access to that individual site. MorrowTab also runs automatically on Zoom
-                            recording pages at <code>https://*.zoom.us/rec/*</code>, where it reads the page title and
-                            direct video sources to build a local download overlay. It does not save or upload that
-                            Zoom information.
-                        </p>
+                        <summary>Can I search my saved links?</summary>
+                        <p>Yes. Open Find saved links with the toolbar magnifier or Ctrl/Cmd + Shift + K.
+                            It searches titles, URLs and descriptions across all your links boards. Open a result
+                            or choose Show on board to jump to its original location. Queries stay on your computer,
+                            are cleared when you close the dialog, and are not added to web-search suggestions.</p>
                     </details>
                     <details>
                         <summary>How much can I save?</summary>
-                        <p>
-                            Browser Sync supports up to 30 boards, 120 columns (40 per board), 250 links (200 per
-                            column) and 80 search engines inside a 100&nbsp;KB budget. Optional FixQuotes Sync raises
-                            the overall limits to 5,000 links and 4&nbsp;MB; the other ceilings stay the same. Settings
-                            shows the active provider and how much of its budget you are using.
-                        </p>
+                        <p>Browser Sync allows up to 250 links within a 100 KB budget. FixQuotes Sync allows up to
+                            5,000 links within 4 MB. Both support up to 30 boards, 120 columns overall, 40 columns
+                            per board, 200 links per column and 80 search engines. Settings shows how much space you are using.</p>
+                    </details>
+                    <details>
+                        <summary>What connects to the internet?</summary>
+                        <p>The daily quote requests fixquotes.com once per local day. Nature photos use api.fixquotes.com
+                            and images.pexels.com. Website icons send an eligible saved hostname to api.fixquotes.com.
+                            These features start enabled in a new sample setup; each can be turned off in Settings.</p>
+                        <p>Calendar feeds and page titles are fetched from addresses you add, after you grant access to
+                            that site. Optional FixQuotes Sync sends sign-in requests and, after you connect, board data
+                            to api.fixquotes.com. There is no analytics.
+                            The <a href="privacy.html">privacy policy</a> lists the requests and the data they contain.</p>
+                    </details>
+                    <details>
+                        <summary>Can it read the pages I browse?</summary>
+                        <p>The Quick Save popup reads the current tab's title and address when you open it.
+                            If you enable page-title fetching, the browser asks for access to each site.</p>
+                        <p>MorrowTab also runs on Zoom recording pages at https://*.zoom.us/rec/* to show local video
+                            download links. It reads the recording title and video sources there, without saving them
+                            or sending them to FixQuotes. See <a href="privacy.html">page access in the privacy policy</a>.</p>
                     </details>
                     <details>
                         <summary>Is my data encrypted?</summary>
-                        <p>
-                            Not end-to-end. Browser Sync follows the browser provider's security, and FixQuotes Sync
-                            uses HTTPS but stores a server-readable copy. Treat board names, link titles, saved
-                            addresses, search templates and private calendar feed addresses as non-confidential.
-                            Exported backups are plain JSON, and local extension records are readable in the browser
-                            profile.
-                        </p>
+                        <p>MorrowTab does not add end-to-end encryption. Browser Sync uses the browser provider's
+                            security. FixQuotes Sync uses HTTPS and stores a copy that its server operators can read.
+                            Avoid saving confidential information, including private calendar feed addresses.
+                            Exported backups are plain JSON, and local records can be read from the browser profile.</p>
                     </details>
                     <details>
-                        <summary>Which browsers does it work in?</summary>
-                        <p>
-                            Google Chrome and Microsoft Edge on Chromium 114 or newer. That floor is real: MorrowTab
-                            relies on the Popover API, Web Locks, CSS <code>:has()</code> and
-                            <code>color-mix()</code>. There is no Firefox or Safari build.
-                        </p>
+                        <summary>Can I export my boards?</summary>
+                        <p>Yes. Export a backup in Settings to save your boards, links, search engines and shared
+                            settings in a readable JSON file. You can import it again, or export just one column.
+                            Background images, saved search suggestions and cached images stay on their own computer
+                            and are left out of the backup.</p>
                     </details>
                     <details>
-                        <summary>Can I get my data out again?</summary>
-                        <p>
-                            Yes. Settings exports everything synced &mdash; boards, columns, links, search engines and
-                            shared settings &mdash; as one readable JSON file saved to your own computer, and imports
-                            it back. You can also export a single column and drop it into another board. Backgrounds,
-                            saved search suggestions and cached images stay on the computer that made them and are
-                            deliberately excluded from the file.
-                        </p>
+                        <summary>Which browsers can I use?</summary>
+                        <p>Google Chrome and Microsoft Edge, version 114 or newer. There is currently no Firefox or Safari version.</p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <section id="more-extensions">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">More from FixQuotes</span>
-                    <h2>Other FixQuotes Tools</h2>
-                    <p class="section-desc">Five more browser extensions and apps from the same publisher, covering
-                        video rotation, code formatting, ad blocking, tab sharing and page notes.</p>
-                </div>
-                <div class="extensions-grid">
-                    <a href="https://clipturn.app/" class="extension-card" target="_blank" rel="noopener">
-                        <div class="extension-icon">
-                            <img src="img/plugins/clipturn-logo.svg" alt="" class="extension-logo" width="48"
-                                height="48" aria-hidden="true">
-                        </div>
-                        <h3>ClipTurn</h3>
-                        <p>Rotate videos like photos in Windows 11, from File Explorer or the app.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
-                    <a href="https://prettify.cloud" class="extension-card" target="_blank" rel="noopener">
-                        <div class="extension-icon">
-                            <img src="img/plugins/codeprettify-logo.svg" alt="" class="extension-logo" width="48"
-                                height="48" aria-hidden="true">
-                        </div>
-                        <h3>CodePrettify</h3>
-                        <p>Format JS, JSON, CSS, YAML, XML, and RSS right in your browser.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
-                    <a href="https://fixguard.org/" class="extension-card" target="_blank" rel="noopener">
-                        <div class="extension-icon">
-                            <img src="img/plugins/fixguard-logo.svg" alt="" class="extension-logo" width="48"
-                                height="48" aria-hidden="true">
-                        </div>
-                        <h3>FixGuard</h3>
-                        <p>Block ads, hide cookie banners, and browse clean with zero tracking.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
-                    <a href="https://notepin.cloud/" class="extension-card" target="_blank" rel="noopener">
-                        <div class="extension-icon">
-                            <img src="img/plugins/notepin-logo.svg" alt="" class="extension-logo" width="48"
-                                height="48" aria-hidden="true">
-                        </div>
-                        <h3>NotePin</h3>
-                        <p>Save notes for any web page, with the page URL already attached.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
-                    <a href="https://tabconnect.app/" class="extension-card" target="_blank" rel="noopener">
-                        <div class="extension-icon">
-                            <img src="img/plugins/tabconnect-logo.svg" alt="" class="extension-logo" width="48"
-                                height="48" aria-hidden="true">
-                        </div>
-                        <h3>TabConnect</h3>
-                        <p>Share browser tabs with short passwords and encrypted remote viewing.</p><span class="visually-hidden"> (opens in a new tab)</span></a>
-                </div>
+        <section id="more-extensions" class="publisher-section">
+            <div class="container publisher-layout">
+                <h2>Also from FixQuotes</h2>
+                <p><a href="https://clipturn.app/" target="_blank" rel="noopener">ClipTurn<span class="visually-hidden"> (opens in a new tab)</span></a>
+                    <a href="https://prettify.cloud/" target="_blank" rel="noopener">CodePrettify<span class="visually-hidden"> (opens in a new tab)</span></a>
+                    <a href="https://fixguard.org/" target="_blank" rel="noopener">FixGuard<span class="visually-hidden"> (opens in a new tab)</span></a>
+                    <a href="https://notepin.cloud/" target="_blank" rel="noopener">NotePin<span class="visually-hidden"> (opens in a new tab)</span></a>
+                    <a href="https://tabconnect.app/" target="_blank" rel="noopener">TabConnect<span class="visually-hidden"> (opens in a new tab)</span></a></p>
             </div>
         </section>
     </main>
@@ -921,9 +639,9 @@
                 <div class="footer-column">
                     <h2>MorrowTab</h2>
                     <ul>
-                        <li><a href="./#install">Availability</a></li>
+                        <li><a href="./#install">Install</a></li>
                         <li><a href="manual.html">User manual</a></li>
-                        <li><a href="changelog.html">Changelog</a></li>
+                        <li><a href="changelog.html">What's new</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -952,7 +670,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 FixQuotes. MorrowTab is a browser extension by FixQuotes.</p>
+                <p>&copy; 2026 FixQuotes. MorrowTab by FixQuotes.</p>
             </div>
         </div>
     </footer>

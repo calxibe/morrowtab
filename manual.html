@@ -12,7 +12,7 @@
         content="The complete MorrowTab manual: boards, calendars, search, Quick Save, Zoom recording downloads, Browser Sync, optional FixQuotes Sync, backup, privacy and troubleshooting.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
-    <meta name="theme-color" content="#0a0b12">
+    <meta name="theme-color" content="#181a1d">
     <link rel="canonical" href="https://calxibe.github.io/morrowtab/manual.html">
 
     <!-- Open Graph -->
@@ -41,7 +41,7 @@
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260902-2">
+    <link rel="stylesheet" href="style.css?v=20261005-2">
     <script src="index.js" defer></script>
     <script src="manual.js" defer></script>
 
@@ -68,7 +68,6 @@
 </head>
 
 <body>
-    <div class="bg-glow"></div>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
@@ -84,9 +83,9 @@
                 <span class="nav-toggle-bar"></span>
             </button>
             <nav id="site-nav" aria-label="Main">
-                <a href="./#install">Availability</a>
+                <a href="./#install">Install</a>
                 <a href="manual.html" class="active" aria-current="page">Manual</a>
-                <a href="changelog.html">Changelog</a>
+                <a href="changelog.html">What's new</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -97,13 +96,10 @@
         <section class="page-hero">
             <div class="container">
                 <span class="section-badge">User manual</span>
-                <h1>MorrowTab User Manual</h1>
+                <h1>The MorrowTab manual</h1>
                 <p class="subtitle">
-                    MorrowTab replaces the new tab in Chrome and Edge with a board of your own links, a search box that
-                    runs through your browser's own provider, and a daily quote from FixQuotes. This manual walks
-                    through every screen and every setting in the order you are likely to meet them — from the starter
-                    board a fresh install shows you, through boards, columns, links and search engines, to backups,
-                    storage limits, keyboard shortcuts and what to do when something looks wrong.
+                    Start with your first board, then find the settings and shortcuts you need.
+                    This guide covers links, calendars, search, sync and backups, with troubleshooting at the end.
                 </p>
                 <p class="updated">Chrome and Edge 114 or newer</p>
             </div>
@@ -125,6 +121,7 @@
                         <li><a href="#columns">Columns</a></li>
                         <li><a href="#links">Adding and editing links</a></li>
                         <li><a href="#search">Searching from the new tab</a></li>
+                        <li><a href="#saved-link-search">Finding saved links</a></li>
                         <li><a href="#search-engines">Adding your own search engines</a></li>
                         <li><a href="#suggestions">Saved search suggestions</a></li>
                         <li><a href="#quick-save">Quick Save from the toolbar</a></li>
@@ -264,8 +261,8 @@
                             <source type="image/webp"
                                 srcset="img/screenshots/welcome-768.webp 768w, img/screenshots/welcome-1280.webp 1280w, img/screenshots/welcome-1920.webp 1920w"
                                 sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
-                            <img src="img/screenshots/welcome.png" width="1920" height="3135"
-                                alt="The MorrowTab welcome page, headed Everything you reach for, thoughtfully arranged, with four cards covering Quick Save, boards and search, rearranging and quote modes, and a privacy panel beneath them"
+                            <img src="img/screenshots/welcome.png" width="1920" height="1693"
+                                alt="The MorrowTab welcome page with separate choices for a sample board and existing synced boards, followed by a short guide and privacy information"
                                 loading="lazy" decoding="async">
                         </picture>
                             <span class="screenshot-hint">Open full size</span>
@@ -322,8 +319,8 @@
                         </button>
                         <figcaption>
                             The starter board with the default Auto color theme and Daily Pexels nature enabled.
-                            The board picker sits at the top left, the search form in the middle, and the layout lock
-                            and Settings buttons at the right. The nature photo changes daily.
+                            The board picker sits at the top left, the web-search form in the middle, and Find saved
+                            links, the layout lock and Settings at the right. The nature photo changes daily.
                         </figcaption>
                     </figure>
 
@@ -512,17 +509,17 @@
                     </p>
 
                     <figure class="manual-figure">
-                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/calendar-agenda.png"
-                            aria-label="Open full size: a calendar board in the Agenda layout">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/calendar-agenda-light.png"
+                            aria-label="Open full size: a light-mode calendar board in the Agenda layout">
                             <picture>
                             <source type="image/avif"
-                                srcset="img/screenshots/calendar-agenda-768.avif 768w, img/screenshots/calendar-agenda-1280.avif 1280w, img/screenshots/calendar-agenda-1920.avif 1920w"
+                                srcset="img/screenshots/calendar-agenda-light-768.avif 768w, img/screenshots/calendar-agenda-light-1280.avif 1280w, img/screenshots/calendar-agenda-light-1920.avif 1920w"
                                 sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
                             <source type="image/webp"
-                                srcset="img/screenshots/calendar-agenda-768.webp 768w, img/screenshots/calendar-agenda-1280.webp 1280w, img/screenshots/calendar-agenda-1920.webp 1920w"
+                                srcset="img/screenshots/calendar-agenda-light-768.webp 768w, img/screenshots/calendar-agenda-light-1280.webp 1280w, img/screenshots/calendar-agenda-light-1920.webp 1920w"
                                 sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
-                            <img src="img/screenshots/calendar-agenda.png" width="1920" height="1200"
-                                alt="A calendar board in the Agenda layout: chips for a Work and a Family calendar, the Agenda, Week and Month switch, then Today with a meeting in progress, tomorrow with an all-day birthday, and the following days' events"
+                            <img src="img/screenshots/calendar-agenda-light.png" width="1920" height="1200"
+                                alt="A calendar board in light mode in the Agenda layout: chips for a Work and a Family calendar, the Agenda, Week and Month switch, then Today with a meeting in progress, tomorrow with an all-day birthday, and the following days' events"
                                 loading="lazy" decoding="async">
                         </picture>
                             <span class="screenshot-hint">Open full size</span>
@@ -1042,6 +1039,55 @@
                         switches the search engine."
                     </p>
                 </section>
+                <section class="manual-topic" id="saved-link-search">
+                    <h2>Finding saved links</h2>
+                    <p>
+                        Use the toolbar magnifier labelled <strong>Find saved links</strong>,
+                        or press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> (<kbd>Cmd</kbd> on Mac)
+                        while on MorrowTab. This opens a separate search across all your links boards;
+                        the usual web-search box and its shortcuts stay unchanged.
+                    </p>
+                    <p>
+                        Type any part of a title, URL or description. Matching ignores case and accents,
+                        and every word you type must match somewhere in those fields. Title matches appear first.
+                        Each result shows its board and column, URL and optional description. Large lists appear
+                        in batches of 50; choose <strong>Show more results</strong> to see the next batch.
+                    </p>
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/saved-link-search.png"
+                            aria-label="Open full size: Find saved links">
+                            <picture>
+                                <source type="image/avif"
+                                    srcset="img/screenshots/saved-link-search-768.avif 768w, img/screenshots/saved-link-search-1280.avif 1280w, img/screenshots/saved-link-search-1920.avif 1920w"
+                                    sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                                <source type="image/webp"
+                                    srcset="img/screenshots/saved-link-search-768.webp 768w, img/screenshots/saved-link-search-1280.webp 1280w, img/screenshots/saved-link-search-1920.webp 1920w"
+                                    sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                                <img src="img/screenshots/saved-link-search.png" width="1920" height="1200"
+                                    alt="Find saved links with google entered: the sample board's matching links list their titles, board and column, URLs and Show on board buttons"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>
+                            Find saved links searches the loaded library, separately from web search. Each result
+                            can open the saved page or take you to its original board and column.
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Press <kbd>↓</kbd> to focus a result, use the arrow keys to browse, and press
+                        <kbd>Enter</kbd> to open it. Enter in the search field opens the first result.
+                        Opening follows the link's saved current/new-tab and auto-close choices.
+                        <strong>Show on board</strong> instead switches to the original board and focuses the
+                        saved link. It does not create a copy or edit your boards.
+                    </p>
+                    <p>
+                        Search reads only the library already loaded on this computer. It sends no search
+                        queries to a server and does not add them to saved web-search suggestions.
+                        Closing with the close button, Escape or the backdrop clears the query.
+                        Results update when your loaded library changes; calendar events are not searched.
+                    </p>
+                </section>
                 <section class="manual-topic" id="search-engines">
                     <h2>Adding your own search engines</h2>
                     <p>
@@ -1447,10 +1493,13 @@
                 <section class="manual-topic" id="appearance">
                     <h2>Appearance and layout</h2>
                     <p>
-                        The gear button at the top right opens Settings. On a wide screen it puts <em>Background
-                        color</em> and <em>Backup</em> on one side and the taller <em>Layout and links</em> column
-                        opposite; in a short or narrow window the sections stack and only the area under the fixed
-                        header scrolls.
+                        The gear button at the top right opens Settings. Its sidebar has three sections:
+                        <strong>Appearance</strong>, <strong>Links &amp; search</strong> and
+                        <strong>Data &amp; privacy</strong>. One section is shown at a time. Appearance contains the
+                        backgrounds, daily quote, spacing, board layout and board picker; Links &amp; search contains
+                        opening behavior, suggestions, usage ordering and page-title fetching; Data &amp; privacy
+                        contains website-icon downloads, FixQuotes Sync and backups. In short or narrow windows the
+                        navigation becomes a wrapping strip, and only the area beneath the fixed header scrolls.
                     </p>
 
                     <figure class="manual-figure">
@@ -1463,15 +1512,15 @@
                                 srcset="img/screenshots/settings-light-768.webp 768w, img/screenshots/settings-light-1280.webp 1280w, img/screenshots/settings-light-1920.webp 1920w"
                                 sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
                             <img src="img/screenshots/settings-light.png" width="1920" height="1200"
-                                alt="The MorrowTab Settings dialog showing the Background color swatch grid, the Daily Pexels nature checkbox and upload buttons, a Backup section, and the Layout and links column with the daily quote select and toggles"
+                                alt="Settings with Appearance selected in the sidebar, nine background swatches including three lighter colours, Daily Pexels nature and upload controls, daily quote mode and column spacing"
                                 loading="lazy" decoding="async">
                         </picture>
                             <span class="screenshot-hint">Open full size</span>
                         </button>
                         <figcaption>
-                            Settings, with the nine background swatches at the top left and the "Layout and links"
-                            controls on the right. This example has Daily Pexels nature switched off; new sample setups
-                            start with it checked.
+                            The Appearance section of Settings. Purple, Green and Pink are the three lighter choices;
+                            Violet is deep purple. This example has Daily Pexels nature switched off; new sample setups
+                            start with it checked. Sync and backup controls are in Data &amp; privacy.
                         </figcaption>
                     </figure>
 
@@ -1487,8 +1536,13 @@
                         <strong>Auto</strong> is the default color theme and the only flat one: when no background photo
                         is shown, it gives a plain white page when your system
                         is in light mode, and a dark gray surface when it is in dark mode, switching live as the system
-                        does. The other eight are gradients. There is no separate light/dark switch — <em>Dark</em> is
-                        simply one of the nine choices, and everything else follows the operating system.
+                        does. Of the eight coloured gradients, <strong>Purple</strong> is light lavender,
+                        <strong>Green</strong> is light mint and <strong>Pink</strong> is light blush, all with dark text.
+                        <strong>Violet</strong> is a distinct deep purple; <strong>Blue</strong> retains its established
+                        look. The refreshed choices use published IBM Design Language colour grades, and their Settings
+                        previews share the page palette. There is no separate light/dark switch — <em>Dark</em> is
+                        simply one of the nine choices. Coloured backgrounds retain their palette in either system
+                        appearance; Auto and the modal dialogs follow the operating system.
                     </p>
                     <p>
                         The swatches behave as a radio group: <kbd>←</kbd> <kbd>→</kbd>
@@ -1532,7 +1586,7 @@
                         <li><strong>Buttons — every board as a button, side by side.</strong> One button per board in
                             your board order, the current one filled in, and a <strong>Manage boards…</strong> button
                             at the end of the group. With many boards the group wraps onto another line; on a narrow
-                            window it shares the top row with the lock and Settings buttons as the dropdown does.</li>
+                            window it shares the top row with Find saved links, the lock and Settings as the dropdown does.</li>
                     </ul>
                     <p>
                         The choice syncs with your other settings. Keyboard shortcuts, the tab title and the board
@@ -1546,6 +1600,7 @@
                     </p>
 
                     <h3>Where links and searches open</h3>
+                    <p>These choices are in <strong>Settings → Links &amp; search</strong>.</p>
                     <ul>
                         <li><strong>Open saved links in a new tab</strong> — "Individual links can override this in
                             their editor." Off by default.</li>
@@ -1563,13 +1618,13 @@
                     srcset="img/screenshots/newtab-mobile-768.webp 768w"
                     sizes="(min-width: 1100px) 340px, calc(100vw - 48px)">
                     <img src="img/screenshots/newtab-mobile.png" width="828" height="1792"
-                    alt="MorrowTab in a narrow window: the board picker and the lock and Settings buttons share the top row, the search box sits on its own row beneath them, and the columns are stacked one per row"
+                    alt="MorrowTab in a narrow desktop window: the board picker, Find saved links, layout lock and Settings share the top row, web search sits beneath them, and link columns stack vertically"
                     loading="lazy" decoding="async">
                     </picture>
                     <span class="screenshot-hint">Open full size</span>
                     </button>
                     <figcaption>
-                    A narrow window. Below 1080&nbsp;px the search form drops onto its own row so the controls cannot collide, and narrower still the search field, engine picker and Search button each take a row. Columns wrap one per row rather than scrolling sideways.
+                    A narrow desktop window. Below 1080&nbsp;px the search form drops onto its own row so the controls cannot collide; narrower still, the field sits above the engine picker and Search button. Columns wrap one per row rather than scrolling sideways.
                     </figcaption>
                     </figure>
                 </section>
@@ -2145,6 +2200,11 @@
                                     <td>Switch to the first through ninth board, in board order</td>
                                 </tr>
                                 <tr>
+                                    <th scope="row"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd></th>
+                                    <td>Open Find saved links across all boards (<kbd>Cmd</kbd> + <kbd>Shift</kbd> +
+                                        <kbd>K</kbd> on Mac). Within its results, arrow keys navigate and Enter opens a link.</td>
+                                </tr>
+                                <tr>
                                     <th scope="row"><kbd>Alt</kbd> + <kbd>↑</kbd> /
                                         <kbd>Alt</kbd> + <kbd>↓</kbd></th>
                                     <td>In the search field: cycle backwards and forwards through that board's search
@@ -2549,9 +2609,9 @@
                 <div class="footer-column">
                     <h2>MorrowTab</h2>
                     <ul>
-                        <li><a href="./#install">Availability</a></li>
+                        <li><a href="./#install">Install</a></li>
                         <li><a href="manual.html">User manual</a></li>
-                        <li><a href="changelog.html">Changelog</a></li>
+                        <li><a href="changelog.html">What's new</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -2580,7 +2640,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 FixQuotes. MorrowTab is a browser extension by FixQuotes.</p>
+                <p>&copy; 2026 FixQuotes. MorrowTab by FixQuotes.</p>
             </div>
         </div>
     </footer>

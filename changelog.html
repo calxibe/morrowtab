@@ -9,10 +9,10 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>MorrowTab Changelog - Release Notes</title>
     <meta name="description"
-        content="Release notes for MorrowTab 1.0.11: safer FixQuotes Sync reconnection and a production service encryption update.">
+        content="Release notes for MorrowTab 1.0.12: private saved-link search across all boards and calmer, richer background colours.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="FixQuotes">
-    <meta name="theme-color" content="#0a0b12">
+    <meta name="theme-color" content="#181a1d">
     <link rel="canonical" href="https://calxibe.github.io/morrowtab/changelog.html">
 
     <!-- Open Graph -->
@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="MorrowTab">
     <meta property="og:title" content="MorrowTab Changelog - Release Notes">
     <meta property="og:description"
-        content="MorrowTab 1.0.11 improves FixQuotes Sync reconnection, alongside server-side encryption at rest.">
+        content="MorrowTab 1.0.12 adds private saved-link search across every board and calmer, richer background colours.">
     <meta property="og:url" content="https://calxibe.github.io/morrowtab/changelog.html">
     <meta property="og:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MorrowTab Changelog - Release Notes">
     <meta name="twitter:description"
-        content="MorrowTab 1.0.11 improves FixQuotes Sync reconnection, alongside server-side encryption at rest.">
+        content="MorrowTab 1.0.12 adds private saved-link search across every board and calmer, richer background colours.">
     <meta name="twitter:image" content="https://calxibe.github.io/morrowtab/img/morrowtab-social-card.png">
 
     <!-- Favicon -->
@@ -41,12 +41,11 @@
     <link rel="manifest" href="site.webmanifest">
 
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=20260902-2">
+    <link rel="stylesheet" href="style.css?v=20261005-2">
     <script src="index.js" defer></script>
 </head>
 
 <body>
-    <div class="bg-glow"></div>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
@@ -62,9 +61,9 @@
                 <span class="nav-toggle-bar"></span>
             </button>
             <nav id="site-nav" aria-label="Main">
-                <a href="./#install">Availability</a>
+                <a href="./#install">Install</a>
                 <a href="manual.html">Manual</a>
-                <a href="changelog.html" class="active" aria-current="page">Changelog</a>
+                <a href="changelog.html" class="active" aria-current="page">What's new</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -75,27 +74,52 @@
         <section class="page-hero">
             <div class="container">
                 <span class="section-badge">Changelog</span>
-                <h1>MorrowTab Release Notes</h1>
+                <h1>What's new in MorrowTab</h1>
 
                 <p class="subtitle">
-                    MorrowTab 1.0.11 improves FixQuotes Sync reconnection and keeps your local boards safe while
-                    you confirm a merge. The production sync service now also encrypts stored account emails and board data.
-                    Calendar boards show the next two weeks from your Google and Outlook calendars, read-only,
-                    right on the new tab. The earlier release notes remain below. MorrowTab is
+                    The next release, MorrowTab 1.0.12, adds saved-link search across all your boards.
+                    Find links by title, URL or description, open a result, or jump to its original board.
+                    Search stays on your computer, and your existing web search is unchanged.
+                    The earlier release notes remain below. MorrowTab is
                     available from <a
                         href="https://microsoftedge.microsoft.com/addons/detail/pbdbhkiajaobdacbebifndnghiiodlgi"
                         target="_blank" rel="noopener">Microsoft Edge Add-ons<span class="visually-hidden"> (opens in
                             a new tab)</span></a> and the <a href="https://chromewebstore.google.com/detail/gfpandbngbmageefohholgefhmhahpff" target="_blank" rel="noopener">Chrome Web Store<span class="visually-hidden"> (opens in a new tab)</span></a>.
                 </p>
 
-                <p class="updated">Last updated <time datetime="2026-09">September 2026</time>.</p>
+                <p class="updated">Last updated <time datetime="2026-10">October 2026</time>.</p>
             </div>
         </section>
 
         <div class="container content">
             <article class="version-card">
+                <h2>1.0.12</h2>
+                <p class="version-date"><time datetime="2026-10">October 2026</time> · Release preparation</p>
+                <h3>Added</h3>
+                <ul>
+                    <li><strong>Find saved links</strong> searches titles, URLs and descriptions across every
+                        links board. Open it with the toolbar magnifier or Ctrl/Cmd + Shift + K.</li>
+                    <li>Results show the board and column. Use the arrow keys and Enter to open a link, or
+                        choose <strong>Show on board</strong> to jump to its original location.</li>
+                    <li>Search stays on your computer and does not save your queries. Web search and existing
+                        keyboard shortcuts continue to work as before; no additional browser permissions are needed.</li>
+                </ul>
+                <h3>Improved</h3>
+                <ul>
+                    <li>The same nine backgrounds now include three lighter coloured choices: lavender Purple,
+                        mint Green and blush Pink. Violet is a distinct deep purple; Blue keeps its approved look.</li>
+                    <li>The refreshed colours use the <a href="https://www.ibm.com/design/language/color/"
+                            target="_blank" rel="noopener">IBM Design Language palette<span class="visually-hidden">
+                                (opens in a new tab)</span></a>, with subtle gradients and matching Settings previews.</li>
+                    <li>Small link descriptions stay readable on coloured backgrounds. Auto still follows your
+                        system appearance, and uploaded or daily nature photos continue to take priority.</li>
+                    <li>The website previews and manual now show the current toolbar, sectioned Settings and
+                        Find saved links, alongside refreshed calendar and theme screenshots.</li>
+                </ul>
+            </article>
+            <article class="version-card">
                 <h2>1.0.11</h2>
-                <p class="version-date"><time datetime="2026-09-30">September 30, 2026</time> · Release preparation</p>
+                <p class="version-date"><time datetime="2026-09">September 2026</time></p>
                 <h3>Fixed</h3>
                 <ul>
                     <li>Reconnecting to the same FixQuotes account no longer fails just because the account ID
@@ -583,21 +607,8 @@
                 </ul>
             </article>
 
-            <div class="note-box">
-                <span class="icon" aria-hidden="true">📌</span>
-                <div>
-                    <h3>What goes on this page next</h3>
-                    <p>
-                        Later releases will be added here, newest first, each in its own card with its version number
-                        and release date.
-                    </p>
-                    <p>
-                        For how any of the above behaves in practice, see the <a href="manual.html">user manual</a>;
-                        for what is stored and what is sent, see the <a href="privacy.html">privacy policy</a>. If
-                        something here does not match what you see, <a href="contact.html">get in touch</a>.
-                    </p>
-                </div>
-            </div>
+            <p class="release-help">Need help with a change? Check the <a href="manual.html">manual</a>
+                or <a href="contact.html">get in touch</a>.</p>
         </div>
     </main>
 
@@ -607,9 +618,9 @@
                 <div class="footer-column">
                     <h2>MorrowTab</h2>
                     <ul>
-                        <li><a href="./#install">Availability</a></li>
+                        <li><a href="./#install">Install</a></li>
                         <li><a href="manual.html">User manual</a></li>
-                        <li><a href="changelog.html">Changelog</a></li>
+                        <li><a href="changelog.html">What's new</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -639,7 +650,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 FixQuotes. MorrowTab is a browser extension by FixQuotes.</p>
+                <p>&copy; 2026 FixQuotes. MorrowTab by FixQuotes.</p>
             </div>
         </div>
     </footer>
