@@ -81,7 +81,7 @@
                     what data is collected, why it is used, where it is stored, who receives it, how it is protected
                     and retained, and how you can delete it.
                 </p>
-                <p class="updated">Effective <time datetime="2026-10-05">October 5, 2026</time></p>
+                <p class="updated">Effective <time datetime="2026-10-12">October 12, 2026</time></p>
             </div>
         </section>
 
@@ -399,6 +399,10 @@
                     <li><strong>Google or Microsoft</strong> processes the Browser Sync data in section 2 when that
                         feature is enabled in your Chrome or Edge profile. They do not receive FixQuotes device tokens
                         through MorrowTab.</li>
+                    <li><strong>Google or Apple Maps</strong> receives the selected address as a URL query only
+                        when you choose its right-click action. The temporary selection reader runs locally and
+                        the other provider and FixQuotes receive none of that selected text. MorrowTab does not
+                        retain it; handling after navigation is controlled by the selected provider.</li>
                     <li>The other functional recipients — Pexels, a calendar-feed host, a page-title site, a search
                         provider or a public website whose icon FixQuotes retrieves — receive only the requests
                         described in section 5 when you use the corresponding feature.</li>
@@ -777,8 +781,12 @@
             <section id="permissions">
                 <h2>6. Each permission, and why it is there</h2>
                 <p>
-                    MorrowTab runs an automatic content script only on top-level HTTPS Zoom recording pages matching <code>https://*.zoom.us/rec/*</code>. It reads video source addresses and adds a dismissible download overlay that updates as the player loads. Closing it stops watching the player; refresh the recording page to show it again. There is no Zoom context-menu action. Addresses stay on that page and are not stored in Browser Sync or FixQuotes Sync. Saving a video uses the Zoom document's normal referrer policy and browser session context. MorrowTab declares no <code>tabs</code> permission. Choosing the Google Maps context-menu item
-                    provides the selected text to MorrowTab and sends it to Google as a search in a new tab. Link auto-close uses the optional <code>webNavigation</code> permission to
+                    MorrowTab runs an automatic content script only on top-level HTTPS Zoom recording pages matching <code>https://*.zoom.us/rec/*</code>. It reads video source addresses and adds a dismissible download overlay that updates as the player loads. Closing it stops watching the player; refresh the recording page to show it again. There is no Zoom context-menu action. Addresses stay on that page and are not stored in Browser Sync or FixQuotes Sync. Saving a video uses the Zoom document's normal referrer policy and browser session context. MorrowTab declares no <code>tabs</code> permission. Choosing the Google or Apple Maps context-menu item
+                    provides the selected text to MorrowTab. A one-shot script reads the selected range and its layout
+                    boundaries in the clicked frame to preserve spaces between address fields, then sends that text
+                    to your selected provider, Google or Apple, as an address query in a new tab. It does not modify the page, monitor future selections,
+                    store the text, or send it to FixQuotes. If the selection changed or cannot be read, the
+                    browser-provided text is used. Link auto-close uses the optional <code>webNavigation</code> permission to
                     receive navigation events, but the worker considers only tab IDs that MorrowTab itself created and
                     compares only their top-level hostname. It stores no navigation log.
                 </p>
@@ -799,7 +807,7 @@
                             </tr>
                             <tr>
                                 <th scope="row"><code>contextMenus</code></th>
-                                <td>Adds Save to MorrowTab and Google Maps selection search. Save to MorrowTab opens a dialog with the current page address and title; nothing is saved until you confirm. Selected text is sent to Google only when you choose this action; it is not saved by MorrowTab.</td>
+                                <td>Adds Save to MorrowTab, Google Maps and Apple Maps, in that order. Save to MorrowTab opens a dialog with the current page address and title; nothing is saved until you confirm. Selected text is sent only to the Maps provider you choose; it is not saved by MorrowTab.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>storage</code></th>
@@ -833,7 +841,15 @@
                             <tr>
                                 <th scope="row"><code>activeTab</code></th>
                                 <td>Grants temporary access after a toolbar, keyboard or context-menu action. Quick Save
-                                    reads the current page title and address. It grants no standing access to any site.</td>
+                                    reads the current page title and address. Maps uses this temporary access to read
+                                    the selected address's layout. It grants no standing access to any site.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><code>scripting</code></th>
+                                <td>Runs the one-shot, isolated selection reader only after you choose Google or Apple Maps
+                                    address search, in the clicked frame using temporary <code>activeTab</code> access.
+                                    It preserves address spacing without an always-running page reader. No page changes,
+                                    selection monitoring, storage or FixQuotes transfer occur.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>webNavigation</code> (optional)</th>
@@ -1132,7 +1148,7 @@
                     <a href="https://apps.fixquotes.com/contact/?category=morrowtab" target="_blank"
                         rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
                 </p>
-                <p class="updated">Effective <time datetime="2026-10-05">October 5, 2026</time></p>
+                <p class="updated">Effective <time datetime="2026-10-12">October 12, 2026</time></p>
             </section>
         </div>
     </main>

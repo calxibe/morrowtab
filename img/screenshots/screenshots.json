@@ -77,6 +77,17 @@
     "thumbnail": "settings-dark_thumb.webp"
   },
   {
+    "name": "layout-unlocked",
+    "width": 1920,
+    "height": 1200,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "layout-unlocked_thumb.webp"
+  },
+  {
     "name": "saved-link-search",
     "width": 1920,
     "height": 1200,
@@ -220,35 +231,6 @@
     "thumbnail": "calendar-editor_thumb.webp"
   },
   {
-    "name": "newtab-mobile",
-    "width": 828,
-    "height": 1792,
-    "widths": [
-      768
-    ],
-    "thumbnail": "newtab-mobile_thumb.webp"
-  },
-  {
-    "name": "quick-save-popup",
-    "width": 640,
-    "height": 1120,
-    "widths": [
-      640
-    ],
-    "thumbnail": "quick-save-popup_thumb.webp"
-  },
-  {
-    "name": "welcome",
-    "width": 1920,
-    "height": 1693,
-    "widths": [
-      1920,
-      1280,
-      768
-    ],
-    "thumbnail": "welcome_thumb.webp"
-  },
-  {
     "name": "calendar-agenda-light",
     "width": 1920,
     "height": 1200,
@@ -280,5 +262,34 @@
       768
     ],
     "thumbnail": "calendar-month-light_thumb.webp"
+  },
+  {
+    "name": "newtab-mobile",
+    "width": 828,
+    "height": 1792,
+    "widths": [
+      768
+    ],
+    "thumbnail": "newtab-mobile_thumb.webp"
+  },
+  {
+    "name": "quick-save-popup",
+    "width": 640,
+    "height": 1120,
+    "widths": [
+      640
+    ],
+    "thumbnail": "quick-save-popup_thumb.webp"
+  },
+  {
+    "name": "welcome",
+    "width": 1920,
+    "height": 1693,
+    "widths": [
+      1920,
+      1280,
+      768
+    ],
+    "thumbnail": "welcome_thumb.webp"
   }
 ]

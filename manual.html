@@ -713,7 +713,9 @@
                     <h3>Creating a column</h3>
                     <p>
                         On an empty board, use the <strong>Create the first column</strong> button. Otherwise use the
-                        <strong>+</strong> button in a column card's header. Either way you get a dialog titled
+                        padlock to <strong>Unlock layout</strong>, then the labelled <strong>Add column</strong>
+                        button immediately to its left. The button stays visible while this page's layout is
+                        unlocked on a links board; locking hides it again. Either way you get a dialog titled
                         <em>New column</em> with the field <strong>Column heading</strong>, the placeholder "For
                         example, Current projects", and a <strong>Create column</strong> button.
                     </p>
@@ -1321,6 +1323,25 @@
                         delay, and the warning resets if you change the board.
                     </p>
 
+                    <h3>Search a selected address in Google or Apple Maps</h3>
+                    <p>
+                        Select an address on a webpage, right-click, and choose
+                        <strong>Search this address on Google Maps</strong> or
+                        <strong>Search this address on Apple Maps</strong>. The menu lists
+                        <strong>Save to MorrowTab</strong> first, then Google Maps, then Apple Maps.
+                        MorrowTab preserves spaces between
+                        selected address lines and fields, then opens a Maps search in a new tab. For example,
+                        a street line and postcode become <em>Example Road 185 0123 Exampletown</em>, not a joined number.
+                        Inline words and suffixes such as <em>12A</em> stay intact; no number-based guessing is used.
+                        Apple Maps opens its Look Around address view; imagery availability is controlled by Apple.
+                    </p>
+                    <p>
+                        The selected range is read only after this action, with temporary access to the clicked
+                        page and frame. Nothing is saved or synced. If the selection changed or the page blocks
+                        access, MorrowTab uses Chrome's original selected text instead. Only the Maps query is
+                        sent to the provider you choose, Google or Apple; it is not sent to FixQuotes.
+                    </p>
+
                     <h3>What can and cannot be saved</h3>
                     <p>
                         Only <code>http</code> and <code>https</code> pages. On a <code>chrome://</code> page, a
@@ -1387,10 +1408,31 @@
                         tooltip between "Unlock layout" and "Lock layout".
                     </p>
                     <p>
-                        Unlocking shows the toast "Drag and drop enabled — drag a handle or press Alt + arrow keys";
+                        Unlocking reveals <strong>Add column</strong> immediately left of the padlock on links boards
+                        and shows the toast "Layout unlocked — add a column, drag a handle or press Alt + arrow keys";
                         locking again shows "Layout locked". The unlocked state belongs to that one page: it is never
                         saved, never synced, does not affect another open tab, and is back to locked after a reload.
                     </p>
+
+                    <figure class="manual-figure">
+                        <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/layout-unlocked.png"
+                            aria-label="Open full size: the unlocked layout and Add column button">
+                            <picture>
+                                <source type="image/avif"
+                                    srcset="img/screenshots/layout-unlocked-768.avif 768w, img/screenshots/layout-unlocked-1280.avif 1280w, img/screenshots/layout-unlocked-1920.avif 1920w"
+                                    sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                                <source type="image/webp"
+                                    srcset="img/screenshots/layout-unlocked-768.webp 768w, img/screenshots/layout-unlocked-1280.webp 1280w, img/screenshots/layout-unlocked-1920.webp 1920w"
+                                    sizes="(min-width: 1100px) 720px, calc(100vw - 48px)">
+                                <img src="img/screenshots/layout-unlocked.png" width="1920" height="1200"
+                                    alt="The unlocked links board with a labelled Add column button immediately left of the open padlock and visible drag handles on columns and links"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <span class="screenshot-hint">Open full size</span>
+                        </button>
+                        <figcaption>Unlock the layout to add columns or rearrange them. Lock it again to hide the
+                            Add column button and drag handles.</figcaption>
+                    </figure>
 
                     <h3>With the mouse, a finger or a pen</h3>
                     <ul>
@@ -2402,7 +2444,7 @@
                         <summary>I cannot drag anything</summary>
                         <p>
                             The layout starts locked on every page. Press the padlock button beside Settings — you
-                            should see "Drag and drop enabled — drag a handle or press Alt + arrow keys" and the drag
+                            should see "Layout unlocked — add a column, drag a handle or press Alt + arrow keys" and the drag
                             handles appear. The unlocked state is per tab and is deliberately forgotten on reload.
                         </p>
                         <p>
