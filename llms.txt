@@ -17,6 +17,7 @@ Use the user manual for detailed information about boards, calendar boards, colu
 
 ## Legal and support
 
+- [Terms of Use](https://calxibe.github.io/morrowtab/terms.html): Conditions for using MorrowTab and optional FixQuotes Sync, permitted use, ownership, backups, third-party services, availability, account deletion and statutory rights.
 - [Privacy policy](https://calxibe.github.io/morrowtab/privacy.html): What Browser Sync and optional FixQuotes Sync process and store, what stays only on one computer, every network request and page-access feature, account deletion, backup contents, and how the website itself behaves.
 - [Contact MorrowTab support](https://calxibe.github.io/morrowtab/contact.html): MorrowTab's handoff page for support, feedback and questions, all handled by FixQuotes.
 - [FixQuotes support form](https://apps.fixquotes.com/contact/?category=morrowtab): The private support route for MorrowTab and the required route for FixQuotes Sync account-deletion requests; the live page may also offer a Discord community link.
