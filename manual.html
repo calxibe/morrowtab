@@ -174,8 +174,9 @@
                             introduction, not a release-notes page, and it does not reappear after an update.
                         </li>
                         <li>
-                            <strong>The Zoom recording overlay.</strong> On a Zoom recording page, MorrowTab adds a
-                            small panel containing any direct recording files the player exposes. See
+                            <strong>The Zoom recording overlay.</strong> Optional and off by default. Once you turn
+                            it on in Settings, MorrowTab adds a small panel on a Zoom recording page containing any
+                            direct recording files the player exposes. See
                             <a href="#zoom-downloads">Downloading a Zoom recording</a>.
                         </li>
                     </ul>
@@ -203,8 +204,9 @@
                                 in Settings to stop those requests. Website-icon downloads can send eligible hostnames
                                 to FixQuotes. After you explicitly connect FixQuotes Sync, it exchanges your board data
                                 with the FixQuotes API. Calendar and page-title requests go only to addresses you add
-                                and approve. The Zoom overlay reads the recording page locally and makes no separate
-                                request to FixQuotes.
+                                and approve. The optional Zoom overlay, when you have turned it on, reads the
+                                recording page locally and makes no separate request to FixQuotes. Searching saved
+                                links from the address bar stays on your computer.
                             </p>
                         </div>
                     </div>
@@ -537,6 +539,23 @@
                         <strong>Add calendar</strong> button. A calendar board holds up to ten calendars.
                     </p>
 
+                    <h3>Keeping a calendar on this computer only</h3>
+                    <p>
+                        A calendar's private address works like a password for reading that calendar. By default it
+                        is saved with the board and syncs like the rest of your boards. If you would rather it never
+                        left this computer, tick <strong>Keep on this computer only</strong> when you add or edit the
+                        calendar. Its address is then stored only in this browser profile: it is left out of Browser
+                        Sync, FixQuotes Sync and exported backups, and your other computers do not show that calendar.
+                        <strong>Manage calendars</strong> marks such a calendar <em>This computer only</em>.
+                    </p>
+                    <p>
+                        You can change your mind in either direction from the calendar's editor. If you move a
+                        calendar that has already synced, MorrowTab removes it from the synced board, but the
+                        address has been synced before; reset the secret address in Google Calendar or Outlook if
+                        it needs to stay private. Because it is not in a backup, add a local calendar again after
+                        reinstalling MorrowTab or moving to another computer.
+                    </p>
+
                     <h3>Finding a calendar's address</h3>
                     <p>
                         The empty calendar board and the calendar editor both offer <strong>Copy the address
@@ -827,6 +846,8 @@
                             <strong>Web address</strong> — placeholder <code>https://example.com</code>. Only
                             <code>http</code> and <code>https</code> addresses can be saved, up to 2,048 characters. If
                             you leave the scheme out, MorrowTab prepends <code>https://</code> before validating.
+                            Another kind of address, such as <code>mailto:</code>, <code>ftp://</code> or a file on
+                            your computer, is refused with a message rather than saved.
                         </li>
                         <li>
                             <strong>Name</strong> <em>(optional)</em> — placeholder "A friendly name". Left empty, the
@@ -1045,8 +1066,10 @@
                     <h2>Finding saved links</h2>
                     <p>
                         Use the toolbar magnifier labelled <strong>Find saved links</strong>,
-                        or press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> (<kbd>Cmd</kbd> on Mac)
-                        while on MorrowTab. This opens a separate search across all your links boards;
+                        or press <kbd>Ctrl</kbd> + <kbd>F</kbd> (<kbd>Cmd</kbd> + <kbd>F</kbd> on Mac)
+                        while on MorrowTab. <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> does the same.
+                        If you want the browser's own find-in-page instead, press <kbd>Ctrl</kbd> + <kbd>F</kbd>
+                        a second time while Find saved links is open. This opens a separate search across all your links boards;
                         the usual web-search box and its shortcuts stay unchanged.
                     </p>
                     <p>
@@ -1088,6 +1111,22 @@
                         queries to a server and does not add them to saved web-search suggestions.
                         Closing with the close button, Escape or the backdrop clears the query.
                         Results update when your loaded library changes; calendar events are not searched.
+                    </p>
+
+                    <h3>From the address bar</h3>
+                    <p>
+                        You can also search your saved links without opening MorrowTab first. Click the
+                        browser's address bar, type <kbd>mt</kbd>, press <kbd>Space</kbd>, and type a few words.
+                        Up to eight matching links appear as suggestions, each with its board and column. Choose
+                        one to open it, or press <kbd>Enter</kbd> on what you typed to open MorrowTab with
+                        <strong>Find saved links</strong> already showing every match.
+                    </p>
+                    <p>
+                        Address-bar search uses the same matching rules and also stays on this computer: nothing
+                        you type is sent anywhere or saved. A link opened this way opens like any other address
+                        you choose in the address bar; it does not use the link's saved new-tab or auto-close
+                        choice and is not counted for <strong>Order links by most used</strong>. Before you have
+                        set up your boards, the sample board is not searched.
                     </p>
                 </section>
                 <section class="manual-topic" id="search-engines">
@@ -1325,7 +1364,13 @@
 
                     <h3>Search a selected address in Google or Apple Maps</h3>
                     <p>
-                        Select an address on a webpage, right-click, and choose
+                        This is an optional tool and is off by default. Turn it on under
+                        <strong>Settings → Links &amp; search → Optional page tools → Search selected addresses on
+                        Maps</strong>; the choice applies to this computer only. Turning it off removes both Maps
+                        entries from the right-click menu again.
+                    </p>
+                    <p>
+                        With the tool on, select an address on a webpage, right-click, and choose
                         <strong>Search this address on Google Maps</strong> or
                         <strong>Search this address on Apple Maps</strong>. The menu lists
                         <strong>Save to MorrowTab</strong> first, then Google Maps, then Apple Maps.
@@ -1374,7 +1419,16 @@
                 <section class="manual-topic" id="zoom-downloads">
                     <h2>Downloading a Zoom recording</h2>
                     <p>
-                        On Zoom recording pages whose address matches <code>https://*.zoom.us/rec/*</code>, MorrowTab
+                        This is an optional tool and is off by default. Turn it on under
+                        <strong>Settings → Links &amp; search → Optional page tools → Show download links on Zoom
+                        recordings</strong>. Your browser then asks whether MorrowTab may access
+                        <code>zoom.us</code>; the tool stays off if you decline. The choice applies to this computer
+                        only, and turning the tool off gives that access back. Until you turn it on, MorrowTab does
+                        nothing on Zoom pages.
+                    </p>
+                    <p>
+                        With the tool on, on Zoom recording pages whose address matches
+                        <code>https://*.zoom.us/rec/*</code>, MorrowTab
                         automatically adds a <strong>Download Zoom recording</strong> overlay in the top-right corner.
                         The overlay follows the player as it loads and lists up to twenty direct HTTPS video files that
                         the page exposes. Right-click a recording link and choose <strong>Save link as…</strong>; from
@@ -1390,6 +1444,9 @@
 
                     <h3>When no download link appears</h3>
                     <ul>
+                        <li>Check that <strong>Show download links on Zoom recordings</strong> is on in Settings, then
+                            refresh the recording page. It is off after installing MorrowTab, and after updating from
+                            an earlier release in which it was always on.</li>
                         <li>Wait for the player to load, or start playback; links appear as Zoom exposes the sources.</li>
                         <li>If the page uses HLS or DASH streaming instead of a direct file, use Zoom&rsquo;s own
                             <strong>Download</strong> button if the recording owner enabled it.</li>
@@ -2045,7 +2102,8 @@
                         consumes one Chrome write operation. Another computer may still receive those keys in stages;
                         it uses the prior complete checkpoint or stays read-only until the new checkpoint verifies.
                         Obsolete chunks owned by this actor are removed after editing has been idle for ten seconds;
-                        failed cleanup backs off and never touches another computer's checkpoint.
+                        failed cleanup backs off and never touches another computer's checkpoint. That cleanup is
+                        not a change to your data, so open MorrowTab pages carry on without reloading.
                     </p>
                     <p>
                         If the browser cannot provide that locking, MorrowTab refuses to write at all rather than risk
@@ -2129,10 +2187,27 @@
                     <p>
                         <strong>Sign out</strong> revokes this device&rsquo;s session when the service is reachable and
                         keeps the local cloud working copy so you do not lose offline boards. Signing out, clearing the
-                        extension or uninstalling it does not by itself delete the server account. To request account
-                        deletion, use the <a href="contact.html">FixQuotes support route</a> and complete the fresh
-                        email verification requested for the account. See the <a href="privacy.html">privacy policy</a>
-                        for retention, service-provider and deletion details.
+                        extension or uninstalling it does not by itself delete the server account.
+                    </p>
+
+                    <h3>Deleting your FixQuotes account</h3>
+                    <p>
+                        On a connected computer, open <strong>Settings → Data &amp; privacy</strong> and choose
+                        <strong>Delete account…</strong>. After you confirm, MorrowTab deletes the account straight
+                        away if you signed in within the last ten minutes. Otherwise it emails a new 8-digit code to
+                        the account address; enter it under <strong>Code to delete the account</strong> and choose
+                        <strong>Delete account</strong>. Nothing is deleted until then, and <strong>Cancel</strong>
+                        stops the process.
+                    </p>
+                    <p>
+                        Deleting removes the account, the boards stored on FixQuotes and the sign-in on every
+                        computer, and it cannot be undone. Your boards stay on this computer but are no longer
+                        synced anywhere, so <strong>Export backup</strong> if you want a copy. Other computers keep
+                        the boards they already have and show a message asking you to sign in again. Signing in
+                        again with the same address creates a new, empty account and asks before uploading
+                        anything. If you cannot use the extension, use the
+                        <a href="contact.html">FixQuotes support route</a> instead. See the
+                        <a href="privacy.html">privacy policy</a> for retention, service-provider and deletion details.
                     </p>
                 </section>
                 <section class="manual-topic" id="recovery">
@@ -2245,9 +2320,11 @@
                                     <td>Switch to the first through ninth board, in board order</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd></th>
-                                    <td>Open Find saved links across all boards (<kbd>Cmd</kbd> + <kbd>Shift</kbd> +
-                                        <kbd>K</kbd> on Mac). Within its results, arrow keys navigate and Enter opens a link.</td>
+                                    <th scope="row"><kbd>Ctrl</kbd> + <kbd>F</kbd></th>
+                                    <td>Open Find saved links across all boards (<kbd>Cmd</kbd> + <kbd>F</kbd> on Mac;
+                                        <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> also works).
+                                        Press it again for the browser's own find-in-page. Within the results, arrow
+                                        keys navigate and Enter opens a link.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><kbd>Alt</kbd> + <kbd>↑</kbd> /
@@ -2535,9 +2612,11 @@
                     <details>
                         <summary>The Zoom download overlay is missing or has no link</summary>
                         <p>
-                            The overlay runs only on HTTPS Zoom recording addresses matching
-                            <code>https://*.zoom.us/rec/*</code>. Reload the recording page after installing or updating
-                            MorrowTab, wait for the player to load and start playback if necessary. A streaming-only
+                            The overlay is optional and off by default: turn on <strong>Show download links on Zoom
+                            recordings</strong> under <strong>Settings → Links &amp; search → Optional page tools</strong>
+                            and allow access to <code>zoom.us</code>. It then runs only on HTTPS Zoom recording
+                            addresses matching <code>https://*.zoom.us/rec/*</code>. Refresh the recording page after
+                            turning it on, wait for the player to load and start playback if necessary. A streaming-only
                             recording has no direct file for MorrowTab to list; use Zoom&rsquo;s own Download button when
                             the recording owner provides one. See <a href="#zoom-downloads">Downloading a Zoom
                             recording</a>.

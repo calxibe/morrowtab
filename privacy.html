@@ -81,7 +81,7 @@
                     what data is collected, why it is used, where it is stored, who receives it, how it is protected
                     and retained, and how you can delete it.
                 </p>
-                <p class="updated">Effective <time datetime="2026-10-12">October 12, 2026</time></p>
+                <p class="updated">Effective <time datetime="2026-11-16">November 16, 2026</time></p>
             </div>
         </section>
 
@@ -122,9 +122,15 @@
                         a working bundled icon, eligible lookups send only its hostname to FixQuotes, not its complete
                         address or title. FixQuotes retrieves public website artwork directly. Turn this setting off
                         on a computer to stop new icon requests there; cached icons remain.</li>
-                    <li>On Zoom recording pages, MorrowTab reads the page title and video source addresses only to
-                        provide its download overlay. That information stays on the Zoom page and is not stored in
-                        Browser Sync or FixQuotes Sync.</li>
+                    <li><strong>MorrowTab does nothing on other websites unless you turn on an optional tool.</strong>
+                        Maps address search and Zoom recording download links are off by default. If you turn on the
+                        Zoom tool, MorrowTab reads the page title and video source addresses on Zoom recording pages
+                        only to provide its download overlay. That information stays on the Zoom page and is not
+                        stored in Browser Sync or FixQuotes Sync.</li>
+                    <li>A calendar marked <strong>Keep on this computer only</strong> stays in this browser profile.
+                        Its address is not placed in Browser Sync, FixQuotes Sync or an exported backup.</li>
+                    <li>Searching your saved links from the address bar (the <code>mt</code> keyword) happens on your
+                        computer. What you type is not sent anywhere and is not saved.</li>
                     <li>There is no analytics, no telemetry, no advertising tracker and no remote code in the
                         extension. This website runs no analytics and sets no cookies.</li>
                 </ul>
@@ -150,7 +156,8 @@
                     For a private support or privacy request, use
                     <a href="https://apps.fixquotes.com/contact/?category=morrowtab" target="_blank"
                         rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
-                    That form is required for FixQuotes Sync account deletion; the live page may also offer FixQuotes'
+                    You can delete a FixQuotes Sync account yourself in MorrowTab's Settings (section 9); that form
+                    is the alternative when you cannot use the extension. The live page may also offer FixQuotes'
                     Discord community for general public conversation. There is no in-extension feedback form or
                     separate MorrowTab support address.
                 </p>
@@ -367,7 +374,8 @@
                 <p>
                     FixQuotes Sync does not upload saved search suggestions or search-box history, uploaded background
                     images, cached quotes, downloaded website icons or nature photographs, downloaded calendar events,
-                    the local calendar layout, live tab IDs, browsing history, or Zoom page and video information.
+                    the local calendar layout, calendars kept on one computer only, the optional-tool switches,
+                    address-bar searches, live tab IDs, browsing history, or Zoom page and video information.
                 </p>
 
                 <h3>Why the information is used</h3>
@@ -400,7 +408,7 @@
                         feature is enabled in your Chrome or Edge profile. They do not receive FixQuotes device tokens
                         through MorrowTab.</li>
                     <li><strong>Google or Apple Maps</strong> receives the selected address as a URL query only
-                        when you choose its right-click action. The temporary selection reader runs locally and
+                        when you have turned on the optional Maps tool and choose its right-click action. The temporary selection reader runs locally and
                         the other provider and FixQuotes receive none of that selected text. MorrowTab does not
                         retain it; handling after navigation is controlled by the selected provider.</li>
                     <li>The other functional recipients — Pexels, a calendar-feed host, a page-title site, a search
@@ -447,7 +455,12 @@
                     active. You can access and correct board content by signing in and editing it in MorrowTab. Signing
                     out or uninstalling the extension does not delete the server account, because another connected
                     computer may still use it. To delete the FixQuotes Sync account, board replica and all server
-                    sessions, submit a request through the
+                    sessions yourself, open <strong>Settings → Data &amp; privacy</strong> on a connected computer and
+                    choose <strong>Delete account…</strong> (update MorrowTab if the button is missing). After you confirm, the
+                    service deletes the account only for a sign-in made in the last ten minutes; otherwise MorrowTab
+                    emails a new one-use code to the account address and deletes once you enter it. The boards stay
+                    on that computer, no longer synced, and your other computers keep their own copies and are
+                    signed out. If you cannot use the extension, submit a request through the
                     <a href="https://apps.fixquotes.com/contact/?category=morrowtab" target="_blank"
                         rel="noopener">FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
                     FixQuotes will require fresh verification of the account email before completing deletion.
@@ -781,7 +794,7 @@
             <section id="permissions">
                 <h2>6. Each permission, and why it is there</h2>
                 <p>
-                    MorrowTab runs an automatic content script only on top-level HTTPS Zoom recording pages matching <code>https://*.zoom.us/rec/*</code>. It reads video source addresses and adds a dismissible download overlay that updates as the player loads. Closing it stops watching the player; refresh the recording page to show it again. There is no Zoom context-menu action. Addresses stay on that page and are not stored in Browser Sync or FixQuotes Sync. Saving a video uses the Zoom document's normal referrer policy and browser session context. MorrowTab declares no <code>tabs</code> permission. Choosing the Google or Apple Maps context-menu item
+                    MorrowTab's manifest declares no content script, so by default it runs nothing on any website. Two optional tools, each off until you turn it on under <strong>Settings → Links &amp; search → Optional page tools</strong>, change that for one purpose each, on this computer only. If you turn on <strong>Show download links on Zoom recordings</strong> and allow access to <code>zoom.us</code> when your browser asks, MorrowTab registers one page script that runs only on top-level HTTPS Zoom recording pages matching <code>https://*.zoom.us/rec/*</code>. It reads video source addresses and adds a dismissible download overlay that updates as the player loads. Turning the tool off removes the script and gives the <code>zoom.us</code> access back. Closing it stops watching the player; refresh the recording page to show it again. There is no Zoom context-menu action. Addresses stay on that page and are not stored in Browser Sync or FixQuotes Sync. Saving a video uses the Zoom document's normal referrer policy and browser session context. MorrowTab declares no <code>tabs</code> permission. If you turn on <strong>Search selected addresses on Maps</strong>, choosing the Google or Apple Maps context-menu item
                     provides the selected text to MorrowTab. A one-shot script reads the selected range and its layout
                     boundaries in the clicked frame to preserve spaces between address fields, then sends that text
                     to your selected provider, Google or Apple, as an address query in a new tab. It does not modify the page, monitor future selections,
@@ -802,12 +815,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">Zoom recording page access</th>
-                                <td>The content script matches <code>https://*.zoom.us/rec/*</code> so the download overlay appears automatically. It reads the page title and video sources, watches for player changes while open, and keeps this information on the page. It does not run automatically on other Zoom pages.</td>
+                                <th scope="row">Zoom recording page access (optional)</th>
+                                <td>Not granted when you install. Requested only when you turn on <strong>Show download links on Zoom recordings</strong>; your browser asks whether MorrowTab may access <code>zoom.us</code>. The page script then matches <code>https://*.zoom.us/rec/*</code> so the download overlay appears on recording pages. It reads the page title and video sources, watches for player changes while open, and keeps this information on the page. It does not run on other Zoom pages, and turning the tool off gives the access back.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>contextMenus</code></th>
-                                <td>Adds Save to MorrowTab, Google Maps and Apple Maps, in that order. Save to MorrowTab opens a dialog with the current page address and title; nothing is saved until you confirm. Selected text is sent only to the Maps provider you choose; it is not saved by MorrowTab.</td>
+                                <td>Adds Save to MorrowTab and, only while you have turned on the optional Maps tool, Google Maps and Apple Maps after it. Save to MorrowTab opens a dialog with the current page address and title; nothing is saved until you confirm. Selected text is sent only to the Maps provider you choose; it is not saved by MorrowTab.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>storage</code></th>
@@ -845,11 +858,21 @@
                                     the selected address's layout. It grants no standing access to any site.</td>
                             </tr>
                             <tr>
-                                <th scope="row"><code>scripting</code></th>
-                                <td>Runs the one-shot, isolated selection reader only after you choose Google or Apple Maps
-                                    address search, in the clicked frame using temporary <code>activeTab</code> access.
-                                    It preserves address spacing without an always-running page reader. No page changes,
-                                    selection monitoring, storage or FixQuotes transfer occur.</td>
+                                <th scope="row"><code>scripting</code> (optional)</th>
+                                <td>Not granted when you install; requested only when you turn on an optional page
+                                    tool, and given back when neither tool uses it. For Maps it runs the one-shot,
+                                    isolated selection reader only after you choose Google or Apple Maps address
+                                    search, in the clicked frame using temporary <code>activeTab</code> access, which
+                                    preserves address spacing without an always-running page reader. For Zoom it
+                                    registers the recording-page script described above. No selection monitoring,
+                                    storage of page text or FixQuotes transfer occurs.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address-bar keyword (<code>omnibox</code>)</th>
+                                <td>Lets you type <code>mt</code> in the address bar to search your saved links. It is
+                                    a manifest entry rather than a permission, shows no install warning and does not
+                                    change your search engine. Matching runs on your computer against your own saved
+                                    links; what you type is not sent anywhere or saved.</td>
                             </tr>
                             <tr>
                                 <th scope="row"><code>webNavigation</code> (optional)</th>
@@ -1148,7 +1171,7 @@
                     <a href="https://apps.fixquotes.com/contact/?category=morrowtab" target="_blank"
                         rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
                 </p>
-                <p class="updated">Effective <time datetime="2026-10-12">October 12, 2026</time></p>
+                <p class="updated">Effective <time datetime="2026-11-16">November 16, 2026</time></p>
             </section>
         </div>
     </main>
