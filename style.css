@@ -470,6 +470,7 @@ code {
     background: var(--surface-light);
     color: var(--accent-text);
     font-size: 0.85rem;
+    overflow-wrap: anywhere;
 }
 
 kbd {
@@ -1252,6 +1253,7 @@ main:has(> .content) > .page-hero > .container {
 
 .manual-topic li {
     margin-bottom: 8px;
+    overflow-wrap: anywhere;
 }
 
 .manual-figure {
