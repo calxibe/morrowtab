@@ -81,7 +81,7 @@
                     what data is collected, why it is used, where it is stored, who receives it, how it is protected
                     and retained, and how you can delete it.
                 </p>
-                <p class="updated">Effective <time datetime="2026-11-16">November 16, 2026</time></p>
+                <p class="updated">Effective <time datetime="2026-11-22">November 22, 2026</time></p>
             </div>
         </section>
 
@@ -577,13 +577,12 @@
 
                 <h3>Find saved links (temporary page memory)</h3>
                 <p>
-                    The separate <strong>Find saved links</strong> dialog searches titles, addresses and descriptions
-                    in the board library already loaded on this computer. Its query and results exist only in that
-                    open page's memory and are cleared when the dialog closes. Queries are not written to local
-                    search history, Browser Sync, FixQuotes Sync or exported backups, and are not sent to a search
-                    provider or FixQuotes. Choosing a result then opens the saved address normally; choosing
-                    <strong>Show on board</strong> navigates within MorrowTab instead. This feature is separate from
-                    web search and saved web-search suggestions.
+                    The new-tab search field checks titles, addresses and descriptions in the board library
+                    already loaded on this computer. Matching saved links takes place in the open page's memory.
+                    Choosing a saved link opens its address. Choosing <strong>Show on board</strong> navigates
+                    within MorrowTab. Neither action saves the query to web-search history or sends it to a search
+                    provider. If you submit the text as a web search, the selected provider receives the query and
+                    it can be saved to local web-search history according to your settings.
                 </p>
 
                 <h3>Plugin.managedTabs (session only)</h3>
@@ -690,9 +689,9 @@
                             </tr>
                             <tr>
                                 <th scope="row">The one site you typed</th>
-                                <td>Only when both are true: "Fetch page titles when adding links" is on (it is off
-                                    by default) <em>and</em> you granted that single site's access at your browser's
-                                    own permission prompt. It never runs while you edit an existing link.</td>
+                                <td>When adding a link, only if "Fetch page titles when adding links" is on
+                                    <em>and</em> you granted access to that HTTPS site. The setting starts on
+                                    in new sample-board setups. It preserves names you enter yourself.</td>
                                 <td>A <code>GET</code> of the exact address you typed, 400 ms after you stop typing:
                                     no cookies or credentials, no referrer, <code>Accept: text/html,application/xhtml+xml</code>, a
                                     7-second timeout. A declared response larger than 1 MB is rejected; otherwise
@@ -1171,7 +1170,7 @@
                     <a href="https://apps.fixquotes.com/contact/?category=morrowtab" target="_blank"
                         rel="noopener">the FixQuotes contact page for MorrowTab<span class="visually-hidden"> (opens in a new tab)</span></a>.
                 </p>
-                <p class="updated">Effective <time datetime="2026-11-16">November 16, 2026</time></p>
+                <p class="updated">Effective <time datetime="2026-11-22">November 22, 2026</time></p>
             </section>
         </div>
     </main>

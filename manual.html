@@ -952,13 +952,11 @@
 
                     <h3>Fetching page titles</h3>
                     <p>
-                        Settings has a toggle <strong>Fetch page titles when adding links</strong>, described as "Off by
-                        default. When enabled, MorrowTab asks for access to each entered site and uses its page title
-                        only when Name is empty." Two separate opt-ins are needed: the setting itself, and Chrome's own
-                        permission prompt for that one site the first time you commit an address in the field. Decline
-                        and you simply see "Allow site access to fetch the page title." and type the name yourself.
-                        Title fetching never runs while you are editing an existing link, and never overwrites a name
-                        you typed.
+                        <strong>Fetch page titles when adding links</strong> starts checked when you set up the
+                        sample board. You can turn it off in Settings. When it is on and <strong>Name</strong>
+                        is empty, the browser asks for permission the first time you enter an HTTPS address for
+                        that site. If you decline, type the name yourself. Title fetching applies when adding a
+                        link and preserves names you enter yourself.
                     </p>
 
                     <h3>Link icons</h3>
@@ -1057,26 +1055,19 @@
                             <kbd>Alt</kbd> + <kbd>↓</kbd> cycle through that board's
                             engines, wrapping around.</li>
                     </ul>
-                    <p>
-                        The field's own tooltip says the same thing: "Press / to focus search. Alt + up or down arrow
-                        switches the search engine."
-                    </p>
                 </section>
                 <section class="manual-topic" id="saved-link-search">
                     <h2>Finding saved links</h2>
                     <p>
-                        Use the toolbar magnifier labelled <strong>Find saved links</strong>,
-                        or press <kbd>Ctrl</kbd> + <kbd>F</kbd> (<kbd>Cmd</kbd> + <kbd>F</kbd> on Mac)
-                        while on MorrowTab. <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> does the same.
-                        If you want the browser's own find-in-page instead, press <kbd>Ctrl</kbd> + <kbd>F</kbd>
-                        a second time while Find saved links is open. This opens a separate search across all your links boards;
-                        the usual web-search box and its shortcuts stay unchanged.
+                        Type in the main search field to find links across all your boards. Press
+                        <kbd>Ctrl</kbd> + <kbd>F</kbd> (<kbd>Cmd</kbd> + <kbd>F</kbd> on Mac) to focus the field
+                        and select its text. <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> does the same.
                     </p>
                     <p>
                         Type any part of a title, URL or description. Matching ignores case and accents,
-                        and every word you type must match somewhere in those fields. Title matches appear first.
-                        Each result shows its board and column, URL and optional description. Large lists appear
-                        in batches of 50; choose <strong>Show more results</strong> to see the next batch.
+                        and every word you type must match somewhere in those fields. Results are ordered by click
+                        count, with relevance breaking ties. Each result shows its board and column, URL and optional
+                        description. Choose <strong>Show more saved links</strong> for the next 50 results.
                     </p>
                     <figure class="manual-figure">
                         <button class="screenshot-card" type="button" data-fullsrc="img/screenshots/saved-link-search.png"
@@ -1095,22 +1086,20 @@
                             <span class="screenshot-hint">Open full size</span>
                         </button>
                         <figcaption>
-                            Find saved links searches the loaded library, separately from web search. Each result
-                            can open the saved page or take you to its original board and column.
+                            Saved-link matches for “google” appear below the search field. Each result can open the
+                            saved page or take you to its board and column.
                         </figcaption>
                     </figure>
                     <p>
-                        Press <kbd>↓</kbd> to focus a result, use the arrow keys to browse, and press
-                        <kbd>Enter</kbd> to open it. Enter in the search field opens the first result.
-                        Opening follows the link's saved current/new-tab and auto-close choices.
-                        <strong>Show on board</strong> instead switches to the original board and focuses the
-                        saved link. It does not create a copy or edit your boards.
+                        Use <kbd>↑</kbd> and <kbd>↓</kbd> to highlight a link, then press <kbd>Enter</kbd> to
+                        open it. Opening follows the global saved-link setting, any per-link override, and the link's
+                        auto-close choice. Press <kbd>→</kbd> on a highlighted link to select <strong>Show on
+                        board</strong>, then <kbd>Enter</kbd> to go to the original board and focus the link.
                     </p>
                     <p>
-                        Search reads only the library already loaded on this computer. It sends no search
-                        queries to a server and does not add them to saved web-search suggestions.
-                        Closing with the close button, Escape or the backdrop clears the query.
-                        Results update when your loaded library changes; calendar events are not searched.
+                        Matching saved links uses the library already loaded on this computer. Matching and opening
+                        saved links leave web-search history untouched. With no result highlighted, press
+                        <kbd>Enter</kbd> to submit a web search. Press <kbd>Escape</kbd> to close the dropdown.
                     </p>
 
                     <h3>From the address bar</h3>
@@ -1119,7 +1108,7 @@
                         browser's address bar, type <kbd>mt</kbd>, press <kbd>Space</kbd>, and type a few words.
                         Up to eight matching links appear as suggestions, each with its board and column. Choose
                         one to open it, or press <kbd>Enter</kbd> on what you typed to open MorrowTab with
-                        <strong>Find saved links</strong> already showing every match.
+                        matching saved links below the main search field.
                     </p>
                     <p>
                         Address-bar search uses the same matching rules and also stays on this computer: nothing
@@ -1219,9 +1208,9 @@
                 <section class="manual-topic" id="suggestions">
                     <h2>Saved search suggestions</h2>
                     <p>
-                        Searches you have actually run come back as suggestions the next time you type. They are your
-                        own past queries and nothing else — MorrowTab does not fetch completions from Google, Bing or
-                        any other provider, and it never sends what you are typing anywhere to build the list.
+                        Searches you have actually run come back as suggestions the next time you type. They appear
+                        below matching saved links in the dropdown. MorrowTab builds these suggestions on your
+                        computer from your own past queries.
                     </p>
 
                     <figure class="manual-figure">
@@ -1241,15 +1230,13 @@
                             <span class="screenshot-hint">Open full size</span>
                         </button>
                         <figcaption>
-                            The suggestion panel opens under the field once you have typed at least five characters, and
-                            flips above it if there is not enough room below.
+                            Web-search suggestions appear after you type at least five characters.
                         </figcaption>
                     </figure>
 
                     <h3>How the list behaves</h3>
                     <ul>
-                        <li>Nothing appears until you have typed <strong>five characters</strong>. Below that the
-                            screen-reader status says how many more are needed.</li>
+                        <li>Web-search history starts matching after <strong>five characters</strong>.</li>
                         <li>It matches anywhere inside a saved query, not just at the start.</li>
                         <li>At most <strong>eight</strong> suggestions are shown at a time.</li>
                         <li>Each search engine keeps its own history of up to <strong>50</strong> queries, newest
@@ -1685,7 +1672,7 @@
                         <li><strong>Buttons — every board as a button, side by side.</strong> One button per board in
                             your board order, the current one filled in, and a <strong>Manage boards…</strong> button
                             at the end of the group. With many boards the group wraps onto another line; on a narrow
-                            window it shares the top row with Find saved links, the lock and Settings as the dropdown does.</li>
+                            window it shares the top row with the lock and Settings as the dropdown does.</li>
                     </ul>
                     <p>
                         The choice syncs with your other settings. Keyboard shortcuts, the tab title and the board
@@ -2321,10 +2308,8 @@
                                 </tr>
                                 <tr>
                                     <th scope="row"><kbd>Ctrl</kbd> + <kbd>F</kbd></th>
-                                    <td>Open Find saved links across all boards (<kbd>Cmd</kbd> + <kbd>F</kbd> on Mac;
-                                        <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> also works).
-                                        Press it again for the browser's own find-in-page. Within the results, arrow
-                                        keys navigate and Enter opens a link.</td>
+                                    <td>Focus the main search field and select its text (<kbd>Cmd</kbd> + <kbd>F</kbd>
+                                        on Mac; <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> also works)</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><kbd>Alt</kbd> + <kbd>↑</kbd> /
@@ -2334,12 +2319,11 @@
                                 </tr>
                                 <tr>
                                     <th scope="row"><kbd>↑</kbd> / <kbd>↓</kbd></th>
-                                    <td>Move through the saved search suggestions, opening the list if it is closed</td>
+                                    <td>Move through saved links and recent web searches</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><kbd>Enter</kbd></th>
-                                    <td>In the suggestion list: put the highlighted suggestion in the field without
-                                        submitting it</td>
+                                    <td>Open the highlighted link or fill the field with the highlighted web-search suggestion</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><kbd>Esc</kbd></th>

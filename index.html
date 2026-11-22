@@ -103,7 +103,7 @@
                             "name": "Can I search my saved links?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Yes. Open Find saved links with the toolbar magnifier or Ctrl/Cmd + F. It searches titles, URLs and descriptions across all your links boards. Open a result or choose Show on board to jump to its original location. Queries stay on your computer, are cleared when you close the dialog, and are not added to web-search suggestions."
+                                    "text": "Yes. Type in the main search field, or press Ctrl/Cmd + F to focus it. Matching saved links appear in order of use across all your boards. Open a result or choose Show on board to jump to its original location."
                             }
                     },
                     {
@@ -127,7 +127,7 @@
                             "name": "Can it read the pages I browse?",
                             "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "The Quick Save popup reads the current tab's title and address when you open it. If you enable page-title fetching, the browser asks for access to each site. MorrowTab does nothing on other websites by default. Two optional tools are off until you turn them on in Settings: Maps address search, and download links on Zoom recording pages at https://*.zoom.us/rec/*, which reads the recording title and video sources there without saving them or sending them to FixQuotes. See page access in the privacy policy."
+                                    "text": "The Quick Save popup reads the current tab's title and address when you open it. When fetching page titles for new links, the browser asks for access to each HTTPS site. MorrowTab does nothing on other websites by default. Two optional tools are off until you turn them on in Settings: Maps address search, and download links on Zoom recording pages at https://*.zoom.us/rec/*, which reads the recording title and video sources there without saving them or sending them to FixQuotes. See page access in the privacy policy."
                             }
                     },
                     {
@@ -403,7 +403,7 @@
                                     srcset="img/screenshots/saved-link-search-768.webp 768w, img/screenshots/saved-link-search-1280.webp 1280w, img/screenshots/saved-link-search-1920.webp 1920w"
                                     sizes="(min-width: 1248px) 1180px, (max-width: 768px) calc(100vw - 34px), calc(100vw - 50px)">
                                 <img src="img/screenshots/saved-link-search.png" width="1920" height="1200"
-                                    alt="The Find saved links dialog searching for google in the sample board: matching saved links show their titles, board and column, URLs and Show on board actions"
+                                    alt="The main search field showing saved links for google, with their board and column, URLs and Show on board buttons"
                                     loading="lazy" decoding="async">
                             </picture>
                             <span class="screenshot-hint">Open full size</span>
@@ -414,7 +414,7 @@
                                 data-fullsrc="img/screenshots/saved-link-search.png"
                                 data-avif="img/screenshots/saved-link-search-768.avif 768w, img/screenshots/saved-link-search-1280.avif 1280w, img/screenshots/saved-link-search-1920.avif 1920w"
                                 data-webp="img/screenshots/saved-link-search-768.webp 768w, img/screenshots/saved-link-search-1280.webp 1280w, img/screenshots/saved-link-search-1920.webp 1920w"
-                                data-alt="The Find saved links dialog searching for google in the sample board: matching saved links show their titles, board and column, URLs and Show on board actions"
+                                data-alt="The main search field showing saved links for google, with their board and column, URLs and Show on board buttons"
                                 data-label="Find saved links">Find saved links</button>
                             <button class="screenshot-variant" type="button" aria-pressed="false"
                                 data-previewsrc="img/screenshots/search-suggestions.png"
@@ -564,10 +564,9 @@
                     </details>
                     <details>
                         <summary>Can I search my saved links?</summary>
-                        <p>Yes. Open Find saved links with the toolbar magnifier or Ctrl/Cmd + F.
-                            It searches titles, URLs and descriptions across all your links boards. Open a result
-                            or choose Show on board to jump to its original location. Queries stay on your computer,
-                            are cleared when you close the dialog, and are not added to web-search suggestions.</p>
+                        <p>Yes. Type in the main search field, or press Ctrl/Cmd + F to focus it.
+                            Matching saved links appear in order of use across all your boards. Open a result
+                            or choose Show on board to jump to its original location.</p>
                     </details>
                     <details>
                         <summary>How much can I save?</summary>
@@ -588,7 +587,7 @@
                     <details>
                         <summary>Can it read the pages I browse?</summary>
                         <p>The Quick Save popup reads the current tab's title and address when you open it.
-                            If you enable page-title fetching, the browser asks for access to each site.</p>
+                            When fetching page titles for new links, the browser asks for access to each HTTPS site.</p>
                         <p>MorrowTab does nothing on other websites by default. Two optional tools are off until you
                             turn them on in Settings: Maps address search, and download links on Zoom recording pages
                             at https://*.zoom.us/rec/*, which reads the recording title and video sources there
